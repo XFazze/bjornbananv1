@@ -182,7 +182,16 @@ async def quote_voice(ctx):
     quote_nr = random.randint(0, len(quote_list)-1)
     message = "at your service"+"_ _"
     sent = await ctx.send(message)
-
+    quote = quote_list[quote_nr]["quote"].replace('"', '')
+  
+    channel = ctx.message.author.voice.channel
+    path = r"/home/pi/discordbot/songs/"+quote+".mp3"
+    await channel.connect()
+    await ctx.send("God has entered the chat")
+    vc = get(bot.voice_clients, guild=ctx.guild)
+    vc.play(discord.FFmpegPCMAudio(path),
+            after=lambda e: print("song is done"))
+    vc.source = discord.PCMVolumeTransformer(vc.source)
     emojis = ['\U0001f449','\U0001f44C', '\U0001F620']
     for emoji in emojis:
         await sent.add_reaction(emoji)

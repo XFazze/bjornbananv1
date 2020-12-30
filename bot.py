@@ -106,6 +106,7 @@ async def leave(ctx):
 async def play_djungel(ctx):
     log(ctx)
     channel = ctx.message.author.voice.channel
+    voice = get(bot.voice_clients, guild=ctx.guild)
     path = r"/home/pi/discordbot/songs/djungeltrubbaduren.mp3"
     if voice and voice.is_connected():
         await voice.move_to(channel)
@@ -122,6 +123,7 @@ async def play_djungel(ctx):
 async def play_cat(ctx):
     log(ctx)
     channel = ctx.message.author.voice.channel
+    voice = get(bot.voice_clients, guild=ctx.guild)
     path = r"/home/pi/discordbot/songs/erika.mp3"
     await channel.connect()
     await ctx.send("God has entered the chat")
@@ -188,6 +190,7 @@ async def quote_voice(ctx):
     quote = quote_list[quote_nr]["quote"].replace('"', '')
   
     channel = ctx.message.author.voice.channel
+    voice = get(bot.voice_clients, guild=ctx.guild)
     path = r"/home/pi/discordbot/quote/voice/"+quote+".mp3"
     if voice and voice.is_connected():
         await voice.move_to(channel)

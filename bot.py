@@ -105,7 +105,6 @@ async def leave(ctx):
 @bot.command(pass_context=True, aliases=['od', '.play_djungeltrubbaduren'])
 async def play_djungel(ctx):
     log(ctx)
-    song = os.path.isfile
     channel = ctx.message.author.voice.channel
     path = r"/home/pi/discordbot/songs/djungeltrubbaduren.mp3"
     await channel.connect()
@@ -119,7 +118,6 @@ async def play_djungel(ctx):
 @bot.command(pass_context=True, aliases=['erika', '.play_erika'])
 async def play_cat(ctx):
     log(ctx)
-    song = os.path.isfile
     channel = ctx.message.author.voice.channel
     path = r"/home/pi/discordbot/songs/erika.mp3"
     await channel.connect()
@@ -182,10 +180,9 @@ async def quote_voice(ctx):
     log(ctx)
     quote_list = json.load(open('/home/pi/discordbot/quote/quote.json'))
     quote_nr = random.randint(0, len(quote_list)-1)
-    message = quote_list[quote_nr]["quote"] + \
-        " - "+quote_list[quote_nr]["author"] +"_ _"
+    message = "at your service"+"_ _"
     sent = await ctx.send(message)
-    # 👉, 👌, 😠
+
     emojis = ['\U0001f449','\U0001f44C', '\U0001F620']
     for emoji in emojis:
         await sent.add_reaction(emoji)
@@ -208,13 +205,12 @@ async def quote_add(ctx):
     quote_list.append(new_quote)
     with open('/home/pi/discordbot/quote/quote.json', 'w') as file:
         json.dump(quote_list, file, indent=4)
-    with open('/home/pi/discordbot/all_quote.json', 'w') as file:
+    with open('/home/pi/discordbot/quote/all_quote.json', 'w') as file:
         json.dump(quote_list, file, indent=4)
     
     voice = gTTS(quote)
     filename = "quote/voice/"+quote_org[1]+".mp3"
     voice.save(filename)
-    print("should aT", filename)
     
     message = "Added " + quote + " to the quote mind from " + author
     await ctx.send(message)

@@ -107,7 +107,10 @@ async def play_djungel(ctx):
     log(ctx)
     channel = ctx.message.author.voice.channel
     path = r"/home/pi/discordbot/songs/djungeltrubbaduren.mp3"
-    await channel.connect()
+    if voice and voice.is_connected():
+        await voice.move_to(channel)
+    else:
+        voice = await channel.connect()
     await ctx.send("God has entered the chat")
     vc = get(bot.voice_clients, guild=ctx.guild)
     vc.play(discord.FFmpegPCMAudio(path),
@@ -186,7 +189,10 @@ async def quote_voice(ctx):
   
     channel = ctx.message.author.voice.channel
     path = r"/home/pi/discordbot/quote/voice/"+quote+".mp3"
-    await channel.connect()
+    if voice and voice.is_connected():
+        await voice.move_to(channel)
+    else:
+        voice = await channel.connect()
     await ctx.send("God has entered the chat")
     vc = get(bot.voice_clients, guild=ctx.guild)
     vc.play(discord.FFmpegPCMAudio(path),

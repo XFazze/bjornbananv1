@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "../main"
+		},
+		{
+			"path": "../website"
+		},
+		{
+			"path": "."
+		}
+	],
+	"remoteAuthority": "wsl+Debian",
+	"settings": {
+		"C_Cpp.default.systemIncludePath": []
+	},
+	"remote.fileWatcher.polling" : true
+}

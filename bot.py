@@ -227,7 +227,7 @@ async def quote_add(ctx):
         json.dump(quote_list, file, indent=4)
     
     voice = gTTS(quote)
-    filename = "quote/voice/"+quote_org[1]+".mp3"
+    filename = "/home/pi/discordbot/quote/voice/"+quote_org[1]+".mp3"
     voice.save(filename)
     
     message = "Added " + quote + " to the quote mind from " + author

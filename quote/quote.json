@@ -1,5 +1,4 @@
 [
-   
     {
         "quote": "\"sass\"",
         "author": "xfazze",
@@ -7,6 +6,11 @@
     },
     {
         "quote": "\"daddy is my mom\"",
+        "author": "xfazze",
+        "rating": 1
+    },
+    {
+        "quote": "\"ta mig i r\u00f6ven\"",
         "author": "xfazze",
         "rating": 1
     }

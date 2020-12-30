@@ -185,7 +185,7 @@ async def quote_voice(ctx):
     quote = quote_list[quote_nr]["quote"].replace('"', '')
   
     channel = ctx.message.author.voice.channel
-    path = r"/home/pi/discordbot/songs/"+quote+".mp3"
+    path = r"/home/pi/discordbot/quote/voice/"+quote+".mp3"
     await channel.connect()
     await ctx.send("God has entered the chat")
     vc = get(bot.voice_clients, guild=ctx.guild)

@@ -37,6 +37,7 @@ def change(quote, amount):
     file = json.load(open('/home/pi/discordbot/quote/quote.json', 'r'))
     for quote_file in file:
         if quote_file["quote"] == quote:
+            print("found quote")
             quote_file["rating"] += amount
             if quote_file["rating"] < -3:
                 print("remove gobi")
@@ -54,6 +55,7 @@ async def on_raw_reaction_add(payload):
     reaction = discord.utils.get(message.reactions, emoji=payload.emoji.name)
     if str(message.author) == "Björnbanan#6641" and "_ _" in message.content and str(payload.member) != "Björnbanan#6641":
         quote = message.content.split(" -")[0]
+        quote = quote[:-3]
         if str(reaction) == "👉" or str(reaction) == "👌":
             change(quote, 1)
         if str(reaction) == "😠":
@@ -67,6 +69,7 @@ async def on_raw_reaction_remove(payload):
     reaction = discord.utils.get(message.reactions, emoji=payload.emoji.name)
     if str(message.author) == "Björnbanan#6641" and "_ _" in message.content and str(payload.member) != "Björnbanan#6641":
         quote = message.content.split(" -")[0]
+        quote = quote[:-3]
         if str(reaction) == "👉" or str(reaction) == "👌":
             change(quote, -1)
         if str(reaction) == "😠":

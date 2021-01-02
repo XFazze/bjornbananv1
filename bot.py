@@ -98,7 +98,7 @@ async def leave(ctx):
     log(ctx)
     channel = ctx.message.author.voice.channel
     voice = get(bot.voice_clients, guild=ctx.guild)
-    if voice and voice.is_connected():
+    if voice.is_connected():
         await voice.disconnect()
         await ctx.send(f"Left {channel}")
     else:

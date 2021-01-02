@@ -87,10 +87,10 @@ async def join(ctx):
 
     if voice and voice.is_connected():
         await voice.move_to(channel)
-        print("moved to a channel")
+        print(f"moved to a channel{channel}")
     else:
         voice = await channel.connect()
-        print("connected to a channel")
+        print(f"connected to a channel{channel}")
 
     await ctx.send(f"Joined {channel}")
 
@@ -103,8 +103,10 @@ async def leave(ctx):
     if voice.is_connected():
         await voice.disconnect()
         await ctx.send(f"Left {channel}")
+        print(f"Left channel:{channel}")
     else:
         await ctx.send("Not in a channel f u")
+        print(f"was asked to leave but not in channel{channel}")
 
 
 @bot.command(pass_context=True, aliases=['od', '.play_djungeltrubbaduren'])

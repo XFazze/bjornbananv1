@@ -87,8 +87,10 @@ async def join(ctx):
 
     if voice and voice.is_connected():
         await voice.move_to(channel)
+        print("moved to a channel")
     else:
         voice = await channel.connect()
+        print("connected to a channel")
 
     await ctx.send(f"Joined {channel}")
 

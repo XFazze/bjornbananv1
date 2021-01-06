@@ -149,7 +149,7 @@ async def quote_voice(ctx):
         await voice.move_to(channel)
     else:
         voice = await channel.connect()
-    await ctx.send("God has entered the chat")
+        await ctx.send("God has entered the chat")
     vc = get(bot.voice_clients, guild=ctx.guild)
     vc.play(discord.FFmpegPCMAudio(path),
             after=lambda e: print("song is done"))
@@ -259,7 +259,7 @@ async def farg(ctx):
                 return
     await ctx.send("You dont have a role")
 
-@bot.command(pass_context=True, aliases=['rr', '.reactionroles'])
+@bot.command(pass_context=True, aliases=['rear', '.reactionroles'])
 @commands.has_permissions(manage_roles=True)
 async def reaction_role(ctx):
     log(ctx)
@@ -267,19 +267,19 @@ async def reaction_role(ctx):
         role_id=int(str(ctx.message.content).split(" ")[1][3:-1])
     except:
         print("forgot variable role")
-        await ctx.send("you forgot the role variable, format: grr @role emoji text. OBS spaces")
+        await ctx.send("you forgot the role variable, format: grear @role emoji text. OBS spaces")
         return
     try:
         emoji=str(ctx.message.content).split(" ")[2]
     except:
         print("forgot variable emoji")
-        await ctx.send("you forgot the amoji variable, format: grr @role emoji text. OBS spaces")
+        await ctx.send("you forgot the amoji variable, format: grear @role emoji text. OBS spaces")
         return
     try:
         text=str(ctx.message.content).split(" ")[3:]
     except:
         print("forgot variable text")
-        await ctx.send("you forgot the text variable, format: grr @role emoji text. OBS spaces")
+        await ctx.send("you forgot the text variable, format: grear @role emoji text. OBS spaces")
         return
     highest_role=ctx.message.author.roles[-1]
     role = get(ctx.guild.roles, id=role_id)
@@ -310,11 +310,10 @@ async def on_raw_reaction_add(payload):
     channel = await bot.fetch_channel(payload.channel_id)
     message = await channel.fetch_message(payload.message_id)
     reaction = discord.utils.get(message.reactions, emoji=payload.emoji.name)
+    guild= discord.utils.find(lambda g: g.id == payload.guild_id, bot.guilds)
     if str(message.author) == "Björnbanan#6641" and "Role:" == str(message.content)[0:5] and str(payload.member) != "Björnbanan#6641":
-        print("yeeees")
         role = str(message.content)[6:].split(" |")[0]
-        role = discord.utils.get(payload.member.roles,name=role)
-        print(type(role))
+        role = discord.utils.get(guild.roles,name=role)
         await payload.member.add_roles(role)
 
  
@@ -325,8 +324,21 @@ async def on_raw_reaction_remove(payload):
     channel = await bot.fetch_channel(payload.channel_id)
     message = await channel.fetch_message(payload.message_id)
     reaction = discord.utils.get(message.reactions, emoji=payload.emoji.name)
+    guild = discord.utils.find(lambda g: g.id == payload.guild_id, bot.guilds)
     if str(message.author) == "Björnbanan#6641" and "Role:" == str(message.content)[0:5] and str(payload.member) != "Björnbanan#6641":
-        print("REEEEEEEEE")
+        role = str(message.content)[6:].split(" |")[0]
+        role = discord.utils.get(guild.roles,name=role)
+        print(payload.user_id, guild.members)
+        member = discord.utils.get(guild.members, id=payload.user_id)
+        print(guild, type(guild), member, type(member))
+        await member.remove_roles(role)
+
+# Action 
+# on_message, on_message_delete, on_raw_message_edit, on_raw_reaction_add, on_raw_reaction_remove, on_raw_reaction_clear, 
+# on_private_channel_create, on_private_channel_delete, on_private_channel_pins_update
+@bot.event
+async def peepee(ctx):
+    f=open("quote/peepoo.txt", "a+")
 
 
 def log(ctx):

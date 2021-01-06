@@ -357,15 +357,7 @@ async def on_raw_reaction_remove(payload):
         member = await guild.fetch_member(payload.user_id)
         await member.remove_roles(role)
 
-# Action
-# on_message, on_message_delete, on_raw_message_edit, on_raw_reaction_add, on_raw_reaction_remove, on_raw_reaction_clear,
-# on_private_channel_create, on_private_channel_delete, on_private_channel_pins_update
 
-
-@bot.event
-async def peepee(self,ctx):
-    print("heyeyee")
-    f = open("quote/peepoo.txt", "a+")
 
 
 def log(ctx):

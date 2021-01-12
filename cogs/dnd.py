@@ -4,21 +4,40 @@ from discord.ext import commands
 
 
 class Base(commands.Cog):
-
     def __init__(self, bot):
         self.bot = bot
     
-    @commands.command(pass_context=True, aliases=['rol', '.roll'])
-    async def roll(self,ctx):
+    @commands.Cog.listener()
+    async def on_message(self,message):
+        if message.content[0] != "d":
+            return
         try:
-            rollamount = int(ctx.message.content.split(" ")[1])
+            notd = message.content[1:].split(" ")
+            rollamount = int(notd[0])
+            notd.pop(0)
         except:
             print("didnt provide number")
-            await ctx.send("You didnt provide a number")
             return
         outcome = random.randint(1,rollamount)
-        await ctx.send(f"You got a {outcome}")
-        print("done")
+        result = outcome
+        try:
+            for operator in notd:
+                if operator[0] == "+":
+                    result = result+int(operator[1:])
+                if operator[0] == "-":
+                    result = result-int(operator[1:])
+                if operator[0] == "/":
+                    result = result/int(operator[1:])
+                if operator[0] == "*":
+                    result = result*int(operator[1:])
+        except:
+            await message.channel.send(f'You inputed wrong operators("+2","-3", "/2", "*5")')
+        await message.channel.send(f"```d{rollamount}:{outcome} {' '.join(map(str,notd))}= {result}```")
+        print("roll done")
+    
+    @commands.command(pass_context=True, aliases=['dndframer', '.dndframe'])
+    async def dndframe(self,ctx):
+        print("hey")
         
 
 def setup(bot):

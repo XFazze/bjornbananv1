@@ -10,6 +10,7 @@ bot_prefix = 'g'
 bot = commands.Bot(command_prefix=bot_prefix, Intents=intents)
 
 bot.remove_command('help')
+bot.remove_command('tts')
 
 
 extensions = ['cogs.basic_vc', 'cogs.tournament', 'cogs.quote','cogs.simple', 'cogs.reaction_roles']

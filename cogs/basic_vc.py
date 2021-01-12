@@ -58,7 +58,10 @@ class Base(commands.Cog):
         channel = ctx.message.author.voice.channel
         voice = get(self.bot.voice_clients, guild=ctx.guild)
         path = r"/home/pi/discordbot/songs/erika.mp3"
-        await channel.connect()
+        if voice and voice.is_connected():
+            await voice.move_to(channel)
+        else:
+            voice = await channel.connect()
         await ctx.send("God has entered the chat")
         vc = get(self.bot.voice_clients, guild=ctx.guild)
         vc.play(discord.FFmpegPCMAudio(path),

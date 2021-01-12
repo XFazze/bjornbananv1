@@ -20,7 +20,7 @@ if __name__ == '__main__':
 
 @bot.event
 async def on_ready():
-    print("Logged in as: " + bot.user.name + "n")
+    print("Logged in as: " + bot.user.name)
     await bot.change_presence(activity=discord.Game(name="you | ghelp"))
 
 bot.run(code)

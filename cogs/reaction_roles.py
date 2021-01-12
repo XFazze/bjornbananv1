@@ -8,9 +8,10 @@ class Base(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
     # Reaction roles
+
     @commands.command(pass_context=True, aliases=['rear', '.reactionroles'])
     @commands.has_permissions(manage_roles=True)
-    async def reaction_role(self,ctx):
+    async def reaction_role(self, ctx):
         try:
             role_id = int(str(ctx.message.content).split(" ")[1][3:-1])
         except:
@@ -47,30 +48,49 @@ class Base(commands.Cog):
         await bot_message.add_reaction(emoji)
         await ctx.message.delete()
 
-
     @commands.Cog.listener()
     async def on_raw_reaction_add(self, payload):
         channel = await self.bot.fetch_channel(payload.channel_id)
         message = await channel.fetch_message(payload.message_id)
-        reaction = discord.utils.get(message.reactions, emoji=payload.emoji.name)
+        reaction = discord.utils.get(
+            message.reactions, emoji=payload.emoji.name)
         guild = self.bot.get_guild(payload.guild_id)
         if message.author == guild.get_member(self.bot.user.id) and "Role:" == str(message.content)[0:5] and payload.member != guild.get_member(self.bot.user.id):
             role = str(message.content)[6:].split(" |")[0]
             role = discord.utils.get(guild.roles, name=role)
             await payload.member.add_roles(role)
 
-
     @commands.Cog.listener()
-    async def on_raw_reaction_remove(self,payload):
+    async def on_raw_reaction_remove(self, payload):
         channel = await self.bot.fetch_channel(payload.channel_id)
         message = await channel.fetch_message(payload.message_id)
-        reaction = discord.utils.get(message.reactions, emoji=payload.emoji.name)
+        reaction = discord.utils.get(
+            message.reactions, emoji=payload.emoji.name)
         guild = self.bot.get_guild(payload.guild_id)
         if message.author == guild.get_member(self.bot.user.id) and "Role:" == str(message.content)[0:5]:
             role = str(message.content)[6:].split(" |")[0]
             role = discord.utils.get(guild.roles, name=role)
             member = await guild.fetch_member(payload.user_id)
             await member.remove_roles(role)
+
+    @commands.command(pass_context=True, aliases=['reac', '.reactionroles_clean'])
+    async def clean_roles(self, ctx):
+        await ctx.message.delete()
+        channel = ctx.message.channel
+        messages = await channel.history(limit=200).flatten()
+        print("found messages")
+        tosend = []
+        for message in messages:
+            if message.content[0:6] == "Role: " and message.author == ctx.guild.get_member(self.bot.user.id) and message.reactions != []:
+                tosend.append({"content": message.content,
+                               "reaction": message.reactions[0]})
+                await message.delete()
+        print("done withe delete")
+        for sending in tosend:
+            msg = await ctx.send(sending["content"])
+            await msg.add_reaction(sending["reaction"])
+        print("sent again")
+
 
 def setup(bot):
     bot.add_cog(Base(bot))

@@ -1,7 +1,7 @@
 
 import discord
 from discord.ext import commands
-from codemy import code_ex
+from codemy import code
 
 
 intents = discord.Intents.default()
@@ -23,5 +23,5 @@ async def on_ready():
     print("Logged in as: " + bot.user.name + "n")
     await bot.change_presence(activity=discord.Game(name="you | ghelp"))
 
-bot.run(code_ex)
+bot.run(code)
 

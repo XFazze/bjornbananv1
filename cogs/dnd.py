@@ -12,32 +12,60 @@ class Base(commands.Cog):
         if message.content[0] != "d":
             return
         try:
-            notd = message.content[1:].split(" ")
-            rollamount = int(notd[0])
-            notd.pop(0)
-        except:
-            print("didnt provide number")
-            return
-        outcome = random.randint(1, rollamount)
-        result = outcome
-        try:
-            for operator in notd:
-                if operator[0] == "+":
-                    result = result+int(operator[1:])
-                if operator[0] == "-":
-                    result = result-int(operator[1:])
-                if operator[0] == "/":
-                    result = result/int(operator[1:])
-                if operator[0] == "*":
-                    result = result*int(operator[1:])
+            msg=message.content
+            print(msg)
+            new = []
+            temp = ""
+            for symbol in msg:
+                try:
+                    x = int(symbol)
+                    temp = temp+symbol
+                except:
+                    new.append(temp)
+                    new.append(symbol)
+                    temp = ""
+            new.append(temp)
+            dice = int(new[2])
+            new[0] = random.randint(1, dice)
+            new[1:]=new[3:]
+            x = 1
+            value = []
+            operator=[]
+            print("new", new)
+            for i in new:
+                x = x*-1
+                if x < 0:
+                    value.append(i)
+                else:
+                    operator.append(i)
+
+
+            result = value[0]
+            print("op, val", operator, value)
+            for op in operator:
+                x = operator.index(op)
+                if op == "+":
+                    result = result+int(value[x+1])
+                if op == "-":
+                    result = result-int(value[x+1])
+                if op == "/":
+                    result = result/int(value[x+1])
+                if op == "*":
+                    result = result*int(value[x+1])
+            print(f"success  {value[0]} {result}")
+            await message.channel.send(f"```d{dice}:{value[0]} = {result}```")
         except:
             await message.channel.send(f'You inputed wrong operators("+2","-3", "/2", "*5")')
-        await message.channel.send(f"```d{rollamount}:{outcome} {' '.join(map(str,notd))}= {result}```")
         print("roll done")
 
     @commands.command(pass_context=True, aliases=['dndframer'])
     @commands.has_permissions(manage_channels=True)
     async def dndframe(self, ctx):
+        f = json.load(open("servers.json", "r"))
+        if str(ctx.message.guild.id) not in f["dndframe"]:
+            print("not allowed on server")
+            await ctx.send("COMMAND NOT ALLOWED IN YOUR HOME")
+            return
         try:
             name = ctx.message.content[11:].split(",")[0]
         except:
@@ -56,7 +84,6 @@ class Base(commands.Cog):
         await category.set_permissions(role, overwrite=overwrite)
         for player in players:
             await player.add_roles(role)
-            print(type(player.display_name))
             channel_perm = await guild.create_text_channel(name=player.display_name+" dm", category=category)
             await channel_perm.set_permissions(role, read_messages=False)
             await channel_perm.set_permissions(dm, overwrite=overwrite)
@@ -73,8 +100,6 @@ class Base(commands.Cog):
             channel_perm = await guild.create_text_channel(name=channel, category=category)
             await channel_perm.set_permissions(role, read_messages=False)
             await channel_perm.set_permissions(dm, overwrite=overwrite)
-
-        
 
 
 def setup(bot):

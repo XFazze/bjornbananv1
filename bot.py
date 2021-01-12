@@ -13,7 +13,7 @@ bot.remove_command('help')
 bot.remove_command('tts')
 
 
-extensions = ['cogs.basic_vc', 'cogs.tournament', 'cogs.quote','cogs.simple', 'cogs.reaction_roles']
+extensions = ['cogs.basic_vc', 'cogs.tournament', 'cogs.quote','cogs.simple', 'cogs.reaction_roles', 'cogs.dnd']
 if __name__ == '__main__':
     for extension in extensions:
         bot.load_extension(extension)

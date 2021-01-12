@@ -82,7 +82,7 @@ class Base(commands.Cog):
         tosend = []
         for message in messages:
             if message.content[0:6] == "Role: " and message.author == ctx.guild.get_member(self.bot.user.id) and message.reactions != []:
-                tosend.append({"content": message.content,
+                tosend.insert(0, {"content": message.content,
                                "reaction": message.reactions[0]})
                 await message.delete()
         print("done withe delete")

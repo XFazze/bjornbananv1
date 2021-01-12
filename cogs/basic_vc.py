@@ -46,7 +46,7 @@ class Base(commands.Cog):
             await voice.move_to(channel)
         else:
             voice = await channel.connect()
-        await ctx.send("God has entered the chat")
+            await ctx.send("God has entered the chat")
         vc = get(self.bot.voice_clients, guild=ctx.guild)
         vc.play(discord.FFmpegPCMAudio(path),
                 after=lambda e: print("song is done"))
@@ -62,11 +62,13 @@ class Base(commands.Cog):
             await voice.move_to(channel)
         else:
             voice = await channel.connect()
-        await ctx.send("God has entered the chat")
+            await ctx.send("God has entered the chat")
         vc = get(self.bot.voice_clients, guild=ctx.guild)
         vc.play(discord.FFmpegPCMAudio(path),
                 after=lambda e: print("song is done"))
         vc.source = discord.PCMVolumeTransformer(vc.source)
+    
+ 
 
 def setup(bot):
     bot.add_cog(Base(bot))

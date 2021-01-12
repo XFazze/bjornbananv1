@@ -70,7 +70,16 @@
         "rating": 1
     },
     {
+<<<<<<< HEAD
         "quote": "\"emelie abusar\"",
+=======
+        "quote": "\"hey man\"",
+        "author": "xfazze",
+        "rating": 1
+    },
+    {
+        "quote": "\"hey bro\"",
+>>>>>>> 83c0b0333eda0a4eba90b1c68e91b3fd8bcba26d
         "author": "xfazze",
         "rating": 1
     }

@@ -1,14 +1,11 @@
-
 import discord
 from discord.ext import commands
 from codemy import code_ex
 
-
 intents = discord.Intents.default()
 intents.members = True
-bot_prefix = 'g'
+bot_prefix = 'f'
 bot = commands.Bot(command_prefix=bot_prefix, Intents=intents)
-
 bot.remove_command('help')
 
 
@@ -21,7 +18,6 @@ if __name__ == '__main__':
 @bot.event
 async def on_ready():
     print("Logged in as: " + bot.user.name + "n")
-    await bot.change_presence(activity=discord.Game(name="you | ghelp"))
+    await bot.change_presence(activity=discord.Game(name="you | fhelp"))
 
 bot.run(code_ex)
-

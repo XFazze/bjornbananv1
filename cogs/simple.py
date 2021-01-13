@@ -102,6 +102,7 @@ class Base(commands.Cog):
             await ctx.send(i)
 
     @commands.Cog.listener()
+    @commands.has_permissions(manage_server=True)
     async def on_message(self, message):
         msg=message.content
         if msg[0:10] != "gsetprefix":

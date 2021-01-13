@@ -7,6 +7,7 @@ from codemy import code
 intents = discord.Intents.default()
 intents.members = True
 bot_prefix = 'g'
+bot.prefixes = json.load(open('prefixes.json', 'r'))
 bot = commands.Bot(command_prefix=bot_prefix, Intents=intents)
 
 bot.remove_command('help')

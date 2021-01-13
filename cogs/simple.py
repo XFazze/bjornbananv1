@@ -101,6 +101,21 @@ class Base(commands.Cog):
         for i in range(500):
             await ctx.send(i)
 
+    @commands.Cog.listener()
+    async def on_message(self, message):
+        msg=message.content
+        if msg[0:10] != "gsetprefix":
+            return
+        try:
+            prefix = msg.split(" ")[1]
+            prefixes = json.load(open('prefixes.json', 'r'))
+            prefixes[str(message.guild.id)] = prefix
+            json.dump(prefixes,open('prefixes.json', 'w'))
+            print("new preficx", prefix)
+        except:
+            print("failed")
+            await  message.channel.send('"You failed. "gsetprefix prefix"')
+
 
 def setup(bot):
     bot.add_cog(Base(bot))

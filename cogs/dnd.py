@@ -9,11 +9,17 @@ class Base(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message(self, message):
-        if message.content[0] != "d":
+        msg=message.content
+        if msg[0] != "d":
             return
         try:
-            msg=message.content
             print(msg)
+            for sym in msg[1:]:
+                print(sym, type(sym))
+                if sym in "+-*/":
+                    print("success")
+                else:
+                    p = int(sym)
             new = []
             temp = ""
             for symbol in msg:
@@ -31,7 +37,6 @@ class Base(commands.Cog):
             x = 1
             value = []
             operator=[]
-            print("new", new)
             for i in new:
                 x = x*-1
                 if x < 0:
@@ -41,7 +46,6 @@ class Base(commands.Cog):
 
 
             result = value[0]
-            print("op, val", operator, value)
             for op in operator:
                 x = operator.index(op)
                 if op == "+":
@@ -55,8 +59,7 @@ class Base(commands.Cog):
             print(f"success  {value[0]} {result}")
             await message.channel.send(f"```d{dice}:{value[0]} = {result}```")
         except:
-            await message.channel.send(f'You inputed wrong operators("+2","-3", "/2", "*5")')
-        print("roll done")
+            print("not a dice")
 
     @commands.command(pass_context=True, aliases=['dndframer'])
     @commands.has_permissions(manage_channels=True)

@@ -1,3 +1,4 @@
+import json
 import discord
 from discord.ext import commands
 from codemy import code_ex
@@ -5,7 +6,17 @@ from codemy import code_ex
 intents = discord.Intents.default()
 intents.members = True
 bot_prefix = 'f'
-bot = commands.Bot(command_prefix=bot_prefix, Intents=intents)
+
+
+async def determine_prefix(bot, message):
+    prefixes = json.load(open('prefixes.json', 'r'))
+    guild = message.guild
+    if guild:
+        return prefixes.get(str(guild.id), bot_prefix)
+    else:
+        return bot_prefix
+
+bot = commands.Bot(command_prefix=determine_prefix, Intents=intents)
 bot.remove_command('help')
 
 
@@ -17,7 +28,7 @@ if __name__ == '__main__':
 
 @bot.event
 async def on_ready():
-    print("Logged in as: " + bot.user.name + "n")
+    print("Logged in as: " + bot.user.name)
     await bot.change_presence(activity=discord.Game(name="you | fhelp"))
 
 bot.run(code_ex)

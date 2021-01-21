@@ -43,13 +43,13 @@ class Base(commands.Cog):
         await ctx.message.author.add_roles(role)
         await ctx.send("I have also given you the roles you're welcume")
 
-    @commands.command(pass_context=True, aliases=['help', 'wtf'])
+    @commands.command(pass_context=True, aliases=['help', '.help'])
     async def help_commands(self, ctx):
         await ctx.send("**Commands**:\n Avaible at  https://fabbe90.gq/bjornbanan and yes I love milk.")
 
     @commands.command(pass_context=True, aliases=['clear', '.clear'])
     @commands.has_permissions(manage_messages=True)
-    async def help_commands(self, ctx):
+    async def clearbitch(self, ctx):
         try:
             message = ctx.message.content.split(" ")
             amount = int(message[1])

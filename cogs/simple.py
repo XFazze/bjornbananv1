@@ -43,7 +43,7 @@ class Base(commands.Cog):
         await ctx.message.author.add_roles(role)
         await ctx.send("I have also given you the roles you're welcume")
 
-    @commands.command(pass_context=True, aliases=['help', '.help'])
+    @commands.command(pass_context=True, aliases=['help', 'wtf'])
     async def help_commands(self, ctx):
         await ctx.send("**Commands**:\n Avaible at  https://fabbe90.gq/bjornbanan and yes I love milk.")
 

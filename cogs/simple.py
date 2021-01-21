@@ -92,6 +92,7 @@ class Base(commands.Cog):
         print("done delteing")
 
     @commands.command(pass_context=True, aliases=['spamm', '.spam'])
+    @commands.has_permissions(manage_channels=True)
     async def spam(self, ctx):
         print(ctx.message.author)
         if str(ctx.message.author) != "xfazze#1854":

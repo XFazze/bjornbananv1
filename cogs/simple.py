@@ -67,6 +67,7 @@ class Base(commands.Cog):
                     print("tried to not delete but didnt gave me an int")
                     await ctx.send('You need to provide a number ("gclear x not z" z can be 1 or 5 etc )')
                     return
+
         except:
             note = 0
         if amount > 99:

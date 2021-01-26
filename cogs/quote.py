@@ -12,7 +12,7 @@ class Base(commands.Cog):
         self.bot = bot
 
 
-    @commands.command(pass_context=True, aliases=['obi', '.quote'])
+    @commands.command(pass_context=True, aliases=['obi'])
     async def quote_text(self,ctx):
         quote_list = json.load(open('/home/pi/discordbot/quote/quote.json'))
         quote_nr = random.randint(0, len(quote_list)-1)
@@ -25,7 +25,7 @@ class Base(commands.Cog):
             await sent.add_reaction(emoji)
 
 
-    @commands.command(pass_context=True, aliases=['obiv', '.quote_voice'])
+    @commands.command(pass_context=True, aliases=['obiv'])
     async def quote_voice(self,ctx):
         quote_list = json.load(open('/home/pi/discordbot/quote/quote.json'))
         quote_nr = random.randint(0, len(quote_list)-1)
@@ -49,7 +49,7 @@ class Base(commands.Cog):
         for emoji in emojis:
             await sent.add_reaction(emoji)
 
-    @commands.command(pass_context=True, aliases=['tits', '.tits'])
+    @commands.command(pass_context=True, aliases=['tits'])
     async def tts(self,ctx):
         message = ctx.message.content[6:]
         if len(message) > 50:
@@ -75,7 +75,7 @@ class Base(commands.Cog):
 
 
 
-    @commands.command(pass_context=True, aliases=['add', '.quote_add'])
+    @commands.command(pass_context=True, aliases=['add'])
     async def quote_add(self,ctx):
         quote_org = ctx.message.content.split(' ', 1)
         quote = '"' + quote_org[1] + '"'
@@ -102,7 +102,7 @@ class Base(commands.Cog):
         message = "Added " + quote + " to the quote mind from " + author
         await ctx.send(message)
 
-
+'''
     def change(quote, amount):
         print("quote change", quote, amount)
         file = json.load(open('/home/pi/discordbot/quote/quote.json', 'r'))
@@ -146,7 +146,7 @@ class Base(commands.Cog):
                 change(quote, -1)
             if str(reaction) == "😠":
                 change(quote, 1)
-
+'''
 
 def setup(bot):
     bot.add_cog(Base(bot))

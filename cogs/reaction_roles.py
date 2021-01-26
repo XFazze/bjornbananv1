@@ -73,7 +73,7 @@ class Base(commands.Cog):
             member = await guild.fetch_member(payload.user_id)
             await member.remove_roles(role)
 
-    @commands.command(pass_context=True, aliases=['reac', '.reactionroles_clean'])
+    @commands.command(pass_context=True, aliases=['reac'])
     async def clean_roles(self, ctx):
         await ctx.message.delete()
         channel = ctx.message.channel

@@ -3,6 +3,7 @@ import discord
 from discord.ext import commands
 from codemy import code_ex
 
+
 intents = discord.Intents.default()
 intents.members = True
 bot_prefix = 'f'

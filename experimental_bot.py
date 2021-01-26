@@ -22,7 +22,7 @@ bot.remove_command('help')
 
 
 extensions = ['cogs.basic_vc', 'cogs.tournament', 'cogs.quote',
-              'cogs.simple', 'cogs.reaction_roles', 'cogs.dnd']
+              'cogs.simple', 'cogs.reaction_roles', 'cogs.dnd', 'cogs.actionlog']
 if __name__ == '__main__':
     for extension in extensions:
         bot.load_extension(extension)

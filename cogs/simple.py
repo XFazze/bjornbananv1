@@ -13,7 +13,7 @@ class Base(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(pass_context=True, aliases=['color', '.color'])
+    @commands.command(pass_context=True, aliases=['color'])
     async def farg(self, ctx):
         f = json.load(open("servers.json", "r"))
         if str(ctx.message.guild.id) not in f[".color"]:
@@ -43,11 +43,11 @@ class Base(commands.Cog):
         await ctx.message.author.add_roles(role)
         await ctx.send("I have also given you the roles you're welcume")
 
-    @commands.command(pass_context=True, aliases=['help', '.help'])
+    @commands.command(pass_context=True, aliases=['help'])
     async def help_commands(self, ctx):
         await ctx.send("**Commands**:\n Avaible at  https://fabbe90.gq/bjornbanan and yes I love milk.")
 
-    @commands.command(pass_context=True, aliases=['clear', '.clear'])
+    @commands.command(pass_context=True, aliases=['clear'])
     @commands.has_permissions(manage_messages=True)
     async def clearbitch(self, ctx):
         try:
@@ -91,8 +91,9 @@ class Base(commands.Cog):
         await message.delete()
         print("done delteing")
 
-    @commands.command(pass_context=True, aliases=['spamm', '.spam'])
+    @commands.command(pass_context=True, aliases=['spamm'])
     @commands.has_permissions(manage_channels=True)
+    @commands.has_permissions(manage_messages=True)
     async def spam(self, ctx):
         print(ctx.message.author)
         if str(ctx.message.author) != "xfazze#1854":

@@ -14,36 +14,36 @@ class Base(commands.Cog):
         print(after)
         action = "admin abuse"
         if before.self_mute != after.self_mute:
-            channeli_id = before.channel.id
+            channnel_id = before.channel.id
             if before.self_mute:
                 action = "unselfmute"
             elif after.self_mute:
                 action = "selfmute"
 
         elif before.self_deaf != after.self_deaf:
-            channeli_id = before.channel.id
+            channnel_id = before.channel.id
             if before.self_deaf:
                 action = "unselfdeaf"
             elif after.self_deaf:
                 action = "selfdeaf"
 
         elif before.self_stream != after.self_stream:
-            channeli_id = before.channel.id
+            channnel_id = before.channel.id
             if before.self_stream:
                 action = "unselfstream"
             elif after.self_stream:
                 action = "selfstream"
 
         elif not before.channel:
-            channeli_id = after.channel.id
+            channnel_id = after.channel.id
             action = "connect"
 
         elif not after.channel:
-            channeli_id = before.channel.id
+            channnel_id = before.channel.id
             action = "disconnect" 
         
         elif after.channel !=  before.channel:
-            channeli_id = [after.channel.id, before.channel.id]
+            channnel_id = [after.channel.id, before.channel.id]
             action = "move"
         
         

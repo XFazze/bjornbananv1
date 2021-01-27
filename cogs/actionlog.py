@@ -48,7 +48,7 @@ class Base(commands.Cog):
         
         
         with open('/home/pi/discordbot/vc_logs.txt', 'a') as f:
-            f.write(str(time.time())+" "+ action+" "+ channnel_id + " "+str(member)+ "\n")
+            f.write(str(time.time())+" "+ action+" "+ str(channnel_id) + " "+str(member)+ "\n")
 
     
     @commands.Cog.listener()

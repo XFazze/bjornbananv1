@@ -4,11 +4,6 @@ from discord.ext import commands
 from codemy import code_ex
 
 
-intents = discord.Intents.default()
-intents.members = True
-bot_prefix = 'f'
-
-
 async def determine_prefix(bot, message):
     prefixes = json.load(open('prefixes.json', 'r'))
     guild = message.guild
@@ -17,12 +12,16 @@ async def determine_prefix(bot, message):
     else:
         return bot_prefix
 
-bot = commands.Bot(command_prefix=determine_prefix, Intents=intents)
+intents = discord.Intents.all()
+bot_prefix = 'f'
+bot = commands.Bot(command_prefix=determine_prefix, intents=intents)   
 bot.remove_command('help')
 
 
-extensions = ['cogs.basic_vc', 'cogs.tournament', 'cogs.quote',
-              'cogs.simple', 'cogs.reaction_roles', 'cogs.dnd', 'cogs.actionlog']
+extensions = ['cogs.basic_vc', 'cogs.tournament', 'cogs.quote','cogs.simple', 'cogs.reaction_roles', 'cogs.dnd', 'cogs.actionlog']
+
+
+
 if __name__ == '__main__':
     for extension in extensions:
         bot.load_extension(extension)

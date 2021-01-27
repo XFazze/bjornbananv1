@@ -1,2 +1,4 @@
 import time
-print(time.time)
+print(time.localtime(time.time()).tm_min)
+
+print(time.time())

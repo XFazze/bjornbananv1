@@ -9,6 +9,9 @@ class Base(commands.Cog):
 
     @commands.Cog.listener()
     async def on_voice_state_update(self, member, before, after):
+        print(member)
+        print(before)
+        print(after)
         action = "admin abuse"
         if before.self_mute != after.self_mute:
             if before.self_mute:

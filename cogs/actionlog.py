@@ -76,7 +76,6 @@ class Base(commands.Cog):
         with open('/home/pi/discordbot/tc_logs.txt', 'a') as f:
             f.write(str(time.time()) + " typing "  +str(channel.guild.id) + " "+ str(channel.id) +" " +str(user)+"\n")
 
-# on yuypine
 
 # channel create(private), channel delete, channel update
 # role create, role delete, role update
@@ -84,5 +83,6 @@ class Base(commands.Cog):
 # guild emoji update
 # ban unban
 # invite create remove
+
 def setup(bot):
     bot.add_cog(Base(bot))

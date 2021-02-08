@@ -4,11 +4,6 @@ from discord.ext import commands
 from codemy import code
 
 
-intents = discord.Intents.default()
-intents.members = True
-bot_prefix = 'g'
-
-
 async def determine_prefix(bot, message):
     prefixes = json.load(open('prefixes.json', 'r'))
     guild = message.guild
@@ -17,8 +12,7 @@ async def determine_prefix(bot, message):
     else:
         return bot_prefix
 
-intents = discord.Intents.default()
-intents.members = True
+intents = discord.Intents.all()
 bot_prefix = 'g'
 bot = commands.Bot(command_prefix=determine_prefix, Intents=intents)
 bot.remove_command('help')

@@ -14,7 +14,6 @@ class Base(commands.Cog):
         if msg[0] != "d":
             return
         try:
-            print(msg)
             for sym in msg[1:]:
                 print(sym, type(sym))
                 if sym in "+-*/":

@@ -1,0 +1,13 @@
+AbstractNucleus:gdelete
+xfazze:Lmao
+Trockeltum:XD
+AbstractNucleus:😦
+AbstractNucleus:mobbniging
+xfazze:Get jebaited
+AbstractNucleus:ajaj
+xfazze:Twitch mentality
+xfazze:Vad gör du ensam
+AbstractNucleus:vet inte
+AbstractNucleus:grear 👀  <@&802305915491319838>
+Björnbanan:you forgot the role variable, format: grear @role emoji text. OBS spaces
+Björnbanan:Role: Public |

@@ -1,4 +1,9 @@
-import time
-print(time.localtime(time.time()).tm_min)
+import requests
+from PIL import Image
 
-print(time.time())
+url  = 'https://cdn.discordapp.com/emojis/587726828815384738.png?v=1'
+
+
+im = Image.open(requests.get(url, stream=True).raw)
+im.show()
+print(type(im))

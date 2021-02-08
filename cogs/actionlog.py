@@ -80,7 +80,7 @@ class Base(commands.Cog):
     @commands.Cog.listener()
     async def on_typing(self, channel, user, when):        
         with open('/home/pi/discordbot/tc_logs.txt', 'a') as f:
-            f.write(str(time.time()) + " typing "  +str(channel.guild.id) + " "+ str(channel.id) +" " +str(user)+"\n")
+            f.write(str(time.time()) + " typing"  +str(channel.guild.id) + " "+ str(channel.id) +" " +str(user)+"\n")
 
 
 # channel create(private), channel delete, channel update

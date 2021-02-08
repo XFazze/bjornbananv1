@@ -10,6 +10,7 @@ class Base(commands.Cog):
     @commands.command(pass_context=True, aliases=['newmembers'])
     async def newmemberss(self, ctx):
         guild = ctx.guild
+        print(guild.members)
         for member in guild.members:
             if len(member.roles) == 1:
                 message = "user: "+member.name
@@ -20,6 +21,7 @@ class Base(commands.Cog):
     async def prive(self, ctx):
         guild = ctx.guild
         for member in ctx.message.mentions:
+
             role = get(guild.roles, id=802300233103048704)
             await member.add_roles(role)
             

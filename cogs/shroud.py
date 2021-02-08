@@ -1,4 +1,5 @@
 
+
 import discord
 from discord.ext import commands
 from discord.utils import get
@@ -11,11 +12,10 @@ class Base(commands.Cog):
     @commands.command(pass_context=True, aliases=['newmembers'])
     async def newmemberss(self, ctx):
         guild = ctx.guild
+        print(guild)
         for member in guild.members:
-            if len(member.roles) == 1:
-                message = "user: "+member.name
-                await ctx.send(message)
-    
+            print(guild.members)
+ 
     @commands.command(pass_context=True, aliases=['prime'])
     @commands.has_permissions(manage_roles=True)
     async def prive(self, ctx):

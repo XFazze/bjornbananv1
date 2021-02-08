@@ -62,7 +62,7 @@ class Base(commands.Cog):
     @commands.Cog.listener()
     async def on_raw_message_edit(self, payload):
         with open('/home/pi/discordbot/tc_logs.txt', 'a') as f:
-            f.write(str(time.time()) + " edit " + str(payload.data["guild_id"]) + " " + str(payload.data["channel_id"]) +" "+ str(payload.data["id"]) + " "+ str(payload.data["author"]["username"])+ "#"+str(payload.data["author"]["discriminator"]) + "\n")
+            f.write(str(time.time()) + " edit " + str(payload.data["guild_id"]) + " " + str(payload.data["channel_id"]) +" "+ str(payload.data["id"]) + " "+ str(payload.data["member"]["nick"]) +  "\n")
     
     @commands.Cog.listener()
     async def on_raw_reaction_add(self, payload):

@@ -50,7 +50,8 @@ class Base(commands.Cog):
         message = await channel.fetch_message(payload.message_id)
         reaction = discord.utils.get(message.reactions, emoji=payload.emoji.name)
         guild = self.bot.get_guild(payload.guild_id)
-        if message.author == guild.get_member(self.bot.user.id) and payload.member != guild.get_member(self.bot.user.id):
+        print(channel.category_id)
+        if message.author == guild.get_member(self.bot.user.id) and payload.member != guild.get_member(self.bot.user.id) and channel.category_id == 808279224485806110:
             print("delete tickets")
             bigmessage = []
             file = "/home/pi/discordbot/tickets/"+channel.name+".txt"

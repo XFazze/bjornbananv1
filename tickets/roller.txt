@@ -1,23 +1,13 @@
-Björnbanan:Role: Stockholm |
-Björnbanan:Role: Gamla Minnen |
-Björnbanan:Role: Sevtech |
-Björnbanan:Role: Among us |
-Björnbanan:Role: NSFW⚠️ |
-Björnbanan:Role: Anime |
-Björnbanan:Role: Skola |
-Björnbanan:Role: Rita Tisdag |
-Björnbanan:Role: ARK |
-Björnbanan:Role: Apex Legends |
-Björnbanan:Role: Film |
-Björnbanan:Role: Conter-Strike |
-Björnbanan:Role: Terraria |
-Björnbanan:Role: Civilization |
-Björnbanan:Role: Osu |
-Björnbanan:Role: dbd |
-Björnbanan:Role: DnD Player |
-Björnbanan:Role: Minecraft |
 Björnbanan:Role: Valorant |
-Björnbanan:Role: Läs mer om reglerna |
-Björnbanan:Role: Gambling |
-Björnbanan:Role: Clean | Fabians cleaness
-Björnbanan:Role: league of legends |
+Björnbanan:Role: Counter Strike |
+Björnbanan:Role: Minecraft |
+Björnbanan:Role: Among Us |
+Björnbanan:Role: Osu |
+Björnbanan:Role: Film/Anime |
+Björnbanan:Role: League of Legends |
+Björnbanan:Role: Apex Legends |
+Björnbanan:Role: Terraria |
+Björnbanan:Role: NSFW |
+Björnbanan:Role: Gambling | Ger tillgång till gambling kanaler
+Björnbanan:Role: Rust |
+Björnbanan:Role: Clean |  Gömmer #welcome och #tull

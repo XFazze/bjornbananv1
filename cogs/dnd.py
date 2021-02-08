@@ -15,7 +15,6 @@ class Base(commands.Cog):
             return
         try:
             for sym in msg[1:]:
-                print(sym, type(sym))
                 if sym in "+-*/":
                     print("success")
                 else:
@@ -59,7 +58,7 @@ class Base(commands.Cog):
             print(f"success  {value[0]} {result}")
             await message.channel.send(f"```d{dice}:{value[0]} = {result}```")
         except:
-            print("not a dice")
+            return
 
     @commands.command(pass_context=True, aliases=['dndframer'])
     @commands.has_permissions(manage_channels=True)

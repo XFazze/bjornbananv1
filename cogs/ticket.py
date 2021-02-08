@@ -56,7 +56,7 @@ class Base(commands.Cog):
             file = "/home/pi/discordbot/tickets/"+channel.name+".txt"
             with open(file, "w+") as f:
                 newhistory = []
-                async for message in channel.history(limit=2000):
+                async for message in channel.history(limit=20000):
                     newhistory.insert(0, message)
                 for message in newhistory:
                     f.write(message.author.name +":"+ message.content + "\n")

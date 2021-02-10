@@ -125,10 +125,15 @@ class Base(commands.Cog):
                 channel_id = rolelog[guild_id]
                 channel = self.bot.get_channel(channel_id)
                 if len(before.roles) > len(after.roles):
-                    message = "User: "+ str(before) +"\nRole removed: " +list(set(before.roles)-set(after.roles))[0].name
+                    role = list(set(before.roles)-set(after.roles))[0]
+                    message = "User: "+ str(before) +"\nRole removed: " +role.name
                     await channel.send(message)
                 else:
-                    message = "User: "+ str(before) +"\nRole added: " +list(set(after.roles)-set(before.roles))[0].name
+                    role = list(set(after.roles)-set(before.roles))[0]
+                    if role.id == 802300001875001455:
+                        message = "@everyopne User: "+ str(before) +"\nRole added: " +role.name
+                    else:
+                        message = "User: "+ str(before) +"\nRole added: " +role.name
                     await channel.send(message)
         
 

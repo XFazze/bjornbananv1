@@ -130,7 +130,7 @@ class Base(commands.Cog):
                 else:
                     role = list(set(after.roles)-set(before.roles))[0]
                     if role.id == 802300001875001455:
-                        message = "@everyopne User: "+ str(before) +"\nRole added: " +role.name
+                        message = "@everyone User: "+ str(before) +"\nRole added: " +role.name
                     else:
                         message = "User: "+ str(before) +"\nRole added: " +role.name
                     await channel.send(message)

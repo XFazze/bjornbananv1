@@ -113,6 +113,7 @@ class Base(commands.Cog):
     
     @commands.Cog.listener()
     async def on_member_update(self, before, after):
+        print("yeeee")
         if before.roles == after.roles:
             return
         else:
@@ -123,7 +124,6 @@ class Base(commands.Cog):
                     return
                 channel_id = rolelog[guild_id]
                 channel = self.bot.get_channel(channel_id)
-                print(channel)
                 if len(before.roles) > len(after.roles):
                     message = "User: "+ str(before) +"\nRole removed: " +list(set(before.roles)-set(after.roles))[0].name
                     await channel.send(message)

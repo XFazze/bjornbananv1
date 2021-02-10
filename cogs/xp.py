@@ -32,6 +32,10 @@ class Base(commands.Cog):
                         except:
                             tc_formated[tmp[5]] = 1
             print(tc_formated)
+    @all_xp.before_loop
+    async def before_all_xp(self):
+        print('all xp enabled')
+        await self.bot.wait_until_ready())
 
 
 def setup(bot):

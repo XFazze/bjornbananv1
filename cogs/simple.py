@@ -47,9 +47,9 @@ class Base(commands.Cog):
     async def help_commands(self, ctx):
         await ctx.send("**Commands**:\n Avaible at  https://fabbe90.gq/bjornbanan and yes I love milk.")
 
-    @commands.command(pass_context=True, aliases=['clear'])
+    @commands.command(pass_context=True)
     @commands.has_permissions(manage_messages=True)
-    async def clearbitch(self, ctx):
+    async def clear(self, ctx):
         try:
             message = ctx.message.content.split(" ")
             amount = int(message[1])
@@ -92,7 +92,7 @@ class Base(commands.Cog):
         await message.delete()
         print("done delteing")
 
-    @commands.command(pass_context=True, aliases=['spamm'])
+    @commands.command(pass_context=True)
     @commands.has_permissions(manage_channels=True)
     @commands.has_permissions(manage_messages=True)
     async def spam(self, ctx):

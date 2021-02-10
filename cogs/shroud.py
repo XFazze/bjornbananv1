@@ -113,24 +113,23 @@ class Base(commands.Cog):
     
     @commands.Cog.listener()
     async def on_member_update(self, before, after):
-        if before.roles != after.roles:
-            pass
-        else:
+        if before.roles == after.roles:
             return
-
-        with open('/home/pi/discordbot/management/rolelog.json', 'r') as f:
-            rolelog = json.load(f)
-            guild_id = str(before.guild.id)
-            if guild_id not in rolelog.keys():
-                return
-            channel_id = rolelog[guild_id]
-            channel = self.bot.get_channel(channel_id)
-        if len(before.roles) > len(after.roles):
-            message = "User: "+ str(before) +"\nRole removed: " +list(set(before.roles)-set(after.roles))[0].name
-            await channel.send(message)
         else:
-            message = "User: "+ str(before) +"\nRole added: " +list(set(after.roles)-set(before.roles))[0].name
-            await channel.send(message)
+            with open('/home/pi/discordbot/management/rolelog.json', 'r') as f:
+                rolelog = json.load(f)
+                guild_id = str(before.guild.id)
+                if guild_id not in rolelog.keys():
+                    return
+                channel_id = rolelog[guild_id]
+                channel = self.bot.get_channel(channel_id)
+                print(channel)
+                if len(before.roles) > len(after.roles):
+                    message = "User: "+ str(before) +"\nRole removed: " +list(set(before.roles)-set(after.roles))[0].name
+                    await channel.send(message)
+                else:
+                    message = "User: "+ str(before) +"\nRole added: " +list(set(after.roles)-set(before.roles))[0].name
+                    await channel.send(message)
         
 
        

@@ -14,14 +14,14 @@ async def determine_prefix(bot, message):
 
 intents = discord.Intents.all()
 bot_prefix = 'g'
-bot = commands.Bot(command_prefix=determine_prefix, Intents=intents)
+bot = commands.Bot(command_prefix=determine_prefix, intents=intents)
 bot.remove_command('help')
 
 
 extensions = ['cogs.basic_vc', 'cogs.tournament', 'cogs.quote',
               'cogs.simple', 'cogs.reaction_roles', 'cogs.dnd', 'cogs.actionlog', 'cogs.ticket', 'cogs.shroud']
 
-              
+
 if __name__ == '__main__':
     for extension in extensions:
         bot.load_extension(extension)

@@ -113,7 +113,6 @@ class Base(commands.Cog):
     
     @commands.Cog.listener()
     async def on_member_update(self, before, after):
-        print("yeeee")
         if before.roles == after.roles:
             return
         else:

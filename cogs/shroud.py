@@ -53,7 +53,7 @@ class Base(commands.Cog):
             c_id = ctx.channel.id
             if c_id in noelbot:
                 noelbot.remove(c_id)
-                await ctx.send("removed channel to noelbot")
+                await ctx.send("removed channel from noelbot")
                 print("disabled noelbot")
                 with open('/home/pi/discordbot/management/noelbot.json', 'w') as file:
                     json.dump(noelbot, file, indent=4)
@@ -76,6 +76,62 @@ class Base(commands.Cog):
     async def before_noelcleanse(self):
         print('noelbot enabled')
         await self.bot.wait_until_ready()
+
+    @commands.command(pass_context=True)
+    @commands.has_permissions(manage_roles=True)
+    async def rolebotadd(self, ctx):
+        with open('/home/pi/discordbot/management/rolelog.json', 'r+') as f:
+            rolelog = json.load(f)
+            c_id = ctx.channel.id
+            g_id = str(ctx.guild.id)
+            if c_id in rolelog.values():
+                await ctx.send("This channel is already added to rolelog")
+                print("tried to add rolelog but alreaddy added added")
+            else:
+                rolelog[g_id] = c_id
+                await ctx.send("Added channel to rolelog")
+                print("enabled rolelog for server", ctx.guild)
+                with open('/home/pi/discordbot/management/rolelog.json', 'w') as file:
+                    json.dump(rolelog, file, indent=4)
+    
+    @commands.command(pass_context=True)
+    @commands.has_permissions(manage_roles=True)
+    async def rolebotremove(self, ctx):
+        with open('/home/pi/discordbot/management/rolelog.json', 'r+') as f:
+            rolelog = json.load(f)
+            c_id = ctx.channel.id
+            g_id = str(ctx.guild.id)
+            if c_id in rolelog.values():
+                del rolelog[g_id]
+                await ctx.send("removed channel to rolelog")
+                print("disabled rolelog for server", ctx.guild)
+                with open('/home/pi/discordbot/management/rolelog.json', 'w') as file:
+                    json.dump(rolelog, file, indent=4)
+            else:
+                await ctx.send("This channel isnta a rolelog channel")
+                print("tried to remove rolelog but wasnt added")
+    
+    @commands.Cog.listener()
+    async def on_member_update(self, before, after):
+        if before.roles != after.roles:
+            pass
+        else:
+            return
+
+        with open('/home/pi/discordbot/management/rolelog.json', 'r') as f:
+            rolelog = json.load(f)
+            guild_id = str(before.guild.id)
+            if guild_id not in rolelog.keys():
+                return
+            channel_id = rolelog[guild_id]
+            channel = self.bot.get_channel(channel_id)
+        if len(before.roles) > len(after.roles):
+            message = "User: "+ str(before) +"\nRole removed: " +list(set(before.roles)-set(after.roles))[0].name
+            await channel.send(message)
+        else:
+            message = "User: "+ str(before) +"\nRole added: " +list(set(after.roles)-set(before.roles))[0].name
+            await channel.send(message)
+        
 
        
 

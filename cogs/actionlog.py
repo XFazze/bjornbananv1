@@ -1,5 +1,6 @@
 import discord
 import time
+import math
 from discord.ext import commands
 
 

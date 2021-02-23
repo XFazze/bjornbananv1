@@ -136,7 +136,7 @@ class Base(commands.Cog):
         messages =  dict(sorted(messages.items(), key=lambda item: item[1]))
         mess = ""
         for item in messages:
-             mess = mess +str(messages[item]),"   :   ", item
+            mess = mess +str(messages[item]) + "   :   " +  str(item) + "\n"
         await ctx.send(mess)
 
 def setup(bot):

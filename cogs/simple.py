@@ -13,8 +13,8 @@ class Base(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(pass_context=True, aliases=['color'])
-    async def farg(self, ctx):
+    @commands.command(pass_context=True)
+    async def color(self, ctx):
         f = json.load(open("servers.json", "r"))
         if str(ctx.message.guild.id) not in f[".color"]:
             print("not allowed on server")

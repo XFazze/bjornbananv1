@@ -89,6 +89,54 @@ class Base(commands.Cog):
 # guild emoji update
 # ban unban
 # invite create remove
+    @commands.command(pass_context=True)
+    async def vcstats(self, ctx):
+        with open('/home/pi/discordbot/vc_logs.txt', 'r') as file:
+            filelines = file.readlines()
+        minutes={}
+        for line in filelines:
+            linelist = line.split(" ")
+            if linelist[1] == "connect":
+                line_num = filelines.index(line)
+                for iline in filelines[line_num:]:
+                    ilinelist = iline.split(" ")
+                    if ilinelist[1] == "disconnect" and str(linelist[3])[:-1] == str(ilinelist[3])[:-1]:
+                        trime = int(math.floor((float(ilinelist[0])/60 - float(linelist[0])/60)))
+                        name = str(linelist[3])[:-1]
+                        if name in minutes.keys():
+                            minutes[name] = minutes[name]+trime
+                        else:
+                            minutes[name] = trime
+                        break
+
+        minutes =  dict(sorted(minutes.items(), key=lambda item: item[1]))
+        mess = ""
+        for item in minutes:
+            mess = mess + str(minutes[item]) + "   :   "+str(item)+"\n"
+        await ctx.send(mess)
+
+
+    @commands.command(pass_context=True)
+    async def tcstats(self, ctx):
+        with open('/home/pi/discordbot/tc_logs.txt', 'r') as file:
+            filelines = file.readlines()
+        messages = {}
+
+        for line in filelines:
+            linelist = line.split(" ")
+            if linelist[1] == "send":
+                name = str(linelist[5])[:-1]
+                if name in messages.keys():
+                    messages[name] = messages[name]+1
+                else:
+                    messages[name] = 1
+        
+        
+        messages =  dict(sorted(messages.items(), key=lambda item: item[1]))
+        mess = ""
+        for item in messages:
+             mess = mess +str(messages[item]),"   :   ", item
+        await ctx.send(mess)
 
 def setup(bot):
     bot.add_cog(Base(bot))

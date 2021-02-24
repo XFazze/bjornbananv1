@@ -1,0 +1,6 @@
+{'type': 0, 'tts': False, 'timestamp': '2021-02-24T09: 03: 48.817000+00: 00', 'pinned': False, 'mentions': [], 'mention_roles': [], 'mention_everyone': False, 'member': {'roles': ['802345133528973312', '803675042793127956', '802299956299169845'
+        ], 'premium_since': None, 'pending': False, 'nick': 'ara ara ara ara ara ara ara ara', 'mute': False, 'joined_at': '2021-01-23T02: 49: 55.829000+00: 00', 'is_pending': False,
+                                                                                                                                                                       'hoisted_role': '802299956299169845', 'deaf': False
+    }, 'id': '814060001315913738', 'flags': 0, 'embeds': [], 'edited_timestamp': '2021-02-24T09: 03: 58.428091+00: 00', 'content': 'sss', 'channel_id': '803650360048746507', 'author': {'username': 'xfazze', 'public_flags': 0, 'id': '243022798543519745', 'discriminator': '1854', 'avatar': '75c2dcfda4d76b34ae6c5fab2c6ae71d'
+    }, 'attachments': [], 'guild_id': '802298523214938153'
+}

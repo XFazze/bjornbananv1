@@ -72,7 +72,7 @@ class Base(commands.Cog):
     
     @hidechannels.before_loop
     async def before_hidechannels(self):
-        print('noelbot enabled')
+        print('bettervc enabled')
         await self.bot.wait_until_ready()
 
     

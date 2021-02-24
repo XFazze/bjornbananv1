@@ -45,7 +45,7 @@ class Base(commands.Cog):
             channel_id = [after.channel.id, before.channel.id]
             action = "move"
 
-        if not action:
+        if action == "admin abuse":
             print("break")
             return
             

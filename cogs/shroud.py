@@ -67,12 +67,11 @@ class Base(commands.Cog):
     async def noelcleanse(self):
         with open('/home/pi/discordbot/management/noelbot.json', 'r') as f:
             noelbot = json.load(f)
-            if not noelbot:
-                break
-            for channel in noelbot:
-                channel = self.bot.get_channel(channel)
-                messages = await channel.history(limit=100).flatten()
-                await channel.delete_messages(messages)
+            if noelbot:
+                for channel in noelbot:
+                    channel = self.bot.get_channel(channel)
+                    messages = await channel.history(limit=100).flatten()
+                    await channel.delete_messages(messages)
     
     @noelcleanse.before_loop
     async def before_noelcleanse(self):

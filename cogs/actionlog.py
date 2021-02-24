@@ -8,6 +8,7 @@ class Base(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
+
     @commands.Cog.listener()
     async def on_voice_state_update(self, member, before, after):
         action = "admin abuse"
@@ -44,44 +45,78 @@ class Base(commands.Cog):
             channnel_id = [after.channel.id, before.channel.id]
             action = "move"
         
-        
-        with open('/home/pi/discordbot/vc_logs.txt', 'a') as f:
-            f.write(str(time.time())+" "+ action+" "+ str(channnel_id) + " "+str(member)+ "\n")
+        filename = '/home/pi/discordbot/vc_logs/'+str(math.floor(time.time()/86400))+'.txt'
+        try:
+            with open(filename, 'a') as f:
+                f.write(str(time.time())+" "+ action+" "+ str(channnel_id) + " "+str(member)+ "\n")
+        except:
+            with open(filename, 'w') as f:
+                f.write(str(time.time())+" "+ action+" "+ str(channnel_id) + " "+str(member)+ "\n")
 
     
     @commands.Cog.listener()
     async def on_message(self, message):
         member = await message.guild.fetch_member(message.author.id)
-        with open('/home/pi/discordbot/tc_logs.txt', 'a') as f:
-            f.write(str(time.time()) + " send "   + str(message.guild.id)+ " "+ str(message.channel.id)+ " "+str(message.id) +" "+ str(member) + " "+ "\n")
+        filename = '/home/pi/discordbot/tc_logs/'+str(math.floor(time.time()/86400))+'.txt'
+        try:
+            with open(filename, 'a') as f:
+                f.write(str(time.time()) + " send "   + str(message.guild.id)+ " "+ str(message.channel.id)+ " "+str(message.id) +" "+ str(member) + " "+ "\n")
+        except:
+            with open(filename, 'w') as f:
+                f.write(str(time.time()) + " send "   + str(message.guild.id)+ " "+ str(message.channel.id)+ " "+str(message.id) +" "+ str(member) + " "+ "\n")
 
     @commands.Cog.listener()
     async def on_raw_message_delete(self, payload):
-        with open('/home/pi/discordbot/tc_logs.txt', 'a') as f:
-            f.write(str(time.time()) + " delete " + str(payload.guild_id) +" "+ str(payload.channel_id) +" "+ str(payload.message_id) + " "+ "\n")
+        filename = '/home/pi/discordbot/tc_logs/'+str(math.floor(time.time()/86400))+'.txt'
+        try:
+            with open(filename, 'a') as f:
+                f.write(str(time.time()) + " delete " + str(payload.guild_id) +" "+ str(payload.channel_id) +" "+ str(payload.message_id) + " "+ "\n")
+        except:
+            with open(filename, 'w') as f:
+                f.write(str(time.time()) + " delete " + str(payload.guild_id) +" "+ str(payload.channel_id) +" "+ str(payload.message_id) + " "+ "\n")
             
     @commands.Cog.listener()
     async def on_raw_message_edit(self, payload):
-        with open('/home/pi/discordbot/tc_logs.txt', 'a') as f:
-            f.write(str(time.time()) + " edit " + str(payload.data["guild_id"]) + " " + str(payload.data["channel_id"]) +" "+ str(payload.data["id"]) + " "+ str(payload.data["member"]["nick"]) +  "\n")
-    
+        filename = '/home/pi/discordbot/tc_logs/'+str(math.floor(time.time()/86400))+'.txt'
+        try:
+            with open(filename, 'a') as f:
+                f.write(str(time.time()) + " edit " + str(payload.data["guild_id"]) + " " + str(payload.data["channel_id"]) +" "+ str(payload.data["id"]) + " "+ str(payload.data["author"]["username"]) + "#" + str(payload.data["author"]["discriminator"]) +  "\n")
+        except:
+            with open(filename, 'w') as f:
+                f.write(str(time.time()) + " edit " + str(payload.data["guild_id"]) + " " + str(payload.data["channel_id"]) +" "+ str(payload.data["id"]) + " "+ str(payload.data["author"]["username"]) + "#" + str(payload.data["author"]["discriminator"]) +  "\n")
+        
     @commands.Cog.listener()
     async def on_raw_reaction_add(self, payload):
-        with open('/home/pi/discordbot/tc_logs.txt', 'a') as f:
-            f.write(str(time.time()) + " reactadd " + str(payload.guild_id) +" "+ str(payload.channel_id) +" "+ str(payload.message_id) + " " + str(payload.member.name) +"#"+ str(payload.member.discriminator) + " " + str(payload.emoji.name) +"\n")
+        filename = '/home/pi/discordbot/tc_logs/'+str(math.floor(time.time()/86400))+'.txt'
+        try:
+            with open(filename, 'a') as f:
+                f.write(str(time.time()) + " reactadd " + str(payload.guild_id) +" "+ str(payload.channel_id) +" "+ str(payload.message_id) + " " + str(payload.member.name) +"#"+ str(payload.member.discriminator) + " " + str(payload.emoji.name) +"\n")
+        except:
+            with open(filename, 'w') as f:
+                f.write(str(time.time()) + " reactadd " + str(payload.guild_id) +" "+ str(payload.channel_id) +" "+ str(payload.message_id) + " " + str(payload.member.name) +"#"+ str(payload.member.discriminator) + " " + str(payload.emoji.name) +"\n")
 
     @commands.Cog.listener()
     async def on_raw_reaction_remove(self, payload):
-        print(payload)
         guild = self.bot.get_guild(payload.guild_id)
         member = await guild.fetch_member(payload.user_id)
-        with open('/home/pi/discordbot/tc_logs.txt', 'a') as f:
-            f.write(str(time.time()) + " reactremove " + str(payload.guild_id) +" "+ str(payload.channel_id) +" "+ str(payload.message_id) + " " + str(member) + " " + str(payload.emoji.name) +"\n")
+        filename = '/home/pi/discordbot/tc_logs/'+str(math.floor(time.time()/86400))+'.txt'
+        try:
+            with open(filename, 'a') as f:
+                f.write(str(time.time()) + " reactremove " + str(payload.guild_id) +" "+ str(payload.channel_id) +" "+ str(payload.message_id) + " " + str(member) + " " + str(payload.emoji.name) +"\n")
+        except:
+            with open(filename, 'w') as f:
+                f.write(str(time.time()) + " reactremove " + str(payload.guild_id) +" "+ str(payload.channel_id) +" "+ str(payload.message_id) + " " + str(member) + " " + str(payload.emoji.name) +"\n")
 
     @commands.Cog.listener()
-    async def on_typing(self, channel, user, when):        
-        with open('/home/pi/discordbot/tc_logs.txt', 'a') as f:
-            f.write(str(time.time()) + " typing"  +str(channel.guild.id) + " "+ str(channel.id) +" " +str(user)+"\n")
+    async def on_typing(self, channel, user, when):      
+        filename = '/home/pi/discordbot/tc_logs/'+str(math.floor(time.time()/86400))+'.txt'
+        try:  
+            with open(filename, 'a') as f:
+                f.write(str(time.time()) + " typing "  +str(channel.guild.id) + " "+ str(channel.id) +" " +str(user)+"\n")
+        except:
+            with open(filename, 'w') as f:
+                f.write(str(time.time()) + " typing "  +str(channel.guild.id) + " "+ str(channel.id) +" " +str(user)+"\n")
+            
 
 
 # channel create(private), channel delete, channel update

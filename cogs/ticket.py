@@ -9,11 +9,10 @@ class Base(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(pass_context=True, aliases=['tickets'])
-    async def ticketrr(self, ctx):
+    @commands.command(pass_context=True)
+    async def ticket(self, ctx):
         f = json.load(open("servers.json", "r"))
         if str(ctx.message.guild.id) not in f["ticket"]:
-            print("not allowed on server")
             await ctx.send("COMMAND NOT ALLOWED IN YOUR HOME")
             return
         guild = ctx.guild
@@ -25,13 +24,11 @@ class Base(commands.Cog):
                 category = cat
         
         if tickets:
-            print("create ticket categor ")
             category = await guild.create_category("tickets")
             await category.set_permissions(guild.default_role, read_messages=False)
             overwrite = discord.PermissionOverwrite()
             overwrite.read_messages = True
             role = get(guild.roles, id=802299956299169845)
-            print(role)
             await category.set_permissions(role, overwrite=overwrite)
         
         name = str(random.randint(111111,999999))+"_"+str(ctx.author)
@@ -50,9 +47,7 @@ class Base(commands.Cog):
         message = await channel.fetch_message(payload.message_id)
         reaction = discord.utils.get(message.reactions, emoji=payload.emoji.name)
         guild = self.bot.get_guild(payload.guild_id)
-        print(channel.category_id)
         if message.author == guild.get_member(self.bot.user.id) and payload.member != guild.get_member(self.bot.user.id) and channel.category_id == 808279224485806110:
-            print("delete tickets")
             bigmessage = []
             file = "/home/pi/discordbot/tickets/"+channel.name+".txt"
             with open(file, "w+") as f:

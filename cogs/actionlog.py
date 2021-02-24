@@ -13,45 +13,49 @@ class Base(commands.Cog):
     async def on_voice_state_update(self, member, before, after):
         action = "admin abuse"
         if before.self_mute != after.self_mute:
-            channnel_id = before.channel.id
+            channel_id = before.channel.id
             if before.self_mute:
                 action = "unselfmute"
             elif after.self_mute:
                 action = "selfmute"
 
         elif before.self_deaf != after.self_deaf:
-            channnel_id = before.channel.id
+            channel_id = before.channel.id
             if before.self_deaf:
                 action = "unselfdeaf"
             elif after.self_deaf:
                 action = "selfdeaf"
 
         elif before.self_stream != after.self_stream:
-            channnel_id = before.channel.id
+            channel_id = before.channel.id
             if before.self_stream:
                 action = "unselfstream"
             elif after.self_stream:
                 action = "selfstream"
 
         elif not before.channel:
-            channnel_id = after.channel.id
+            channel_id = after.channel.id
             action = "connect"
 
         elif not after.channel:
-            channnel_id = before.channel.id
+            channel_id = before.channel.id
             action = "disconnect" 
         
         elif after.channel !=  before.channel:
-            channnel_id = [after.channel.id, before.channel.id]
+            channel_id = [after.channel.id, before.channel.id]
             action = "move"
-        
+
+        if not action:
+            print("break")
+            return
+            
         filename = '/home/pi/discordbot/vc_logs/'+str(math.floor(time.time()/86400))+'.txt'
         try:
             with open(filename, 'a') as f:
-                f.write(str(time.time())+" "+ action+" "+ str(channnel_id) + " "+str(member)+ "\n")
+                f.write(str(time.time())+" "+ action+" "+ str(channel_id) + " "+str(member)+ "\n")
         except:
             with open(filename, 'w') as f:
-                f.write(str(time.time())+" "+ action+" "+ str(channnel_id) + " "+str(member)+ "\n")
+                f.write(str(time.time())+" "+ action+" "+ str(channel_id) + " "+str(member)+ "\n")
 
     
     @commands.Cog.listener()

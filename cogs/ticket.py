@@ -37,6 +37,8 @@ class Base(commands.Cog):
         overwrite = discord.PermissionOverwrite()
         overwrite.read_messages = True
         await channel.set_permissions(ctx.author, overwrite=overwrite)
+        admin = get(guild.roles, id=802299956299169845)
+        await channel.set_permissions(admin, overwrite=overwrite)
         message = await channel.send("Here you can contact the admins if you have a report or a proposal. When finished react with the :lock: to this message.")
         await message.add_reaction("🔒")
         

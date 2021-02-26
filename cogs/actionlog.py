@@ -81,6 +81,7 @@ class Base(commands.Cog):
             
     @commands.Cog.listener()
     async def on_raw_message_edit(self, payload):
+        print(payload.data["author"])
         filename = '/home/pi/discordbot/tc_logs/'+str(math.floor(time.time()/86400))+'.txt'
         try:
             with open(filename, 'a') as f:

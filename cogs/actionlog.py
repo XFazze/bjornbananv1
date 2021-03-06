@@ -12,19 +12,22 @@ class Base(commands.Cog):
     @commands.Cog.listener()
     async def on_voice_state_update(self, member, before, after):
         action = "admin abuse"
-        if before.self_mute != after.self_mute:
+        
+        if before.self_deaf != after.self_deaf:
+            channel_id = before.channel.id
+            if before.self_deaf:
+                action = "unselfdeaf"
+            elif after.self_deaf:
+                action = "selfdeaf"
+                
+        elif before.self_mute != after.self_mute:
             channel_id = before.channel.id
             if before.self_mute:
                 action = "unselfmute"
             elif after.self_mute:
                 action = "selfmute"
 
-        elif before.self_deaf != after.self_deaf:
-            channel_id = before.channel.id
-            if before.self_deaf:
-                action = "unselfdeaf"
-            elif after.self_deaf:
-                action = "selfdeaf"
+       
 
         elif before.self_stream != after.self_stream:
             channel_id = before.channel.id

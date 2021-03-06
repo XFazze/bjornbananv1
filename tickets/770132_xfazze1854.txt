@@ -1,0 +1,5 @@
+Björnbanan:Here you can contact the admins if you have a report or a proposal. When finished react with the :lock: to this message.
+xfazze:Flytta op bots under <@&802305915491319838>  och göra op bots display seperate.
+De kommer göra det stå "op bots" istället för "online"
+AbstractNucleus:btw gör så trial kan se tickets
+xfazze:det är mycket jobbigt

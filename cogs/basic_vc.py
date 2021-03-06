@@ -9,8 +9,8 @@ class Base(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
     
-    @commands.command(pass_context=True, aliases=['j', '.join'])
-    async def join(self,ctx):
+    @commands.command(pass_context=True)
+    async def j(self,ctx):
         global voice
         channel = ctx.message.author.voice.channel
         voice = get(self.bot.voice_clients, guild=ctx.guild)
@@ -25,8 +25,8 @@ class Base(commands.Cog):
         await ctx.send(f"Joined {channel}")
 
 
-    @commands.command(pass_context=True, aliases=['l', '.leave'])
-    async def leave(self,ctx):
+    @commands.command(pass_context=True)
+    async def l(self,ctx):
         channel = ctx.message.author.voice.channel
         voice = get(self.bot.voice_clients, guild=ctx.guild)
         if voice.is_connected():
@@ -37,9 +37,10 @@ class Base(commands.Cog):
             await ctx.send("Not in a channel f u")
             print(f"was asked to leave but not in channel{channel}")
 
-    @commands.command(pass_context=True, aliases=['od', '.play_djungeltrubbaduren'])
-    async def play_djungel(self,ctx):
+    @commands.command(pass_context=True)
+    async def od(self,ctx):
         channel = ctx.message.author.voice.channel
+        print(self.bot.voice_clients, ctx.guild)
         voice = get(self.bot.voice_clients, guild=ctx.guild)
         path = r"/home/pi/discordbot/songs/djungeltrubbaduren.mp3"
         if voice and voice.is_connected():
@@ -53,8 +54,8 @@ class Base(commands.Cog):
         vc.source = discord.PCMVolumeTransformer(vc.source)
 
 
-    @commands.command(pass_context=True, aliases=['erika', '.play_erika'])
-    async def play_cat(self,ctx):
+    @commands.command(pass_context=True)
+    async def erika(self,ctx):
         channel = ctx.message.author.voice.channel
         voice = get(self.bot.voice_clients, guild=ctx.guild)
         path = r"/home/pi/discordbot/songs/erika.mp3"

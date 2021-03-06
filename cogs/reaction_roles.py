@@ -9,9 +9,9 @@ class Base(commands.Cog):
         self.bot = bot
     # Reaction roles
 
-    @commands.command(pass_context=True, aliases=['rear', '.reactionroles'])
+    @commands.command(pass_context=True)
     @commands.has_permissions(manage_roles=True)
-    async def reaction_role(self, ctx):
+    async def rear(self, ctx):
         try:
             role_id = int(str(ctx.message.content).split(" ")[1][3:-1])
         except:
@@ -73,8 +73,8 @@ class Base(commands.Cog):
             member = await guild.fetch_member(payload.user_id)
             await member.remove_roles(role)
 
-    @commands.command(pass_context=True, aliases=['reac'])
-    async def clean_roles(self, ctx):
+    @commands.command(pass_context=True)
+    async def reac(self, ctx):
         await ctx.message.delete()
         channel = ctx.message.channel
         messages = await channel.history(limit=200).flatten()

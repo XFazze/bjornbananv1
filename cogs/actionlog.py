@@ -1,6 +1,7 @@
 import discord
 import time
 import math
+import os
 from discord.ext import commands
 
 
@@ -136,14 +137,20 @@ class Base(commands.Cog):
 # invite create remove
     @commands.command(pass_context=True)
     async def vcstats(self, ctx):
-        with open('/home/pi/discordbot/vc_logs.txt', 'r') as file:
-            filelines = file.readlines()
+        directory = os.fsencode('/home/pi/discordbot/vc_logs/')
+        bigfileline=[]
+        for file in os.listdir(directory):
+            filename = '/home/pi/discordbot/vc_logs/'+os.fsdecode(file)
+            with open(filename, 'r') as file:
+                filelines = file.readlines()
+                for line in filelines:
+                    bigfileline.append(line)
         minutes={}
-        for line in filelines:
+        for line in bigfileline:
             linelist = line.split(" ")
             if linelist[1] == "connect":
-                line_num = filelines.index(line)
-                for iline in filelines[line_num:]:
+                line_num = bigfileline.index(line)
+                for iline in bigfileline[line_num:]:
                     ilinelist = iline.split(" ")
                     if ilinelist[1] == "disconnect" and str(linelist[3])[:-1] == str(ilinelist[3])[:-1]:
                         trime = int(math.floor((float(ilinelist[0])/60 - float(linelist[0])/60)))
@@ -163,11 +170,18 @@ class Base(commands.Cog):
 
     @commands.command(pass_context=True)
     async def tcstats(self, ctx):
-        with open('/home/pi/discordbot/tc_logs.txt', 'r') as file:
-            filelines = file.readlines()
+        directory = os.fsencode('/home/pi/discordbot/tc_logs/')
+        bigfileline=[]
+        for file in os.listdir(directory):
+            filename = '/home/pi/discordbot/tc_logs/'+os.fsdecode(file)
+            with open(filename, 'r') as file:
+                filelines = file.readlines()
+                for line in filelines:
+                    bigfileline.append(line)
+
         messages = {}
 
-        for line in filelines:
+        for line in bigfileline:
             linelist = line.split(" ")
             if linelist[1] == "send":
                 name = str(linelist[5])[:-1]

@@ -1,7 +1,7 @@
 import json
 import discord
 from discord.ext import commands
-from codemy import code
+from codemy import code_m
 
 
 async def determine_prefix(bot, message):
@@ -31,4 +31,4 @@ async def on_ready():
     print("Logged in as: " + bot.user.name)
     await bot.change_presence(activity=discord.Game(name="you | hhelp"))
 
-bot.run(code)
+bot.run(code_m)

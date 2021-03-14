@@ -1,11 +1,11 @@
 import json
 import discord
 from discord.ext import commands
-from codemy import code_ex
+from codemy import code
 
 
 async def determine_prefix(bot, message):
-    prefixes = json.load(open('prefixes.json', 'r'))
+    prefixes = json.load(open('musicprefixes.json', 'r'))
     guild = message.guild
     if guild:
         return prefixes.get(str(guild.id), bot_prefix)
@@ -13,13 +13,12 @@ async def determine_prefix(bot, message):
         return bot_prefix
 
 intents = discord.Intents.all()
-bot_prefix = 'f'
-bot = commands.Bot(command_prefix=determine_prefix, intents=intents)   
+bot_prefix = 'h'
+bot = commands.Bot(command_prefix=determine_prefix, intents=intents)
 bot.remove_command('help')
 
 
 extensions = ['cogs.playq']
-
 
 
 if __name__ == '__main__':
@@ -30,6 +29,6 @@ if __name__ == '__main__':
 @bot.event
 async def on_ready():
     print("Logged in as: " + bot.user.name)
-    await bot.change_presence(activity=discord.Game(name="you | fhelp"))
+    await bot.change_presence(activity=discord.Game(name="you | hhelp"))
 
-bot.run(code_ex)
+bot.run(code)

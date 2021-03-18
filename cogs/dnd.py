@@ -11,13 +11,13 @@ class Base(commands.Cog):
     @commands.Cog.listener()
     async def on_message(self, message):
         msg=message.content
-        print(msg)
+        print("message", msg)
         if msg[0] != "d":
             return
         try:
             for sym in msg[1:]:
                 if sym in "+-*/":
-                    print("success")
+                    pass
                 else:
                     p = int(sym)
             new = []
@@ -66,13 +66,11 @@ class Base(commands.Cog):
     async def dndframe(self, ctx):
         f = json.load(open("servers.json", "r"))
         if str(ctx.message.guild.id) not in f["dndframe"]:
-            print("not allowed on server")
             await ctx.send("COMMAND NOT ALLOWED IN YOUR HOME")
             return
         try:
             name = ctx.message.content[11:].split(",")[0]
         except:
-            print("invalid name")
             await ctx.send('format was wrong("gdndframer your name @person1 @person2")')
         guild = ctx.guild
         role = await guild.create_role(name=name)

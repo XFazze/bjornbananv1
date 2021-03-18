@@ -50,7 +50,6 @@ class Base(commands.Cog):
             action = "move"
 
         if action == "admin abuse":
-            print("break")
             return
             
         filename = '/home/pi/discordbot/vc_logs/'+str(math.floor(time.time()/86400))+'.txt'

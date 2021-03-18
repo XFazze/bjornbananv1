@@ -90,7 +90,6 @@ class Base(commands.Cog):
         message = await ctx.send(f"I have deleted {amount} messages for you master")
         time.sleep(2)
         await message.delete()
-        print("done delteing")
 
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_channels=True)

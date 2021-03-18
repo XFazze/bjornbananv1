@@ -11,6 +11,7 @@ class Base(commands.Cog):
     @commands.Cog.listener()
     async def on_message(self, message):
         msg=message.content
+        print(msg)
         if msg[0] != "d":
             return
         try:

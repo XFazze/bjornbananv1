@@ -11,8 +11,10 @@ class Base(commands.Cog):
     @commands.Cog.listener()
     async def on_message(self, message):
         msg=message.content
-        print("message", msg)
-        if msg[0] != "d":
+        try:
+            if msg[0] != "d":
+                return
+        except:
             return
         try:
             for sym in msg[1:]:

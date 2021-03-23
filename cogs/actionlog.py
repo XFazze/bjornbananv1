@@ -94,6 +94,7 @@ class Base(commands.Cog):
                     f.write(str(time.time()) + " edit " + str(payload.data["guild_id"]) + " " + str(payload.data["channel_id"]) +" "+ str(payload.data["id"]) + " "+ str(payload.data["author"]["username"]) + "#" + str(payload.data["author"]["discriminator"]) +  "\n")
             except:
                 print("the strange thing happeneded in actionlog")
+                
     @commands.Cog.listener()
     async def on_raw_reaction_add(self, payload):
         filename = '/home/pi/discordbot/tc_logs/'+str(math.floor(time.time()/86400))+'.txt'

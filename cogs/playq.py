@@ -41,11 +41,14 @@ class Base(commands.Cog):
                 'preferredquality': '192',
             }],
         }
+        print("1")
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             ydl.download([url])
+        print("2")
         for file in os.listdir("./"):
             if file.endswith(".mp3"):
                 os.rename(file, 'song.mp3')
+        print("3")
         voice.play(discord.FFmpegPCMAudio("song.mp3"))
         voice.volume = 100
         voice.is_playing()
@@ -124,11 +127,14 @@ class Base(commands.Cog):
         }
         url = message.content
         print(url)
+        print("1")
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             ydl.download([url])
+        print("2")
         for file in os.listdir("./"):
             if file.endswith(".mp3"):
                 os.rename(file, 'song.mp3')
+        print("3")
         voice.play(discord.FFmpegPCMAudio("song.mp3"))
         voice.volume = 100
         voice.is_playing()

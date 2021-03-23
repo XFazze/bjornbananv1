@@ -275,7 +275,7 @@ class Base(commands.Cog):
     async def cog_command_error(self, ctx: commands.Context, error: commands.CommandError):
         await ctx.send('An error occurred: {}'.format(str(error)))
 
-    @commands.command(name='join', invoke_without_subcommand=True, aliases=['join', 'j'])
+    @commands.command(invoke_without_subcommand=True, aliases=['join', 'j'])
     async def _join(self, ctx: commands.Context):
         """Joins a voice channel."""
 

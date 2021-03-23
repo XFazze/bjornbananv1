@@ -95,7 +95,7 @@ async def play_cat(ctx):
 @bot.command(pass_context=True, aliases=['.create'])
 async def create_team(ctx):
     log(ctx)
-    f = json.load(open("servers.json", "r"))
+    f = json.load(open("management/servers.json", "r"))
     if str(ctx.message.guild.id) not in f[".create"]:
         print("not allowed on server")
         await ctx.send("COMMAND NOT ALLOWED IN YOUR HOME")
@@ -118,7 +118,7 @@ async def create_team(ctx):
 @bot.command(pass_context=True, aliases=['.skapa_kanaler'])
 async def create_channels(ctx):
     log(ctx)
-    f = json.load(open("servers.json", "r"))
+    f = json.load(open("management/servers.json", "r"))
     if str(ctx.message.guild.id) not in f[".skapa_kanaler"]:
         print("not allowed on server")
         await ctx.send("COMMAND NOT ALLOWED IN YOUR HOME")
@@ -262,7 +262,7 @@ async def help_commands(ctx):
 @bot.command(pass_context=True, aliases=['color', '.color'])
 async def farg(ctx):
     log(ctx)
-    f = json.load(open("servers.json", "r"))
+    f = json.load(open("management/servers.json", "r"))
     if str(ctx.message.guild.id) not in f[".color"]:
         print("not allowed on server")
         await ctx.send("COMMAND NOT ALLOWED IN YOUR HOME")

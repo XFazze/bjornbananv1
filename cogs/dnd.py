@@ -66,7 +66,7 @@ class Base(commands.Cog):
     @commands.command(pass_context=True, aliases=['dndframer'])
     @commands.has_permissions(manage_channels=True)
     async def dndframe(self, ctx):
-        f = json.load(open("servers.json", "r"))
+        f = json.load(open("management/servers.json", "r"))
         if str(ctx.message.guild.id) not in f["dndframe"]:
             await ctx.send("COMMAND NOT ALLOWED IN YOUR HOME")
             return

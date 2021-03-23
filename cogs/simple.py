@@ -15,7 +15,7 @@ class Base(commands.Cog):
 
     @commands.command(pass_context=True)
     async def color(self, ctx):
-        f = json.load(open("servers.json", "r"))
+        f = json.load(open("management/servers.json", "r"))
         if str(ctx.message.guild.id) not in f[".color"]:
             print("not allowed on server")
             await ctx.send("COMMAND NOT ALLOWED IN YOUR HOME")

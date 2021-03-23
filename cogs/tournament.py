@@ -13,7 +13,7 @@ class Base(commands.Cog):
 
     @commands.command(pass_context=True, aliases=['.create'])
     async def create_team(self,ctx):
-        f = json.load(open("servers.json", "r"))
+        f = json.load(open("management/servers.json", "r"))
         if str(ctx.message.guild.id) not in f[".create"]:
             print("not allowed on server")
             await ctx.send("COMMAND NOT ALLOWED IN YOUR HOME")
@@ -35,7 +35,7 @@ class Base(commands.Cog):
 
     @commands.command(pass_context=True, aliases=['.skapa_kanaler'])
     async def create_channels(self,ctx):
-        f = json.load(open("servers.json", "r"))
+        f = json.load(open("management/servers.json", "r"))
         if str(ctx.message.guild.id) not in f[".skapa_kanaler"]:
             print("not allowed on server")
             await ctx.send("COMMAND NOT ALLOWED IN YOUR HOME")

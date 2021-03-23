@@ -5,7 +5,7 @@ from codemy import code_ex
 
 
 async def determine_prefix(bot, message):
-    prefixes = json.load(open('prefixes.json', 'r'))
+    prefixes = json.load(open('management/prefixes.json', 'r'))
     guild = message.guild
     if guild:
         return prefixes.get(str(guild.id), bot_prefix)

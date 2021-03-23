@@ -11,7 +11,7 @@ class Base(commands.Cog):
 
     @commands.command(pass_context=True)
     async def ticket(self, ctx):
-        f = json.load(open("servers.json", "r"))
+        f = json.load(open("management/servers.json", "r"))
         if str(ctx.message.guild.id) not in f["ticket"]:
             await ctx.send("COMMAND NOT ALLOWED IN YOUR HOME")
             return

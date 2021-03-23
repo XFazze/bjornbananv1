@@ -298,7 +298,7 @@ class Base(commands.Cog):
         await ctx.voice_state.stop()
         del self.voice_states[ctx.guild.id]
 
-    @commands.command(name='now', aliases=['current', 'n'])
+    @commands.command(aliases=['current', 'n'])
     async def _now(self, ctx: commands.Context):
         """Displays the currently playing song."""
 
@@ -316,7 +316,7 @@ class Base(commands.Cog):
             ctx.voice_state.voice.stop()
             await ctx.message.add_reaction('⏹')
 
-    @commands.command(name='skip', aliases=['skip', 's'])
+    @commands.command(aliases=['skip', 's'])
     async def _skip(self, ctx: commands.Context):
         """Skip song"""
 
@@ -326,7 +326,7 @@ class Base(commands.Cog):
         await ctx.message.add_reaction('⏭')
         ctx.voice_state.skip()
 
-    @commands.command(name='queue', aliases=['queue', 'q'])
+    @commands.command(aliases=['queue', 'q'])
     async def _queue(self, ctx: commands.Context, *, page: int = 1):
         """Shows the player's queue.
         You can optionally specify the page to show. Each page contains 10 elements.
@@ -382,7 +382,7 @@ class Base(commands.Cog):
         ctx.voice_state.loop = not ctx.voice_state.loop
         await ctx.message.add_reaction('✅')
 
-    @commands.command(name='play', aliases=['play', 'p'])
+    @commands.command(aliases=['play', 'p'])
     async def _play(self, ctx: commands.Context, *, search: str):
         """Plays a song.
         If there are songs in the queue, this will be queued until the

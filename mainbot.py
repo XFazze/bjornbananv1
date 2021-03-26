@@ -18,8 +18,8 @@ bot = commands.Bot(command_prefix=determine_prefix, intents=intents)
 bot.remove_command('help')
 
 
-extensions = ['cogs.basic_vc', 'cogs.quote','cogs.joinroles',
-              'cogs.simple', 'cogs.reaction_roles', 'cogs.dnd', 'cogs.actionlog', 'cogs.ticket', 'cogs.shroud', 'cogs.bettervc', 'cogs.maslog']
+extensions = ['cogs.basic_vc', 'cogs.joinroles','cogs.simple', 'cogs.reaction_roles', 'cogs.dnd', 
+'cogs.actionlog', 'cogs.ticket', 'cogs.shroud', 'cogs.bettervc', 'cogs.maslog']
 
 
 if __name__ == '__main__':

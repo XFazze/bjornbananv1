@@ -6,7 +6,7 @@ import time
 
 import discord
 from discord.ext import commands
-from enabledisable import checkenable
+
 
 
 class Base(commands.Cog):

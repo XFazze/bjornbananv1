@@ -33,3 +33,4 @@ async def on_ready():
     await bot.change_presence(activity=discord.Game(name="you | ghelp"))
 
 bot.run(code)
+ 

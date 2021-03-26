@@ -63,7 +63,7 @@ class Base(commands.Cog):
                                 category = get(guild.categories, id=bettervc[str(guild_id)])
                                 for empty_channel in category.channels:
                                     if len(empty_channel.members) == 0:
-                                        await empty_channel.set_permissions(guild.default_role, read_messages=True)
+                                        await empty_channel.set_permissions(guild.default_role, read_messages=None)
                                         break
             except:
                 return

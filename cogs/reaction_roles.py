@@ -12,9 +12,11 @@ class Base(commands.Cog):
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_roles=True)
     async def rear(self, ctx):
-        if checkenable("vcstats", ctx.guild.id):
-            await ctx.send("command not allowed")
-            return
+        with open('/home/pi/discordbot/management/enable.json', 'r+') as f:
+            enable = json.load(f)
+            if "rear" in enable[str(ctx.guild.id)]:
+                await ctx.send("Command not allowed in this server")
+                return
         try:
             role_id = int(str(ctx.message.content).split(" ")[1][3:-1])
         except:
@@ -80,7 +82,7 @@ class Base(commands.Cog):
     async def reac(self, ctx):
         with open('/home/pi/discordbot/management/enable.json', 'r+') as f:
             enable = json.load(f)
-            if "rear" in enable[str(ctx.guild.id)]:
+            if "reac" in enable[str(ctx.guild.id)]:
                 await ctx.send("Command not allowed in this server")
                 return
         await ctx.message.delete()

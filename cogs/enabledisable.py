@@ -62,10 +62,15 @@ class Base(commands.Cog):
                                 with open('/home/pi/discordbot/management/enable.json', 'w') as file:
                                     json.dump(enable, file, indent=4)
                             await ctx.send("This command is enabled")
+                            return
                         else:
                             await ctx.send("Command already allowed")
+                            return
                     else:
                         await ctx.send("Command already allowed")
+                        return
+        await ctx.send("Command does not exist")
+        
             
 
 

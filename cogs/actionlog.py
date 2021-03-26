@@ -3,7 +3,6 @@ import time
 import math
 import os
 from discord.ext import commands
-from enabledisable import checkenable
 
 class Base(commands.Cog):
     def __init__(self, bot):

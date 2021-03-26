@@ -2,6 +2,7 @@ import discord
 import ffmpeg
 from discord.ext import commands
 from discord.utils import get
+from enabledisable import checkenable
 
 
 class Base(commands.Cog):
@@ -11,6 +12,11 @@ class Base(commands.Cog):
     
     @commands.command(pass_context=True)
     async def j(self,ctx):
+        with open('/home/pi/discordbot/management/enable.json', 'r+') as f:
+            enable = json.load(f)
+            if "j" in enable[str(ctx.guild.id)]:
+                await ctx.send("Command not allowed in this server")
+                return
         global voice
         channel = ctx.message.author.voice.channel
         voice = get(self.bot.voice_clients, guild=ctx.guild)
@@ -27,6 +33,11 @@ class Base(commands.Cog):
 
     @commands.command(pass_context=True)
     async def l(self,ctx):
+        with open('/home/pi/discordbot/management/enable.json', 'r+') as f:
+            enable = json.load(f)
+            if "l" in enable[str(ctx.guild.id)]:
+                await ctx.send("Command not allowed in this server")
+                return
         channel = ctx.message.author.voice.channel
         voice = get(self.bot.voice_clients, guild=ctx.guild)
         if voice.is_connected():
@@ -39,6 +50,11 @@ class Base(commands.Cog):
 
     @commands.command(pass_context=True)
     async def od(self,ctx):
+        with open('/home/pi/discordbot/management/enable.json', 'r+') as f:
+            enable = json.load(f)
+            if "od" in enable[str(ctx.guild.id)]:
+                await ctx.send("Command not allowed in this server")
+                return
         channel = ctx.message.author.voice.channel
         print(self.bot.voice_clients, ctx.guild)
         voice = get(self.bot.voice_clients, guild=ctx.guild)
@@ -56,6 +72,11 @@ class Base(commands.Cog):
 
     @commands.command(pass_context=True)
     async def erika(self,ctx):
+        with open('/home/pi/discordbot/management/enable.json', 'r+') as f:
+            enable = json.load(f)
+            if "erika" in enable[str(ctx.guild.id)]:
+                await ctx.send("Command not allowed in this server")
+                return
         channel = ctx.message.author.voice.channel
         voice = get(self.bot.voice_clients, guild=ctx.guild)
         path = r"/home/pi/discordbot/songs/erika.mp3"

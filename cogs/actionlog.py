@@ -3,7 +3,7 @@ import time
 import math
 import os
 from discord.ext import commands
-
+from enabledisable import checkenable
 
 class Base(commands.Cog):
     def __init__(self, bot):
@@ -137,6 +137,12 @@ class Base(commands.Cog):
 # invite create remove
     @commands.command(pass_context=True)
     async def vcstats(self, ctx):
+        with open('/home/pi/discordbot/management/enable.json', 'r+') as f:
+            enable = json.load(f)
+            if "vcstats" in enable[str(ctx.guild.id)]:
+                await ctx.send("Command not allowed in this server")
+                return
+
         directory = os.fsencode('/home/pi/discordbot/vc_logs/')
         bigfileline=[]
         for file in os.listdir(directory):
@@ -170,6 +176,12 @@ class Base(commands.Cog):
 
     @commands.command(pass_context=True)
     async def tcstats(self, ctx):
+        with open('/home/pi/discordbot/management/enable.json', 'r+') as f:
+            enable = json.load(f)
+            if "tcstats" in enable[str(ctx.guild.id)]:
+                await ctx.send("Command not allowed in this server")
+                return
+
         directory = os.fsencode('/home/pi/discordbot/tc_logs/')
         bigfileline=[]
         for file in os.listdir(directory):

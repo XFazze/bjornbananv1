@@ -3,6 +3,7 @@ import json
 import random
 from discord.ext import commands
 from discord.utils import get
+from enabledisable import checkenable
 
 
 class Base(commands.Cog):
@@ -11,13 +12,13 @@ class Base(commands.Cog):
 
     @commands.command(pass_context=True)
     async def ticket(self, ctx):
-        f = json.load(open("management/servers.json", "r"))
-        if str(ctx.message.guild.id) not in f["ticket"]:
-            await ctx.send("COMMAND NOT ALLOWED IN YOUR HOME")
-            return
+        with open('/home/pi/discordbot/management/enable.json', 'r+') as f:
+            enable = json.load(f)
+            if "ticket" in enable[str(ctx.guild.id)]:
+                await ctx.send("Command not allowed in this server")
+                return
         guild = ctx.guild
         tickets = True
-        
         for cat in guild.categories:
             if cat.name == "tickets":
                 tickets = False

@@ -2,6 +2,7 @@ import discord
 import json
 import random
 from discord.ext import commands
+from enabledisable import checkenable
 
 
 class Base(commands.Cog):
@@ -66,10 +67,11 @@ class Base(commands.Cog):
     @commands.command(pass_context=True, aliases=['dndframer'])
     @commands.has_permissions(manage_channels=True)
     async def dndframe(self, ctx):
-        f = json.load(open("management/servers.json", "r"))
-        if str(ctx.message.guild.id) not in f["dndframe"]:
-            await ctx.send("COMMAND NOT ALLOWED IN YOUR HOME")
-            return
+        with open('/home/pi/discordbot/management/enable.json', 'r+') as f:
+            enable = json.load(f)
+            if "dndframe" in enable[str(ctx.guild.id)]:
+                await ctx.send("Command not allowed in this server")
+                return
         try:
             name = ctx.message.content[11:].split(",")[0]
         except:

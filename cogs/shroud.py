@@ -2,6 +2,7 @@ import discord
 import json
 from discord.ext import commands, tasks
 from discord.utils import get
+from enabledisable import checkenable
 
 
 class Base(commands.Cog):
@@ -32,6 +33,11 @@ class Base(commands.Cog):
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_messages=True)
     async def noelbotadd(self, ctx):
+        with open('/home/pi/discordbot/management/enable.json', 'r+') as f:
+            enable = json.load(f)
+            if "noelbotadd" in enable[str(ctx.guild.id)]:
+                await ctx.send("Command not allowed in this server")
+                return
         with open('/home/pi/discordbot/management/noelbot.json', 'r+') as f:
             noelbot = json.load(f)
             c_id = ctx.channel.id
@@ -48,6 +54,11 @@ class Base(commands.Cog):
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_messages=True)
     async def noelbotremove(self, ctx):
+        with open('/home/pi/discordbot/management/enable.json', 'r+') as f:
+            enable = json.load(f)
+            if "noelbotremove" in enable[str(ctx.guild.id)]:
+                await ctx.send("Command not allowed in this server")
+                return
         with open('/home/pi/discordbot/management/noelbot.json', 'r+') as f:
             noelbot = json.load(f)
             c_id = ctx.channel.id
@@ -81,6 +92,11 @@ class Base(commands.Cog):
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_roles=True)
     async def rolebotadd(self, ctx):
+        with open('/home/pi/discordbot/management/enable.json', 'r+') as f:
+            enable = json.load(f)
+            if "rolebotadd" in enable[str(ctx.guild.id)]:
+                await ctx.send("Command not allowed in this server")
+                return
         with open('/home/pi/discordbot/management/rolelog.json', 'r+') as f:
             rolelog = json.load(f)
             c_id = ctx.channel.id
@@ -98,6 +114,11 @@ class Base(commands.Cog):
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_roles=True)
     async def rolebotremove(self, ctx):
+        with open('/home/pi/discordbot/management/enable.json', 'r+') as f:
+            enable = json.load(f)
+            if "rolebotremove" in enable[str(ctx.guild.id)]:
+                await ctx.send("Command not allowed in this server")
+                return
         with open('/home/pi/discordbot/management/rolelog.json', 'r+') as f:
             rolelog = json.load(f)
             c_id = ctx.channel.id

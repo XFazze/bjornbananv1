@@ -6,6 +6,7 @@ import time
 
 import discord
 from discord.ext import commands
+from enabledisable import checkenable
 
 
 class Base(commands.Cog):
@@ -15,11 +16,11 @@ class Base(commands.Cog):
 
     @commands.command(pass_context=True)
     async def color(self, ctx):
-        f = json.load(open("management/servers.json", "r"))
-        if str(ctx.message.guild.id) not in f[".color"]:
-            print("not allowed on server")
-            await ctx.send("COMMAND NOT ALLOWED IN YOUR HOME")
-            return
+        with open('/home/pi/discordbot/management/enable.json', 'r+') as f:
+            enable = json.load(f)
+            if "color" in enable[str(ctx.guild.id)]:
+                await ctx.send("Command not allowed in this server")
+                return
         for role in ctx.message.author.roles:
             if str(role)[0] == ";":
                 if len(str(ctx.message.content).split(" ")) > 1:
@@ -50,6 +51,11 @@ class Base(commands.Cog):
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_messages=True)
     async def clear(self, ctx):
+        with open('/home/pi/discordbot/management/enable.json', 'r+') as f:
+            enable = json.load(f)
+            if "clear" in enable[str(ctx.guild.id)]:
+                await ctx.send("Command not allowed in this server")
+                return
         try:
             message = ctx.message.content.split(" ")
             amount = int(message[1])

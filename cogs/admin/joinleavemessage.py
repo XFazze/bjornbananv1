@@ -61,7 +61,6 @@ class Base(commands.Cog):
                             times += 1
 
 
-            print("member join")
             if str(member.guild.id) in joinleavemessage.keys():
                 for channel in joinleavemessage[str(member.guild.id)]:
                     channel = self.bot.get_channel(channel)
@@ -83,7 +82,6 @@ class Base(commands.Cog):
                         if "leave" in line and str(member) in line:
                             times += 1
                 
-            print("member leave")
             if str(member.guild.id) in joinleavemessage.keys():
                 for channel in joinleavemessage[str(member.guild.id)]:
                     channel = self.bot.get_channel(channel)

@@ -12,11 +12,6 @@ class Base(commands.Cog):
 
     @commands.command(pass_context=True)
     async def ticket(self, ctx):
-        with open('/home/pi/discordbot/management/enable.json', 'r+') as f:
-            enable = json.load(f)
-            if "ticket" in enable[str(ctx.guild.id)]:
-                await ctx.send("Command not allowed in this server")
-                return
         guild = ctx.guild
         tickets = True
         for cat in guild.categories:
@@ -27,10 +22,10 @@ class Base(commands.Cog):
         if tickets:
             category = await guild.create_category("tickets")
             await category.set_permissions(guild.default_role, read_messages=False)
-            overwrite = discord.PermissionOverwrite()
-            overwrite.read_messages = True
-            role = get(guild.roles, id=802299956299169845)
-            await category.set_permissions(role, overwrite=overwrite)
+            #overwrite = discord.PermissionOverwrite()
+            #overwrite.read_messages = True
+            #role = get(guild.roles, id=802299956299169845)
+            #await category.set_permissions(role, overwrite=overwrite)
         
         name = str(random.randint(111111,999999))+"_"+str(ctx.author)
         channel = await guild.create_text_channel(name=name, category=category)

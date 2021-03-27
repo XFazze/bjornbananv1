@@ -18,8 +18,9 @@ bot = commands.Bot(command_prefix=determine_prefix, intents=intents)
 bot.remove_command('help')
 
 
-extensions = ['cogs.basic_vc', 'cogs.joinroles','cogs.simple', 'cogs.reaction_roles', 'cogs.dnd', 
-'cogs.actionlog', 'cogs.ticket', 'cogs.shroud', 'cogs.bettervc', 'cogs.maslog', 'cogs.enabledisable']
+extensions = ['cogs.admin.deletingchannel', 'cogs.admin.enabledisable', 'cogs.admin.joinroles', 'cogs.admin.reaction_roles', 'cogs.admin.ticket',
+              'cogs.logging.actionlog', 'cogs.logging.rolelog', 'cogs.logging.tcstats', 'cogs.logging.vcstats', 'cogs.random.dnd', 'cogs.random.maslog',
+              'cogs.random.shroud', 'cogs.random.simple', 'cogs.voice.', 'cogs.voice.basic_vc', 'cogs.voice.bettervc']
 
 
 if __name__ == '__main__':
@@ -33,4 +34,3 @@ async def on_ready():
     await bot.change_presence(activity=discord.Game(name="you | ghelp"))
 
 bot.run(code)
- 

@@ -50,7 +50,7 @@ class Base(commands.Cog):
         if action == "admin abuse":
             return
 
-        filename = '/home/pi/discordbot/vc_logs/' + \
+        filename = '/home/pi/discordbot/logs/vc_logs/' + \
             str(math.floor(time.time()/86400))+'.txt'
         try:
             with open(filename, 'a') as f:
@@ -64,7 +64,7 @@ class Base(commands.Cog):
     @commands.Cog.listener()
     async def on_message(self, message):
         member = await message.guild.fetch_member(message.author.id)
-        filename = '/home/pi/discordbot/tc_logs/' + \
+        filename = '/home/pi/discordbot/logs/tc_logs/' + \
             str(math.floor(time.time()/86400))+'.txt'
         try:
             with open(filename, 'a') as f:
@@ -77,7 +77,7 @@ class Base(commands.Cog):
 
     @commands.Cog.listener()
     async def on_raw_message_delete(self, payload):
-        filename = '/home/pi/discordbot/tc_logs/' + \
+        filename = '/home/pi/discordbot/logs/tc_logs/' + \
             str(math.floor(time.time()/86400))+'.txt'
         try:
             with open(filename, 'a') as f:
@@ -90,7 +90,7 @@ class Base(commands.Cog):
 
     @commands.Cog.listener()
     async def on_raw_message_edit(self, payload):
-        filename = '/home/pi/discordbot/tc_logs/' + \
+        filename = '/home/pi/discordbot/logs/tc_logs/' + \
             str(math.floor(time.time()/86400))+'.txt'
         try:
             with open(filename, 'a') as f:
@@ -106,7 +106,7 @@ class Base(commands.Cog):
 
     @commands.Cog.listener()
     async def on_raw_reaction_add(self, payload):
-        filename = '/home/pi/discordbot/tc_logs/' + \
+        filename = '/home/pi/discordbot/logs/tc_logs/' + \
             str(math.floor(time.time()/86400))+'.txt'
         try:
             with open(filename, 'a') as f:
@@ -121,7 +121,7 @@ class Base(commands.Cog):
     async def on_raw_reaction_remove(self, payload):
         guild = self.bot.get_guild(payload.guild_id)
         member = await guild.fetch_member(payload.user_id)
-        filename = '/home/pi/discordbot/tc_logs/' + \
+        filename = '/home/pi/discordbot/logs/tc_logs/' + \
             str(math.floor(time.time()/86400))+'.txt'
         try:
             with open(filename, 'a') as f:
@@ -134,7 +134,7 @@ class Base(commands.Cog):
 
     @commands.Cog.listener()
     async def on_typing(self, channel, user, when):
-        filename = '/home/pi/discordbot/tc_logs/' + \
+        filename = '/home/pi/discordbot/logs/tc_logs/' + \
             str(math.floor(time.time()/86400))+'.txt'
         try:
             with open(filename, 'a') as f:

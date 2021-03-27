@@ -11,7 +11,7 @@ class Base(commands.Cog):
 
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_messages=True)
-    async def botadd(self, ctx):
+    async def deletingchanneladd(self, ctx):
         with open('/home/pi/discordbot/management/deletingchannel.json', 'r+') as f:
             deletingchannel = json.load(f)
             c_id = ctx.channel.id

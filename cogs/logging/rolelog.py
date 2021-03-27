@@ -26,7 +26,6 @@ class Base(commands.Cog):
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_roles=True)
     async def rolebotremove(self, ctx):
-        with open('/home/pi/discordbot/management/enable.json', 'r+') as f:
         with open('/home/pi/discordbot/management/rolelog.json', 'r+') as f:
             rolelog = json.load(f)
             c_id = ctx.channel.id

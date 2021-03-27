@@ -20,7 +20,7 @@ bot.remove_command('help')
 
 extensions = ['cogs.admin.deletingchannel', 'cogs.admin.enabledisable', 'cogs.admin.joinroles', 'cogs.admin.reaction_roles', 'cogs.admin.ticket',
               'cogs.logging.actionlog', 'cogs.logging.rolelog', 'cogs.logging.tcstats', 'cogs.logging.vcstats', 'cogs.random.dnd', 'cogs.random.maslog',
-              'cogs.random.shroud', 'cogs.random.simple', 'cogs.voice.', 'cogs.voice.basic_vc', 'cogs.voice.bettervc']
+              'cogs.random.shroud', 'cogs.random.simple', 'cogs.voice.basic_vc', 'cogs.voice.bettervc']
 
 
 if __name__ == '__main__':

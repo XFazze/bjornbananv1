@@ -64,7 +64,7 @@ class Base(commands.Cog):
             if str(member.guild.id) in joinleavemessage.keys():
                 for channel in joinleavemessage[str(member.guild.id)]:
                     channel = self.bot.get_channel(channel)
-                    embed = discord.Embed(title=str(member) + "    " +time.asctime(), description="User has joined the server " + str(times)+" times", color=0x00ff00)
+                    embed = discord.Embed(title=str(member) , description=time.asctime()+ "User has joined the server " + str(times)+" times", color=0x00ff00)
                     await channel.send(embed=embed)
 
     @commands.Cog.listener()
@@ -84,7 +84,7 @@ class Base(commands.Cog):
             if str(member.guild.id) in joinleavemessage.keys():
                 for channel in joinleavemessage[str(member.guild.id)]:
                     channel = self.bot.get_channel(channel)
-                    embed = discord.Embed(title=str(member) + "    " +time.asctime(), description="User has left the server " + str(times)+" times", color=0xFF0000)
+                    embed = discord.Embed(title=str(member) + , description=time.asctime() + "User has left the server " + str(times)+" times", color=0xFF0000)
                     await channel.send(embed=embed)
 
 def setup(bot):

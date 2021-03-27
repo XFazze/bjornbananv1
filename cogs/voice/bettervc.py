@@ -12,7 +12,7 @@ class Base(commands.Cog):
 
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_roles=True)
-    async def addvccat(self, ctx):
+    async def addbettervc(self, ctx):
         with open('/home/pi/discordbot/management/bettervc.json', 'r+') as f:
             bettervc = json.load(f)
             if str(ctx.author.voice.channel.guild.id) in bettervc.keys():
@@ -25,7 +25,7 @@ class Base(commands.Cog):
     
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_roles=True)
-    async def removevccat(self, ctx):
+    async def removebettervc(self, ctx):
         with open('/home/pi/discordbot/management/bettervc.json', 'r+') as f:
             bettervc = json.load(f)
             if str(ctx.author.voice.channel.guild.id) in bettervc.keys():

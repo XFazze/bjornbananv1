@@ -4,28 +4,21 @@ from discord.ext import commands
 from discord.utils import get
 
 
-
 class Base(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
     # Reaction roles
 
-    
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_roles=True)
     async def joinroleadd(self, ctx):
-        with open('/home/pi/discordbot/management/enable.json', 'r+') as f:
-            enable = json.load(f)
-            if "joinroleadd" in enable[str(ctx.guild.id)]:
-                await ctx.send("Command not allowed in this server")
-                return
         try:
             role_id = int(str(ctx.message.content).split(" ")[1][3:-1])
         except:
             await ctx.send("you forgot the role")
             return
-            
+
         guild_id = ctx.message.guild.id
         with open('/home/pi/discordbot/management/joinrole.json', 'r+') as f:
             joinrole = json.load(f)
@@ -42,21 +35,16 @@ class Base(commands.Cog):
                 await ctx.send("Added channel to joinrole")
                 with open('/home/pi/discordbot/management/joinrole.json', 'w') as file:
                     json.dump(joinrole, file, indent=4)
-        
+
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_roles=True)
     async def joinroleremove(self, ctx):
-        with open('/home/pi/discordbot/management/enable.json', 'r+') as f:
-            enable = json.load(f)
-            if "joinroleremove" in enable[str(ctx.guild.id)]:
-                await ctx.send("Command not allowed in this server")
-                return
         try:
             role_id = int(str(ctx.message.content).split(" ")[1][3:-1])
         except:
             await ctx.send("you forgot the role")
             return
-            
+
         guild_id = ctx.message.guild.id
         with open('/home/pi/discordbot/management/joinrole.json', 'r+') as f:
             joinrole = json.load(f)
@@ -76,7 +64,6 @@ class Base(commands.Cog):
                     await ctx.send("Channel not added")
             else:
                 await ctx.send("Channel not added")
-        
 
     @commands.Cog.listener()
     async def on_member_join(self, member):
@@ -87,9 +74,6 @@ class Base(commands.Cog):
                 for role_id in joinrole[str(guild.id)]:
                     role = get(guild.roles, id=role_id)
                     await member.add_roles(role)
-
-
-  
 
 
 def setup(bot):

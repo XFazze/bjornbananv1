@@ -64,14 +64,9 @@ class Base(commands.Cog):
         except:
             return
 
-    @commands.command(pass_context=True, aliases=['dndframer'])
+    @commands.command(pass_context=True)
     @commands.has_permissions(manage_channels=True)
     async def dndframe(self, ctx):
-        with open('/home/pi/discordbot/management/enable.json', 'r+') as f:
-            enable = json.load(f)
-            if "dndframe" in enable[str(ctx.guild.id)]:
-                await ctx.send("Command not allowed in this server")
-                return
         try:
             name = ctx.message.content[11:].split(",")[0]
         except:

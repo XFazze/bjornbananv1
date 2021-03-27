@@ -18,10 +18,10 @@ class Base(commands.Cog):
                 await ctx.send("Command not allowed in this server")
                 return
 
-        directory = os.fsencode('/home/pi/discordbot/vc_logs/')
+        directory = os.fsencode('/home/pi/discordbot/logs/vc_logs/')
         bigfileline = []
         for file in os.listdir(directory):
-            filename = '/home/pi/discordbot/vc_logs/'+os.fsdecode(file)
+            filename = '/home/pi/discordbot/logs/vc_logs/'+os.fsdecode(file)
             with open(filename, 'r') as file:
                 filelines = file.readlines()
                 for line in filelines:

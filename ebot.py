@@ -18,7 +18,7 @@ bot = commands.Bot(command_prefix=determine_prefix, intents=intents)
 bot.remove_command('help')
 
 
-extensions = ['cogs.admin.joinleavemessage', 'cogs.logging.joinleavelog']
+extensions = ['cogs.voice.bettervc']
 
 
 

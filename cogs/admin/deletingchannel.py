@@ -49,7 +49,7 @@ class Base(commands.Cog):
 
     @cleanse.before_loop
     async def before_cleanse(self):
-        print('bot enabled')
+        print('deletingchannel enabled')
         await self.cleanse.wait_until_ready()
 
 def setup(bot):

@@ -10,7 +10,7 @@ class Base(commands.Cog):
         self.bot = bot
 
     @commands.command(pass_context=True)
-    async def r(self, ctx):
+    async def d(self, ctx):
         with open('/home/pi/discordbot/logs/delete_logs/delete_mega.json', 'r') as f:
             delete_logs = json.load(f)
             sending_message = 'Deleted messages in this channel\n'

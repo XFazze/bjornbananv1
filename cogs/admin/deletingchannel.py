@@ -3,7 +3,7 @@ import json
 from discord.ext import commands, tasks
 from discord.utils import get
 
-
+# channels which get clensed every 10 seoncds
 class Base(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -11,7 +11,7 @@ class Base(commands.Cog):
 
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_messages=True)
-    async def deletingchanneladd(self, ctx):
+    async def ed(self, ctx):
         with open('/home/pi/discordbot/management/deletingchannel.json', 'r+') as f:
             deletingchannel = json.load(f)
             c_id = ctx.channel.id
@@ -25,7 +25,7 @@ class Base(commands.Cog):
 
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_messages=True)
-    async def deletingchannelremove(self, ctx):
+    async def dd(self, ctx):
         with open('/home/pi/discordbot/management/deletingchannel.json', 'r+') as f:
             deletingchannel = json.load(f)
             c_id = ctx.channel.id

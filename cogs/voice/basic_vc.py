@@ -72,7 +72,7 @@ class Base(commands.Cog):
         vc.source = discord.PCMVolumeTransformer(vc.source)
 
     @commands.command(pass_context=True)
-    async def tits(self,ctx):
+    async def a(self,ctx):
         message = ctx.message.content[6:]
         if len(message) > 50:
             print("tried to add too long")

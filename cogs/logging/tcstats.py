@@ -11,7 +11,7 @@ class Base(commands.Cog):
         self.bot = bot
 
     @commands.command(pass_context=True)
-    async def tcstats(self, ctx):
+    async def ts(self, ctx):
         with open('/home/pi/discordbot/management/enable.json', 'r+') as f:
             enable = json.load(f)
             if "tcstats" in enable[str(ctx.guild.id)]:

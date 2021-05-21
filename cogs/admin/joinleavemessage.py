@@ -11,7 +11,7 @@ class Base(commands.Cog):
 
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_messages=True)
-    async def joinleavemessageadd(self, ctx):
+    async def ej(self, ctx):
         await ctx.message.delete()
         with open('/home/pi/discordbot/management/joinleavemessage.json', 'r+') as f:
             joinleavemessage = json.load(f)
@@ -31,7 +31,7 @@ class Base(commands.Cog):
 
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_messages=True)
-    async def joinleavemessageremove(self, ctx):
+    async def dj(self, ctx):
         await ctx.message.delete()
         with open('/home/pi/discordbot/management/joinleavemessage.json', 'r+') as f:
             joinleavemessage = json.load(f)

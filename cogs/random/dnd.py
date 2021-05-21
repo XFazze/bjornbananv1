@@ -66,7 +66,7 @@ class Base(commands.Cog):
 
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_channels=True)
-    async def dndframe(self, ctx):
+    async def df(self, ctx):
         try:
             name = ctx.message.content[11:].split(",")[0]
         except:

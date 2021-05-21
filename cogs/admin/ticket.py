@@ -11,7 +11,7 @@ class Base(commands.Cog):
         self.bot = bot
 
     @commands.command(pass_context=True)
-    async def ticket(self, ctx):
+    async def t(self, ctx):
         guild = ctx.guild
         tickets = True
         for cat in guild.categories:

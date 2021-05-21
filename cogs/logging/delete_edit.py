@@ -61,15 +61,13 @@ class Base(commands.Cog):
                 
     @commands.Cog.listener()
     async def on_raw_message_edit(self, ctx):
-        print("sss message")
         filepath = '/home/pi/discordbot/logs/message_logs/'
         for file in os.listdir(filepath):
             filename = "/home/pi/discordbot/logs/message_logs/" + file
             with open(filename, 'r') as f:
                 messagelog = json.load(f)
                 try:
-                    message = messagelog[str(ctx.guild_id)][str(ctx.channel_id)][str(ctx.message_id)]
-                    print("found message")
+                    message = messagelog[str(ctx.data['guild_id'])][str(ctx.channel_id)][str(ctx.message_id)]
                     break
                 except:
                     pass
@@ -80,14 +78,14 @@ class Base(commands.Cog):
             return
         with open('/home/pi/discordbot/logs/delete_logs/edit_mega.json', 'r') as f:
             delete_logs = json.load(f)
-            if str(ctx.guild_id) not in delete_logs.keys():
+            if str(ctx.data['guild_id']) not in delete_logs.keys():
                 print("created guild dict")
-                delete_logs[str(ctx.guild_id)] = {}
-            if str(ctx.channel_id) not in delete_logs[str(ctx.guild_id)].keys():
+                delete_logs[str(ctx.data['guild_id'])] = {}
+            if str(ctx.channel_id) not in delete_logs[str(ctx.data['guild_id'])].keys():
                 print("created channel dict")
-                delete_logs[str(ctx.guild_id)][str(ctx.channel_id)] = {}
+                delete_logs[str(ctx.data['guild_id'])][str(ctx.channel_id)] = {}
                 
-            delete_logs[str(ctx.guild_id)][str(ctx.channel_id)][str(ctx.message_id)] = message
+            delete_logs[str(ctx.data['guild_id'])][str(ctx.channel_id)][str(ctx.message_id)] = message
             with open('/home/pi/discordbot/logs/delete_logs/edit_mega.json', 'w') as file:
                 json.dump(delete_logs, file, indent=4)
         pass

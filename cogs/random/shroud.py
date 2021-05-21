@@ -9,7 +9,7 @@ class Base(commands.Cog):
         self.bot = bot
 
     @commands.command(pass_context=True)
-    async def c(self, ctx):
+    async def cc(self, ctx):
         for role in ctx.message.author.roles:
             if str(role)[0] == ";":
                 if len(str(ctx.message.content).split(" ")) > 1:

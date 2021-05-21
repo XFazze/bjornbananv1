@@ -36,12 +36,12 @@ c - clean reaction roles
 t - make ticket
 d - deleted messages
 e - edited messages
-c - color changes
 g - clear chat
 s - spamming
 j - join voice
 l - leave voice
 a - talk to speach
+cc - color changes
 od - djungel
 erika - erika
 ts - text chat stats

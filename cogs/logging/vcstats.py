@@ -11,7 +11,7 @@ class Base(commands.Cog):
         self.bot = bot
 
     @commands.command(pass_context=True)
-    async def vcstats(self, ctx):
+    async def vs(self, ctx):
         with open('/home/pi/discordbot/management/enable.json', 'r+') as f:
             enable = json.load(f)
             if "vcstats" in enable[str(ctx.guild.id)]:

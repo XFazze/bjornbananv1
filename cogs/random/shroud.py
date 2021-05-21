@@ -9,39 +9,7 @@ class Base(commands.Cog):
         self.bot = bot
 
     @commands.command(pass_context=True)
-    async def newmembers(self, ctx):
-        guild = ctx.guild
-        for member in guild.members:
-            if len(member.roles) == 1:
-                message = "user: "+member.name
-                await ctx.send(message)
-
-    @commands.command(pass_context=True)
-    @commands.has_permissions(manage_roles=True)
-    async def prime(self, ctx):
-        guild = ctx.guild
-        for member in ctx.message.mentions:
-
-            role = get(guild.roles, id=802300233103048704)
-            await member.add_roles(role)
-
-            role = get(guild.roles, id=802305915491319838)
-            await member.remove_roles(role)
-    
-    @commands.command(pass_context=True)
-    @commands.has_permissions(manage_roles=True)
-    async def rprime(self, ctx):
-        guild = ctx.guild
-        for member in ctx.message.mentions:
-
-            role = get(guild.roles, id=802300233103048704)
-            await member.remove_roles(role)
-
-            role = get(guild.roles, id=802305915491319838)
-            await member.add_roles(role)
-
-    @commands.command(pass_context=True)
-    async def color(self, ctx):
+    async def c(self, ctx):
         for role in ctx.message.author.roles:
             if str(role)[0] == ";":
                 if len(str(ctx.message.content).split(" ")) > 1:

@@ -12,7 +12,7 @@ class Base(commands.Cog):
 
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_roles=True)
-    async def rear(self, ctx):
+    async def r(self, ctx):
         try:
             role_id = int(str(ctx.message.content).split(" ")[1][3:-1])
         except:
@@ -70,7 +70,7 @@ class Base(commands.Cog):
             await member.remove_roles(role)
 
     @commands.command(pass_context=True)
-    async def reac(self, ctx):
+    async def c(self, ctx):
         await ctx.message.delete()
         channel = ctx.message.channel
         messages = await channel.history(limit=200).flatten()

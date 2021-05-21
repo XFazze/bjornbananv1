@@ -150,6 +150,36 @@
                 "author_name": "Rumpan",
                 "author_discriminator": "4556",
                 "time": "2021-05-21 11:19:46.101729"
+            },
+            "845231440521592862": {
+                "content": "Jechir was shot by Kagulin",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 11:27:59.150214"
+            },
+            "845235344504782869": {
+                "content": "Jechir left the game",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 11:43:30.003628"
+            },
+            "845235388029337622": {
+                "content": "Kagulin left the game",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 11:43:40.407427"
+            },
+            "845235399541522443": {
+                "content": "sebben18 left the game",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 11:43:43.048397"
+            },
+            "845236489080143872": {
+                "content": "Teryxeon has made the advancement [advancements.miskatonicmysteries.miskatonic_university.title]",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 11:48:02.814180"
             }
         },
         "806887487061622815": {
@@ -844,6 +874,188 @@
                 "author_name": "xfazze",
                 "author_discriminator": "1854",
                 "time": "2021-05-21 11:22:59.455072"
+            },
+            "845231549392748544": {
+                "content": "asd",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 11:28:25.124786"
+            },
+            "845234013559062548": {
+                "content": "845229830261833738",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 11:38:12.599762"
+            },
+            "845234030567358484": {
+                "content": "843790026281189447'",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 11:38:16.655801"
+            },
+            "845234047637913620": {
+                "content": "736563768149934080",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 11:38:20.739247"
+            },
+            "845234064218783744": {
+                "content": "243022798543519745",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 11:38:24.697626"
+            },
+            "845234084585144320": {
+                "content": "843790026281189447",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 11:38:29.533782"
+            },
+            "845234108790472725": {
+                "content": "845231549392748544",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 11:38:35.335845"
+            },
+            "845234117805342761": {
+                "content": "845230183459979304",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 11:38:37.527113"
+            },
+            "845234136242454538": {
+                "content": "845229830261833738",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 11:38:41.854258"
+            },
+            "845235547262025748": {
+                "content": "ge",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 11:44:18.264971"
+            },
+            "845235560272756737": {
+                "content": "fe",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 11:44:21.386603"
+            },
+            "845235561371140106": {
+                "content": "```Edited messages in this channel\n\n2021-05-21 11:21:28.348341 xfazze#1854:\nwee```",
+                "author_name": "Bj\u00f6rnbanan_experimental",
+                "author_discriminator": "4698",
+                "time": "2021-05-21 11:44:21.629769"
+            },
+            "845236809541615676": {
+                "content": "ge",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 11:49:19.238608"
+            },
+            "845236818454642718": {
+                "content": "fe",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 11:49:21.350463"
+            },
+            "845236856522276904": {
+                "content": "fe",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 11:49:30.431275"
+            },
+            "845236867330080808": {
+                "content": "fe",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 11:49:33.017930"
+            },
+            "845237490952830997": {
+                "content": "fe",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 11:52:01.688759"
+            },
+            "845237491786711050": {
+                "content": "```Edited messages in this channel\n\n2021-05-21 11:21:28.348341 xfazze#1854:\nwee```",
+                "author_name": "Bj\u00f6rnbanan_experimental",
+                "author_discriminator": "4698",
+                "time": "2021-05-21 11:52:01.889641"
+            },
+            "845237497385713674": {
+                "content": "fe",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 11:52:03.214717"
+            },
+            "845237498115391528": {
+                "content": "```Edited messages in this channel\n\n2021-05-21 11:21:28.348341 xfazze#1854:\nwee```",
+                "author_name": "Bj\u00f6rnbanan_experimental",
+                "author_discriminator": "4698",
+                "time": "2021-05-21 11:52:03.389807"
+            },
+            "845237521197432853": {
+                "content": "fe",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 11:52:09.000732"
+            },
+            "845237522506055700": {
+                "content": "```Edited messages in this channel\n\n2021-05-21 11:21:28.348341 xfazze#1854:\nwee```",
+                "author_name": "Bj\u00f6rnbanan_experimental",
+                "author_discriminator": "4698",
+                "time": "2021-05-21 11:52:09.214847"
+            },
+            "845237599425789962": {
+                "content": "fe",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 11:52:27.540709"
+            },
+            "845237600569786368": {
+                "content": "```Edited messages in this channel\n\n2021-05-21 11:21:28.348341 xfazze#1854:\nwee```",
+                "author_name": "Bj\u00f6rnbanan_experimental",
+                "author_discriminator": "4698",
+                "time": "2021-05-21 11:52:27.810880"
+            },
+            "845237911702994944": {
+                "content": "asd",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 11:53:42.021929"
+            },
+            "845237958672121916": {
+                "content": "fe",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 11:53:53.196809"
+            },
+            "845237959662108672": {
+                "content": "```Edited messages in this channel\n\n2021-05-21 11:21:28.348341 xfazze#1854:\nwee\n2021-05-21 11:53:40.970801 xfazze#1854:\nasd```",
+                "author_name": "Bj\u00f6rnbanan_experimental",
+                "author_discriminator": "4698",
+                "time": "2021-05-21 11:53:53.426094"
+            },
+            "845238013822107658": {
+                "content": "fe",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 11:54:06.341751"
+            },
+            "845238014245339157": {
+                "content": "```Edited messages in this channel\n\n2021-05-21 11:21:28.348341 xfazze#1854:\nwee\n2021-05-21 11:53:40.970801 xfazze#1854:\nasd```",
+                "author_name": "Bj\u00f6rnbanan_experimental",
+                "author_discriminator": "4698",
+                "time": "2021-05-21 11:54:06.516961"
+            }
+        },
+        "802388086365093918": {
+            "845237835559993344": {
+                "content": ",,,",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 11:53:23.841468"
             }
         }
     }

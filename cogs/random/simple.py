@@ -13,13 +13,13 @@ class Base(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(pass_context=True, aliases=['help'])
-    async def help_commands(self, ctx):
+    @commands.command(pass_context=True, aliases=['help', 'commands'])
+    async def h(self, ctx):
         await ctx.send("**Commands**:\n Avaible at  https://fabbe90.gq/bjornbanan and yes I love milk.")
 
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_messages=True)
-    async def clear(self, ctx):
+    async def g(self, ctx):
         try:
             message = ctx.message.content.split(" ")
             amount = int(message[1])
@@ -62,7 +62,7 @@ class Base(commands.Cog):
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_channels=True)
     @commands.has_permissions(manage_messages=True)
-    async def spam(self, ctx):
+    async def s(self, ctx):
         print(ctx.message.author)
         if str(ctx.message.author) != "xfazze#1854":
             await ctx.send("YOU ARE NOT THE WISE ONE")

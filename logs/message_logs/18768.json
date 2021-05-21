@@ -1,1173 +1,1741 @@
 {
     "802298523214938153": {
         "836700243730104331": {
-            "845196056392499230": {
-                "content": "Server is starting!",
-                "author_name": "Rumpan",
-                "author_discriminator": "4556",
-                "time": "2021-05-21 09:07:22.917973"
-            },
-            "845196073113747457": {
-                "content": "Server Started.",
-                "author_name": "Rumpan",
-                "author_discriminator": "4556",
-                "time": "2021-05-21 09:07:26.990892"
-            },
-            "845223435772887050": {
-                "content": "sebben18 joined the game",
-                "author_name": "Rumpan",
-                "author_discriminator": "4556",
-                "time": "2021-05-21 10:56:10.660512"
-            },
-            "845226269116727306": {
+            "845238553008668692": {
                 "content": "Jechir joined the game",
                 "author_name": "Rumpan",
                 "author_discriminator": "4556",
-                "time": "2021-05-21 11:07:26.202730"
+                "time": "2021-05-21 11:56:14.891670"
             },
-            "845228786374148126": {
-                "content": "Kagulin joined the game",
+            "845268074797465610": {
+                "content": "<Jechir> noel",
                 "author_name": "Rumpan",
                 "author_discriminator": "4556",
-                "time": "2021-05-21 11:17:26.343153"
+                "time": "2021-05-21 13:53:33.433576"
             },
-            "845228857500893214": {
-                "content": "Teryxeon joined the game",
-                "author_name": "Rumpan",
-                "author_discriminator": "4556",
-                "time": "2021-05-21 11:17:43.308105"
-            },
-            "845229303393157140": {
-                "content": "<Teryxeon> sov",
-                "author_name": "Rumpan",
-                "author_discriminator": "4556",
-                "time": "2021-05-21 11:19:29.616161"
-            },
-            "845229304476336158": {
-                "content": "<Teryxeon> sov",
-                "author_name": "Rumpan",
-                "author_discriminator": "4556",
-                "time": "2021-05-21 11:19:29.870563"
-            },
-            "845229305398165564": {
-                "content": "<Teryxeon> sovs",
-                "author_name": "Rumpan",
-                "author_discriminator": "4556",
-                "time": "2021-05-21 11:19:30.091785"
-            },
-            "845229306250788914": {
-                "content": "<Teryxeon> ovs",
-                "author_name": "Rumpan",
-                "author_discriminator": "4556",
-                "time": "2021-05-21 11:19:30.290769"
-            },
-            "845229307131199508": {
-                "content": "<Teryxeon> vs",
-                "author_name": "Rumpan",
-                "author_discriminator": "4556",
-                "time": "2021-05-21 11:19:30.507399"
-            },
-            "845229325292929044": {
-                "content": "<Teryxeon> ovs",
-                "author_name": "Rumpan",
-                "author_discriminator": "4556",
-                "time": "2021-05-21 11:19:34.846268"
-            },
-            "845229326311751680": {
-                "content": "<Teryxeon> vo",
-                "author_name": "Rumpan",
-                "author_discriminator": "4556",
-                "time": "2021-05-21 11:19:35.078897"
-            },
-            "845229327200026674": {
-                "content": "<Teryxeon> sv",
-                "author_name": "Rumpan",
-                "author_discriminator": "4556",
-                "time": "2021-05-21 11:19:35.289250"
-            },
-            "845229328375873626": {
-                "content": "<Teryxeon> oso",
-                "author_name": "Rumpan",
-                "author_discriminator": "4556",
-                "time": "2021-05-21 11:19:35.599979"
-            },
-            "845229329059545119": {
-                "content": "<Teryxeon> vo",
-                "author_name": "Rumpan",
-                "author_discriminator": "4556",
-                "time": "2021-05-21 11:19:35.837674"
-            },
-            "845229346749939713": {
-                "content": "<Teryxeon> sv",
-                "author_name": "Rumpan",
-                "author_discriminator": "4556",
-                "time": "2021-05-21 11:19:40.044843"
-            },
-            "845229347735470111": {
-                "content": "<Teryxeon> osvo",
-                "author_name": "Rumpan",
-                "author_discriminator": "4556",
-                "time": "2021-05-21 11:19:40.260125"
-            },
-            "845229349014994944": {
-                "content": "<Teryxeon> s",
-                "author_name": "Rumpan",
-                "author_discriminator": "4556",
-                "time": "2021-05-21 11:19:40.490805"
-            },
-            "845229349904318495": {
-                "content": "<Teryxeon> ovs",
-                "author_name": "Rumpan",
-                "author_discriminator": "4556",
-                "time": "2021-05-21 11:19:40.702087"
-            },
-            "845229350722469898": {
-                "content": "<Teryxeon> ovo",
-                "author_name": "Rumpan",
-                "author_discriminator": "4556",
-                "time": "2021-05-21 11:19:40.900823"
-            },
-            "845229368853790741": {
-                "content": "<Teryxeon> sv",
-                "author_name": "Rumpan",
-                "author_discriminator": "4556",
-                "time": "2021-05-21 11:19:45.308832"
-            },
-            "845229370149961758": {
-                "content": "<Teryxeon> os",
-                "author_name": "Rumpan",
-                "author_discriminator": "4556",
-                "time": "2021-05-21 11:19:45.549665"
-            },
-            "845229371249393664": {
-                "content": "<Teryxeon> o",
-                "author_name": "Rumpan",
-                "author_discriminator": "4556",
-                "time": "2021-05-21 11:19:45.791664"
-            },
-            "845229372490645554": {
-                "content": "<Teryxeon> nej",
-                "author_name": "Rumpan",
-                "author_discriminator": "4556",
-                "time": "2021-05-21 11:19:46.101729"
-            },
-            "845231440521592862": {
-                "content": "Jechir was shot by Kagulin",
-                "author_name": "Rumpan",
-                "author_discriminator": "4556",
-                "time": "2021-05-21 11:27:59.150214"
-            },
-            "845235344504782869": {
+            "845274238890147871": {
                 "content": "Jechir left the game",
                 "author_name": "Rumpan",
                 "author_discriminator": "4556",
-                "time": "2021-05-21 11:43:30.003628"
+                "time": "2021-05-21 14:18:03.100619"
             },
-            "845235388029337622": {
-                "content": "Kagulin left the game",
+            "845278624486785095": {
+                "content": "Jechir joined the game",
                 "author_name": "Rumpan",
                 "author_discriminator": "4556",
-                "time": "2021-05-21 11:43:40.407427"
+                "time": "2021-05-21 14:35:28.787961"
             },
-            "845235399541522443": {
+            "845279942036160562": {
+                "content": "Jechir was blown up by Creeper",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 14:40:42.821492"
+            },
+            "845281526076932106": {
+                "content": "Jechir was blown up by Creeper",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 14:47:00.511991"
+            },
+            "845282063979511838": {
+                "content": "<Teryxeon> joahjao",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 14:49:08.718977"
+            },
+            "845282076085583882": {
+                "content": "<Teryxeon> johan",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 14:49:11.603570"
+            },
+            "845282093616988160": {
+                "content": "<Teryxeon> nasj",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 14:49:15.785191"
+            },
+            "845282132498317354": {
+                "content": "<Teryxeon> annahoj",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 14:49:25.129466"
+            },
+            "845282157596377108": {
+                "content": "<Teryxeon> is you there+",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 14:49:31.043352"
+            },
+            "845282850093924383": {
+                "content": "sebben18 joined the game",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 14:52:16.186056"
+            },
+            "845282874148257802": {
+                "content": "<Teryxeon> hej johanna",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 14:52:21.884642"
+            },
+            "845284812326567956": {
+                "content": "<Teryxeon> sov",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 15:00:03.988048"
+            },
+            "845284814188707840": {
+                "content": "<Teryxeon> ovs",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 15:00:04.417332"
+            },
+            "845284815216967680": {
+                "content": "<Teryxeon> ovso",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 15:00:04.666522"
+            },
+            "845284816211017728": {
+                "content": "<Teryxeon> vso",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 15:00:04.906239"
+            },
+            "845284816995483669": {
+                "content": "<Teryxeon> v",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 15:00:05.201248"
+            },
+            "845284834230534185": {
+                "content": "<Teryxeon> osvos",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 15:00:09.281521"
+            },
+            "845284835459072002": {
+                "content": "<Teryxeon> ovo",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 15:00:09.558049"
+            },
+            "845284836579213323": {
+                "content": "<Teryxeon> svo",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 15:00:09.834436"
+            },
+            "845284838901547120": {
+                "content": "<Teryxeon> sov",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 15:00:10.413281"
+            },
+            "845284840186445895": {
+                "content": "<Teryxeon> svo",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 15:00:10.708079"
+            },
+            "845284863467978802": {
+                "content": "<Jechir> noeeel",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 15:00:16.171582"
+            },
+            "845285226715545631": {
+                "content": "<Jechir> noel",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 15:01:42.869726"
+            },
+            "845285437701619722": {
+                "content": "<Jechir> NOEL",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 15:02:33.076453"
+            },
+            "845288035130277930": {
+                "content": "<Teryxeon> vilka var viktigast",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 15:12:52.415004"
+            },
+            "845288040503312434": {
+                "content": "<Teryxeon> ?",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 15:12:53.635054"
+            },
+            "845288117275852840": {
+                "content": "<Jechir> Forutne pick och axe",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 15:13:11.954041"
+            },
+            "845288155296563252": {
+                "content": "Jechir left the game",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 15:13:21.049553"
+            },
+            "845292193661190186": {
+                "content": "Teryxeon left the game",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 15:29:23.887770"
+            },
+            "845292212132249630": {
+                "content": "sebben18 has made the advancement [Who is Cutting Onions?]",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 15:29:28.230728"
+            },
+            "845295587083550800": {
+                "content": "sebben18 fell from a high place",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 15:42:52.890320"
+            },
+            "845299255169384468": {
                 "content": "sebben18 left the game",
                 "author_name": "Rumpan",
                 "author_discriminator": "4556",
-                "time": "2021-05-21 11:43:43.048397"
+                "time": "2021-05-21 15:57:27.428882"
             },
-            "845236489080143872": {
-                "content": "Teryxeon has made the advancement [advancements.miskatonicmysteries.miskatonic_university.title]",
+            "845307499052793876": {
+                "content": "Server is starting!",
                 "author_name": "Rumpan",
                 "author_discriminator": "4556",
-                "time": "2021-05-21 11:48:02.814180"
+                "time": "2021-05-21 16:30:12.913718"
+            },
+            "845307510473752636": {
+                "content": "Server Started.",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 16:30:15.649248"
+            },
+            "845315313997185034": {
+                "content": "Jechir joined the game",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 17:01:16.244809"
+            },
+            "845319175239893003": {
+                "content": "sebben18 joined the game",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 17:16:36.822090"
+            },
+            "845321334086565940": {
+                "content": "sebben18 left the game",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 17:25:11.548891"
+            },
+            "845372476434415616": {
+                "content": "Jechir has made the advancement [Ender Access]",
+                "author_name": "Rumpan",
+                "author_discriminator": "4556",
+                "time": "2021-05-21 20:48:24.737936"
             }
         },
-        "806887487061622815": {
-            "845196222716968972": {
-                "content": "Inte vara v\u00e4rdel\u00f6s",
-                "author_name": "Emser",
-                "author_discriminator": "8979",
-                "time": "2021-05-21 09:08:02.626644"
-            },
-            "845196264500887573": {
-                "content": "\ud83d\ude2d",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:08:12.542666"
-            },
-            "845196286046765057": {
-                "content": "Neeee",
-                "author_name": "Emser",
-                "author_discriminator": "8979",
-                "time": "2021-05-21 09:08:17.782697"
-            },
-            "845196347337605180": {
-                "content": "V\u00e4rdefulla vi \u00e4r",
-                "author_name": "Emser",
-                "author_discriminator": "8979",
-                "time": "2021-05-21 09:08:32.287214"
-            },
-            "845196348453421096": {
-                "content": "vill du komma och va v\u00e4rdel\u00f6s med mig?",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:08:32.541810"
-            },
-            "845196548152623145": {
-                "content": "Hmm b\u00e4ttre \u00e4n att vara ensam, men d\u00e5 m\u00e5ste jag g\u00e5 upp ur s\u00e4ngen",
-                "author_name": "Emser",
-                "author_discriminator": "8979",
-                "time": "2021-05-21 09:09:20.203096"
-            },
-            "845197028152574002": {
-                "content": "Pog",
-                "author_name": "Emser",
-                "author_discriminator": "8979",
-                "time": "2021-05-21 09:11:14.600968"
-            },
-            "845197078844932106": {
-                "content": "goP",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:11:26.704902"
-            },
-            "845197155588898846": {
-                "content": "Hur k\u00e4nns det?",
-                "author_name": "Emser",
-                "author_discriminator": "8979",
-                "time": "2021-05-21 09:11:44.998420"
-            },
-            "845197212593946636": {
-                "content": "\ud83d\udc40",
+        "824364665035161629": {
+            "845256602785153028": {
+                "content": "waka waka",
                 "author_name": "Jechir",
                 "author_discriminator": "5352",
-                "time": "2021-05-21 09:11:58.637355"
+                "time": "2021-05-21 13:07:58.400005"
             },
-            "845197298216337459": {
-                "content": "https://tenor.com/view/markdashian-eating-fried-in-hell-waiting-for-friends-mchen-fries-gif-9912138",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:12:19.029954"
-            },
-            "845197302570549280": {
-                "content": "https://tenor.com/view/eye-looking-around-staying-vigilant-gif-10055847",
-                "author_name": "Emser",
-                "author_discriminator": "8979",
-                "time": "2021-05-21 09:12:20.097499"
-            },
-            "845197486032945162": {
-                "content": "Jaja vill bara leva en stund till i s\u00e4ngen",
-                "author_name": "Emser",
-                "author_discriminator": "8979",
-                "time": "2021-05-21 09:13:03.769095"
-            },
-            "845197526634201088": {
-                "content": "Sen kan jag t\u00e4nka mig att d\u00f6",
-                "author_name": "Emser",
-                "author_discriminator": "8979",
-                "time": "2021-05-21 09:13:13.453502"
-            },
-            "845197869467041812": {
-                "content": "hmmmm",
+            "845256917793112114": {
+                "content": "africa toto",
                 "author_name": "Jechir",
                 "author_discriminator": "5352",
-                "time": "2021-05-21 09:14:35.188545"
+                "time": "2021-05-21 13:09:13.402593"
             },
-            "845201362097537066": {
-                "content": "N\u00c4MEN GOD MORGON V\u00c4NSTERSTRUMPAN",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:28:28.004083"
+            "845291442570395758": {
+                "content": "https://open.spotify.com/track/1G2iW3trf8lqBnLiq71HOR?si=ab6dbd32e4b94be3",
+                "author_name": "Kromosomkungen",
+                "author_discriminator": "8688",
+                "time": "2021-05-21 15:26:24.774658"
             },
-            "845201463302815756": {
-                "content": "^^",
-                "author_name": "Jechir",
-                "author_discriminator": "5352",
-                "time": "2021-05-21 09:28:52.127409"
+            "845292177927176243": {
+                "content": "https://open.spotify.com/track/5YZuePCawcrg0DJrWovPu7?si=16a771858d8c462e",
+                "author_name": "Kromosomkungen",
+                "author_discriminator": "8688",
+                "time": "2021-05-21 15:29:20.074768"
             },
-            "845201494717497344": {
-                "content": "H\u00e4nsterstrumpan?",
-                "author_name": "Jechir",
-                "author_discriminator": "5352",
-                "time": "2021-05-21 09:28:59.523124"
-            },
-            "845201545128837131": {
-                "content": "men jag saknar v\u00e4nsterstrumpan \ud83d\ude2d",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:29:11.528169"
-            },
-            "845201898767515699": {
-                "content": "\ud83e\udd7a",
-                "author_name": "Emser",
-                "author_discriminator": "8979",
-                "time": "2021-05-21 09:30:35.889193"
-            },
-            "845201980234006548": {
-                "content": "vad henda med  den d\u00e5?",
-                "author_name": "Emser",
-                "author_discriminator": "8979",
-                "time": "2021-05-21 09:30:55.262805"
-            },
-            "845202025918365697": {
-                "content": "jag r\u00e5ka ta hennes V",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:31:06.263501"
-            },
-            "845202087700463626": {
-                "content": "vill du ha tillbaka det",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:31:20.901428"
-            },
-            "845202100803600395": {
-                "content": "?",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:31:24.114821"
-            },
-            "845202138435026984": {
-                "content": "oj, kan man ta tillbaka det",
-                "author_name": "Emser",
-                "author_discriminator": "8979",
-                "time": "2021-05-21 09:31:32.988426"
-            },
-            "845202151886422026": {
-                "content": "f\u00f6r isf ja",
-                "author_name": "Emser",
-                "author_discriminator": "8979",
-                "time": "2021-05-21 09:31:36.244460"
-            },
-            "845202155001479213": {
-                "content": "ja",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:31:36.940957"
-            },
-            "845202246227984385": {
-                "content": "H",
-                "author_name": "Emser",
-                "author_discriminator": "8979",
-                "time": "2021-05-21 09:31:58.697023"
-            },
-            "845202278294224927": {
-                "content": "tack f\u00f6r l\u00e5net",
-                "author_name": "Emser",
-                "author_discriminator": "8979",
-                "time": "2021-05-21 09:32:06.430679"
-            },
-            "845202296132730900": {
-                "content": "tackar",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:32:10.594233"
-            },
-            "845202452764557342": {
-                "content": "skumt",
-                "author_name": "Jechir",
-                "author_discriminator": "5352",
-                "time": "2021-05-21 09:32:47.923826"
-            },
-            "845202782617206785": {
-                "content": "\ud83e\udd14",
-                "author_name": "Jechir",
-                "author_discriminator": "5352",
-                "time": "2021-05-21 09:34:06.641543"
-            },
-            "845202846159994901": {
-                "content": "\u262f\ufe0f  Ni be like <@!212483159659380739> <@!588805185422229505>",
-                "author_name": "Jechir",
-                "author_discriminator": "5352",
-                "time": "2021-05-21 09:34:21.736711"
-            },
-            "845202897993990164": {
-                "content": "precis",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:34:34.083796"
-            },
-            "845203031599611915": {
+            "845292286978949150": {
                 "content": "",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:35:05.972430"
+                "author_name": "Hydra Staging",
+                "author_discriminator": "5335",
+                "time": "2021-05-21 15:29:46.065887"
             },
-            "845203041334722572": {
-                "content": "finns plats",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:35:08.326504"
+            "845292386090745876": {
+                "content": "https://open.spotify.com/track/7fVlbM9hxmv3Omz4UPcsy8?si=72596d0d09304aed",
+                "author_name": "Kromosomkungen",
+                "author_discriminator": "8688",
+                "time": "2021-05-21 15:30:09.708928"
             },
-            "845203074271281182": {
-                "content": "eyyyyyyyy",
-                "author_name": "Jechir",
-                "author_discriminator": "5352",
-                "time": "2021-05-21 09:35:16.111176"
+            "845293418783047732": {
+                "content": "https://open.spotify.com/track/3KWpkpZRx6mJ3W5jGCLXnY?si=c37e39410ad642cb",
+                "author_name": "Kromosomkungen",
+                "author_discriminator": "8688",
+                "time": "2021-05-21 15:34:15.940626"
             },
-            "845203106852896780": {
-                "content": "\ud83d\ude0c",
-                "author_name": "Jechir",
-                "author_discriminator": "5352",
-                "time": "2021-05-21 09:35:23.956322"
+            "845295104868352007": {
+                "content": "https://open.spotify.com/track/1G2iW3trf8lqBnLiq71HOR?si=1613afd99cda4abc",
+                "author_name": "Kromosomkungen",
+                "author_discriminator": "8688",
+                "time": "2021-05-21 15:40:57.927473"
             },
-            "845203131221409792": {
-                "content": "",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:35:29.679614"
+            "845295259215069264": {
+                "content": "https://open.spotify.com/track/1wRGG0b7MxPgywwK5D0dYU?si=e40745e079174e88",
+                "author_name": "Kromosomkungen",
+                "author_discriminator": "8688",
+                "time": "2021-05-21 15:41:34.724712"
             },
-            "845203390996021260": {
-                "content": "",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:36:31.696267"
+            "845295336658567208": {
+                "content": "https://open.spotify.com/track/6j8ZhFIEf5n2zpdsmwAhH0?si=c2d6d0afc45d49fb",
+                "author_name": "Kromosomkungen",
+                "author_discriminator": "8688",
+                "time": "2021-05-21 15:41:53.184942"
             },
-            "845203424726614056": {
-                "content": "\ud83d\ude42",
-                "author_name": "Jechir",
-                "author_discriminator": "5352",
-                "time": "2021-05-21 09:36:39.691828"
+            "845296695788175360": {
+                "content": "https://www.youtube.com/watch?v=lSVa6dZgiy4&t=224s",
+                "author_name": "Kromosomkungen",
+                "author_discriminator": "8688",
+                "time": "2021-05-21 15:47:17.219800"
             },
-            "845203519882919986": {
-                "content": "BYT FORT INNAN VILLE SER",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:37:02.348191"
+            "845296885802467368": {
+                "content": "https://open.spotify.com/track/03ZyPqIZXdBNNVIpM2KORq?si=7455bb48c89f4d53",
+                "author_name": "Kromosomkungen",
+                "author_discriminator": "8688",
+                "time": "2021-05-21 15:48:02.516404"
             },
-            "845203542603726869": {
-                "content": "<@!427538535256424461>",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:37:07.833366"
+            "845296937443262514": {
+                "content": "https://open.spotify.com/track/7BVPU8CcKhatjAdezvPEfl?si=b4c8faf5ce9d4fcc",
+                "author_name": "Kromosomkungen",
+                "author_discriminator": "8688",
+                "time": "2021-05-21 15:48:14.844372"
             },
-            "845203563423727616": {
-                "content": "XD",
-                "author_name": "Jechir",
-                "author_discriminator": "5352",
-                "time": "2021-05-21 09:37:12.761367"
+            "845296979332694028": {
+                "content": "https://open.spotify.com/track/1oGlt5DCQOsZg7Vw64ACAw?si=d7c07a6774ab444a",
+                "author_name": "Kromosomkungen",
+                "author_discriminator": "8688",
+                "time": "2021-05-21 15:48:24.903846"
             },
-            "845203634824282122": {
-                "content": "opsi",
-                "author_name": "Jechir",
-                "author_discriminator": "5352",
-                "time": "2021-05-21 09:37:29.753841"
-            },
-            "845203651789979698": {
-                "content": "aa det var n\u00e4ra",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:37:33.790655"
-            },
-            "845203706747682877": {
-                "content": "fick du n\u00e5gra dm?",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:37:46.904310"
-            },
-            "845203721616752640": {
-                "content": "nope",
-                "author_name": "Jechir",
-                "author_discriminator": "5352",
-                "time": "2021-05-21 09:37:50.442621"
-            },
-            "845203757964328960": {
-                "content": "attans-emojin",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:37:59.115180"
-            },
-            "845203764570488862": {
-                "content": "johanna, inte gr\u00e5ta",
-                "author_name": "Emser",
-                "author_discriminator": "8979",
-                "time": "2021-05-21 09:38:00.681084"
-            },
-            "845205405285220395": {
-                "content": "hmm",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:44:31.890145"
-            },
-            "845205433937428500": {
-                "content": "johanna har du ett annat f\u00f6rslag",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:44:38.689477"
-            },
-            "845205468544106536": {
-                "content": "?",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:44:46.946756"
-            },
-            "845205618779226142": {
-                "content": "jag har",
-                "author_name": "Emser",
-                "author_discriminator": "8979",
-                "time": "2021-05-21 09:45:22.760116"
-            },
-            "845205635721461760": {
-                "content": "f\u00f6rslag",
-                "author_name": "Emser",
-                "author_discriminator": "8979",
-                "time": "2021-05-21 09:45:26.811594"
-            },
-            "845205652254097428": {
-                "content": "say",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:45:30.759318"
-            },
-            "845205665563017257": {
-                "content": "till dig johanna",
-                "author_name": "Emser",
-                "author_discriminator": "8979",
-                "time": "2021-05-21 09:45:33.921676"
-            },
-            "845205673805611008": {
-                "content": "Coolstrumpan\nVistrumpan\nVipstrumpan",
-                "author_name": "Emser",
-                "author_discriminator": "8979",
-                "time": "2021-05-21 09:45:35.906842"
-            },
-            "845206154765533185": {
-                "content": "johanna",
-                "author_name": "Emser",
-                "author_discriminator": "8979",
-                "time": "2021-05-21 09:47:30.598374"
-            },
-            "845206167193649152": {
-                "content": "come back",
-                "author_name": "Emser",
-                "author_discriminator": "8979",
-                "time": "2021-05-21 09:47:33.519734"
-            },
-            "845206236655910942": {
-                "content": "Trumpstrumpan",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:47:50.076040"
-            },
-            "845206252848939014": {
-                "content": "\ud83d\ude42",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:47:54.021263"
-            },
-            "845206269006315530": {
-                "content": "no",
-                "author_name": "Emser",
-                "author_discriminator": "8979",
-                "time": "2021-05-21 09:47:57.797919"
-            },
-            "845210008571346954": {
-                "content": "hmmmmmmmmmmmmm",
-                "author_name": "Jechir",
-                "author_discriminator": "5352",
-                "time": "2021-05-21 10:02:49.375964"
-            },
-            "845210110280466442": {
-                "content": "why are you a hat?",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 10:03:13.636832"
-            },
-            "845210157083263006": {
-                "content": "f\u00f6r",
-                "author_name": "Jechir",
-                "author_discriminator": "5352",
-                "time": "2021-05-21 10:03:24.782720"
-            },
-            "845210161349394462": {
-                "content": "att",
-                "author_name": "Jechir",
-                "author_discriminator": "5352",
-                "time": "2021-05-21 10:03:25.796214"
-            }
-        },
-        "818060497944313867": {
-            "845198232724176896": {
-                "content": "W\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4",
-                "author_name": "Jechir",
-                "author_discriminator": "5352",
-                "time": "2021-05-21 09:16:01.789281"
-            },
-            "845198284545064970": {
-                "content": "b\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:16:14.144060"
-            },
-            "845198331851964446": {
-                "content": "m\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4\u00e4",
+            "845299253769404436": {
+                "content": ",remove 9",
                 "author_name": "Trockeltum",
                 "author_discriminator": "5293",
-                "time": "2021-05-21 09:16:25.430938"
+                "time": "2021-05-21 15:57:27.086437"
             },
-            "845198332037038132": {
-                "content": "w\u00e4\u00e4\u00e4\u00e4",
-                "author_name": "Jechir",
-                "author_discriminator": "5352",
-                "time": "2021-05-21 09:16:25.550495"
-            },
-            "845198349065781269": {
-                "content": "presentaiton'",
-                "author_name": "Jechir",
-                "author_discriminator": "5352",
-                "time": "2021-05-21 09:16:29.613680"
-            },
-            "845198402581037056": {
-                "content": "du valde v\u00e4ll?",
-                "author_name": "Trockeltum",
-                "author_discriminator": "5293",
-                "time": "2021-05-21 09:16:42.290121"
-            },
-            "845198453101428746": {
-                "content": "japp men \u00e4nd\u00e5",
-                "author_name": "Jechir",
-                "author_discriminator": "5352",
-                "time": "2021-05-21 09:16:54.356052"
-            },
-            "845198455865212929": {
-                "content": "ja det gjorde hon",
-                "author_name": "Kagulin",
-                "author_discriminator": "9231",
-                "time": "2021-05-21 09:16:54.998427"
-            },
-            "845198490925400064": {
-                "content": "usch",
-                "author_name": "Jechir",
-                "author_discriminator": "5352",
-                "time": "2021-05-21 09:17:03.354143"
-            },
-            "845198516582088734": {
-                "content": "d\u00e5 f\u00e5r du ju BARA skylla dig sj\u00e4lv",
-                "author_name": "Trockeltum",
-                "author_discriminator": "5293",
-                "time": "2021-05-21 09:17:09.473290"
-            },
-            "845198660169891852": {
-                "content": "Kul",
-                "author_name": "Emser",
-                "author_discriminator": "8979",
-                "time": "2021-05-21 09:17:43.799653"
-            },
-            "845198697900933130": {
-                "content": "St\u00e5 i rampljuset",
-                "author_name": "Emser",
-                "author_discriminator": "8979",
-                "time": "2021-05-21 09:17:52.701120"
-            },
-            "845198712137318401": {
-                "content": "Men like ville ha det gjort eftersom jag redan var klar, men det betyder inte att jag tycker det \u00e4r kul",
-                "author_name": "Jechir",
-                "author_discriminator": "5352",
-                "time": "2021-05-21 09:17:56.101658"
-            },
-            "845198742931111979": {
-                "content": "Ni andra kommer ocks\u00e5 m\u00e5sta g\u00f6ra",
-                "author_name": "Jechir",
-                "author_discriminator": "5352",
-                "time": "2021-05-21 09:18:03.532333"
-            },
-            "845198800778952726": {
-                "content": "Jag har inga problem med att g\u00f6ra det",
-                "author_name": "Kagulin",
-                "author_discriminator": "9231",
-                "time": "2021-05-21 09:18:17.244603"
-            },
-            "845198827556569118": {
-                "content": "inte jag heller",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:18:23.610206"
-            },
-            "845198853753405441": {
-                "content": "var ej klar innan men nu \u00e4r jag",
-                "author_name": "Trockeltum",
-                "author_discriminator": "5293",
-                "time": "2021-05-21 09:18:29.892008"
-            },
-            "845198896565321778": {
-                "content": "men orkar ej fixa camera",
-                "author_name": "Trockeltum",
-                "author_discriminator": "5293",
-                "time": "2021-05-21 09:18:40.071607"
-            },
-            "845198900142800906": {
-                "content": "Men Abbe d\u00e5",
-                "author_name": "Kagulin",
-                "author_discriminator": "9231",
-                "time": "2021-05-21 09:18:40.906668"
-            },
-            "845198899773177877": {
-                "content": "Ha allas uppm\u00e4rksamhet riktad mot er och \u00e4ndats er",
-                "author_name": "Emser",
-                "author_discriminator": "8979",
-                "time": "2021-05-21 09:18:40.919335"
-            },
-            "845198917138251797": {
-                "content": "s\u00e5 g\u00f6r det ej idag",
-                "author_name": "Trockeltum",
-                "author_discriminator": "5293",
-                "time": "2021-05-21 09:18:44.972626"
-            },
-            "845198932787462204": {
-                "content": "det kommer antagligen bli mer av en diskussion",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:18:48.720290"
-            },
-            "845198964339769345": {
-                "content": "eftersom man ska prata om varandras",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:18:56.226406"
-            },
-            "845199062465642506": {
-                "content": "nej",
-                "author_name": "Jechir",
-                "author_discriminator": "5352",
-                "time": "2021-05-21 09:19:19.613518"
-            },
-            "845199072309542912": {
-                "content": "^^",
-                "author_name": "Jechir",
-                "author_discriminator": "5352",
-                "time": "2021-05-21 09:19:21.959182"
-            },
-            "845199136009224202": {
-                "content": "alla presentera och sedan kan andra fr\u00e5ga fr\u00e5\u00e5gor",
-                "author_name": "Jechir",
-                "author_discriminator": "5352",
-                "time": "2021-05-21 09:19:37.145154"
-            },
-            "845199377366253569": {
-                "content": "aja \u00e4nd\u00e5 ganska chill. presentera sin produkt och sen ber\u00e4tta vilka aspekter av h\u00e5llbarhet som den f\u00f6rs\u00e4mrar eller f\u00f6rb\u00e4ttrar",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:20:34.782729"
-            },
-            "845199416604491796": {
-                "content": "och allt \u00e4r ju f\u00e4rdigt",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:20:44.053353"
-            },
-            "845199881009365012": {
-                "content": "HOn F\u00d6rsvann",
-                "author_name": "Jechir",
-                "author_discriminator": "5352",
-                "time": "2021-05-21 09:22:34.776256"
-            },
-            "845199916514672730": {
-                "content": "rpipp",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:22:43.241500"
-            },
-            "845200020969619486": {
-                "content": "s\u00e5 fabian \u00e4r vaken?=",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:23:08.136871"
-            },
-            "845200045309689877": {
-                "content": "ja",
-                "author_name": "Jechir",
-                "author_discriminator": "5352",
-                "time": "2021-05-21 09:23:14.028974"
-            },
-            "845200064230326272": {
-                "content": "wow",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:23:18.453939"
-            },
-            "845200101748113428": {
-                "content": "ganska h\u00e4ftigt",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:23:27.401265"
-            },
-            "845200141186891777": {
-                "content": "v\u00e4ldigt schockerande",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:23:36.805055"
-            },
-            "845200157350821908": {
-                "content": "men imponerande",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:23:40.662751"
-            },
-            "845227950776516618": {
-                "content": "https://youtu.be/dQ1RrkZMQrI",
-                "author_name": "Kagulin",
-                "author_discriminator": "9231",
-                "time": "2021-05-21 11:14:07.127171"
-            },
-            "845227978942185493": {
-                "content": "https://youtu.be/dQ1RrkZMQrI?t=469",
-                "author_name": "Kagulin",
-                "author_discriminator": "9231",
-                "time": "2021-05-21 11:14:13.928833"
-            }
-        },
-        "841722649155338301": {
-            "845205305695535155": {
-                "content": "https://open.spotify.com/album/2t3dociTSaDTmqIlN21rmC?si=Li-49DMJSQi-8kK1UYyfAA",
-                "author_name": "AbstractNucleus",
-                "author_discriminator": "6969",
-                "time": "2021-05-21 09:44:08.183136"
-            },
-            "845205307235631144": {
+            "845299255123902464": {
                 "content": "",
                 "author_name": "Hydra 3",
                 "author_discriminator": "5531",
-                "time": "2021-05-21 09:44:08.529722"
+                "time": "2021-05-21 15:57:27.415525"
+            },
+            "845299293967220736": {
+                "content": ",remove 8",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 15:57:36.682755"
+            },
+            "845299295242289162": {
+                "content": "",
+                "author_name": "Hydra 3",
+                "author_discriminator": "5531",
+                "time": "2021-05-21 15:57:36.973401"
+            },
+            "845299349213806652": {
+                "content": ".remove 11",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 15:57:49.849588"
+            },
+            "845299350492938311": {
+                "content": "",
+                "author_name": "Hydra Staging",
+                "author_discriminator": "5335",
+                "time": "2021-05-21 15:57:50.146618"
+            },
+            "845299412599439421": {
+                "content": ".remove 9",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 15:58:05.081749"
+            },
+            "845299414523314187": {
+                "content": "",
+                "author_name": "Hydra Staging",
+                "author_discriminator": "5335",
+                "time": "2021-05-21 15:58:05.426481"
+            },
+            "845299423667814432": {
+                "content": "",
+                "author_name": "Hydra Staging",
+                "author_discriminator": "5335",
+                "time": "2021-05-21 15:58:07.675005"
+            },
+            "845299528394342411": {
+                "content": ".p 9",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 15:58:32.563605"
+            },
+            "845299559114735637": {
+                "content": ".remove 10",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 15:58:39.927204"
+            },
+            "845299560552726598": {
+                "content": "",
+                "author_name": "Hydra Staging",
+                "author_discriminator": "5335",
+                "time": "2021-05-21 15:58:40.229348"
+            },
+            "845299630153007183": {
+                "content": "",
+                "author_name": "Hydra Staging",
+                "author_discriminator": "5335",
+                "time": "2021-05-21 15:58:56.817968"
+            },
+            "845299672041390150": {
+                "content": "",
+                "author_name": "Hydra Staging",
+                "author_discriminator": "5335",
+                "time": "2021-05-21 15:59:06.803831"
+            },
+            "845304145477107742": {
+                "content": "",
+                "author_name": "Hydra Staging",
+                "author_discriminator": "5335",
+                "time": "2021-05-21 16:16:53.373455"
+            },
+            "845304146852839444": {
+                "content": "",
+                "author_name": "Hydra Staging",
+                "author_discriminator": "5335",
+                "time": "2021-05-21 16:16:53.689834"
+            },
+            "845310102478389250": {
+                "content": "",
+                "author_name": "Hydra Staging",
+                "author_discriminator": "5335",
+                "time": "2021-05-21 16:40:33.825165"
+            },
+            "845310103900782632": {
+                "content": "",
+                "author_name": "Hydra Staging",
+                "author_discriminator": "5335",
+                "time": "2021-05-21 16:40:33.957053"
+            },
+            "845316059624112179": {
+                "content": "",
+                "author_name": "Hydra Staging",
+                "author_discriminator": "5335",
+                "time": "2021-05-21 17:04:13.980710"
+            },
+            "845316060655779850": {
+                "content": "",
+                "author_name": "Hydra Staging",
+                "author_discriminator": "5335",
+                "time": "2021-05-21 17:04:14.158683"
+            },
+            "845322020573151252": {
+                "content": "",
+                "author_name": "Hydra Staging",
+                "author_discriminator": "5335",
+                "time": "2021-05-21 17:27:55.146461"
+            },
+            "845322021462474813": {
+                "content": "",
+                "author_name": "Hydra Staging",
+                "author_discriminator": "5335",
+                "time": "2021-05-21 17:27:55.334803"
             }
         },
-        "837091830264233984": {
-            "845213148620652544": {
-                "content": "noel det \u00e4r ok du f\u00e5r vara plast",
-                "author_name": "Emser",
-                "author_discriminator": "8979",
-                "time": "2021-05-21 10:15:18.010933"
+        "818060497944313867": {
+            "845257911210999839": {
+                "content": "https://skribbl.io/?aOo4Z9cV4XRC",
+                "author_name": "Jechir",
+                "author_discriminator": "5352",
+                "time": "2021-05-21 13:13:10.347310"
             },
-            "845213183421317140": {
-                "content": "du \u00e4r v\u00e4rdefullt plast",
+            "845269154721562625": {
+                "content": "damp spel",
                 "author_name": "Emser",
                 "author_discriminator": "8979",
-                "time": "2021-05-21 10:15:26.326091"
+                "time": "2021-05-21 13:57:51.007451"
+            },
+            "845269165262110721": {
+                "content": ":c",
+                "author_name": "Emser",
+                "author_discriminator": "8979",
+                "time": "2021-05-21 13:57:53.480691"
+            },
+            "845269214088790026": {
+                "content": "kan inte byta spr\u00e5k fram och tillbaka s\u00e5d\u00e4r",
+                "author_name": "Emser",
+                "author_discriminator": "8979",
+                "time": "2021-05-21 13:58:05.063608"
+            },
+            "845269226847862795": {
+                "content": "blir dum",
+                "author_name": "Emser",
+                "author_discriminator": "8979",
+                "time": "2021-05-21 13:58:08.219294"
             }
-        }
-    },
-    "686631829641363577": {
-        "686639451367014442": {
-            "845222303804686336": {
-                "content": "https://youtu.be/YTztDAsqmSc",
-                "author_name": "Kagulin",
-                "author_discriminator": "9231",
-                "time": "2021-05-21 10:51:40.781377"
+        },
+        "841722649155338301": {
+            "845266564705157121": {
+                "content": "waka waka",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 13:47:33.425234"
+            },
+            "845267195646443581": {
+                "content": "",
+                "author_name": "Hydra 3",
+                "author_discriminator": "5531",
+                "time": "2021-05-21 13:50:03.830714"
+            },
+            "845296097316700181": {
+                "content": "Du \u00e4r v\u00e4rdel\u00f6s",
+                "author_name": "Emser",
+                "author_discriminator": "8979",
+                "time": "2021-05-21 15:44:54.615108"
+            },
+            "845296217092915200": {
+                "content": "https://open.spotify.com/track/5NNlUMcOEOdoOIwwaWXv0k?si=888377af838f485a",
+                "author_name": "AbstractNucleus",
+                "author_discriminator": "6969",
+                "time": "2021-05-21 15:45:23.191394"
+            },
+            "845296226056273930": {
+                "content": "Elmont\u00f6rer",
+                "author_name": "Emser",
+                "author_discriminator": "8979",
+                "time": "2021-05-21 15:45:25.228867"
+            },
+            "845296240292134963": {
+                "content": "https://open.spotify.com/track/7npLlaPu9Mfno8hjk5OagD?si=34b5e487273b4559",
+                "author_name": "AbstractNucleus",
+                "author_discriminator": "6969",
+                "time": "2021-05-21 15:45:28.617089"
+            },
+            "845296292502568960": {
+                "content": "",
+                "author_name": "Hydra 3",
+                "author_discriminator": "5531",
+                "time": "2021-05-21 15:45:41.079313"
+            },
+            "845297562407796807": {
+                "content": ",rm 2",
+                "author_name": "AbstractNucleus",
+                "author_discriminator": "6969",
+                "time": "2021-05-21 15:50:43.912447"
+            },
+            "845297563791392811": {
+                "content": "",
+                "author_name": "Hydra 3",
+                "author_discriminator": "5531",
+                "time": "2021-05-21 15:50:44.236885"
+            },
+            "845300428115542097": {
+                "content": "https://open.spotify.com/track/6mYrhCAGWzTdF8QnKuchXM?si=6936e19406f44778",
+                "author_name": "AbstractNucleus",
+                "author_discriminator": "6969",
+                "time": "2021-05-21 16:02:07.086206"
+            },
+            "845300430723350578": {
+                "content": "",
+                "author_name": "Hydra 3",
+                "author_discriminator": "5531",
+                "time": "2021-05-21 16:02:07.693327"
+            },
+            "845308513483620392": {
+                "content": "lemon tree",
+                "author_name": "Emser",
+                "author_discriminator": "8979",
+                "time": "2021-05-21 16:34:14.808367"
+            },
+            "845308535281287238": {
+                "content": "",
+                "author_name": "Hydra 3",
+                "author_discriminator": "5531",
+                "time": "2021-05-21 16:34:19.969749"
+            },
+            "845323316209909770": {
+                "content": "",
+                "author_name": "Hydra 3",
+                "author_discriminator": "5531",
+                "time": "2021-05-21 17:33:04.010230"
+            },
+            "845323553527038063": {
+                "content": "https://www.youtube.com/watch?v=inEdn4SwTqM&ab_channel=ChrisNotap",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 17:34:00.600010"
+            },
+            "845323554644033598": {
+                "content": "",
+                "author_name": "Hydra 3",
+                "author_discriminator": "5531",
+                "time": "2021-05-21 17:34:00.956499"
+            },
+            "845323568392306738": {
+                "content": "",
+                "author_name": "Hydra 3",
+                "author_discriminator": "5531",
+                "time": "2021-05-21 17:34:04.164950"
+            },
+            "845323589725192192": {
+                "content": "https://www.youtube.com/watch?v=inEdn4SwTqM&ab_channel=ChrisNotap",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 17:34:09.234959"
+            },
+            "845323864224563211": {
+                "content": ".vol 200",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 17:35:14.774193"
+            },
+            "845323865974374420": {
+                "content": "",
+                "author_name": "Hydra Staging",
+                "author_discriminator": "5335",
+                "time": "2021-05-21 17:35:15.088786"
+            },
+            "845334704131407872": {
+                "content": "",
+                "author_name": "Emser",
+                "author_discriminator": "8979",
+                "time": "2021-05-21 18:18:19.118629"
+            },
+            "845334845219405874": {
+                "content": "https://open.spotify.com/playlist/05UcghvQywBrOlGJRozHfl?si=ac0adae785f8426b",
+                "author_name": "Emser",
+                "author_discriminator": "8979",
+                "time": "2021-05-21 18:18:52.757686"
+            },
+            "845334850441314345": {
+                "content": "",
+                "author_name": "Hydra 3",
+                "author_discriminator": "5531",
+                "time": "2021-05-21 18:18:53.994700"
+            }
+        },
+        "814303858904793098": {
+            "845270315054923806": {
+                "content": "chrome://flags/#enable-force-dark",
+                "author_name": "Vaalei",
+                "author_discriminator": "1598",
+                "time": "2021-05-21 14:02:27.552752"
+            },
+            "845352996774084658": {
+                "content": "",
+                "author_name": "Vaalei",
+                "author_discriminator": "1598",
+                "time": "2021-05-21 19:31:00.414030"
+            },
+            "845353133831094323": {
+                "content": "https://tenor.com/view/cursed-walk-gif-15233770",
+                "author_name": "Emser",
+                "author_discriminator": "8979",
+                "time": "2021-05-21 19:31:33.187636"
+            },
+            "845353265674584119": {
+                "content": "https://tenor.com/view/hatsune-miku-miku-wink-miku-cute-miku-dance-gif-19308397",
+                "author_name": "V\u00e4nstra Strumpnissen",
+                "author_discriminator": "5429",
+                "time": "2021-05-21 19:32:04.531765"
+            }
+        },
+        "802376051719143464": {
+            "845286522969391114": {
+                "content": "https://paper-io.com/ps/?p-eu1k1tr05h",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 15:06:51.869886"
+            },
+            "845296614939688972": {
+                "content": "",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 15:46:57.998538"
+            },
+            "845296681112698890": {
+                "content": "damn",
+                "author_name": "AbstractNucleus",
+                "author_discriminator": "6969",
+                "time": "2021-05-21 15:47:13.715936"
+            },
+            "845297574005309460": {
+                "content": "https://paper-io.com/ps/?p-eu1vxfevzh",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 15:50:46.615674"
+            },
+            "845298471875641344": {
+                "content": "<@!212483159659380739> \u00e4r du eken",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 15:54:20.665432"
+            },
+            "845298607887220767": {
+                "content": "plaey",
+                "author_name": "AbstractNucleus",
+                "author_discriminator": "6969",
+                "time": "2021-05-21 15:54:53.091686"
+            },
+            "845298616981520486": {
+                "content": "player",
+                "author_name": "AbstractNucleus",
+                "author_discriminator": "6969",
+                "time": "2021-05-21 15:54:55.334230"
+            },
+            "845299024546103327": {
+                "content": "d\u00f6da dig <@!212483159659380739>",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 15:56:32.452347"
+            },
+            "845299070553030667": {
+                "content": "h\u00e4ng dig sj\u00e4lv <@!220607888459038721>",
+                "author_name": "AbstractNucleus",
+                "author_discriminator": "6969",
+                "time": "2021-05-21 15:56:43.420832"
+            },
+            "845299102769872916": {
+                "content": "XD",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 15:56:51.083913"
+            },
+            "845299145006645268": {
+                "content": "ska tyv\u00e4rr g\u00e5 nu dock",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 15:57:01.193943"
+            },
+            "845299156582793276": {
+                "content": "s\u00e5\u1e45 dig inte ens p\u00e5 leaderboard <@!212483159659380739>",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 15:57:03.916920"
+            },
+            "845299670448209972": {
+                "content": "https://paper-io.com/ps/?p-eu1vxfevzh",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 15:59:06.517581"
+            },
+            "845302767669215272": {
+                "content": "<@!427538535256424461> hur levde du",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 16:11:24.862797"
+            },
+            "845302906735427604": {
+                "content": "Bara b\u00e4ttre",
+                "author_name": "Emser",
+                "author_discriminator": "8979",
+                "time": "2021-05-21 16:11:58.035335"
+            },
+            "845303544637947936": {
+                "content": "vad heter du",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 16:14:30.187150"
+            },
+            "845303936855703573": {
+                "content": "oi!",
+                "author_name": "Jechir",
+                "author_discriminator": "5352",
+                "time": "2021-05-21 16:16:03.681015"
+            },
+            "845304046918959136": {
+                "content": ":)",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 16:16:29.863654"
+            },
+            "845307288222564382": {
+                "content": "ea du vet att du \u00e4r\u0325 b\u00f6g",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 16:29:22.646859"
+            },
+            "845337489866883102": {
+                "content": "G\u00e5r nu",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 18:29:23.296375"
+            },
+            "845339260948578355": {
+                "content": "Damn ska \u00e4ta om 5 typ men ring n\u00e4r du snart du n\u00e4rmar dig",
+                "author_name": "CEO of Anime",
+                "author_discriminator": "1537",
+                "time": "2021-05-21 18:36:25.556160"
+            },
+            "845339268607115355": {
+                "content": "jag ocks\u00e5",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 18:36:27.384339"
+            },
+            "845339304229732482": {
+                "content": "(dock ska bara g\u00e5 ner och \u00e4ta=",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 18:36:35.892760"
+            },
+            "845339332520837121": {
+                "content": "Ahop",
+                "author_name": "CEO of Anime",
+                "author_discriminator": "1537",
+                "time": "2021-05-21 18:36:42.618192"
+            },
+            "845339375348613210": {
+                "content": "S\u00e5 Fabian g\u00e5 l\u00e5ngsamt",
+                "author_name": "CEO of Anime",
+                "author_discriminator": "1537",
+                "time": "2021-05-21 18:36:52.820451"
+            },
+            "845339394365849661": {
+                "content": "Typ snigelfart",
+                "author_name": "CEO of Anime",
+                "author_discriminator": "1537",
+                "time": "2021-05-21 18:36:57.426443"
+            },
+            "845343454753325177": {
+                "content": "Kan du \u00e4ta p\u00e5 10 min",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 18:53:05.523272"
+            },
+            "845362362739720213": {
+                "content": "",
+                "author_name": "Horny_Berny",
+                "author_discriminator": "8268",
+                "time": "2021-05-21 20:08:13.492762"
+            },
+            "845362381604257792": {
+                "content": "Sigma balls",
+                "author_name": "Horny_Berny",
+                "author_discriminator": "8268",
+                "time": "2021-05-21 20:08:17.933866"
+            },
+            "845377802407772210": {
+                "content": "nya prefixes:\ncommands\nex and dx for enable and disable x:\nd - deleteing channels\nj - join logging channel\nr - role when server join\no - role log channel\nb - bettervc\n\nr - reaction roles\nc - clean reaction roles\nt - make ticket\nd - deleted messages\ne - edited messages\nc - color changes\ng - clear chat\ns - spamming\nj - join voice\nl - leave voice\na - talk to speach\nod - djungel\nerika - erika\nts - text chat stats\nvs - voice chat stats\ndf - abbes dnd framer\nh, help, commands - help command",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 21:09:34.542802"
+            },
+            "845377904774742036": {
+                "content": "!ts",
+                "author_name": "Leooooooooo",
+                "author_discriminator": "3276",
+                "time": "2021-05-21 21:09:58.941857"
+            },
+            "845377912958091304": {
+                "content": "-ts",
+                "author_name": "Leooooooooo",
+                "author_discriminator": "3276",
+                "time": "2021-05-21 21:10:00.894813"
+            },
+            "845377918191403008": {
+                "content": "ts",
+                "author_name": "Leooooooooo",
+                "author_discriminator": "3276",
+                "time": "2021-05-21 21:10:02.268656"
+            },
+            "845377924932829234": {
+                "content": ".st",
+                "author_name": "Leooooooooo",
+                "author_discriminator": "3276",
+                "time": "2021-05-21 21:10:03.758908"
+            },
+            "845377929415753819": {
+                "content": ".ts",
+                "author_name": "Leooooooooo",
+                "author_discriminator": "3276",
+                "time": "2021-05-21 21:10:04.904827"
+            },
+            "845377954694299659": {
+                "content": "inte fixat \u00e4n",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 21:10:10.978023"
+            },
+            "845377967231598603": {
+                "content": "men om 2 sek",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 21:10:13.910675"
+            },
+            "845377967835709530": {
+                "content": "bruh",
+                "author_name": "Leooooooooo",
+                "author_discriminator": "3276",
+                "time": "2021-05-21 21:10:13.974350"
+            },
+            "845377977750782013": {
+                "content": "monkey",
+                "author_name": "Horny_Berny",
+                "author_discriminator": "8268",
+                "time": "2021-05-21 21:10:16.424896"
+            }
+        },
+        "806887487061622815": {
+            "845314582762356777": {
+                "content": "hur g\u00e5r det? kommer ni p\u00e5 n\u00e5gra l\u00f6sningar?",
+                "author_name": "AbstractNucleus",
+                "author_discriminator": "6969",
+                "time": "2021-05-21 16:58:21.833554"
+            },
+            "845314686136352778": {
+                "content": "\ud83d\udc40",
+                "author_name": "Jechir",
+                "author_discriminator": "5352",
+                "time": "2021-05-21 16:58:46.444664"
+            },
+            "845314794122248242": {
+                "content": "<:eee:811282829605601341>",
+                "author_name": "AbstractNucleus",
+                "author_discriminator": "6969",
+                "time": "2021-05-21 16:59:12.195563"
+            },
+            "845314839223074826": {
+                "content": "pengar",
+                "author_name": "Emser",
+                "author_discriminator": "8979",
+                "time": "2021-05-21 16:59:22.957677"
+            },
+            "845315046807830538": {
+                "content": "det \u00e4r bra att ha",
+                "author_name": "AbstractNucleus",
+                "author_discriminator": "6969",
+                "time": "2021-05-21 17:00:12.451942"
+            },
+            "845315111053033482": {
+                "content": "inst\u00e4mmer",
+                "author_name": "Emser",
+                "author_discriminator": "8979",
+                "time": "2021-05-21 17:00:27.766478"
+            },
+            "845315166781308968": {
+                "content": "och vad var det med det?",
+                "author_name": "AbstractNucleus",
+                "author_discriminator": "6969",
+                "time": "2021-05-21 17:00:41.066025"
+            },
+            "845315220669726770": {
+                "content": "l\u00f6sning",
+                "author_name": "Emser",
+                "author_discriminator": "8979",
+                "time": "2021-05-21 17:00:53.940945"
+            },
+            "845315298831237180": {
+                "content": "allt i v\u00e4rlden kan inte l\u00f6sas med pengar",
+                "author_name": "AbstractNucleus",
+                "author_discriminator": "6969",
+                "time": "2021-05-21 17:01:12.530143"
+            },
+            "845315329513357312": {
+                "content": "trolla fraam pengar och l\u00f6sa alla livets problem",
+                "author_name": "Emser",
+                "author_discriminator": "8979",
+                "time": "2021-05-21 17:01:19.845229"
+            },
+            "845315368780300319": {
+                "content": "g\u00e5r inte",
+                "author_name": "AbstractNucleus",
+                "author_discriminator": "6969",
+                "time": "2021-05-21 17:01:29.280141"
+            },
+            "845315375876669480": {
+                "content": "tyv\u00e4rr",
+                "author_name": "AbstractNucleus",
+                "author_discriminator": "6969",
+                "time": "2021-05-21 17:01:30.891256"
+            },
+            "845315389675536414": {
+                "content": "joho",
+                "author_name": "Emser",
+                "author_discriminator": "8979",
+                "time": "2021-05-21 17:01:34.186191"
+            },
+            "845315449419726948": {
+                "content": "det iaf det som hindrar nu",
+                "author_name": "Emser",
+                "author_discriminator": "8979",
+                "time": "2021-05-21 17:01:48.430402"
+            },
+            "845315533482360862": {
+                "content": ":(",
+                "author_name": "AbstractNucleus",
+                "author_discriminator": "6969",
+                "time": "2021-05-21 17:02:08.482118"
+            },
+            "845315627526914048": {
+                "content": "\ud83d\udcb8 \ud83d\udd25",
+                "author_name": "AbstractNucleus",
+                "author_discriminator": "6969",
+                "time": "2021-05-21 17:02:30.892674"
+            },
+            "845316074877616188": {
+                "content": "Short comand s\u00f6ka ord i dokument?",
+                "author_name": "Jechir",
+                "author_discriminator": "5352",
+                "time": "2021-05-21 17:04:17.556012"
+            },
+            "845316146961580072": {
+                "content": "control F",
+                "author_name": "AbstractNucleus",
+                "author_discriminator": "6969",
+                "time": "2021-05-21 17:04:34.734756"
+            },
+            "845316533302591490": {
+                "content": "ty",
+                "author_name": "Jechir",
+                "author_discriminator": "5352",
+                "time": "2021-05-21 17:06:06.882277"
+            },
+            "845317178650525697": {
+                "content": "n\u00e4r du hemma och kan prata",
+                "author_name": "Jechir",
+                "author_discriminator": "5352",
+                "time": "2021-05-21 17:08:40.820974"
+            },
+            "845317184146505758": {
+                "content": "?",
+                "author_name": "Jechir",
+                "author_discriminator": "5352",
+                "time": "2021-05-21 17:08:42.012927"
+            },
+            "845318759107264530": {
+                "content": "noel",
+                "author_name": "Emser",
+                "author_discriminator": "8979",
+                "time": "2021-05-21 17:14:57.539986"
+            },
+            "845318956502876181": {
+                "content": "var p\u00e5 v\u00e4g in bara",
+                "author_name": "AbstractNucleus",
+                "author_discriminator": "6969",
+                "time": "2021-05-21 17:15:44.687589"
+            },
+            "845318978103672922": {
+                "content": "jag kommer snart",
+                "author_name": "AbstractNucleus",
+                "author_discriminator": "6969",
+                "time": "2021-05-21 17:15:49.735016"
+            },
+            "845319240276770866": {
+                "content": "oki",
+                "author_name": "Emser",
+                "author_discriminator": "8979",
+                "time": "2021-05-21 17:16:52.244810"
+            }
+        },
+        "843220953442025492": {
+            "845324129463959582": {
+                "content": "vad Abbe?",
+                "author_name": "Emser",
+                "author_discriminator": "8979",
+                "time": "2021-05-21 17:36:17.926272"
+            }
+        },
+        "809111507493322753": {
+            "845350545069309962": {
+                "content": "User: V\u00e4nstra Strumpnissen#5429\nRole added: Privileged",
+                "author_name": "Bj\u00f6rnbanan",
+                "author_discriminator": "6641",
+                "time": "2021-05-21 19:21:15.885720"
+            },
+            "845350598223069245": {
+                "content": "User: H\u00f6gerstrumpans L\u00e4rling#5264\nRole added: Privileged",
+                "author_name": "Bj\u00f6rnbanan",
+                "author_discriminator": "6641",
+                "time": "2021-05-21 19:21:28.556773"
+            }
+        },
+        "803743107396665354": {
+            "845368889567477760": {
+                "content": "film inatt",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 20:34:09.563993"
+            },
+            "845368899418718239": {
+                "content": ":???",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 20:34:11.989125"
+            },
+            "845368962833580062": {
+                "content": "vi kollar everest rn",
+                "author_name": "V\u00e4nstra Strumpnissen",
+                "author_discriminator": "5429",
+                "time": "2021-05-21 20:34:27.021845"
+            },
+            "845368980771831859": {
+                "content": "vill du va med?",
+                "author_name": "V\u00e4nstra Strumpnissen",
+                "author_discriminator": "5429",
+                "time": "2021-05-21 20:34:31.374408"
+            },
+            "845368996987797565": {
+                "content": "hur l\u00e5ngt>",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 20:34:35.165170"
+            },
+            "845369050065928203": {
+                "content": "40 min",
+                "author_name": "V\u00e4nstra Strumpnissen",
+                "author_discriminator": "5429",
+                "time": "2021-05-21 20:34:47.898712"
+            },
+            "845369075261636608": {
+                "content": "pass",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 20:34:53.856353"
+            },
+            "845369076436041749": {
+                "content": "men de har knappt b\u00f6rjat vandra",
+                "author_name": "V\u00e4nstra Strumpnissen",
+                "author_discriminator": "5429",
+                "time": "2021-05-21 20:34:54.181103"
+            },
+            "845369096341946408": {
+                "content": "ok sure ig",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 20:34:58.857001"
+            },
+            "845369136498606090": {
+                "content": "dra ion mig",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 20:35:08.429479"
+            }
+        },
+        "814579477849702400": {
+            "845370604513394759": {
+                "content": "jag tar bort mig sj\u00e4lv fr\u00e5n denna kanal",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 20:40:58.425851"
+            },
+            "845370647717740584": {
+                "content": "du kan bara dm mig ifall du vill ha porr wink wink",
+                "author_name": "xfazze",
+                "author_discriminator": "1854",
+                "time": "2021-05-21 20:41:08.729342"
+            },
+            "845370655087525888": {
+                "content": "varf\u00f6r",
+                "author_name": "Vaalei",
+                "author_discriminator": "1598",
+                "time": "2021-05-21 20:41:10.499785"
+            },
+            "845370698552573973": {
+                "content": "har du flickvb\u00e4n?",
+                "author_name": "Vaalei",
+                "author_discriminator": "1598",
+                "time": "2021-05-21 20:41:20.889509"
+            },
+            "845370747764342814": {
+                "content": "vet du vad, vi tar bort den helt",
+                "author_name": "Vaalei",
+                "author_discriminator": "1598",
+                "time": "2021-05-21 20:41:32.591197"
             }
         }
     },
     "736563768149934080": {
         "843790026281189447": {
-            "845229801337913404": {
-                "content": "wee",
+            "845238976834699304": {
+                "content": "Ge mig",
                 "author_name": "xfazze",
                 "author_discriminator": "1854",
-                "time": "2021-05-21 11:21:28.348341"
+                "time": "2021-05-21 11:57:55.942591"
             },
-            "845229830261833738": {
+            "845238989446971402": {
                 "content": "ge",
                 "author_name": "xfazze",
                 "author_discriminator": "1854",
-                "time": "2021-05-21 11:21:35.276981"
+                "time": "2021-05-21 11:57:58.950800"
             },
-            "845230183459979304": {
-                "content": "haha",
-                "author_name": "xfazze",
-                "author_discriminator": "1854",
-                "time": "2021-05-21 11:22:59.455072"
-            },
-            "845231549392748544": {
-                "content": "asd",
-                "author_name": "xfazze",
-                "author_discriminator": "1854",
-<<<<<<< HEAD
-                "time": "2021-05-21 11:28:25.124786"
-=======
-                "time": "2021-05-21 11:28:24.062983"
->>>>>>> 77e5920f414f705f202b5d05b37ae2aa834f0326
-            },
-            "845234013559062548": {
-                "content": "845229830261833738",
-                "author_name": "xfazze",
-                "author_discriminator": "1854",
-<<<<<<< HEAD
-                "time": "2021-05-21 11:38:12.599762"
-=======
-                "time": "2021-05-21 11:38:11.579728"
->>>>>>> 77e5920f414f705f202b5d05b37ae2aa834f0326
-            },
-            "845234030567358484": {
-                "content": "843790026281189447'",
-                "author_name": "xfazze",
-                "author_discriminator": "1854",
-<<<<<<< HEAD
-                "time": "2021-05-21 11:38:16.655801"
-=======
-                "time": "2021-05-21 11:38:15.616852"
->>>>>>> 77e5920f414f705f202b5d05b37ae2aa834f0326
-            },
-            "845234047637913620": {
-                "content": "736563768149934080",
-                "author_name": "xfazze",
-                "author_discriminator": "1854",
-<<<<<<< HEAD
-                "time": "2021-05-21 11:38:20.739247"
-=======
-                "time": "2021-05-21 11:38:19.699207"
->>>>>>> 77e5920f414f705f202b5d05b37ae2aa834f0326
-            },
-            "845234064218783744": {
-                "content": "243022798543519745",
-                "author_name": "xfazze",
-                "author_discriminator": "1854",
-<<<<<<< HEAD
-                "time": "2021-05-21 11:38:24.697626"
-=======
-                "time": "2021-05-21 11:38:23.639205"
->>>>>>> 77e5920f414f705f202b5d05b37ae2aa834f0326
-            },
-            "845234084585144320": {
-                "content": "843790026281189447",
-                "author_name": "xfazze",
-                "author_discriminator": "1854",
-<<<<<<< HEAD
-                "time": "2021-05-21 11:38:29.533782"
-=======
-                "time": "2021-05-21 11:38:28.499617"
->>>>>>> 77e5920f414f705f202b5d05b37ae2aa834f0326
-            },
-            "845234108790472725": {
-                "content": "845231549392748544",
-                "author_name": "xfazze",
-                "author_discriminator": "1854",
-<<<<<<< HEAD
-                "time": "2021-05-21 11:38:35.335845"
-=======
-                "time": "2021-05-21 11:38:34.296331"
->>>>>>> 77e5920f414f705f202b5d05b37ae2aa834f0326
-            },
-            "845234117805342761": {
-                "content": "845230183459979304",
-                "author_name": "xfazze",
-                "author_discriminator": "1854",
-<<<<<<< HEAD
-                "time": "2021-05-21 11:38:37.527113"
-=======
-                "time": "2021-05-21 11:38:36.476694"
->>>>>>> 77e5920f414f705f202b5d05b37ae2aa834f0326
-            },
-            "845234136242454538": {
-                "content": "845229830261833738",
-                "author_name": "xfazze",
-                "author_discriminator": "1854",
-<<<<<<< HEAD
-                "time": "2021-05-21 11:38:41.854258"
-=======
-                "time": "2021-05-21 11:38:40.802672"
->>>>>>> 77e5920f414f705f202b5d05b37ae2aa834f0326
-            },
-            "845235547262025748": {
-                "content": "ge",
-                "author_name": "xfazze",
-                "author_discriminator": "1854",
-<<<<<<< HEAD
-                "time": "2021-05-21 11:44:18.264971"
-=======
-                "time": "2021-05-21 11:44:17.226069"
->>>>>>> 77e5920f414f705f202b5d05b37ae2aa834f0326
-            },
-            "845235560272756737": {
-                "content": "fe",
-                "author_name": "xfazze",
-                "author_discriminator": "1854",
-<<<<<<< HEAD
-                "time": "2021-05-21 11:44:21.386603"
-=======
-                "time": "2021-05-21 11:44:20.351040"
->>>>>>> 77e5920f414f705f202b5d05b37ae2aa834f0326
-            },
-            "845235561371140106": {
-                "content": "```Edited messages in this channel\n\n2021-05-21 11:21:28.348341 xfazze#1854:\nwee```",
-                "author_name": "Bj\u00f6rnbanan_experimental",
-                "author_discriminator": "4698",
-<<<<<<< HEAD
-                "time": "2021-05-21 11:44:21.629769"
-            },
-            "845236809541615676": {
-                "content": "ge",
-                "author_name": "xfazze",
-                "author_discriminator": "1854",
-                "time": "2021-05-21 11:49:19.238608"
-            },
-            "845236818454642718": {
-                "content": "fe",
-                "author_name": "xfazze",
-                "author_discriminator": "1854",
-                "time": "2021-05-21 11:49:21.350463"
-=======
-                "time": "2021-05-21 11:44:20.587517"
->>>>>>> 77e5920f414f705f202b5d05b37ae2aa834f0326
-            },
-            "845236856522276904": {
-                "content": "fe",
-                "author_name": "xfazze",
-                "author_discriminator": "1854",
-<<<<<<< HEAD
-                "time": "2021-05-21 11:49:30.431275"
-=======
-                "time": "2021-05-21 11:49:29.391555"
->>>>>>> 77e5920f414f705f202b5d05b37ae2aa834f0326
-            },
-            "845236867330080808": {
-                "content": "fe",
-                "author_name": "xfazze",
-                "author_discriminator": "1854",
-<<<<<<< HEAD
-                "time": "2021-05-21 11:49:33.017930"
-=======
-                "time": "2021-05-21 11:49:31.950632"
->>>>>>> 77e5920f414f705f202b5d05b37ae2aa834f0326
-            },
-            "845237490952830997": {
-                "content": "fe",
-                "author_name": "xfazze",
-                "author_discriminator": "1854",
-<<<<<<< HEAD
-                "time": "2021-05-21 11:52:01.688759"
-=======
-                "time": "2021-05-21 11:52:00.639719"
->>>>>>> 77e5920f414f705f202b5d05b37ae2aa834f0326
-            },
-            "845237491786711050": {
-                "content": "```Edited messages in this channel\n\n2021-05-21 11:21:28.348341 xfazze#1854:\nwee```",
-                "author_name": "Bj\u00f6rnbanan_experimental",
-                "author_discriminator": "4698",
-<<<<<<< HEAD
-                "time": "2021-05-21 11:52:01.889641"
-=======
-                "time": "2021-05-21 11:52:00.848891"
->>>>>>> 77e5920f414f705f202b5d05b37ae2aa834f0326
-            },
-            "845237497385713674": {
-                "content": "fe",
-                "author_name": "xfazze",
-                "author_discriminator": "1854",
-<<<<<<< HEAD
-                "time": "2021-05-21 11:52:03.214717"
-=======
-                "time": "2021-05-21 11:52:02.170224"
->>>>>>> 77e5920f414f705f202b5d05b37ae2aa834f0326
-            },
-            "845237498115391528": {
-                "content": "```Edited messages in this channel\n\n2021-05-21 11:21:28.348341 xfazze#1854:\nwee```",
-                "author_name": "Bj\u00f6rnbanan_experimental",
-                "author_discriminator": "4698",
-<<<<<<< HEAD
-                "time": "2021-05-21 11:52:03.389807"
-=======
-                "time": "2021-05-21 11:52:02.337295"
->>>>>>> 77e5920f414f705f202b5d05b37ae2aa834f0326
-            },
-            "845237521197432853": {
-                "content": "fe",
-                "author_name": "xfazze",
-                "author_discriminator": "1854",
-<<<<<<< HEAD
-                "time": "2021-05-21 11:52:09.000732"
-=======
-                "time": "2021-05-21 11:52:07.944699"
->>>>>>> 77e5920f414f705f202b5d05b37ae2aa834f0326
-            },
-            "845237522506055700": {
-                "content": "```Edited messages in this channel\n\n2021-05-21 11:21:28.348341 xfazze#1854:\nwee```",
-                "author_name": "Bj\u00f6rnbanan_experimental",
-                "author_discriminator": "4698",
-<<<<<<< HEAD
-                "time": "2021-05-21 11:52:09.214847"
-=======
-                "time": "2021-05-21 11:52:08.189795"
->>>>>>> 77e5920f414f705f202b5d05b37ae2aa834f0326
-            },
-            "845237599425789962": {
-                "content": "fe",
-                "author_name": "xfazze",
-                "author_discriminator": "1854",
-<<<<<<< HEAD
-                "time": "2021-05-21 11:52:27.540709"
-=======
-                "time": "2021-05-21 11:52:26.496316"
->>>>>>> 77e5920f414f705f202b5d05b37ae2aa834f0326
-            },
-            "845237600569786368": {
-                "content": "```Edited messages in this channel\n\n2021-05-21 11:21:28.348341 xfazze#1854:\nwee```",
-                "author_name": "Bj\u00f6rnbanan_experimental",
-                "author_discriminator": "4698",
-<<<<<<< HEAD
-                "time": "2021-05-21 11:52:27.810880"
-=======
-                "time": "2021-05-21 11:52:26.765333"
->>>>>>> 77e5920f414f705f202b5d05b37ae2aa834f0326
-            },
-            "845237911702994944": {
-                "content": "asd",
-                "author_name": "xfazze",
-                "author_discriminator": "1854",
-<<<<<<< HEAD
-                "time": "2021-05-21 11:53:42.021929"
-=======
-                "time": "2021-05-21 11:53:40.970801"
->>>>>>> 77e5920f414f705f202b5d05b37ae2aa834f0326
-            },
-            "845237958672121916": {
-                "content": "fe",
-                "author_name": "xfazze",
-                "author_discriminator": "1854",
-<<<<<<< HEAD
-                "time": "2021-05-21 11:53:53.196809"
-=======
-                "time": "2021-05-21 11:53:52.153941"
->>>>>>> 77e5920f414f705f202b5d05b37ae2aa834f0326
-            },
-            "845237959662108672": {
+            "845238990293827586": {
                 "content": "```Edited messages in this channel\n\n2021-05-21 11:21:28.348341 xfazze#1854:\nwee\n2021-05-21 11:53:40.970801 xfazze#1854:\nasd```",
-                "author_name": "Bj\u00f6rnbanan_experimental",
-                "author_discriminator": "4698",
-<<<<<<< HEAD
-                "time": "2021-05-21 11:53:53.426094"
-=======
-                "time": "2021-05-21 11:53:52.386585"
->>>>>>> 77e5920f414f705f202b5d05b37ae2aa834f0326
+                "author_name": "Bj\u00f6rnbanan",
+                "author_discriminator": "6641",
+                "time": "2021-05-21 11:57:59.267799"
             },
-            "845238013822107658": {
-                "content": "fe",
+            "845239021865140235": {
+                "content": "ge m",
                 "author_name": "xfazze",
                 "author_discriminator": "1854",
-<<<<<<< HEAD
-                "time": "2021-05-21 11:54:06.341751"
-=======
-                "time": "2021-05-21 11:54:05.299351"
->>>>>>> 77e5920f414f705f202b5d05b37ae2aa834f0326
+                "time": "2021-05-21 11:58:06.709811"
             },
-            "845238014245339157": {
+            "845239022438580255": {
                 "content": "```Edited messages in this channel\n\n2021-05-21 11:21:28.348341 xfazze#1854:\nwee\n2021-05-21 11:53:40.970801 xfazze#1854:\nasd```",
-                "author_name": "Bj\u00f6rnbanan_experimental",
-                "author_discriminator": "4698",
-<<<<<<< HEAD
-                "time": "2021-05-21 11:54:06.516961"
-=======
-                "time": "2021-05-21 11:54:05.476706"
->>>>>>> 77e5920f414f705f202b5d05b37ae2aa834f0326
+                "author_name": "Bj\u00f6rnbanan",
+                "author_discriminator": "6641",
+                "time": "2021-05-21 11:58:06.889135"
+            }
+        }
+    },
+    "686631829641363577": {
+        "748189420645253190": {
+            "845246514057052180": {
+                "content": "Ska vi k\u00f6ra idag eller?",
+                "author_name": "Kain Pathos Crow",
+                "author_discriminator": "3417",
+                "time": "2021-05-21 12:27:52.953517"
+            },
+            "845258180618485780": {
+                "content": "ksk kan",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 13:14:14.485720"
+            },
+            "845288942453784586": {
+                "content": "det \u00e4r fredag",
+                "author_name": "nonmystisk",
+                "author_discriminator": "4472",
+                "time": "2021-05-21 15:16:28.674933"
+            },
+            "845288966998589450": {
+                "content": "vi gamear tycker jag",
+                "author_name": "nonmystisk",
+                "author_discriminator": "4472",
+                "time": "2021-05-21 15:16:34.524825"
+            },
+            "845288970342629417": {
+                "content": ":D",
+                "author_name": "nonmystisk",
+                "author_discriminator": "4472",
+                "time": "2021-05-21 15:16:35.416304"
+            },
+            "845289788751740939": {
+                "content": "yees",
+                "author_name": "Vaalei",
+                "author_discriminator": "1598",
+                "time": "2021-05-21 15:19:50.482744"
+            },
+            "845291398839140352": {
+                "content": "Then it's settled. We play today",
+                "author_name": "Kain Pathos Crow",
+                "author_discriminator": "3417",
+                "time": "2021-05-21 15:26:14.334292"
+            },
+            "845299868368240660": {
+                "content": "os\u00e4ker p\u00e5 ifall jag kan",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 15:59:53.648028"
+            },
+            "845299891345162262": {
+                "content": "men \u00e4r p\u00e5 ifall jag kan",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 15:59:59.194063"
+            },
+            "845299927634542594": {
+                "content": "is\u00e5fall typ 8-9",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 16:00:07.843869"
+            },
+            "845299960973885450": {
+                "content": "d\u00e5 borde jag kunna",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 16:00:15.698346"
+            },
+            "845300406170943517": {
+                "content": "typ firbart allts\u00e5",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 16:02:01.839028"
+            },
+            "845300479613468672": {
+                "content": "(blir nog st\u00e4dning som blir firandet dock)",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 16:02:19.363584"
+            },
+            "845357826960261141": {
+                "content": "okey me sit wait",
+                "author_name": "nonmystisk",
+                "author_discriminator": "4472",
+                "time": "2021-05-21 19:50:12.098394"
+            },
+            "845357835273502780": {
+                "content": ":D",
+                "author_name": "nonmystisk",
+                "author_discriminator": "4472",
+                "time": "2021-05-21 19:50:14.001679"
+            },
+            "845359623459569684": {
+                "content": "Ska \u00e4ta f\u00e4rdigt",
+                "author_name": "Vaalei",
+                "author_discriminator": "1598",
+                "time": "2021-05-21 19:57:20.334523"
+            },
+            "845361783115219015": {
+                "content": "kan om typ 10",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 20:05:55.249951"
+            },
+            "845365869449576469": {
+                "content": "<@!283626737818927104>, we need your speed",
+                "author_name": "Kain Pathos Crow",
+                "author_discriminator": "3417",
+                "time": "2021-05-21 20:22:09.536315"
+            },
+            "845369368799477790": {
+                "content": "https://roll20.net/compendium/dnd5e/Young%20Black%20Dragon#content",
+                "author_name": "nonmystisk",
+                "author_discriminator": "4472",
+                "time": "2021-05-21 20:36:03.823282"
+            },
+            "845369685821227048": {
+                "content": "Qi Disconnect Disorder",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 20:37:19.395721"
+            },
+            "845373909410381882": {
+                "content": "",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 20:54:06.438796"
             }
         },
-        "802388086365093918": {
-            "845237835559993344": {
-                "content": ",,,",
-                "author_name": "xfazze",
-                "author_discriminator": "1854",
-<<<<<<< HEAD
-                "time": "2021-05-21 11:53:23.841468"
-=======
-                "time": "2021-05-21 11:53:22.787422"
->>>>>>> 77e5920f414f705f202b5d05b37ae2aa834f0326
+        "748191427011411969": {
+            "845289809319690240": {
+                "content": "abbebabbe",
+                "author_name": "Vaalei",
+                "author_discriminator": "1598",
+                "time": "2021-05-21 15:19:55.363402"
+            },
+            "845289837040238602": {
+                "content": "\u00e4lskling",
+                "author_name": "Vaalei",
+                "author_discriminator": "1598",
+                "time": "2021-05-21 15:20:01.976614"
+            },
+            "845289851103870977": {
+                "content": "jag har ett f\u00f6rslag",
+                "author_name": "Vaalei",
+                "author_discriminator": "1598",
+                "time": "2021-05-21 15:20:05.396221"
+            },
+            "845292579594960916": {
+                "content": "ok? (dock inte \u00e4lskling)",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 15:30:55.872952"
+            },
+            "845292827318812692": {
+                "content": "Blasters, var lite av ett fiasko",
+                "author_name": "Vaalei",
+                "author_discriminator": "1598",
+                "time": "2021-05-21 15:31:54.898849"
+            },
+            "845292917147828284": {
+                "content": "S\u00e5 jag vill byta",
+                "author_name": "Vaalei",
+                "author_discriminator": "1598",
+                "time": "2021-05-21 15:32:16.316132"
+            },
+            "845292978230394880": {
+                "content": "sure",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 15:32:30.876218"
+            },
+            "845293411841212456": {
+                "content": "BIG LEEK",
+                "author_name": "Vaalei",
+                "author_discriminator": "1598",
+                "time": "2021-05-21 15:34:14.271940"
+            },
+            "845294491229093910": {
+                "content": "de blir en quarterstaff med reach o r\u00e4knas som en polearm",
+                "author_name": "Vaalei",
+                "author_discriminator": "1598",
+                "time": "2021-05-21 15:38:31.612670"
+            },
+            "845300341057912873": {
+                "content": "hittar inget om polearm",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 16:01:46.408428"
+            },
+            "845300342740484097": {
+                "content": "<@220607888459038721> is now  50 years old!",
+                "author_name": "MEE6",
+                "author_discriminator": "4876",
+                "time": "2021-05-21 16:01:46.769379"
+            },
+            "845302438134808616": {
+                "content": "aa men du f\u00f6rst\u00e5r",
+                "author_name": "Vaalei",
+                "author_discriminator": "1598",
+                "time": "2021-05-21 16:10:06.299208"
+            },
+            "845302449253908480": {
+                "content": "halberd osv",
+                "author_name": "Vaalei",
+                "author_discriminator": "1598",
+                "time": "2021-05-21 16:10:08.942913"
+            },
+            "845313394412093460": {
+                "content": "kollar p\u00e5 det senare",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 16:53:38.480875"
+            },
+            "845364514265890876": {
+                "content": "BIG LEEK\nyour leek can extend itself up to your stacking feet\nYou can also split your leek and two and both gain finesse and light properite (no damage debuff)\nYou can also use it as a versetile and when you do you uppgrade your die (d1->d2->d4->d6->d8->d10->d12->-d20->d20+d4->d20+d6 osv)",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 20:16:46.393940"
+            },
+            "845364727566565376": {
+                "content": "r\u00e4knas den som en quarterstaff? allts\u00e5 fighting pinne",
+                "author_name": "Vaalei",
+                "author_discriminator": "1598",
+                "time": "2021-05-21 20:17:37.260103"
+            },
+            "845364964885659688": {
+                "content": "skulle jag s\u00e4ga",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 20:18:33.839712"
+            },
+            "845364981754757162": {
+                "content": "okej",
+                "author_name": "Vaalei",
+                "author_discriminator": "1598",
+                "time": "2021-05-21 20:18:37.857656"
+            },
+            "845372412765143050": {
+                "content": "kan jag byta assassinate mot en feat?",
+                "author_name": "Vaalei",
+                "author_discriminator": "1598",
+                "time": "2021-05-21 20:48:09.578257"
+            },
+            "845372967859781655": {
+                "content": "sure",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 20:50:21.944630"
+            }
+        },
+        "795069368442290206": {
+            "845310158253850664": {
+                "content": "Abbe, skulle du kunna kolla p\u00e5 min id\u00e9 f\u00f6r **Reality Bender**?",
+                "author_name": "Kain Pathos Crow",
+                "author_discriminator": "3417",
+                "time": "2021-05-21 16:40:46.920117"
+            },
+            "845313335804821594": {
+                "content": "senare",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 16:53:24.507383"
+            },
+            "845364755798949958": {
+                "content": "sure",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 20:17:43.984392"
+            },
+            "845364828155674666": {
+                "content": "You gain Twisted Actions equal to {max(floor((intelligenceMod+wisdomMod+charismaMod+proficiencyBonus)/3), 1)} (minimum of 1) per long rest.\n\ndock lite os\u00e4ker p\u00e5 den biten",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 20:18:01.323770"
+            },
+            "845364858680639539": {
+                "content": "eller aha var inget",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 20:18:08.523791"
+            },
+            "845364991707316264": {
+                "content": "Vill att den ska vara beroende p\u00e5 mina mentala stats, dock visste jag inte vilken s\u00e5 jag bara valde alla",
+                "author_name": "Kain Pathos Crow",
+                "author_discriminator": "3417",
+                "time": "2021-05-21 20:18:40.227904"
+            },
+            "845365146745569300": {
+                "content": "hmmm",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 20:19:17.213280"
+            },
+            "845365354946494545": {
+                "content": "((wizmod+intmod+probonus)/3)+1 skulle jag nog s\u00e4ga",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 20:20:06.916690"
+            },
+            "845365522248761354": {
+                "content": "max floor \u00e4r redan grund regel i dnd s\u00e5",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 20:20:46.725660"
+            }
+        },
+        "748189470322458705": {
+            "845367903644942336": {
+                "content": "!d22",
+                "author_name": "Kain Pathos Crow",
+                "author_discriminator": "3417",
+                "time": "2021-05-21 20:30:14.495672"
+            },
+            "845367904254165033": {
+                "content": "```Markdown\n# 2\nDetails:[d22 (2)]\n```",
+                "author_name": "DiceParser",
+                "author_discriminator": "0764",
+                "time": "2021-05-21 20:30:14.762755"
+            },
+            "845367926479126538": {
+                "content": "!d2",
+                "author_name": "Kain Pathos Crow",
+                "author_discriminator": "3417",
+                "time": "2021-05-21 20:30:19.934109"
+            },
+            "845367927196745779": {
+                "content": "```Markdown\n# 2\nDetails:[d2 (2)]\n```",
+                "author_name": "DiceParser",
+                "author_discriminator": "0764",
+                "time": "2021-05-21 20:30:20.152758"
+            },
+            "845369547032887296": {
+                "content": "!d103",
+                "author_name": "Kain Pathos Crow",
+                "author_discriminator": "3417",
+                "time": "2021-05-21 20:36:46.301735"
+            },
+            "845369547841863734": {
+                "content": "```Markdown\n# 103\nDetails:[d103 (103)]\n```",
+                "author_name": "DiceParser",
+                "author_discriminator": "0764",
+                "time": "2021-05-21 20:36:46.605856"
+            }
+        },
+        "748191357306404976": {
+            "845369221244256276": {
+                "content": "har du kommit p\u00e5?",
+                "author_name": "nonmystisk",
+                "author_discriminator": "4472",
+                "time": "2021-05-21 20:35:28.818412"
+            },
+            "845369880848498719": {
+                "content": "nope inte t\u00e4nkt p\u00e5 det",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 20:38:05.964117"
+            },
+            "845370045289857034": {
+                "content": "sadge",
+                "author_name": "nonmystisk",
+                "author_discriminator": "4472",
+                "time": "2021-05-21 20:38:45.122425"
+            },
+            "845371777558511656": {
+                "content": "skylldig, 140 points ville",
+                "author_name": "nonmystisk",
+                "author_discriminator": "4472",
+                "time": "2021-05-21 20:45:38.108612"
+            },
+            "845372113916919828": {
+                "content": "jag vill flippa coin",
+                "author_name": "nonmystisk",
+                "author_discriminator": "4472",
+                "time": "2021-05-21 20:46:58.309097"
+            },
+            "845372146535366686": {
+                "content": "f\u00f6r mitt achivment",
+                "author_name": "nonmystisk",
+                "author_discriminator": "4472",
+                "time": "2021-05-21 20:47:06.083734"
+            },
+            "845372157336223744": {
+                "content": "you know?",
+                "author_name": "nonmystisk",
+                "author_discriminator": "4472",
+                "time": "2021-05-21 20:47:08.644508"
+            },
+            "845372378225573898": {
+                "content": "okey jag ska rulla d2 vilken \u00e4r heads vilken \u00e4r tails?",
+                "author_name": "nonmystisk",
+                "author_discriminator": "4472",
+                "time": "2021-05-21 20:48:01.314459"
+            },
+            "845372418528247829": {
+                "content": "heads 1\ntails 2",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 20:48:10.924782"
+            },
+            "845372497267261485": {
+                "content": "okey p\u00e5 charisma heads",
+                "author_name": "nonmystisk",
+                "author_discriminator": "4472",
+                "time": "2021-05-21 20:48:29.714922"
+            },
+            "845372503626743819": {
+                "content": "!d2",
+                "author_name": "nonmystisk",
+                "author_discriminator": "4472",
+                "time": "2021-05-21 20:48:31.289313"
+            },
+            "845372504738234448": {
+                "content": "```Markdown\n# 2\nDetails:[d2 (2)]\n```",
+                "author_name": "DiceParser",
+                "author_discriminator": "0764",
+                "time": "2021-05-21 20:48:31.466348"
+            },
+            "845372581066309663": {
+                "content": "(forts\u00e4tter tills det antligen g\u00e5r \u00e5t helvete eller jag lyckas",
+                "author_name": "nonmystisk",
+                "author_discriminator": "4472",
+                "time": "2021-05-21 20:48:49.720009"
+            },
+            "845372586950262844": {
+                "content": ")",
+                "author_name": "nonmystisk",
+                "author_discriminator": "4472",
+                "time": "2021-05-21 20:48:51.080833"
+            },
+            "845372603744649236": {
+                "content": "heads p\u00e5 charisma",
+                "author_name": "nonmystisk",
+                "author_discriminator": "4472",
+                "time": "2021-05-21 20:48:55.101642"
+            },
+            "845372686322368594": {
+                "content": "cha 10",
+                "author_name": "nonmystisk",
+                "author_discriminator": "4472",
+                "time": "2021-05-21 20:49:14.845090"
+            },
+            "845372692336607232": {
+                "content": "!d2",
+                "author_name": "nonmystisk",
+                "author_discriminator": "4472",
+                "time": "2021-05-21 20:49:16.223385"
+            },
+            "845372693254897714": {
+                "content": "```Markdown\n# 2\nDetails:[d2 (2)]\n```",
+                "author_name": "DiceParser",
+                "author_discriminator": "0764",
+                "time": "2021-05-21 20:49:16.433544"
+            },
+            "845372710422708316": {
+                "content": "cha 5",
+                "author_name": "nonmystisk",
+                "author_discriminator": "4472",
+                "time": "2021-05-21 20:49:20.579261"
+            },
+            "845372716135743529": {
+                "content": "!d2",
+                "author_name": "nonmystisk",
+                "author_discriminator": "4472",
+                "time": "2021-05-21 20:49:21.884422"
+            },
+            "845372716986663003": {
+                "content": "```Markdown\n# 1\nDetails:[d2 (1)]\n```",
+                "author_name": "DiceParser",
+                "author_discriminator": "0764",
+                "time": "2021-05-21 20:49:22.077694"
+            },
+            "845372792924274698": {
+                "content": "du beh\u00f6ver bara 5st till",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 20:49:40.189566"
+            },
+            "845372896549273670": {
+                "content": "!d2",
+                "author_name": "nonmystisk",
+                "author_discriminator": "4472",
+                "time": "2021-05-21 20:50:04.902311"
+            },
+            "845372897349337089": {
+                "content": "```Markdown\n# 1\nDetails:[d2 (1)]\n```",
+                "author_name": "DiceParser",
+                "author_discriminator": "0764",
+                "time": "2021-05-21 20:50:05.126531"
+            },
+            "845372904815460362": {
+                "content": "!d2",
+                "author_name": "nonmystisk",
+                "author_discriminator": "4472",
+                "time": "2021-05-21 20:50:06.872007"
+            },
+            "845372905566371881": {
+                "content": "```Markdown\n# 1\nDetails:[d2 (1)]\n```",
+                "author_name": "DiceParser",
+                "author_discriminator": "0764",
+                "time": "2021-05-21 20:50:07.123268"
+            },
+            "845372912683974666": {
+                "content": "!d2",
+                "author_name": "nonmystisk",
+                "author_discriminator": "4472",
+                "time": "2021-05-21 20:50:08.777028"
+            },
+            "845372913754177597": {
+                "content": "```Markdown\n# 2\nDetails:[d2 (2)]\n```",
+                "author_name": "DiceParser",
+                "author_discriminator": "0764",
+                "time": "2021-05-21 20:50:08.991630"
+            },
+            "845373015646928928": {
+                "content": "f\u00e5r jag inte slippa mer f\u00f6r N\u00c5GON stat eller bara cha?",
+                "author_name": "nonmystisk",
+                "author_discriminator": "4472",
+                "time": "2021-05-21 20:50:33.378284"
+            },
+            "845373031856734228": {
+                "content": "<@!220607888459038721>",
+                "author_name": "nonmystisk",
+                "author_discriminator": "4472",
+                "time": "2021-05-21 20:50:37.154823"
+            },
+            "845373228746801172": {
+                "content": "nope",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 20:51:24.101941"
+            }
+        },
+        "699330715845787828": {
+            "845369749775974434": {
+                "content": "You have advantage on physical skills made with just the right side of the body, disadvantage on all other attacks and skill checks.",
+                "author_name": "Trockeltum",
+                "author_discriminator": "5293",
+                "time": "2021-05-21 20:37:34.713928"
             }
         }
     }

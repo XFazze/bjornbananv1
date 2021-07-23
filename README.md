@@ -1,6 +1,8 @@
 # discordbot
 This is for the bot Björnbanan.
-It is a discordbot with multiple features but mainly playing Djungeltrubbaduren:
+The bot helps manage discord servers.
+
+Working towards becoming a bot all in one.
 
 
 Main bot:
@@ -15,14 +17,6 @@ qutoes
 Song bot:
 .plays music
 
-
-TODO:
-- clean out features
-- make commands short(1 or 2 letters)
-- move files out 
-- enable/ disable commands wtf?
-
-
 commands
 ex and dx for enable and disable x:
 d - deleteing channels
@@ -34,7 +28,7 @@ b - bettervc
 r - reaction roles
 c - clean reaction roles
 t - make ticket
-d - deleted messages
+d - deleted messages (a lot nmore)
 e - edited messages
 g - clear chat
 s - spamming

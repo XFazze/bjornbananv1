@@ -1,11 +1,14 @@
 import json
 import discord
 from discord.ext import commands
-from codemy import code_ex
+
+with open('/tmp/discordbot/secrets.txt', 'r') as f:
+    secrets = f.read()
+    secrets = secrets.split("\n")
 
 
 async def determine_prefix(bot, message):
-    prefixes = json.load(open('management/prefixes.json', 'r'))
+    prefixes = json.load(open('/tmp/discordbot/management/prefixes.json', 'r'))
     guild = message.guild
     if guild:
         return prefixes.get(str(guild.id), bot_prefix)
@@ -32,4 +35,4 @@ async def on_ready():
     print("Logged in as: " + bot.user.name)
     await bot.change_presence(activity=discord.Game(name="you | fhelp"))
 
-bot.run(code_ex)
+bot.run(secrets[1])

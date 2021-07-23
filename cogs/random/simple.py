@@ -78,9 +78,9 @@ class Base(commands.Cog):
             return
         try:
             prefix = msg.split(" ")[1]
-            prefixes = json.load(open('prefixes.json', 'r'))
+            prefixes = json.load(open('/tmp/discordbot/prefixes.json', 'r'))
             prefixes[str(message.guild.id)] = prefix
-            json.dump(prefixes, open('prefixes.json', 'w'))
+            json.dump(prefixes, open('/tmp/discordbot/prefixes.json', 'w'))
             print("new preficx", prefix)
         except:
             await message.channel.send('"You failed. "gsetprefix prefix"')

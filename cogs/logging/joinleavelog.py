@@ -11,7 +11,7 @@ class Base(commands.Cog):
     
     @commands.Cog.listener()
     async def on_member_join(self, member):
-        filename = '/home/pi/discordbot/logs/joinleave_logs/' + \
+        filename = '/tmp/discordbot/logs/joinleave_logs/' + \
             str(math.floor(time.time()/86400))+'.txt'
         try:
             with open(filename, 'a') as f:
@@ -22,7 +22,7 @@ class Base(commands.Cog):
 
     @commands.Cog.listener()
     async def on_member_remove(self, member):
-        filename = '/home/pi/discordbot/logs/joinleave_logs/' + \
+        filename = '/tmp/discordbot/logs/joinleave_logs/' + \
             str(math.floor(time.time()/86400))+'.txt'
         try:
             with open(filename, 'a') as f:

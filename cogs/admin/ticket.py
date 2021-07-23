@@ -47,7 +47,7 @@ class Base(commands.Cog):
         guild = self.bot.get_guild(payload.guild_id)
         if message.author == guild.get_member(self.bot.user.id) and payload.member != guild.get_member(self.bot.user.id) and channel.category_id == 808279224485806110:
             bigmessage = []
-            file = "/home/pi/discordbot/tickets/"+channel.name+".txt"
+            file = "/tmp/discordbot/tickets/"+channel.name+".txt"
             with open(file, "w+") as f:
                 newhistory = []
                 async for message in channel.history(limit=20000):

@@ -17,7 +17,7 @@ class Base(commands.Cog):
 
     @tasks.loop(seconds=15)
     async def all_xp(self):
-        with open('/home/pi/discordbot/tc_logs.txt', 'r') as tc_logs:
+        with open('/tmp/discordbot/tc_logs.txt', 'r') as tc_logs:
             tc_log_content = tc_logs.readlines()
             tc_formated = {}
             lasttime = time.time()-15

@@ -12,7 +12,7 @@ class Base(commands.Cog):
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_messages=True)
     async def ed(self, ctx):
-        with open('/home/pi/discordbot/management/deletingchannel.json', 'r+') as f:
+        with open('/tmp/discordbot/management/deletingchannel.json', 'r+') as f:
             deletingchannel = json.load(f)
             c_id = ctx.channel.id
             if c_id in deletingchannel:
@@ -20,26 +20,26 @@ class Base(commands.Cog):
             else:
                 deletingchannel.append(c_id)
                 await ctx.send("Added channel to deletingchannel")
-                with open('/home/pi/discordbot/management/deletingchannel.json', 'w') as file:
+                with open('/tmp/discordbot/management/deletingchannel.json', 'w') as file:
                     json.dump(deletingchannel, file, indent=4)
 
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_messages=True)
     async def dd(self, ctx):
-        with open('/home/pi/discordbot/management/deletingchannel.json', 'r+') as f:
+        with open('/tmp/discordbot/management/deletingchannel.json', 'r+') as f:
             deletingchannel = json.load(f)
             c_id = ctx.channel.id
             if c_id in deletingchannel:
                 deletingchannel.remove(c_id)
                 await ctx.send("removed channel from deletingchannel")
-                with open('/home/pi/discordbot/management/deletingchannel.json', 'w') as file:
+                with open('/tmp/discordbot/management/deletingchannel.json', 'w') as file:
                     json.dump(deletingchannel, file, indent=4)
             else:
                 await ctx.send("This channel isnta a deletingchannel channel")
 
     @tasks.loop(seconds=10)
     async def cleanse(self):
-        with open('/home/pi/discordbot/management/deletingchannel.json', 'r') as f:
+        with open('/tmp/discordbot/management/deletingchannel.json', 'r') as f:
             deletingchannel = json.load(f)
             if deletingchannel:
                 for channel in deletingchannel:

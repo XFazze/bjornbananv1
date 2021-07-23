@@ -11,7 +11,7 @@ class Base(commands.Cog):
 
     @commands.command(pass_context=True)
     async def e(self, ctx):
-        with open('/home/pi/discordbot/logs/delete_logs/edit_mega.json', 'r') as f:
+        with open('/tmp/discordbot/logs/delete_logs/edit_mega.json', 'r') as f:
             delete_logs = json.load(f)
             sending_message = 'Edited messages in this channel\n'
             for message in delete_logs[str(ctx.guild.id)][str(ctx.channel.id)]:
@@ -22,9 +22,9 @@ class Base(commands.Cog):
 
     @commands.Cog.listener()
     async def on_raw_message_edit(self, ctx):
-        filepath = '/home/pi/discordbot/logs/message_logs/'
+        filepath = '/tmp/discordbot/logs/message_logs/'
         for file in os.listdir(filepath):
-            filename = "/home/pi/discordbot/logs/message_logs/" + file
+            filename = "/tmp/discordbot/logs/message_logs/" + file
             with open(filename, 'r') as f:
                 messagelog = json.load(f)
                 try:
@@ -38,7 +38,7 @@ class Base(commands.Cog):
                 pass
         except:
             return
-        with open('/home/pi/discordbot/logs/delete_logs/edit_mega.json', 'r') as f:
+        with open('/tmp/discordbot/logs/delete_logs/edit_mega.json', 'r') as f:
             delete_logs = json.load(f)
             if str(ctx.data['guild_id']) not in delete_logs.keys():
                 print("created guild dict")
@@ -50,7 +50,7 @@ class Base(commands.Cog):
 
             delete_logs[str(ctx.data['guild_id'])][str(
                 ctx.channel_id)][str(ctx.message_id)] = message
-            with open('/home/pi/discordbot/logs/delete_logs/edit_mega.json', 'w') as file:
+            with open('/tmp/discordbot/logs/delete_logs/edit_mega.json', 'w') as file:
                 json.dump(delete_logs, file, indent=4)
         pass
 

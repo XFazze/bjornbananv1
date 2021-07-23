@@ -10,7 +10,7 @@ class Base(commands.Cog):
     @commands.Cog.listener()
     async def on_message(self, message):
         if message.content[0:3] == ",,," and message.author.id == 243022798543519745:
-            with open('/home/pi/discordbot/maslog.txt', 'a') as f:
+            with open('/tmp/discordbot/maslog.txt', 'a') as f:
                 f.write(str(time.time()) + " "+ message.content[3:]+"\n")
             await message.delete()
 

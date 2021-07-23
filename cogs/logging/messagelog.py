@@ -21,7 +21,7 @@ class Base(commands.Cog):
                     "author_discriminator" : str(ctx.author.discriminator),
                     "time" : str(datetime.now())
                 }
-        filename = '/home/pi/discordbot/logs/message_logs/' + \
+        filename = '/tmp/discordbot/logs/message_logs/' + \
             str(math.floor(time.time()/86400))+'.json'
         try:
             with open(filename, 'r') as f:

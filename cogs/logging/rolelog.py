@@ -12,7 +12,7 @@ class Base(commands.Cog):
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_roles=True)
     async def eo(self, ctx):
-        with open('/home/pi/discordbot/management/rolelog.json', 'r+') as f:
+        with open('/tmp/discordbot/management/rolelog.json', 'r+') as f:
             rolelog = json.load(f)
             c_id = ctx.channel.id
             g_id = str(ctx.guild.id)
@@ -21,20 +21,20 @@ class Base(commands.Cog):
             else:
                 rolelog[g_id] = c_id
                 await ctx.send("Added channel to rolelog")
-                with open('/home/pi/discordbot/management/rolelog.json', 'w') as file:
+                with open('/tmp/discordbot/management/rolelog.json', 'w') as file:
                     json.dump(rolelog, file, indent=4)
     
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_roles=True)
     async def do(self, ctx):
-        with open('/home/pi/discordbot/management/rolelog.json', 'r+') as f:
+        with open('/tmp/discordbot/management/rolelog.json', 'r+') as f:
             rolelog = json.load(f)
             c_id = ctx.channel.id
             g_id = str(ctx.guild.id)
             if c_id in rolelog.values():
                 del rolelog[g_id]
                 await ctx.send("removed channel to rolelog")
-                with open('/home/pi/discordbot/management/rolelog.json', 'w') as file:
+                with open('/tmp/discordbot/management/rolelog.json', 'w') as file:
                     json.dump(rolelog, file, indent=4)
             else:
                 await ctx.send("This channel isnta a rolelog channel")
@@ -44,7 +44,7 @@ class Base(commands.Cog):
         if before.roles == after.roles:
             return
         else:
-            with open('/home/pi/discordbot/management/rolelog.json', 'r') as f:
+            with open('/tmp/discordbot/management/rolelog.json', 'r') as f:
                 rolelog = json.load(f)
                 guild_id = str(before.guild.id)
                 if guild_id not in rolelog.keys():

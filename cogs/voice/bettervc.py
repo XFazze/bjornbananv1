@@ -13,32 +13,32 @@ class Base(commands.Cog):
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_roles=True)
     async def eb(self, ctx):
-        with open('/home/pi/discordbot/management/bettervc.json', 'r+') as f:
+        with open('/tmp/discordbot/management/bettervc.json', 'r+') as f:
             bettervc = json.load(f)
             if str(ctx.author.voice.channel.guild.id) in bettervc.keys():
                 await ctx.send("category already decided, remove if changing")
             else:
                 await ctx.send("adding category to bettervc")
                 bettervc[str(ctx.author.voice.channel.guild.id)] = ctx.author.voice.channel.category_id
-                with open('/home/pi/discordbot/management/bettervc.json', 'w') as file:
+                with open('/tmp/discordbot/management/bettervc.json', 'w') as file:
                     json.dump(bettervc, file, indent=4)
     
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_roles=True)
     async def db(self, ctx):
-        with open('/home/pi/discordbot/management/bettervc.json', 'r+') as f:
+        with open('/tmp/discordbot/management/bettervc.json', 'r+') as f:
             bettervc = json.load(f)
             if str(ctx.author.voice.channel.guild.id) in bettervc.keys():
                 await ctx.send("removing category from bettervc")
                 del bettervc[str(ctx.author.voice.channel.guild.id)]
-                with open('/home/pi/discordbot/management/bettervc.json', 'w') as file:
+                with open('/tmp/discordbot/management/bettervc.json', 'w') as file:
                     json.dump(bettervc, file, indent=4)
             else:
                 await ctx.send("category isn't in bettervc")
     
     @tasks.loop(seconds=10)
     async def hidechannels(self):
-        with open('/home/pi/discordbot/management/bettervc.json', 'r+') as f:
+        with open('/tmp/discordbot/management/bettervc.json', 'r+') as f:
             bettervc = json.load(f)
             for guild_id in bettervc.keys():
                 guild = self.bot.get_guild(int(guild_id))
@@ -53,7 +53,7 @@ class Base(commands.Cog):
 
     @commands.Cog.listener()
     async def on_voice_state_update(self, member, before, after):
-        with open('/home/pi/discordbot/management/bettervc.json', 'r+') as f:
+        with open('/tmp/discordbot/management/bettervc.json', 'r+') as f:
             bettervc = json.load(f)
             try:
                 if after.channel.category_id in bettervc.values():

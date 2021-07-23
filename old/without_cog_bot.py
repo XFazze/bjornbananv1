@@ -64,7 +64,7 @@ async def play_djungel(ctx):
     log(ctx)
     channel = ctx.message.author.voice.channel
     voice = get(bot.voice_clients, guild=ctx.guild)
-    path = r"/home/pi/discordbot/songs/djungeltrubbaduren.mp3"
+    path = r"/tmp/discordbot/songs/djungeltrubbaduren.mp3"
     if voice and voice.is_connected():
         await voice.move_to(channel)
     else:
@@ -81,7 +81,7 @@ async def play_cat(ctx):
     log(ctx)
     channel = ctx.message.author.voice.channel
     voice = get(bot.voice_clients, guild=ctx.guild)
-    path = r"/home/pi/discordbot/songs/erika.mp3"
+    path = r"/tmp/discordbot/songs/erika.mp3"
     await channel.connect()
     await ctx.send("God has entered the chat")
     vc = get(bot.voice_clients, guild=ctx.guild)
@@ -142,7 +142,7 @@ async def create_channels(ctx):
 @bot.command(pass_context=True, aliases=['obi', '.quote'])
 async def quote_text(ctx):
     log(ctx)
-    quote_list = json.load(open('/home/pi/discordbot/quote/quote.json'))
+    quote_list = json.load(open('/tmp/discordbot/quote/quote.json'))
     quote_nr = random.randint(0, len(quote_list)-1)
     message = quote_list[quote_nr]["quote"] + \
         " - "+quote_list[quote_nr]["author"] + "_ _"
@@ -156,7 +156,7 @@ async def quote_text(ctx):
 @bot.command(pass_context=True, aliases=['obiv', '.quote_voice'])
 async def quote_voice(ctx):
     log(ctx)
-    quote_list = json.load(open('/home/pi/discordbot/quote/quote.json'))
+    quote_list = json.load(open('/tmp/discordbot/quote/quote.json'))
     quote_nr = random.randint(0, len(quote_list)-1)
     message = "at your service"+"_ _"
     sent = await ctx.send(message)
@@ -164,7 +164,7 @@ async def quote_voice(ctx):
 
     channel = ctx.message.author.voice.channel
     voice = get(bot.voice_clients, guild=ctx.guild)
-    path = r"/home/pi/discordbot/quote/voice/"+quote+".mp3"
+    path = r"/tmp/discordbot/quote/voice/"+quote+".mp3"
     if voice and voice.is_connected():
         await voice.move_to(channel)
     else:
@@ -188,20 +188,20 @@ async def quote_add(ctx):
         print("tried to add too long")
         await ctx.send("Tha fuck, u trying to add a bible bitch??")
     author = ctx.message.author.name
-    quote_list = json.load(open('/home/pi/discordbot/quote/quote.json'))
+    quote_list = json.load(open('/tmp/discordbot/quote/quote.json'))
     for quote_storage in quote_list:
         if quote_storage["quote"] == quote:
             await ctx.send("U sleezy copyrighter")
             return
     new_quote = {"quote": quote, "author": author, "rating": 1}
     quote_list.append(new_quote)
-    with open('/home/pi/discordbot/quote/quote.json', 'w') as file:
+    with open('/tmp/discordbot/quote/quote.json', 'w') as file:
         json.dump(quote_list, file, indent=4)
-    with open('/home/pi/discordbot/quote/all_quote.json', 'w') as file:
+    with open('/tmp/discordbot/quote/all_quote.json', 'w') as file:
         json.dump(quote_list, file, indent=4)
 
     voice = gTTS(quote)
-    filename = "/home/pi/discordbot/quote/voice/"+quote_org[1]+".mp3"
+    filename = "/tmp/discordbot/quote/voice/"+quote_org[1]+".mp3"
     voice.save(filename)
 
     message = "Added " + quote + " to the quote mind from " + author
@@ -210,7 +210,7 @@ async def quote_add(ctx):
 
 def change(quote, amount):
     print("quote change", quote, amount)
-    file = json.load(open('/home/pi/discordbot/quote/quote.json', 'r'))
+    file = json.load(open('/tmp/discordbot/quote/quote.json', 'r'))
     for quote_file in file:
         if quote_file["quote"] == quote:
             print("found quote")
@@ -219,7 +219,7 @@ def change(quote, amount):
                 print("remove gobi")
                 file.remove(quote_file)
             break
-    with open('/home/pi/discordbot/quote/quote.json', 'w') as place:
+    with open('/tmp/discordbot/quote/quote.json', 'w') as place:
         json.dump(file, place, indent=4)
 
 

@@ -13,7 +13,7 @@ class Base(commands.Cog):
     @commands.has_permissions(manage_messages=True)
     async def ej(self, ctx):
         await ctx.message.delete()
-        with open('/home/pi/discordbot/management/joinleavemessage.json', 'r+') as f:
+        with open('/tmp/discordbot/management/joinleavemessage.json', 'r+') as f:
             joinleavemessage = json.load(f)
             if str(ctx.guild.id) in joinleavemessage.keys():
                 if ctx.channel.id in joinleavemessage[str(ctx.guild.id)]:
@@ -21,25 +21,25 @@ class Base(commands.Cog):
                 else:
                     joinleavemessage[str(ctx.guild.id)].append(ctx.channel.id)
                     await ctx.send("Added channel to joinleavemessage")
-                    with open('/home/pi/discordbot/management/joinleavemessage.json', 'w') as file:
+                    with open('/tmp/discordbot/management/joinleavemessage.json', 'w') as file:
                         json.dump(joinleavemessage, file, indent=4)
             else:
                 joinleavemessage[str(ctx.guild.id)] = [ctx.channel.id]
                 await ctx.send("Added channel to joinleavemessage")
-                with open('/home/pi/discordbot/management/joinleavemessage.json', 'w') as file:
+                with open('/tmp/discordbot/management/joinleavemessage.json', 'w') as file:
                     json.dump(joinleavemessage, file, indent=4)
 
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_messages=True)
     async def dj(self, ctx):
         await ctx.message.delete()
-        with open('/home/pi/discordbot/management/joinleavemessage.json', 'r+') as f:
+        with open('/tmp/discordbot/management/joinleavemessage.json', 'r+') as f:
             joinleavemessage = json.load(f)
             if str(ctx.guild.id) in  joinleavemessage.keys():
                 if ctx.channel.id in joinleavemessage[str(ctx.guild.id)]:
                     joinleavemessage[str(ctx.guild.id)].remove(ctx.channel.id)
                     await ctx.send("removed channel from joinleavemessage")
-                    with open('/home/pi/discordbot/management/joinleavemessage.json', 'w') as file:
+                    with open('/tmp/discordbot/management/joinleavemessage.json', 'w') as file:
                         json.dump(joinleavemessage, file, indent=4)
                     return
             await ctx.send("Channel not in joinleavemessage")
@@ -48,12 +48,12 @@ class Base(commands.Cog):
         
     @commands.Cog.listener()
     async def on_member_join(self, member):
-        with open('/home/pi/discordbot/management/joinleavemessage.json', 'r+') as f:
+        with open('/tmp/discordbot/management/joinleavemessage.json', 'r+') as f:
             joinleavemessage = json.load(f)
-            directory = os.fsencode('/home/pi/discordbot/logs/joinleave_logs/')
+            directory = os.fsencode('/tmp/discordbot/logs/joinleave_logs/')
             times = 0
             for file in os.listdir(directory):
-                filename = '/home/pi/discordbot/logs/joinleave_logs/'+os.fsdecode(file)
+                filename = '/tmp/discordbot/logs/joinleave_logs/'+os.fsdecode(file)
                 with open(filename, 'r') as file:
                     filelines = file.readlines()
                     for line in filelines:
@@ -69,12 +69,12 @@ class Base(commands.Cog):
 
     @commands.Cog.listener()
     async def on_member_remove(self, member):
-        with open('/home/pi/discordbot/management/joinleavemessage.json', 'r+') as f:
+        with open('/tmp/discordbot/management/joinleavemessage.json', 'r+') as f:
             joinleavemessage = json.load(f)
-            directory = os.fsencode('/home/pi/discordbot/logs/joinleave_logs/')
+            directory = os.fsencode('/tmp/discordbot/logs/joinleave_logs/')
             times = 0
             for file in os.listdir(directory):
-                filename = '/home/pi/discordbot/logs/joinleave_logs/'+os.fsdecode(file)
+                filename = '/tmp/discordbot/logs/joinleave_logs/'+os.fsdecode(file)
                 with open(filename, 'r') as file:
                     filelines = file.readlines()
                     for line in filelines:

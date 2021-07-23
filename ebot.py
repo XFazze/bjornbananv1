@@ -21,7 +21,7 @@ bot = commands.Bot(command_prefix=determine_prefix, intents=intents)
 bot.remove_command('help')
 
 
-extensions = ['cogs.logging.delete_log', 'cogs.logging.messagelog']
+extensions = ['cogs.logging.edit_log', 'cogs.logging.messagelog']
 
 
 

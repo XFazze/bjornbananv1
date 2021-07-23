@@ -345,11 +345,333 @@
                 "content": ",,,",
                 "author_name": "xfazze",
                 "author_discriminator": "1854",
-<<<<<<< HEAD
                 "time": "2021-05-21 11:53:23.841468"
-=======
-                "time": "2021-05-21 11:53:22.787422"
->>>>>>> 77e5920f414f705f202b5d05b37ae2aa834f0326
+            }
+        },
+        "858534501646598174": {
+            "867627019868962886": {
+                "content": "fd",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 06:40:01.451122"
+            },
+            "867627323201552404": {
+                "content": "fd",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 06:41:13.752719"
+            },
+            "867632885980856360": {
+                "content": "asdf",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 07:03:20.070786"
+            },
+            "867651564131188766": {
+                "content": "asdf saf",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:17:33.248767"
+            },
+            "867651590655180831": {
+                "content": "sdfasdfsdlkfjlasfksdj",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:17:39.586780"
+            },
+            "867651641150668830": {
+                "content": "3",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:17:51.614329"
+            },
+            "867651638943940618": {
+                "content": "2",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:17:51.086257"
+            },
+            "867651634371624980": {
+                "content": "1",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:17:50.007466"
+            },
+            "867651791390900225": {
+                "content": "3",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:18:27.479327"
+            },
+            "867651786495885322": {
+                "content": "1",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:18:26.272491"
+            },
+            "867651789167919104": {
+                "content": "2",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:18:26.903318"
+            },
+            "867656410530709504": {
+                "content": "fd list",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:36:48.726908"
+            },
+            "867656598481272872": {
+                "content": "fd list",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:37:33.540091"
+            },
+            "867656787465076766": {
+                "content": "fd list",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:38:18.633395"
+            },
+            "867656521966026773": {
+                "content": "fd list",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:37:15.299032"
+            },
+            "867656840024031266": {
+                "content": "fd list 2",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:38:31.145742"
+            },
+            "867658073685098566": {
+                "content": "fd list",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:43:25.257503"
+            },
+            "867651694590164992": {
+                "content": "fd 3",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:18:04.358390"
+            },
+            "867651822527971370": {
+                "content": "fd",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:18:34.874040"
+            },
+            "867651830778822676": {
+                "content": "fd 2",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:18:36.843130"
+            },
+            "867651839436914688": {
+                "content": "fd 1",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:18:38.889628"
+            },
+            "867658153880715274": {
+                "content": "fd list",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:43:44.396570"
+            },
+            "867658178149613599": {
+                "content": "f",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:43:50.261189"
+            },
+            "867658174399512627": {
+                "content": "sdf",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:43:49.356134"
+            },
+            "867659915967725588": {
+                "content": "h",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:50:44.491966"
+            },
+            "867659914137305089": {
+                "content": "g",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:50:44.157408"
+            },
+            "867659911365132289": {
+                "content": "d",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:50:43.463257"
+            },
+            "867659913031581747": {
+                "content": "f",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:50:43.874526"
+            },
+            "867659908459003904": {
+                "content": "a",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:50:42.701210"
+            },
+            "867659954180718612": {
+                "content": "y",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:50:53.647294"
+            },
+            "867659926336045092": {
+                "content": "q",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:50:46.963179"
+            },
+            "867659951208005642": {
+                "content": "we",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:50:52.896790"
+            },
+            "867659923575930910": {
+                "content": ";",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:50:46.325988"
+            },
+            "867659952247930880": {
+                "content": "r",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:50:53.147462"
+            },
+            "867659921474453504": {
+                "content": "l",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:50:45.822848"
+            },
+            "867659919474032651": {
+                "content": "jk",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:50:45.400075"
+            },
+            "867659910354305054": {
+                "content": "s",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:50:43.154427"
+            },
+            "867660049722638366": {
+                "content": "b",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:51:16.384585"
+            },
+            "867660045415350292": {
+                "content": "f",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:51:15.349602"
+            },
+            "867660040457420811": {
+                "content": "d",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:51:14.226157"
+            },
+            "867660038008078396": {
+                "content": "d",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:51:13.609893"
+            },
+            "867660043390418994": {
+                "content": "d",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:51:14.948682"
+            },
+            "867660032313524264": {
+                "content": "d",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:51:12.224539"
+            },
+            "867659953263214592": {
+                "content": "t",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:50:53.385696"
+            },
+            "867660035090022420": {
+                "content": "d",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:51:12.896781"
+            },
+            "867660052885798912": {
+                "content": "sd",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:51:17.144584"
+            },
+            "867660047479210004": {
+                "content": "g",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:51:15.856361"
+            },
+            "867660295979794454": {
+                "content": "",
+                "author_name": "Bj\u00f6rnbanan_experimental",
+                "author_discriminator": "4698",
+                "time": "2021-07-22 08:52:15.121910"
+            },
+            "867661678614413323": {
+                "content": "fd",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-22 08:57:44.806023"
+            },
+            "867661750278946816": {
+                "content": "",
+                "author_name": "Bj\u00f6rnbanan_experimental",
+                "author_discriminator": "4698",
+                "time": "2021-07-22 08:58:01.855404"
+            },
+            "868061308761808957": {
+                "content": "fdf",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-23 11:25:42.221249"
+            },
+            "868061307012808714": {
+                "content": "fsdf",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-23 11:25:41.752373"
+            },
+            "868061305020510259": {
+                "content": "sad",
+                "author_name": "mega",
+                "author_discriminator": "2222",
+                "time": "2021-07-23 11:25:41.370236"
+            },
+            "868062766102085682": {
+                "content": "**\u23e3 60,698** deposited, current bank balance is **\u23e3 94,577**.",
+                "author_name": "Dank Memer",
+                "author_discriminator": "5192",
+                "time": "2021-07-23 11:31:29.629033"
             }
         }
     }

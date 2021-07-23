@@ -20,7 +20,7 @@ class Base(commands.Cog):
             return
 
         guild_id = ctx.message.guild.id
-        with open('/home/pi/discordbot/management/joinrole.json', 'r+') as f:
+        with open('/tmp/discordbot/management/joinrole.json', 'r+') as f:
             joinrole = json.load(f)
             if str(guild_id) in joinrole.keys():
                 if role_id in joinrole[str(guild_id)]:
@@ -28,12 +28,12 @@ class Base(commands.Cog):
                 else:
                     joinrole[str(guild_id)].append(role_id)
                     await ctx.send("Added channel to joinrole")
-                    with open('/home/pi/discordbot/management/joinrole.json', 'w') as file:
+                    with open('/tmp/discordbot/management/joinrole.json', 'w') as file:
                         json.dump(joinrole, file, indent=4)
             else:
                 joinrole[int(guild_id)] = [role_id]
                 await ctx.send("Added channel to joinrole")
-                with open('/home/pi/discordbot/management/joinrole.json', 'w') as file:
+                with open('/tmp/discordbot/management/joinrole.json', 'w') as file:
                     json.dump(joinrole, file, indent=4)
 
     @commands.command(pass_context=True)
@@ -46,18 +46,18 @@ class Base(commands.Cog):
             return
 
         guild_id = ctx.message.guild.id
-        with open('/home/pi/discordbot/management/joinrole.json', 'r+') as f:
+        with open('/tmp/discordbot/management/joinrole.json', 'r+') as f:
             joinrole = json.load(f)
             if str(guild_id) in joinrole.keys():
                 print("exist")
                 if role_id in joinrole[str(guild_id)]:
                     if len(joinrole[str(guild_id)]) > 1:
                         joinrole[str(guild_id)].remove(role_id)
-                        with open('/home/pi/discordbot/management/joinrole.json', 'w') as file:
+                        with open('/tmp/discordbot/management/joinrole.json', 'w') as file:
                             json.dump(joinrole, file, indent=4)
                     else:
                         del joinrole[str(guild_id)]
-                        with open('/home/pi/discordbot/management/joinrole.json', 'w') as file:
+                        with open('/tmp/discordbot/management/joinrole.json', 'w') as file:
                             json.dump(joinrole, file, indent=4)
                     await ctx.send("This channel is removed")
                 else:
@@ -68,7 +68,7 @@ class Base(commands.Cog):
     @commands.Cog.listener()
     async def on_member_join(self, member):
         guild = member.guild
-        with open('/home/pi/discordbot/management/joinrole.json', 'r+') as f:
+        with open('/tmp/discordbot/management/joinrole.json', 'r+') as f:
             joinrole = json.load(f)
             if str(guild.id) in joinrole.keys():
                 for role_id in joinrole[str(guild.id)]:

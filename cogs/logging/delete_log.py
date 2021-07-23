@@ -19,7 +19,7 @@ class Base(commands.Cog):
         channel_id = str(ctx.channel.id)
         if len(message) == 1:
             embed = discord.Embed(title="Deleted message")
-            with open('/home/pi/discordbot/logs/delete_logs/delete_mega.json', 'r') as f:
+            with open('/tmp/discordbot/logs/delete_logs/delete_mega.json', 'r') as f:
                 delete_logs = json.load(f)
                 if guild_id in delete_logs.keys():
                     if channel_id in delete_logs[guild_id].keys():
@@ -61,7 +61,7 @@ class Base(commands.Cog):
                 except:
                     pass
 
-            with open('/home/pi/discordbot/logs/delete_logs/delete_mega.json', 'r') as f:
+            with open('/tmp/discordbot/logs/delete_logs/delete_mega.json', 'r') as f:
                 delete_logs = json.load(f)
                 if guild_id in delete_logs.keys():
                     temp_delete_logs = copy.deepcopy(delete_logs[guild_id])
@@ -163,7 +163,7 @@ class Base(commands.Cog):
                     ret_message = "There are no deleted messages"
 
     '''
-        with open('/home/pi/discordbot/logs/delete_logs/delete_mega.json', 'r') as f:
+        with open('/tmp/discordbot/logs/delete_logs/delete_mega.json', 'r') as f:
             delete_logs = json.load(f)
             sending_message = 'Deleted messages in this channel\n'
             for message in delete_logs[str(ctx.guild.id)][str(ctx.channel.id)]:
@@ -174,9 +174,9 @@ class Base(commands.Cog):
 
     @commands.Cog.listener()
     async def on_raw_message_delete(self, ctx):
-        filepath = '/home/pi/discordbot/logs/message_logs/'
+        filepath = '/tmp/discordbot/logs/message_logs/'
         for file in os.listdir(filepath):
-            filename = "/home/pi/discordbot/logs/message_logs/" + file
+            filename = "/tmp/discordbot/logs/message_logs/" + file
             with open(filename, 'r') as f:
                 messagelog = json.load(f)
                 try:
@@ -193,7 +193,7 @@ class Base(commands.Cog):
                 pass
         except:
             return
-        with open('/home/pi/discordbot/logs/delete_logs/delete_mega.json', 'r') as f:
+        with open('/tmp/discordbot/logs/delete_logs/delete_mega.json', 'r') as f:
             delete_logs = json.load(f)
             if str(ctx.guild_id) not in delete_logs.keys():
                 print("created guild dict")
@@ -204,7 +204,7 @@ class Base(commands.Cog):
 
             delete_logs[str(ctx.guild_id)][str(ctx.channel_id)
                                            ][str(ctx.message_id)] = message
-            with open('/home/pi/discordbot/logs/delete_logs/delete_mega.json', 'w') as file:
+            with open('/tmp/discordbot/logs/delete_logs/delete_mega.json', 'w') as file:
                 json.dump(delete_logs, file, indent=4)
 
 

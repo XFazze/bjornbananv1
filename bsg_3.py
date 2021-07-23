@@ -5,7 +5,7 @@ from codemy import code_m
 
 
 async def determine_prefix(bot, message):
-    prefixes = json.load(open('management/musicprefixes.json', 'r'))
+    prefixes = json.load(open('/tmp/discordbot/management/musicprefixes.json', 'r'))
     guild = message.guild
     if guild:
         return prefixes.get(str(guild.id), bot_prefix)

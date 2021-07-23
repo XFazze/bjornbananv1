@@ -12,16 +12,16 @@ class Base(commands.Cog):
 
     @commands.command(pass_context=True)
     async def ts(self, ctx):
-        with open('/home/pi/discordbot/management/enable.json', 'r+') as f:
+        with open('/tmp/discordbot/management/enable.json', 'r+') as f:
             enable = json.load(f)
             if "tcstats" in enable[str(ctx.guild.id)]:
                 await ctx.send("Command not allowed in this server")
                 return
 
-        directory = os.fsencode('/home/pi/discordbot/logs/tc_logs/')
+        directory = os.fsencode('/tmp/discordbot/logs/tc_logs/')
         bigfileline = []
         for file in os.listdir(directory):
-            filename = '/home/pi/discordbot/logs/tc_logs/'+os.fsdecode(file)
+            filename = '/tmp/discordbot/logs/tc_logs/'+os.fsdecode(file)
             with open(filename, 'r') as file:
                 filelines = file.readlines()
                 for line in filelines:

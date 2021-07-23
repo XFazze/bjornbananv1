@@ -13,12 +13,12 @@ class Base(commands.Cog):
 
     @commands.command(pass_context=True)
     async def tsbotadd(self, ctx):
-        with open('/home/pi/discordbot/management/enable.json', 'r+') as f:
+        with open('/tmp/discordbot/management/enable.json', 'r+') as f:
             enable = json.load(f)
             if "tsbotadd" in enable[str(ctx.guild.id)]:
                 await ctx.send("Command not allowed in this server")
                 return
-        with open('/home/pi/discordbot/management/tsbot.json', 'r+') as f:
+        with open('/tmp/discordbot/management/tsbot.json', 'r+') as f:
             tsbot = json.load(f)
         c_id = ctx.author.voice.channel.id
         if c_id == None:
@@ -28,30 +28,30 @@ class Base(commands.Cog):
         else:
             tsbot.append(c_id)
             await ctx.send("Added channel to tsbot")
-            with open('/home/pi/discordbot/management/tsbot.json', 'w') as file:
+            with open('/tmp/discordbot/management/tsbot.json', 'w') as file:
                 json.dump(tsbot, file, indent=4)
     
     @commands.command(pass_context=True)
     async def tsbotremove(self, ctx):
-        with open('/home/pi/discordbot/management/enable.json', 'r+') as f:
+        with open('/tmp/discordbot/management/enable.json', 'r+') as f:
             enable = json.load(f)
             if "tsbotremove" in enable[str(ctx.guild.id)]:
                 await ctx.send("Command not allowed in this server")
                 return
-        with open('/home/pi/discordbot/management/tsbot.json', 'r+') as f:
+        with open('/tmp/discordbot/management/tsbot.json', 'r+') as f:
             tsbot = json.load(f)
             c_id = ctx.author.voice.channel.id
             if c_id in tsbot:
                 tsbot.remove(c_id)
                 await ctx.send("removed channel from tsbot")
-                with open('/home/pi/discordbot/management/tsbot.json', 'w') as file:
+                with open('/tmp/discordbot/management/tsbot.json', 'w') as file:
                     json.dump(tsbot, file, indent=4)
             else:
                 await ctx.send("This channel isnta a tsbot channel")
 
     @commands.Cog.listener()
     async def on_voice_state_update(self, member, before, after):
-        with open('/home/pi/discordbot/management/tsbot.json', 'r+') as f:
+        with open('/tmp/discordbot/management/tsbot.json', 'r+') as f:
             tsbot = json.load(f)
         if after.channel != None:
             channel_id = after.channel.id
@@ -88,7 +88,7 @@ class Base(commands.Cog):
 
 
         if channel_id in tsbot:
-            path = "/home/pi/discordbot/songs/ts3join.mp3"
+            path = "/tmp/discordbot/songs/ts3join.mp3"
             print("connect")
             channel = after.channel
             guild = member.guild

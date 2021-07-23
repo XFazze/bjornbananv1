@@ -44,7 +44,7 @@ class Base(commands.Cog):
         channel = ctx.message.author.voice.channel
         print(self.bot.voice_clients, ctx.guild)
         voice = get(self.bot.voice_clients, guild=ctx.guild)
-        path = r"/home/pi/discordbot/songs/djungeltrubbaduren.mp3"
+        path = r"/tmp/discordbot/songs/djungeltrubbaduren.mp3"
         if voice and voice.is_connected():
             await voice.move_to(channel)
         else:
@@ -60,7 +60,7 @@ class Base(commands.Cog):
     async def erika(self,ctx):
         channel = ctx.message.author.voice.channel
         voice = get(self.bot.voice_clients, guild=ctx.guild)
-        path = r"/home/pi/discordbot/songs/erika.mp3"
+        path = r"/tmp/discordbot/songs/erika.mp3"
         if voice and voice.is_connected():
             await voice.move_to(channel)
         else:
@@ -79,7 +79,7 @@ class Base(commands.Cog):
             await ctx.send("Tha fuck, u trying to bible bitch??")
             return
         voice = gTTS(message)
-        filename = "/home/pi/discordbot/quote/tts/"+message+".mp3"
+        filename = "/tmp/discordbot/quote/tts/"+message+".mp3"
         voice.save(filename)
         path=filename
         

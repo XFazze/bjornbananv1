@@ -6,7 +6,7 @@
 # how many per hour (overall, month, weekday)
 
 x = 0
-with open('/home/pi/discordbot/maslog.txt', 'r') as f:
+with open('/tmp/discordbot/maslog.txt', 'r') as f:
     lines = f.readlines()
 nlines =[]
 for line in lines:

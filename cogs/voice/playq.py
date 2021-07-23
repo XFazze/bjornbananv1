@@ -66,7 +66,7 @@ class Base(commands.Cog):
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_messages=True)
     async def musicadd(self, ctx):
-        with open('/home/pi/discordbot/management/music.json', 'r+') as f:
+        with open('/tmp/discordbot/management/music.json', 'r+') as f:
             music = json.load(f)
             c_id = ctx.channel.id
             if c_id in music:
@@ -76,20 +76,20 @@ class Base(commands.Cog):
                 music.append(c_id)
                 await ctx.send("Added channel to music")
                 print("enabled music")
-                with open('/home/pi/discordbot/management/music.json', 'w') as file:
+                with open('/tmp/discordbot/management/music.json', 'w') as file:
                     json.dump(music, file, indent=4)
     
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_messages=True)
     async def musicremove(self, ctx):
-        with open('/home/pi/discordbot/management/music.json', 'r+') as f:
+        with open('/tmp/discordbot/management/music.json', 'r+') as f:
             music = json.load(f)
             c_id = ctx.channel.id
             if c_id in music:
                 music.remove(c_id)
                 await ctx.send("removed channel from music")
                 print("disabled music")
-                with open('/home/pi/discordbot/management/music.json', 'w') as file:
+                with open('/tmp/discordbot/management/music.json', 'w') as file:
                     json.dump(music, file, indent=4)
             else:
                 await ctx.send("This channel isnta a music channel")
@@ -97,7 +97,7 @@ class Base(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message(self, message):
-        with open('/home/pi/discordbot/management/music.json', 'r') as f:
+        with open('/tmp/discordbot/management/music.json', 'r') as f:
             music = json.load(f)
             if message.channel.id not in music or message.author == self.bot.user:
                 return
@@ -141,7 +141,7 @@ class Base(commands.Cog):
 
     @tasks.loop(seconds=360)
     async def musiccleanse(self):
-        with open('/home/pi/discordbot/management/music.json', 'r') as f:
+        with open('/tmp/discordbot/management/music.json', 'r') as f:
             music = json.load(f)
             if music:
                 for channel in music:

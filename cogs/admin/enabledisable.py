@@ -19,7 +19,7 @@ class Base(commands.Cog):
         for botcommand in  self.bot.commands:
             if command == str(botcommand):
                 guild_id = ctx.guild.id
-                with open('/home/pi/discordbot/management/enable.json', 'r+') as f:
+                with open('/tmp/discordbot/management/enable.json', 'r+') as f:
                     enable = json.load(f)
                     if str(guild_id) in enable.keys():
                         if command in enable[str(guild_id)]:
@@ -27,12 +27,12 @@ class Base(commands.Cog):
                         else:
                             enable[str(guild_id)].append(command)
                             await ctx.send("Disabled command")
-                            with open('/home/pi/discordbot/management/enable.json', 'w') as file:
+                            with open('/tmp/discordbot/management/enable.json', 'w') as file:
                                 json.dump(enable, file, indent=4)
                     else:
                         enable[int(guild_id)] = [command]
                         await ctx.send("Disabled command")
-                        with open('/home/pi/discordbot/management/enable.json', 'w') as file:
+                        with open('/tmp/discordbot/management/enable.json', 'w') as file:
                             json.dump(enable, file, indent=4)
     
     
@@ -48,18 +48,18 @@ class Base(commands.Cog):
         for botcommand in  self.bot.commands:
             if command == str(botcommand):
                 guild_id = ctx.guild.id
-                with open('/home/pi/discordbot/management/enable.json', 'r+') as f:
+                with open('/tmp/discordbot/management/enable.json', 'r+') as f:
                     enable = json.load(f)
                     if str(guild_id) in enable.keys():
                         print("exist")
                         if command in enable[str(guild_id)]:
                             if len(enable[str(guild_id)]) > 1:
                                 enable[str(guild_id)].remove(command)
-                                with open('/home/pi/discordbot/management/enable.json', 'w') as file:
+                                with open('/tmp/discordbot/management/enable.json', 'w') as file:
                                     json.dump(enable, file, indent=4)
                             else:
                                 del enable[str(guild_id)]
-                                with open('/home/pi/discordbot/management/enable.json', 'w') as file:
+                                with open('/tmp/discordbot/management/enable.json', 'w') as file:
                                     json.dump(enable, file, indent=4)
                             await ctx.send("This command is enabled")
                             return

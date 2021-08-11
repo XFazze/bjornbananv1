@@ -24,7 +24,7 @@ class Base(commands.Cog):
         else:
             voice = await channel.connect()
 
-        song_there = os.path.isfile("song.mp3")
+        song_there = os.path.isfile("songs/song.mp3")
         try:
             if song_there:
                 os.remove("song.mp3")
@@ -108,7 +108,7 @@ class Base(commands.Cog):
         else:
             voice = await channel.connect()
 
-        song_there = os.path.isfile("song.mp3")
+        song_there = os.path.isfile("songs/song.mp3")
         try:
             if song_there:
                 os.remove("song.mp3")

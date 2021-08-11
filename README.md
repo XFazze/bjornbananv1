@@ -4,19 +4,6 @@ The bot helps manage discord servers.
 
 Working towards becoming a bot all in one.
 
-
-Main bot:
-admin
-stats
-bettervc
-tts
-god
-dnd
-qutoes
-
-Song bot:
-.plays music
-
 commands
 ex and dx for enable and disable x:
 d - deleteing channels

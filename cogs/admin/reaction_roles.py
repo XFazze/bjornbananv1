@@ -10,9 +10,9 @@ class Base(commands.Cog):
         self.bot = bot
     # Reaction roles
 
-    @commands.command(pass_context=True)
+    @commands.command(pass_context=True, aliases=['r'])
     @commands.has_permissions(manage_roles=True)
-    async def r(self, ctx):
+    async def reactionroles(self, ctx):
         try:
             role_id = int(str(ctx.message.content).split(" ")[1][3:-1])
         except:
@@ -69,8 +69,8 @@ class Base(commands.Cog):
             member = await guild.fetch_member(payload.user_id)
             await member.remove_roles(role)
 
-    @commands.command(pass_context=True)
-    async def c(self, ctx):
+    @commands.command(pass_context=True, aliases=['c'])
+    async def reactionrolesclean(self, ctx):
         await ctx.message.delete()
         channel = ctx.message.channel
         messages = await channel.history(limit=200).flatten()

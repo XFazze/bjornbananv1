@@ -9,9 +9,9 @@ class Base(commands.Cog):
         self.bot = bot
         self.cleanse.start()
 
-    @commands.command(pass_context=True)
+    @commands.command(pass_context=True, aliases=['ed'])
     @commands.has_permissions(manage_messages=True)
-    async def ed(self, ctx):
+    async def enabledelete(self, ctx):
         with open('/tmp/discordbot/management/deletingchannel.json', 'r+') as f:
             deletingchannel = json.load(f)
             c_id = ctx.channel.id
@@ -23,9 +23,9 @@ class Base(commands.Cog):
                 with open('/tmp/discordbot/management/deletingchannel.json', 'w') as file:
                     json.dump(deletingchannel, file, indent=4)
 
-    @commands.command(pass_context=True)
+    @commands.command(pass_context=True, aliases=['d'])
     @commands.has_permissions(manage_messages=True)
-    async def dd(self, ctx):
+    async def disabledelete(self, ctx):
         with open('/tmp/discordbot/management/deletingchannel.json', 'r+') as f:
             deletingchannel = json.load(f)
             c_id = ctx.channel.id

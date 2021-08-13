@@ -17,9 +17,9 @@ class Base(commands.Cog):
     async def h(self, ctx):
         await ctx.send("**Commands**:\n Avaible at  https://fabbe90.gq/bjornbanan and yes I love milk.")
 
-    @commands.command(pass_context=True)
+    @commands.command(pass_context=True, aliases=['g', 'purge'])
     @commands.has_permissions(manage_messages=True)
-    async def g(self, ctx):
+    async def clear(self, ctx):
         try:
             message = ctx.message.content.split(" ")
             amount = int(message[1])

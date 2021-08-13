@@ -10,8 +10,8 @@ class Base(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(pass_context=True)
-    async def t(self, ctx):
+    @commands.command(pass_context=True, aliases=['t'])
+    async def ticket(self, ctx):
         guild = ctx.guild
         tickets = True
         for cat in guild.categories:

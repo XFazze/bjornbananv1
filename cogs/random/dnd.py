@@ -64,9 +64,9 @@ class Base(commands.Cog):
         except:
             return
 
-    @commands.command(pass_context=True)
+    @commands.command(pass_context=True, aliases=['df'])
     @commands.has_permissions(manage_channels=True)
-    async def df(self, ctx):
+    async def dndframer(self, ctx):
         try:
             name = ctx.message.content[11:].split(",")[0]
         except:

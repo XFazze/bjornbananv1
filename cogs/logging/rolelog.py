@@ -9,9 +9,9 @@ class Base(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(pass_context=True)
+    @commands.command(pass_context=True, aliases=['er'])
     @commands.has_permissions(manage_roles=True)
-    async def eo(self, ctx):
+    async def enablerolelog(self, ctx):
         with open('/tmp/discordbot/management/rolelog.json', 'r+') as f:
             rolelog = json.load(f)
             c_id = ctx.channel.id
@@ -24,9 +24,9 @@ class Base(commands.Cog):
                 with open('/tmp/discordbot/management/rolelog.json', 'w') as file:
                     json.dump(rolelog, file, indent=4)
     
-    @commands.command(pass_context=True)
+    @commands.command(pass_context=True, aliases=['dr'])
     @commands.has_permissions(manage_roles=True)
-    async def do(self, ctx):
+    async def disablerolelog(self, ctx):
         with open('/tmp/discordbot/management/rolelog.json', 'r+') as f:
             rolelog = json.load(f)
             c_id = ctx.channel.id

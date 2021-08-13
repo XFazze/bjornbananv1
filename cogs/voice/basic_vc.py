@@ -11,8 +11,8 @@ class Base(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
     
-    @commands.command(pass_context=True)
-    async def j(self,ctx):
+    @commands.command(pass_context=True, aliases=['j'])
+    async def join(self,ctx):
         global voice
         channel = ctx.message.author.voice.channel
         voice = get(self.bot.voice_clients, guild=ctx.guild)
@@ -27,8 +27,8 @@ class Base(commands.Cog):
         await ctx.send(f"Joined {channel}")
 
 
-    @commands.command(pass_context=True)
-    async def l(self,ctx):
+    @commands.command(pass_context=True, aliases=['l'])
+    async def leave(self,ctx):
         channel = ctx.message.author.voice.channel
         voice = get(self.bot.voice_clients, guild=ctx.guild)
         if voice.is_connected():
@@ -71,8 +71,8 @@ class Base(commands.Cog):
                 after=lambda e: print("song is done"))
         vc.source = discord.PCMVolumeTransformer(vc.source)
 
-    @commands.command(pass_context=True)
-    async def a(self,ctx):
+    @commands.command(pass_context=True, aliases=['tts'])
+    async def texttospeech(self,ctx):
         message = ctx.message.content[6:]
         if len(message) > 50:
             print("tried to add too long")

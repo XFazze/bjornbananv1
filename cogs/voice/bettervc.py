@@ -10,9 +10,9 @@ class Base(commands.Cog):
         self.bot = bot
         self.hidechannels.start()
 
-    @commands.command(pass_context=True)
+    @commands.command(pass_context=True, aliases=['eb'])
     @commands.has_permissions(manage_roles=True)
-    async def eb(self, ctx):
+    async def enablebettervc(self, ctx):
         with open('/tmp/discordbot/management/bettervc.json', 'r+') as f:
             bettervc = json.load(f)
             if str(ctx.author.voice.channel.guild.id) in bettervc.keys():
@@ -23,9 +23,9 @@ class Base(commands.Cog):
                 with open('/tmp/discordbot/management/bettervc.json', 'w') as file:
                     json.dump(bettervc, file, indent=4)
     
-    @commands.command(pass_context=True)
+    @commands.command(pass_context=True, aliases=['db'])
     @commands.has_permissions(manage_roles=True)
-    async def db(self, ctx):
+    async def disablebettervc(self, ctx):
         with open('/tmp/discordbot/management/bettervc.json', 'r+') as f:
             bettervc = json.load(f)
             if str(ctx.author.voice.channel.guild.id) in bettervc.keys():

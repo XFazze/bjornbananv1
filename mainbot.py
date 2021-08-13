@@ -1,6 +1,7 @@
 import json
 import discord
 from discord.ext import commands
+from cogwatch import Watcher
 
 with open('/tmp/discordbot/secrets.txt', 'r') as f:
     secrets = f.read()
@@ -35,6 +36,8 @@ if __name__ == '__main__':
 @bot.event
 async def on_ready():
     print("Logged in as: " + bot.user.name)
+    watcher = Watcher(bot, path="cogs", preload=True)
+    await watcher.start()
     await bot.change_presence(activity=discord.Game(name="you | ghelp"))
 
 bot.run(secrets[0])

@@ -1,6 +1,8 @@
+# https://discord.com/api/oauth2/authorize?client_id=798491487917965323&permissions=8&scope=bot
 import json
 import discord
 from discord.ext import commands
+from cogwatch import Watcher
 
 with open('/tmp/discordbot/secrets.txt', 'r') as f:
     secrets = f.read()
@@ -21,18 +23,11 @@ bot = commands.Bot(command_prefix=determine_prefix, intents=intents)
 bot.remove_command('help')
 
 
-extensions = ['cogs.logging.edit_log', 'cogs.logging.messagelog']
-
-
-
-if __name__ == '__main__':
-    for extension in extensions:
-        bot.load_extension(extension)
-
-
 @bot.event
 async def on_ready():
     print("Logged in as: " + bot.user.name)
+    watcher = Watcher(bot, path="reloading_cogs", preload=True)
+    await watcher.start()
     await bot.change_presence(activity=discord.Game(name="you | fhelp"))
 
 bot.run(secrets[1])

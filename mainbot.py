@@ -1,7 +1,6 @@
 import json
 import discord
 from discord.ext import commands
-from cogwatch import Watcher
 
 with open('/tmp/discordbot/secrets.txt', 'r') as f:
     secrets = f.read()
@@ -25,7 +24,7 @@ bot.remove_command('help')
 
 extensions = ['cogs.admin.deletingchannel', 'cogs.admin.enabledisable', 'cogs.admin.joinroles', 'cogs.admin.reaction_roles', 'cogs.admin.ticket', 'cogs.admin.joinleavemessage',
               'cogs.logging.actionlog', 'cogs.logging.rolelog', 'cogs.logging.tcstats', 'cogs.logging.vcstats', 'cogs.logging.joinleavelog', 'cogs.random.dnd', 'cogs.random.maslog',
-              'cogs.random.shroud', 'cogs.random.simple', 'cogs.voice.basic_vc', 'cogs.voice.bettervc', 'cogs.logging.delete_edit', 'cogs.logging.messagelog', 'cogs.logging.delete_log']
+              'cogs.random.shroud', 'cogs.random.simple', 'cogs.voice.basic_vc', 'cogs.voice.bettervc', 'cogs.logging.delete_edit', 'cogs.logging.messagelog', 'cogs.logging.delete_log', 'cogs.random.todo']
 
 
 if __name__ == '__main__':
@@ -36,8 +35,6 @@ if __name__ == '__main__':
 @bot.event
 async def on_ready():
     print("Logged in as: " + bot.user.name)
-    watcher = Watcher(bot, path="cogs", preload=True)
-    await watcher.start()
     await bot.change_presence(activity=discord.Game(name="you | ghelp"))
 
 bot.run(secrets[0])

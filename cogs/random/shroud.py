@@ -9,8 +9,8 @@ class Base(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(pass_context=True)
-    async def cc(self, ctx):
+    @commands.command(pass_context=True, aliases=['cc'])
+    async def colorcode(self, ctx):
         for role in ctx.message.author.roles:
             if str(role)[0] == ";":
                 if len(str(ctx.message.content).split(" ")) > 1:

@@ -1,25 +1,45 @@
 import json
 import discord
 from discord.ext import commands
-import getpass
 
 with open('/tmp/discordbot/secrets.txt', 'r') as f:
     secrets = f.read()
     secrets = secrets.split("\n")
 
+
+async def determine_prefix(bot, message):
+    prefixes = json.load(open('/tmp/discordbot/management/prefixes.json', 'r'))
+    guild = message.guild
+    if guild:
+        return prefixes.get(str(guild.id), bot_prefix)
+    else:
+        return bot_prefix
+
 intents = discord.Intents.all()
-bot = commands.Bot(command_prefix="g.", intents=intents)
+bot_prefix = 'g'
+bot = commands.Bot(command_prefix=determine_prefix, intents=intents)
 bot.remove_command('help')
 
 
-extensions = ['cogs.admin.deletingchannel', 'cogs.admin.enabledisable', 'cogs.admin.joinroles', 'cogs.admin.reaction_roles', 'cogs.admin.ticket', 'cogs.admin.joinleavemessage',
-              'cogs.logging.actionlog', 'cogs.logging.rolelog', 'cogs.logging.tcstats', 'cogs.logging.vcstats', 'cogs.logging.joinleavelog', 'cogs.random.dnd', 'cogs.random.maslog',
-              'cogs.random.shroud', 'cogs.random.simple', 'cogs.voice.basic_vc', 'cogs.voice.bettervc', 'cogs.logging.delete_edit', 'cogs.logging.messagelog', 'cogs.logging.delete_log', 'cogs.random.todo']
-
+admincogs = ['cogs.admin.channels.deletingchannel', 'cogs.admin.channel.joinleavemessage', 'cogs.admin.channels.rolelog', 'cogs.admin.enabledisable',
+             'cogs.admin.joinroles', 'cogs.admin.reaction_roles', 'cogs.random.setprefix', 'cogs.admin.channels.bettervc']
+gamescogs = []
+infocogs = ['cogs.info.avatar', 'cogs.info.guild',
+            'cogs.info.help', 'cogs.info.user']
+loggingcogs = ['cogs.logging.actionlog', 'cogs.logging.edited_messages', 'cogs.logging.deleted_messages',
+               'cogs.logging.edited_messages', 'cogs.logging.joinleavelog', 'cogs.logging.messagelog', 'cogs.logging.tcstats', 'cogs.logging.vcstats']
+moderationcogs = ['cogs.moderation.ban', 'cogs.moderation.banlist', 'cogs.moderation.kick',
+                  'cogs.moderation.tempban', 'cogs.moderation.ticket', 'cogs.moderation.unban']
+randomcogs = ['cogs.random.clear', 'cogs.random.colorcode',
+              'cogs.random.dnd', 'cogs.random.todo']
+voicecogs = ['cogs.voice.basic_vc', ]
+allcogs = [admincogs, gamescogs, infocogs, loggingcogs,
+           infocogs, moderationcogs, randomcogs, voicecogs]
 
 if __name__ == '__main__':
-    for extension in extensions:
-        bot.load_extension(extensions)
+    for coglist in allcogs:
+        for cog in coglist:
+            bot.load_extension(cog)
 
 
 @bot.event

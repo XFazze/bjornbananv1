@@ -12,8 +12,8 @@ class Base(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(pass_context=True)
-    async def d(self, ctx):
+    @commands.command(pass_context=True, aliases=['d', 'deleted', 'snipe'])
+    async def deletedmessages(self, ctx):
         message = ctx.message.content.split(" ")
         guild_id = str(ctx.guild.id)
         channel_id = str(ctx.channel.id)

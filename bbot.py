@@ -12,7 +12,7 @@ admin = ['channels.deletingchannel', 'channels.joinleavemessage', 'channels.role
 
 games = []
 
-info = ['avatar', 'guild', 'help', 'user']
+info = ['avatar', 'guild', 'help', 'user', 'ping']
 
 stats = ['actionlog', 'edited_messages', 'deleted_messages', 'joinleavelog', 'messagelog', 'tcstats', 'vcstats']
 

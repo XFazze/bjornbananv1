@@ -34,13 +34,12 @@ class Base(commands.Cog):
                     json.dump(delete_pinned, file, indent=4)
             else:
                 await ctx.send("This channel isnta a delete_pinned channel")
+
     @commands.Cog.listener()
     async def on_message(self, ctx):
         if ctx.type.value == 6:
-            print('ites a delete')
             with open('/tmp/discordbot/management/delete_pinned.json', 'r') as f:
                 channels = json.load(f)
-                print(channels)
                 for channel in channels:
                     if channel == ctx.channel.id:
                         await ctx.delete()

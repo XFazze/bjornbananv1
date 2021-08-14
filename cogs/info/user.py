@@ -12,7 +12,15 @@ class User(commands.Cog):
         
         if member is None:
             
-            await ctx.send("Don't forget to mention someone")
+            roles_list = ' | '.join(map(str, ctx.author.roles))
+            
+            embed=discord.Embed(title=member, color=random.randint(0, 0xFFFFFF))
+            embed.add_field(name="ID", value=ctx.author.id, inline=False)
+            embed.add_field(name="Nickname", value=ctx.author.nick, inline=False)
+            embed.add_field(name="Highest role", value=ctx.author.top_role, inline=False)
+            embed.add_field(name="Roles", value=roles_list, inline=False)
+            embed.set_image(url=ctx.author.avatar_url)
+            await ctx.send(embed=embed)
         
         
         else:

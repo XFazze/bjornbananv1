@@ -8,7 +8,7 @@ prefix = ","
 
 
 # Add commands to load here
-admin = ['channels.deletingchannel', 'channels.joinleavemessage', 'channels.rolelog', 'enabledisable', 'joinroles', 'reaction_roles', 'setprefix', 'channels.bettervc', 'delete_pinned']
+admin = ['channels.deletingchannel', 'channels.joinleavemessage', 'channels.rolelog', 'joinroles', 'reaction_roles', 'setprefix', 'channels.bettervc', 'delete_pinned']
 
 games = []
 

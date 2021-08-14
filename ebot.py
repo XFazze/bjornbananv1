@@ -23,5 +23,5 @@ async def on_ready():
     await watcher.start()
     await bot.change_presence(activity=discord.Game(name="you | fhelp"))
 
-#print(token)
+
 bot.run(token[1])

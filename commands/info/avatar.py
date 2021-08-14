@@ -8,7 +8,7 @@ class Avatar(commands.Cog):
         self.bot = bot
         
     
-    @commands.command(pass_context=True)
+    @commands.command(pass_context=True, aliases=['av'])
     async def avatar(self, ctx, member:discord.Member = None):
         if member is None:
             

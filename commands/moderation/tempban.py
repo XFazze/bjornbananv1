@@ -12,8 +12,6 @@ class Tempban(commands.Cog):
     @commands.has_permissions(ban_members=True)
     @commands.bot_has_permissions(ban_members=True)
     async def tempban(self, ctx, member:discord.Member = None, days = None, *reason):
-        
-        
         # Sets default time and reason if not specified
         if days is None:
             days = 7

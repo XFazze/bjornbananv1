@@ -11,7 +11,9 @@ class User(commands.Cog):
     async def user(self, ctx, member:discord.Member = None):
         
         if member is None:
+            
             await ctx.send("Don't forget to mention someone")
+        
         
         else:
             
@@ -24,6 +26,7 @@ class User(commands.Cog):
             embed.add_field(name="Roles", value=roles_list, inline=False)
             embed.set_image(url=member.avatar_url)
             await ctx.send(embed=embed)
+    
 
 def setup(bot):
     bot.add_cog(User(bot))

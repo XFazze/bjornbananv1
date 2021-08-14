@@ -12,8 +12,8 @@ bot.remove_command('help')
 
 # Gets the token
 token1, error = subprocess.Popen(["cat", "/tmp/discordbot/secrets.txt"], stdout=subprocess.PIPE).communicate()
-token1 = re.split("b|'", str(token1))
-token = token1[2].split(" ")
+token1 = re.split("'", str(token1))
+token = token1[1].split(" ")
 
 
 @bot.event
@@ -23,5 +23,5 @@ async def on_ready():
     await watcher.start()
     await bot.change_presence(activity=discord.Game(name="you | fhelp"))
 
-
+#print(token)
 bot.run(token[1])

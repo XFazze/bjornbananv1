@@ -41,8 +41,8 @@ if __name__ == '__main__':
 
 # Gets the token
 token1, error = subprocess.Popen(["cat", "/tmp/discordbot/secrets.txt"], stdout=subprocess.PIPE).communicate()
-token1 = re.split("b|'", str(token1))
-token = token1[2].split(" ")
+token1 = re.split("'", str(token1))
+token = token1[1].split(" ")
 
 
 @bot.event

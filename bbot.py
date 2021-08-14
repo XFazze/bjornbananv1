@@ -16,7 +16,7 @@ async def determine_prefix(bot, message):
         return bot_prefix
 
 intents = discord.Intents.all()
-bot_prefix = 'g'
+bot_prefix = ','
 bot = commands.Bot(command_prefix=determine_prefix, intents=intents)
 bot.remove_command('help')
 
@@ -45,6 +45,6 @@ if __name__ == '__main__':
 @bot.event
 async def on_ready():
     print("Logged in as: " + bot.user.name)
-    await bot.change_presence(activity=discord.Game(name="you | ghelp"))
+    await bot.change_presence(activity=discord.Game(name=","))
 
 bot.run(secrets[0])

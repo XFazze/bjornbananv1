@@ -1,21 +1,14 @@
-
+import discord
 import json
 import math
 import re
 import time
-
-import discord
 from discord.ext import commands
 
 
 class Base(commands.Cog):
-
     def __init__(self, bot):
         self.bot = bot
-
-    @commands.command(pass_context=True, aliases=['help', 'commands'])
-    async def h(self, ctx):
-        await ctx.send("**Commands**:\n Avaible at  https://fabbe90.gq/bjornbanan and yes I love milk.")
 
     @commands.command(pass_context=True, aliases=['g', 'purge'])
     @commands.has_permissions(manage_messages=True)
@@ -58,33 +51,6 @@ class Base(commands.Cog):
         message = await ctx.send(f"I have deleted {amount} messages for you master")
         time.sleep(2)
         await message.delete()
-
-    @commands.command(pass_context=True)
-    @commands.has_permissions(manage_channels=True)
-    @commands.has_permissions(manage_messages=True)
-    async def s(self, ctx):
-        print(ctx.message.author)
-        if str(ctx.message.author) != "xfazze#1854":
-            await ctx.send("YOU ARE NOT THE WISE ONE")
-            return
-        for i in range(500):
-            await ctx.send(i)
-
-    @commands.Cog.listener()
-    @commands.has_permissions(manage_guild=True)
-    async def on_message(self, message):
-        msg = message.content
-        if msg[0:10] != "gsetprefix":
-            return
-        try:
-            prefix = msg.split(" ")[1]
-            prefixes = json.load(open('/tmp/discordbot/prefixes.json', 'r'))
-            prefixes[str(message.guild.id)] = prefix
-            json.dump(prefixes, open('/tmp/discordbot/prefixes.json', 'w'))
-            print("new preficx", prefix)
-        except:
-            await message.channel.send('"You failed. "gsetprefix prefix"')
-
 
 def setup(bot):
     bot.add_cog(Base(bot))

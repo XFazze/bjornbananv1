@@ -18,7 +18,7 @@ stats = ['actionlog', 'edited_messages', 'deleted_messages', 'joinleavelog', 'me
 
 moderation = ['ban', 'banlist', 'kick', 'tempban', 'ticket', 'unban']
 
-utilities = ['clear', 'colorcode', 'dnd', 'todo']
+utilities = ['clear', 'colorcode', 'dnd', 'todo', 'errorhandler']
 
 voice = ['basic_vc']
 

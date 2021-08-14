@@ -39,6 +39,7 @@ class Base(commands.Cog):
 
     @tasks.loop(seconds=10)
     async def cleanse(self):
+        print("wweee")
         with open('/tmp/discordbot/management/deletingchannel.json', 'r') as f:
             deletingchannel = json.load(f)
             if deletingchannel:

@@ -23,7 +23,7 @@ class Base(commands.Cog):
                 with open('/tmp/discordbot/management/deletingchannel.json', 'w') as file:
                     json.dump(deletingchannel, file, indent=4)
 
-    @commands.command(pass_context=True, aliases=['d'])
+    @commands.command(pass_context=True, aliases=['dd'])
     @commands.has_permissions(manage_messages=True)
     async def disabledelete(self, ctx):
         with open('/tmp/discordbot/management/deletingchannel.json', 'r+') as f:

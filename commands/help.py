@@ -4,21 +4,6 @@ from discord.ext import commands
 import os
 
 
-# Commands
-
-adminCommands = ""
-
-moderationCommands = "ban \ntempban \nunban \nkick \n"
-
-infoCommands = "guild \nuser \nbanlist \n"
-
-voiceCommands = ""
-
-loggingCommands = ""
-
-randomCommands = ""
-
-
 
 class Help(commands.Cog):
     def __init__(self, bot):
@@ -26,7 +11,7 @@ class Help(commands.Cog):
     
     @commands.command(pass_context=True)
     async def help(self, ctx):
-        embed = discord.Embed(title="Help", description="More information about usage is found on:\nhttps://www.google.com\n\nPrefix: **n.**", color=0xFFFFFF)
+        embed = discord.Embed(title="Help", description="More information about usage is found on:\nhttps://fabbe90.gq/bjornbanan/commands\n\nPrefix: **n.**", color=0xFFFFFF)
 
         if len(os.listdir('./commands/admin')) > 1:
             adminCommands = ""

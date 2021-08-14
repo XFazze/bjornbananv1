@@ -1,0 +1,1 @@
+screen -S nbot -t Nucleus#3439 -dm bash -c 'cd ..; python3 nbot.py'

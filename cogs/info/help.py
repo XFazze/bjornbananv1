@@ -1,8 +1,6 @@
 import discord
 from discord.ext import commands
-
 import os
-
 
 
 class Help(commands.Cog):
@@ -11,7 +9,7 @@ class Help(commands.Cog):
     
     @commands.command(pass_context=True, aliases=['h','commands'])
     async def help(self, ctx):
-        embed = discord.Embed(title="Help", description="More information about usage is found on:\nhttps://fabbe90.gq/bjornbanan/commands\n\nPrefix: **n.**", color=0xFFFFFF)
+        embed = discord.Embed(title="Help", description="More information about usage is found on:\nhttps://fabbe90.gq/bjornbanan/commands\n\nPrefix: **,**", color=0xFFFFFF)
 
         if len(os.listdir('./commands/admin')) > 1:
             adminCommands = ""

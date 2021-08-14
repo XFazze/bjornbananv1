@@ -1,0 +1,1 @@
+screen -S ebot -t Björnbanan_experimental#4698 -dm bash -c 'cd ..; python3 ebot.py'

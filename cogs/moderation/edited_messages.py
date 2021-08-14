@@ -9,8 +9,8 @@ class Base(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(pass_context=True)
-    async def e(self, ctx):
+    @commands.command(pass_context=True, aliases = ['e'])
+    async def editedmessages(self, ctx):
         with open('/tmp/discordbot/logs/delete_logs/edit_mega.json', 'r') as f:
             delete_logs = json.load(f)
             sending_message = 'Edited messages in this channel\n'

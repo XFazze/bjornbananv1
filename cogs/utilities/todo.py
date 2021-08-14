@@ -57,7 +57,7 @@ class Base(commands.Cog):
         embed.add_field(name=str(len(embed.fields)+1), value=newmessage, inline=False)
         await message.edit(embed=embed)
         
-    @commands.command(pass_context=True)
+    @commands.command(pass_context=True, aliases=['ta'])
     async def tactive(self, ctx, *content):
         await ctx.message.delete()
         try:
@@ -106,7 +106,7 @@ class Base(commands.Cog):
         embed.add_field(name=str(len(message.embeds[0].fields)+1), value=field.value, inline=False)
         await message.edit(embed=embed)
 
-    @commands.command(pass_context=True)
+    @commands.command(pass_context=True, aliases=['td'])
     async def tdone(self, ctx, *content):
         await ctx.message.delete()
         try:

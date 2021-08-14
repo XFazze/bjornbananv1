@@ -10,7 +10,7 @@ class Base(commands.Cog):
         self.bot = bot
     # Reaction roles
 
-    @commands.command(pass_context=True)
+    @commands.command(pass_context=True, aliases=['jra'])
     @commands.has_permissions(manage_roles=True)
     async def joinroleadd(self, ctx):
         try:
@@ -36,7 +36,7 @@ class Base(commands.Cog):
                 with open('/tmp/discordbot/management/joinrole.json', 'w') as file:
                     json.dump(joinrole, file, indent=4)
 
-    @commands.command(pass_context=True)
+    @commands.command(pass_context=True, aliases=['jrr'])
     @commands.has_permissions(manage_roles=True)
     async def joinroleremove(self, ctx):
         try:

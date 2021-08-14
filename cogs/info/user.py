@@ -7,7 +7,7 @@ class User(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
     
-    @commands.command(pass_context=True)
+    @commands.command(pass_context=True, aliases= ['userinfo'])
     async def user(self, ctx, member:discord.Member = None):
         
         if member is None:

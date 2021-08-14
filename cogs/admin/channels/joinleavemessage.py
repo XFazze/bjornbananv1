@@ -9,9 +9,9 @@ class Base(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(pass_context=True)
+    @commands.command(pass_context=True, aliases=['ejlm'])
     @commands.has_permissions(manage_messages=True)
-    async def ej(self, ctx):
+    async def enablejoinleavemessage(self, ctx):
         await ctx.message.delete()
         with open('/tmp/discordbot/management/joinleavemessage.json', 'r+') as f:
             joinleavemessage = json.load(f)
@@ -29,9 +29,9 @@ class Base(commands.Cog):
                 with open('/tmp/discordbot/management/joinleavemessage.json', 'w') as file:
                     json.dump(joinleavemessage, file, indent=4)
 
-    @commands.command(pass_context=True)
+    @commands.command(pass_context=True, aliases=['djlm'])
     @commands.has_permissions(manage_messages=True)
-    async def dj(self, ctx):
+    async def disablejoinleavemessage(self, ctx):
         await ctx.message.delete()
         with open('/tmp/discordbot/management/joinleavemessage.json', 'r+') as f:
             joinleavemessage = json.load(f)

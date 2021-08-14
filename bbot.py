@@ -26,10 +26,9 @@ admincogs = ['cogs.admin.channels.deletingchannel', 'cogs.admin.channels.joinlea
 gamescogs = []
 infocogs = ['cogs.info.avatar', 'cogs.info.guild',
             'cogs.info.help', 'cogs.info.user']
-loggingcogs = ['cogs.logging.actionlog', 'cogs.logging.edited_messages', 'cogs.logging.deleted_messages',
-                'cogs.logging.joinleavelog', 'cogs.logging.messagelog', 'cogs.logging.tcstats', 'cogs.logging.vcstats']
-moderationcogs = ['cogs.moderation.ban', 'cogs.moderation.banlist', 'cogs.moderation.kick',
-                  'cogs.moderation.tempban', 'cogs.moderation.ticket', 'cogs.moderation.unban']
+loggingcogs = ['cogs.stats.logging.actionlog','cogs.stats.logging.joinleavelog', 'cogs.stats.logging.messagelog', 'cogs.stats.tcstats', 'cogs.stats.vcstats']
+moderationcogs = ['cogs.moderation.ban', 'cogs.moderation.banlist', 'cogs.moderation.kick', 'cogs.moderation.tempban',
+                  'cogs.moderation.ticket', 'cogs.moderation.deleted_messages', 'cogs.moderation.edited_messages', 'cogs.moderation.unban']
 randomcogs = ['cogs.random.clear', 'cogs.random.colorcode',
               'cogs.random.dnd', 'cogs.random.todo', 'cogs.random.bomb_reactions']
 voicecogs = ['cogs.voice.basic_vc', ]

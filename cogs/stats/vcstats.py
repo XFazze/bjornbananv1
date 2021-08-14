@@ -10,7 +10,7 @@ class Base(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(pass_context=True)
+    @commands.command(pass_context=True, aliases=['tc', 'tcstats'])
     async def vs(self, ctx):
         with open('/tmp/discordbot/management/enable.json', 'r+') as f:
             enable = json.load(f)

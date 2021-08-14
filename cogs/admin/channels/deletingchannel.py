@@ -3,7 +3,7 @@ import json
 from discord.ext import commands, tasks
 from discord.utils import get
 
-# channels which get clensed every 10 seoncds
+# channels which get cleansed every 10 seoncds
 class Base(commands.Cog):
     def __init__(self, bot):
         self.bot = bot

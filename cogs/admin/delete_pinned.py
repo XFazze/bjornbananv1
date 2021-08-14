@@ -7,9 +7,9 @@ class Base(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(pass_context=True, aliases=['ed'])
+    @commands.command(pass_context=True, aliases=['edp'])
     @commands.has_permissions(manage_messages=True)
-    async def enabledelete(self, ctx):
+    async def enabledeletepinned(self, ctx):
         with open('/tmp/discordbot/management/delete_pinned.json', 'r+') as f:
             delete_pinned = json.load(f)
             c_id = ctx.channel.id
@@ -21,9 +21,9 @@ class Base(commands.Cog):
                 with open('/tmp/discordbot/management/delete_pinned.json', 'w') as file:
                     json.dump(delete_pinned, file, indent=4)
 
-    @commands.command(pass_context=True, aliases=['dd'])
+    @commands.command(pass_context=True, aliases=['ddp'])
     @commands.has_permissions(manage_messages=True)
-    async def disabledelete(self, ctx):
+    async def disabledeletepinned(self, ctx):
         with open('/tmp/discordbot/management/delete_pinned.json', 'r+') as f:
             delete_pinned = json.load(f)
             c_id = ctx.channel.id

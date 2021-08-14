@@ -1,49 +1,54 @@
-import json
 import discord
 from discord.ext import commands
+import subprocess
+import re
 
-with open('/tmp/discordbot/secrets.txt', 'r') as f:
-    secrets = f.read()
-    secrets = secrets.split("\n")
+# Set prefix here
+prefix = ","
 
 
-async def determine_prefix(bot, message):
-    prefixes = json.load(open('/tmp/discordbot/management/prefixes.json', 'r'))
-    guild = message.guild
-    if guild:
-        return prefixes.get(str(guild.id), bot_prefix)
-    else:
-        return bot_prefix
-
-intents = discord.Intents.all()
-bot_prefix = ','
-bot = commands.Bot(command_prefix=determine_prefix, intents=intents)
+bot = commands.Bot(command_prefix=prefix, intents=discord.Intents.all())
 bot.remove_command('help')
 
 
-admincogs = ['cogs.admin.channels.deletingchannel', 'cogs.admin.channels.joinleavemessage', 'cogs.admin.channels.rolelog', 'cogs.admin.enabledisable',
-             'cogs.admin.joinroles', 'cogs.admin.reaction_roles', 'cogs.admin.setprefix', 'cogs.admin.channels.bettervc', 'cogs.admin.delete_pinned']
-gamescogs = []
-infocogs = ['cogs.info.avatar', 'cogs.info.guild',
-            'cogs.info.help', 'cogs.info.user']
-loggingcogs = ['cogs.stats.logging.actionlog','cogs.stats.logging.joinleavelog', 'cogs.stats.logging.messagelog', 'cogs.stats.tcstats', 'cogs.stats.vcstats']
-moderationcogs = ['cogs.moderation.ban', 'cogs.moderation.banlist', 'cogs.moderation.kick', 'cogs.moderation.tempban',
-                  'cogs.moderation.ticket', 'cogs.moderation.deleted_messages', 'cogs.moderation.edited_messages', 'cogs.moderation.unban']
-randomcogs = ['cogs.random.clear', 'cogs.random.colorcode',
-              'cogs.random.dnd', 'cogs.random.todo', 'cogs.random.bomb_reactions']
-voicecogs = ['cogs.voice.basic_vc', ]
-allcogs = [admincogs, gamescogs, loggingcogs,
-           infocogs, moderationcogs, randomcogs, voicecogs]
+admin = ['channels.deletingchannel', 'channels.joinleavemessage', 'channels.rolelog', 'enabledisable', 'joinroles', 'reaction_roles', 'setprefix', 'channels.bettervc', 'delete_pinned']
+
+games = []
+
+info = ['avatar', 'guild', 'help', 'user']
+
+stats = ['actionlog', 'edited_messages', 'deleted_messages', 'joinleavelog', 'messagelog', 'tcstats', 'vcstats']
+
+moderation = ['ban', 'banlist', 'kick', 'tempban', 'ticket', 'unban']
+
+utilities = ['clear', 'colorcode', 'dnd', 'todo']
+
+voice = ['basic_vc']
+
+
+
+
+
+
+allcogs = {"admin":admin, "games":games, "stats":games, "info":info, "moderation":moderation, "utilities":utilities, "voice":voice}
 
 if __name__ == '__main__':
-    for coglist in allcogs:
-        for cog in coglist:
-            bot.load_extension(cog)
+    for coglist in allcogs.keys():
+        for cog in allcogs[coglist]:
+            n = "cogs." + f"{str(coglist)}." + str(cog)
+            bot.load_extension(n)
+
+
+# Gets the token
+token1, error = subprocess.Popen(["cat", "/tmp/discordbot/secrets.txt"], stdout=subprocess.PIPE).communicate()
+token1 = re.split("b|'", str(token1))
+token = token1[2].split(" ")
 
 
 @bot.event
 async def on_ready():
     print("Logged in as: " + bot.user.name)
-    await bot.change_presence(activity=discord.Game(name=","))
+    await bot.change_presence(activity=discord.Game(name=f"{prefix}help"))
 
-bot.run(secrets[0])
+
+bot.run(token[0])

@@ -39,16 +39,16 @@ class Help(commands.Cog):
                     voiceCommands += f"> {f[:-3]}\n"
             embed.add_field(name="Voice", value=voiceCommands, inline=True)
             
-        if len(os.listdir('./commands/logging')) > 1:
+        if len(os.listdir('./commands/stats')) > 1:
             loggingCommands = ""
-            for f in os.listdir('./commands/logging'):
+            for f in os.listdir('./commands/stats'):
                 if f.endswith('.py'):
                     loggingCommands += f"> {f[:-3]}\n"
             embed.add_field(name="Logging", value=loggingCommands, inline=True)
             
-        if len(os.listdir('./commands/random')) > 1:
+        if len(os.listdir('./commands/utilities')) > 1:
             randomCommands = ""
-            for f in os.listdir('./commands/random'):
+            for f in os.listdir('./commands/utilities'):
                 if f.endswith('.py'):
                     randomCommands += f"> {f[:-3]}\n"
             embed.add_field(name="Random", value=randomCommands, inline=True)

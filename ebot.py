@@ -1,16 +1,19 @@
 # https://discord.com/api/oauth2/authorize?client_id=798491487917965323&permissions=8&scope=bot
-import json
+import subprocess
+import re
 import discord
 from discord.ext import commands
 from cogwatch import Watcher
 
-with open('config.txt', 'r') as f:
-    secrets = f.read()
-    secrets = secrets.split("\n")
+
+bot = commands.Bot(command_prefix="f.", intents=discord.Intents.all())   
+bot.remove_command('help')
 
 
-intents = discord.Intents.all()
-bot = commands.Bot(command_prefix="f.", intents=intents)   
+# Gets the token
+token1, error = subprocess.Popen(["cat", "/tmp/discordbot/secrets.txt"], stdout=subprocess.PIPE).communicate()
+token1 = re.split("b|'", str(token1))
+token = token1[2].split(" ")
 
 
 @bot.event
@@ -20,4 +23,5 @@ async def on_ready():
     await watcher.start()
     await bot.change_presence(activity=discord.Game(name="you | fhelp"))
 
-bot.run(secrets[0])
+
+bot.run(token[1])

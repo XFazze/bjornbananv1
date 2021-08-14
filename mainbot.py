@@ -33,7 +33,8 @@ moderationcogs = ['cogs.moderation.ban', 'cogs.moderation.banlist', 'cogs.modera
 randomcogs = ['cogs.random.clear', 'cogs.random.colorcode',
               'cogs.random.dnd', 'cogs.random.todo']
 voicecogs = ['cogs.voice.basic_vc', ]
-allcogs = [admincogs, gamescogs, infocogs, loggingcogs, infocogs,moderationcogs,randomcogs, voicecogs]
+allcogs = [admincogs, gamescogs, infocogs, loggingcogs,
+           infocogs, moderationcogs, randomcogs, voicecogs]
 
 if __name__ == '__main__':
     for coglist in allcogs:

@@ -7,10 +7,7 @@ import re
 prefix = ","
 
 
-bot = commands.Bot(command_prefix=prefix, intents=discord.Intents.all())
-bot.remove_command('help')
-
-
+# Add commands to load here
 admin = ['channels.deletingchannel', 'channels.joinleavemessage', 'channels.rolelog', 'enabledisable', 'joinroles', 'reaction_roles', 'setprefix', 'channels.bettervc', 'delete_pinned']
 
 games = []
@@ -26,12 +23,13 @@ utilities = ['clear', 'colorcode', 'dnd', 'todo']
 voice = ['basic_vc']
 
 
+# Removes default help command and creates the bot object
+bot = commands.Bot(command_prefix=prefix, intents=discord.Intents.all())
+bot.remove_command('help')
 
 
-
-
+# Loads all commands
 allcogs = {"admin":admin, "games":games, "stats":games, "info":info, "moderation":moderation, "utilities":utilities, "voice":voice}
-
 if __name__ == '__main__':
     for coglist in allcogs.keys():
         for cog in allcogs[coglist]:
@@ -44,7 +42,7 @@ token1, error = subprocess.Popen(["cat", "/tmp/discordbot/secrets.txt"], stdout=
 token1 = re.split("'", str(token1))
 token = token1[1].split(" ")
 
-
+# Creates the bot event
 @bot.event
 async def on_ready():
     print("Logged in as: " + bot.user.name)

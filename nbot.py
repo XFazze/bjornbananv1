@@ -1,27 +1,35 @@
 # https://discord.com/oauth2/authorize?client_id=775007176157954058&scope=bot&permissions=8589934591
 
-import json
 import discord
 from discord.ext import commands
-import asyncio
 from cogwatch import Watcher
-import getpass
-
-with open(f'config/config.txt', 'r') as f:
-    secrets = f.read()
-    secrets = secrets.split("\n")
+import subprocess
+import re
 
 
+# Set prefix here
+prefix = "n."
+
+
+# Removes default help command and creates the bot object
 intents = discord.Intents.all()
-bot = commands.Bot(command_prefix='n.', intents=intents)
+bot = commands.Bot(command_prefix=prefix, intents=intents)
 bot.remove_command('help')
 
+
+# When the bot starts
 @bot.event
 async def on_ready():
     print("Logged in as: " + bot.user.name)
     watcher = Watcher(bot, path=f"commands", preload=True)
     await watcher.start()
-    await bot.change_presence(activity=discord.Game(name="n.help"))
+    await bot.change_presence(activity=discord.Game(name=f"{prefix}help"))
 
 
-bot.run(secrets[0])
+# Gets the token
+token, error = subprocess.Popen(["cat", "config.txt"], stdout=subprocess.PIPE).communicate()
+token = re.split("b|'", str(token))
+
+
+# Starts the bot
+bot.run(token[2])

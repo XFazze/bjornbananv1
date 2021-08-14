@@ -4,7 +4,7 @@ import discord
 from discord.ext import commands
 from cogwatch import Watcher
 
-with open('config/config.txt', 'r') as f:
+with open('config.txt', 'r') as f:
     secrets = f.read()
     secrets = secrets.split("\n")
 

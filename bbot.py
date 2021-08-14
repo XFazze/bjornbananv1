@@ -31,7 +31,7 @@ loggingcogs = ['cogs.logging.actionlog', 'cogs.logging.edited_messages', 'cogs.l
 moderationcogs = ['cogs.moderation.ban', 'cogs.moderation.banlist', 'cogs.moderation.kick',
                   'cogs.moderation.tempban', 'cogs.moderation.ticket', 'cogs.moderation.unban']
 randomcogs = ['cogs.random.clear', 'cogs.random.colorcode',
-              'cogs.random.dnd', 'cogs.random.todo']
+              'cogs.random.dnd', 'cogs.random.todo', 'cogs.random.bomb_reactions']
 voicecogs = ['cogs.voice.basic_vc', ]
 allcogs = [admincogs, gamescogs, loggingcogs,
            infocogs, moderationcogs, randomcogs, voicecogs]

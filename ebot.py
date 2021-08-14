@@ -11,7 +11,6 @@ with open('config/config.txt', 'r') as f:
 
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix="f.", intents=intents)   
-bot.remove_command('help')
 
 
 @bot.event
@@ -21,4 +20,4 @@ async def on_ready():
     await watcher.start()
     await bot.change_presence(activity=discord.Game(name="you | fhelp"))
 
-bot.run(secrets[1])
+bot.run(secrets[0])

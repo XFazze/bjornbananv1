@@ -5,9 +5,9 @@ import discord
 from discord.ext import commands
 import asyncio
 from cogwatch import Watcher
+import getpass
 
-
-with open('config.txt', 'r') as f:
+with open(f'config/config.txt', 'r') as f:
     secrets = f.read()
     secrets = secrets.split("\n")
 
@@ -19,7 +19,7 @@ bot.remove_command('help')
 @bot.event
 async def on_ready():
     print("Logged in as: " + bot.user.name)
-    watcher = Watcher(bot, path="commands", preload=True)
+    watcher = Watcher(bot, path=f"commands", preload=True)
     await watcher.start()
     await bot.change_presence(activity=discord.Game(name="n.help"))
 

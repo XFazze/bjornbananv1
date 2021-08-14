@@ -4,22 +4,13 @@ import discord
 from discord.ext import commands
 from cogwatch import Watcher
 
-with open('/tmp/discordbot/secrets.txt', 'r') as f:
+with open('config/config.txt', 'r') as f:
     secrets = f.read()
     secrets = secrets.split("\n")
 
 
-async def determine_prefix(bot, message):
-    prefixes = json.load(open('/tmp/discordbot/management/prefixes.json', 'r'))
-    guild = message.guild
-    if guild:
-        return prefixes.get(str(guild.id), bot_prefix)
-    else:
-        return bot_prefix
-
 intents = discord.Intents.all()
-bot_prefix = 'f'
-bot = commands.Bot(command_prefix=determine_prefix, intents=intents)   
+bot = commands.Bot(command_prefix="f.", intents=intents)   
 bot.remove_command('help')
 
 

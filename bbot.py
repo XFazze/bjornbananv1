@@ -21,7 +21,7 @@ bot = commands.Bot(command_prefix=determine_prefix, intents=intents)
 bot.remove_command('help')
 
 
-admincogs = ['cogs.admin.channels.deletingchannel', 'cogs.admin.channel.joinleavemessage', 'cogs.admin.channels.rolelog', 'cogs.admin.enabledisable',
+admincogs = ['cogs.admin.channels.deletingchannel', 'cogs.admin.channels.joinleavemessage', 'cogs.admin.channels.rolelog', 'cogs.admin.enabledisable',
              'cogs.admin.joinroles', 'cogs.admin.reaction_roles', 'cogs.random.setprefix', 'cogs.admin.channels.bettervc', 'cogs.admin.delete_pinnned']
 gamescogs = []
 infocogs = ['cogs.info.avatar', 'cogs.info.guild',

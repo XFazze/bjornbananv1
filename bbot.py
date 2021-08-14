@@ -22,18 +22,18 @@ bot.remove_command('help')
 
 
 admincogs = ['cogs.admin.channels.deletingchannel', 'cogs.admin.channels.joinleavemessage', 'cogs.admin.channels.rolelog', 'cogs.admin.enabledisable',
-             'cogs.admin.joinroles', 'cogs.admin.reaction_roles', 'cogs.admin.setprefix', 'cogs.admin.channels.bettervc', 'cogs.admin.delete_pinnned']
+             'cogs.admin.joinroles', 'cogs.admin.reaction_roles', 'cogs.admin.setprefix', 'cogs.admin.channels.bettervc', 'cogs.admin.delete_pinned']
 gamescogs = []
 infocogs = ['cogs.info.avatar', 'cogs.info.guild',
             'cogs.info.help', 'cogs.info.user']
 loggingcogs = ['cogs.logging.actionlog', 'cogs.logging.edited_messages', 'cogs.logging.deleted_messages',
-               'cogs.logging.edited_messages', 'cogs.logging.joinleavelog', 'cogs.logging.messagelog', 'cogs.logging.tcstats', 'cogs.logging.vcstats']
+                'cogs.logging.joinleavelog', 'cogs.logging.messagelog', 'cogs.logging.tcstats', 'cogs.logging.vcstats']
 moderationcogs = ['cogs.moderation.ban', 'cogs.moderation.banlist', 'cogs.moderation.kick',
                   'cogs.moderation.tempban', 'cogs.moderation.ticket', 'cogs.moderation.unban']
 randomcogs = ['cogs.random.clear', 'cogs.random.colorcode',
               'cogs.random.dnd', 'cogs.random.todo']
 voicecogs = ['cogs.voice.basic_vc', ]
-allcogs = [admincogs, gamescogs, infocogs, loggingcogs,
+allcogs = [admincogs, gamescogs, loggingcogs,
            infocogs, moderationcogs, randomcogs, voicecogs]
 
 if __name__ == '__main__':

@@ -7,7 +7,7 @@ import asyncio
 from cogwatch import Watcher
 
 
-with open('/mnt/z/Discord Bot/secrets.txt', 'r') as f:
+with open('config.txt', 'r') as f:
     secrets = f.read()
     secrets = secrets.split("\n")
 

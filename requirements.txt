@@ -14,7 +14,6 @@ keyring==17.1.1
 keyrings.alt==3.1.1
 multidict==5.1.0
 pycrypto==2.6.1
-PyGObject==3.30.4
 pyxdg==0.25
 SecretStorage==2.3.1
 six==1.12.0

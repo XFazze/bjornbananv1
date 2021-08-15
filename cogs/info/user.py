@@ -10,6 +10,8 @@ class User(commands.Cog):
     @commands.command(pass_context=True, aliases= ['userinfo'])
     async def user(self, ctx, member:discord.Member = None):
         
+        await ctx.message.delete()
+        
         if member is None:
             
             roles_list = ' | '.join(map(str, ctx.author.roles))

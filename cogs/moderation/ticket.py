@@ -12,6 +12,8 @@ class Base(commands.Cog):
 
     @commands.command(pass_context=True, aliases=['t'])
     async def ticket(self, ctx):
+        
+        await ctx.message.delete()
         guild = ctx.guild
         tickets = True
         for cat in guild.categories:

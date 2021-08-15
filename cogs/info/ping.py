@@ -11,7 +11,8 @@ class Base(commands.Cog):
 
     @commands.command(pass_context=True, aliases=['latency'])
     async def ping(self, ctx):
-        print(dir(self))
+        
+        await ctx.message.delete()
         embed = discord.Embed(colour=0xFFFFFF)
         embed.add_field(name="Uptime", value='{0}ms'.format(round(self.bot.latency, 1)))
         await ctx.send(embed=embed)

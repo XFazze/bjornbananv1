@@ -10,6 +10,8 @@ class Avatar(commands.Cog):
     
     @commands.command(pass_context=True, aliases=['av'])
     async def avatar(self, ctx, member:discord.Member = None):
+        
+        await ctx.message.delete()
         if member is None:
             
             embed=discord.Embed(title=ctx.author, color=random.randint(0, 0xFFFFFF))

@@ -14,6 +14,8 @@ class Base(commands.Cog):
 
     @commands.command(pass_context=True, aliases=['d', 'deleted', 'snipe'])
     async def deletedmessages(self, ctx):
+        
+        await ctx.message.delete()
         message = ctx.message.content.split(" ")
         guild_id = str(ctx.guild.id)
         channel_id = str(ctx.channel.id)

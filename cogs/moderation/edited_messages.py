@@ -11,6 +11,8 @@ class Base(commands.Cog):
 
     @commands.command(pass_context=True, aliases = ['e'])
     async def editedmessages(self, ctx):
+        
+        await ctx.message.delete()
         with open('/tmp/discordbot/logs/delete_logs/edit_mega.json', 'r') as f:
             delete_logs = json.load(f)
             sending_message = 'Edited messages in this channel\n'

@@ -12,6 +12,8 @@ class Banlist(commands.Cog):
     @commands.bot_has_permissions(ban_members=True)
     async def banlist(self, ctx):
         
+        await ctx.message.delete()
+        
         banlist = await ctx.guild.bans()
         
         for i in range(0, len(banlist)):

@@ -9,7 +9,8 @@ class Server(commands.Cog):
     
     @commands.command(pass_context=True, aliases=['serverinfo'])
     async def server(self, ctx):
-        print(dir(ctx.guild))
+        
+        await ctx.message.delete()
         
         
         embed=discord.Embed(title=ctx.guild, color=random.randint(0, 0xFFFFFF))

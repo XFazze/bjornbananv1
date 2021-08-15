@@ -9,6 +9,8 @@ class Help(commands.Cog):
     
     @commands.command(pass_context=True, aliases=['h','commands'])
     async def help(self, ctx):
+        
+        await ctx.message.delete()
         embed = discord.Embed(title="Help", description="More information about usage is found on:\nhttps://fabbe90.gq/bjornbanan/commands\n\nPrefix: **,**", color=0xFFFFFF)
 
         if len(os.listdir('./commands/admin')) > 1:

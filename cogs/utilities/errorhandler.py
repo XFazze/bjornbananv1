@@ -68,7 +68,7 @@ class Base(commands.Cog):
         elif isinstance(error, commands.ExtensionFailed):
             message = f"Extension failed name {error.name} original {error.original}"
         elif isinstance(error, commands.ExtensionNotFound):
-            message = f"Extension not found name {error.name} "
+            message = f"Extension not found name {error.name}"
         elif isinstance(error, commands.CommandRegistrationError):
             message = f"Command registration error name {error.name}  alias conlfict {error.name}"
         else:

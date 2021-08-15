@@ -10,7 +10,7 @@ class Base(commands.Cog):
         self.bot = bot
     # Reaction roles
 
-    @commands.command(pass_context=True, aliases=['jra'])
+    @commands.command(pass_context=True, aliases=['jra', 'jradd'])
     @commands.has_permissions(manage_roles=True)
     async def joinroleadd(self, ctx):
         try:
@@ -36,7 +36,7 @@ class Base(commands.Cog):
                 with open('/tmp/discordbot/management/joinrole.json', 'w') as file:
                     json.dump(joinrole, file, indent=4)
 
-    @commands.command(pass_context=True, aliases=['jrr'])
+    @commands.command(pass_context=True, aliases=['jrr', 'jrremove'])
     @commands.has_permissions(manage_roles=True)
     async def joinroleremove(self, ctx):
         try:
@@ -59,11 +59,25 @@ class Base(commands.Cog):
                         del joinrole[str(guild_id)]
                         with open('/tmp/discordbot/management/joinrole.json', 'w') as file:
                             json.dump(joinrole, file, indent=4)
-                    await ctx.send("This channel is removed")
+                    await ctx.send("This role is removed")
                 else:
                     await ctx.send("Channel not added")
             else:
                 await ctx.send("Channel not added")
+
+    @commands.command(pass_context=True, aliases=['jrl', 'jrlist'])
+    async def joinrolelist(self, ctx):
+        guild = ctx.guild
+        embed=discord.Embed(title="Join roles", color=0x233237)
+        with open('/tmp/discordbot/management/joinrole.json', 'r+') as f:
+            joinrole = json.load(f)
+            if str(guild.id) in joinrole.keys():
+                for role_id in joinrole[str(guild.id)]:
+                    role = get(guild.roles, id=role_id)
+                    embed.add_field(name=role.name, value="\u200b", inline=False)
+            else:
+                embed.add_field(name="Mission failed", value="There are no join roles on this server", inline=False)
+        await ctx.send(embed=embed)
 
     @commands.Cog.listener()
     async def on_member_join(self, member):

@@ -117,7 +117,6 @@ class Cogs(commands.Cog):
                 for f in os.listdir('./cogs/'+title):
                     if f.endswith('.py'):
                         cog = f"cogs.{title}.{str(f)[:-3]}"
-                        print(f)
                         if str(f) == 'uptime.py' or str(f) == 'cog_manager.py':
                             continue
                         if title+'.'+str(f) in extensions:

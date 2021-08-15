@@ -14,7 +14,7 @@ class Base(commands.Cog):
         
         await ctx.message.delete()
         embed = discord.Embed(colour=0xFFFFFF)
-        embed.add_field(name="Uptime", value='{0}ms'.format(round(self.bot.latency, 1)))
+        embed.add_field(name="Latency", value='{0}ms'.format(round(self.bot.latency, 1)))
         await ctx.send(embed=embed)
 
 def setup(bot):

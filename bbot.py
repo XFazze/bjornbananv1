@@ -8,19 +8,50 @@ prefix = ","
 
 
 # Add commands to load here
-admin = ['channels.deletingchannel', 'channels.joinleavemessage', 'channels.rolelog', 'joinroles', 'reaction_roles', 'setprefix', 'channels.bettervc', 'delete_pinned']
+admin = ['joinroles',
+         'reaction_roles',
+         'setprefix',
+         'channels.bettervc',
+         'delete_pinned',
+         'presence']
+
+channels = ['joinleavemessage',
+            'rolelog']
 
 games = []
 
-info = ['avatar', 'guild', 'help', 'user', 'ping']
+info = ['avatar',
+        'guild',
+        'help',
+        'user',
+        'ping',
+        'cog',
+        'uptime']
 
-stats = ['actionlog', 'edited_messages', 'deleted_messages', 'joinleavelog', 'messagelog', 'tcstats', 'vcstats']
+stats = ['tcstats',
+         'vcstats']
 
-moderation = ['ban', 'banlist', 'kick', 'tempban', 'ticket', 'unban']
+logging = ['actionlog',
+           'joinleavelog', 
+           'messagelog',
+           'edited_messages',
+           'deleted_messages']
 
-utilities = ['clear', 'colorcode', 'dnd', 'todo', 'errorhandler']
+moderation = ['ban',
+              'banlist',
+              'kick',
+              'tempban',
+              'ticket',
+              'unban']
+
+utilities = ['clear', 
+             'colorcode', 
+             'dnd', 
+             'todo', 
+             'errorhandler']
 
 voice = ['basic_vc']
+
 
 
 # Removes default help command and creates the bot object
@@ -29,12 +60,26 @@ bot.remove_command('help')
 
 
 # Loads all commands
-allcogs = {"admin":admin, "games":games, "stats":games, "info":info, "moderation":moderation, "utilities":utilities, "voice":voice}
+allcogs = {"admin":admin, 
+           "admin.channels":channels, 
+           "games":games, 
+           "stats":stats, 
+           "stats.logging":logging, 
+           "info":info, 
+           "moderation":moderation, 
+           "utilities":utilities, 
+           "voice":voice}
+
 if __name__ == '__main__':
     for coglist in allcogs.keys():
+        print(f"\n\n{coglist.capitalize()}")
         for cog in allcogs[coglist]:
-            n = "cogs." + f"{str(coglist)}." + str(cog)
-            bot.load_extension(n)
+            try:
+                n = "cogs." + f"{str(coglist)}." + str(cog)
+                print(f"LOADED      ::      {cog}")
+                bot.load_extension(n)
+            except commands.ExtensionFailed:
+                print(f"UNLOADED      ::      {cog}")
 
 
 # Gets the token
@@ -42,10 +87,11 @@ token1, error = subprocess.Popen(["cat", "/tmp/discordbot/secrets.txt"], stdout=
 token1 = re.split("'", str(token1))
 token = token1[1].split(" ")
 
+
 # Creates the bot event
 @bot.event
 async def on_ready():
-    print("Logged in as: " + bot.user.name)
+    print(f"\n\nLogged in as: {bot.user.name}\n")
     await bot.change_presence(activity=discord.Game(name=f"{prefix}help"))
 
 

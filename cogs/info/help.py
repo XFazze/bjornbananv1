@@ -13,47 +13,50 @@ class Help(commands.Cog):
         await ctx.message.delete()
         embed = discord.Embed(title="Help", description="More information about usage is found on:\nhttps://fabbe90.gq/bjornbanan/commands\n\nPrefix: **,**", color=0xFFFFFF)
 
-        if len(os.listdir('./commands/admin')) > 1:
+        if len(os.listdir('./cogs/admin')) > 1:
             adminCommands = ""
-            for f in os.listdir('./commands/admin'):
+            for f in os.listdir('./cogs/admin'):
+                if f.endswith('.py'):
+                    adminCommands += f"> {f[:-3]}\n"
+            for f in os.listdir('./cogs/admin/channels'):
                 if f.endswith('.py'):
                     adminCommands += f"> {f[:-3]}\n"
             embed.add_field(name="Admin", value=adminCommands, inline=True)
         
-        if len(os.listdir('./commands/moderation')) > 1:
+        if len(os.listdir('./cogs/moderation')) > 1:
             moderationCommands = ""
-            for f in os.listdir('./commands/moderation'):
+            for f in os.listdir('./cogs/moderation'):
                 if f.endswith('.py'):
                     moderationCommands += f"> {f[:-3]}\n"
             embed.add_field(name="Moderation", value=moderationCommands, inline=True)
         
-        if len(os.listdir('./commands/info')) > 1:
+        if len(os.listdir('./cogs/info')) > 1:
             infoCommands = ""
-            for f in os.listdir('./commands/info'):
+            for f in os.listdir('./cogs/info'):
                 if f.endswith('.py'):
                     infoCommands += f"> {f[:-3]}\n"
             embed.add_field(name="Info", value=infoCommands, inline=True)
             
-        if len(os.listdir('./commands/voice')) > 1:
+        if len(os.listdir('./cogs/voice')) > 1:
             voiceCommands = ""
-            for f in os.listdir('./commands/voice'):
+            for f in os.listdir('./cogs/voice'):
                 if f.endswith('.py'):
                     voiceCommands += f"> {f[:-3]}\n"
             embed.add_field(name="Voice", value=voiceCommands, inline=True)
             
-        if len(os.listdir('./commands/logging')) > 1:
-            loggingCommands = ""
-            for f in os.listdir('./commands/logging'):
+        if len(os.listdir('./cogs/stats')) > 1:
+            statsCommands = ""
+            for f in os.listdir('./cogs/stats'):
                 if f.endswith('.py'):
-                    loggingCommands += f"> {f[:-3]}\n"
-            embed.add_field(name="Logging", value=loggingCommands, inline=True)
+                    statsCommands += f"> {f[:-3]}\n" 
+            embed.add_field(name="Stats", value=statsCommands, inline=True)
             
-        if len(os.listdir('./commands/random')) > 1:
-            randomCommands = ""
-            for f in os.listdir('./commands/random'):
+        if len(os.listdir('./cogs/utilities')) > 1:
+            utilitiesCommands = ""
+            for f in os.listdir('./cogs/utilities'):
                 if f.endswith('.py'):
-                    randomCommands += f"> {f[:-3]}\n"
-            embed.add_field(name="Random", value=randomCommands, inline=True)
+                    utilitiesCommands += f"> {f[:-3]}\n"
+            embed.add_field(name="Utilities", value=utilitiesCommands, inline=True)
             
         await ctx.send(embed=embed)
     

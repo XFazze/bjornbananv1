@@ -8,7 +8,7 @@ class Command(commands.Cog):
     
     @commands.command(pass_context=True)
     async def command(self, ctx):
-        print("Template")
+        await ctx.send("Template")
     
 
 def setup(bot):

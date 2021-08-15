@@ -12,8 +12,7 @@ prefix = "n."
 
 
 # Removes default help command and creates the bot object
-intents = discord.Intents.all()
-bot = commands.Bot(command_prefix=prefix, intents=intents)
+bot = commands.Bot(command_prefix=prefix, intents=discord.Intents.all())
 bot.remove_command('help')
 
 

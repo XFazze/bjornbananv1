@@ -27,10 +27,8 @@ class Base(commands.Cog):
             with open(filename, 'r') as f:
                 deletemessages = json.load(f)
                 if str(ctx.guild.id) not in deletemessages.keys():
-                    print("created guild dict")
                     deletemessages[str(ctx.guild.id)]={}
                 if str(ctx.channel.id) not in deletemessages[str(ctx.guild.id)].keys():
-                    print("created channel dict")
                     deletemessages[str(ctx.guild.id)][str(ctx.channel.id)] ={}
                 
                 deletemessages[str(ctx.guild.id)][str(ctx.channel.id)][str(ctx.id)] = jsonf

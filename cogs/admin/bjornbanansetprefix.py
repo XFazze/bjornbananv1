@@ -18,16 +18,16 @@ class Base(commands.Cog):
     @commands.has_permissions(manage_guild=True)
     async def on_message(self, message):
         msg = message.content
-        if msg[0:10] != "gsetprefix":
+        if msg[0:19] != "bjornbanansetprefix":
             return
         try:
             prefix = msg.split(" ")[1]
-            prefixes = json.load(open('/tmp/discordbot/prefixes.json', 'r'))
+            prefixes = json.load(open('/tmp/discordbot/management/prefixes.json', 'r'))
             prefixes[str(message.guild.id)] = prefix
-            json.dump(prefixes, open('/tmp/discordbot/prefixes.json', 'w'))
+            json.dump(prefixes, open('/tmp/discordbot/management/prefixes.json', 'w'))
             print("new prefix", prefix)
         except:
-            await message.channel.send('"You failed. "gsetprefix prefix"')
+            await message.channel.send('"You failed. "gsetprefix [prefix]"')
 
 
 def setup(bot):

@@ -1,16 +1,15 @@
 import discord
+import json
 from discord.ext import commands
 import subprocess
 import re
 
-# Set prefix here
-prefix = ","
 
 
 # Add commands to load here
 admin = ['joinroles',
          'reaction_roles',
-         'setprefix',
+         'bjornbanansetprefix',
          'channels.bettervc',
          'delete_pinned',
          'presence']
@@ -33,16 +32,16 @@ stats = ['tcstats',
 
 logging = ['actionlog',
            'joinleavelog', 
-           'messagelog',
-           'edited_messages',
-           'deleted_messages']
+           'messagelog',]
 
 moderation = ['ban',
               'banlist',
               'kick',
               'tempban',
               'ticket',
-              'unban']
+              'unban',
+              'edited_messages',
+              'deleted_messages']
 
 utilities = ['clear', 
              'colorcode', 
@@ -52,10 +51,18 @@ utilities = ['clear',
 
 voice = ['basic_vc']
 
-
+# Set prefix here
+bot_prefix = ","
+async def determine_prefix(bot, message):
+    prefixes = json.load(open('/tmp/discordbot/management/prefixes.json', 'r'))
+    guild = message.guild
+    if guild:
+        return prefixes.get(str(guild.id), bot_prefix)
+    else:
+        return bot_prefix
 
 # Removes default help command and creates the bot object
-bot = commands.Bot(command_prefix=prefix, intents=discord.Intents.all())
+bot = commands.Bot(command_prefix=determine_prefix, intents=discord.Intents.all())
 bot.remove_command('help')
 
 
@@ -92,6 +99,7 @@ token = token1[1].split(" ")
 @bot.event
 async def on_ready():
     print(f"\n\nLogged in as: {bot.user.name}\n")
+    prefix  = determine_prefix
     await bot.change_presence(activity=discord.Game(name=f"{prefix}help"))
 
 

@@ -13,6 +13,7 @@ class Base(commands.Cog):
     @commands.command(pass_context=True, aliases=['g', 'purge'])
     @commands.has_permissions(manage_messages=True)
     async def clear(self, ctx):
+        await ctx.message.delete()
         try:
             message = ctx.message.content.split(" ")
             amount = int(message[1])

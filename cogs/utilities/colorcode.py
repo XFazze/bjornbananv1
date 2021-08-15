@@ -11,6 +11,7 @@ class Base(commands.Cog):
 
     @commands.command(pass_context=True, aliases=['cc'])
     async def colorcode(self, ctx):
+        await ctx.message.delete()
         for role in ctx.message.author.roles:
             if str(role)[0] == ";":
                 if len(str(ctx.message.content).split(" ")) > 1:

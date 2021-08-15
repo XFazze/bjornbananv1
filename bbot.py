@@ -13,11 +13,7 @@ admin = ['joinroles',
          'delete_pinned',
          'joinleavemessage',
          'rolelog',
-         'bettervc',
          'deletingchannel']
-
-channels = ['joinleavemessage',
-            'rolelog']
 
 games = []
 
@@ -81,10 +77,8 @@ bot.remove_command('help')
 
 # Loads all commands
 allcogs = {"admin": admin,
-           "admin.channels": channels,
            "games": games,
            "stats": stats,
-           "stats.logging": logging,
            "info": info,
            "moderation": moderation,
            "utilities": utilities,

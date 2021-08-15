@@ -22,7 +22,6 @@ info = ['avatar',
         'help',
         'user',
         'ping',
-        'cog',
         'uptime']
 
 stats = ['tcstats',
@@ -51,7 +50,7 @@ voice = ['basic_vc']
 
 dev = ['errorhandler',
        'presence',
-        'cog_manager']
+    'cog_manager']
 
 logging = ['actionlog',
            'joinleavelog',

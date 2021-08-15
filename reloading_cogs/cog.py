@@ -14,8 +14,8 @@ class Cogs(commands.Cog):
             await ctx.send("Youre noone")
             return
 
-        embed = discord.Embed(title="Categories", color=0xFFFFFF)
         if category == None:
+            embed = discord.Embed(title="Cogs", color=0xFFFFFF)
             if len(os.listdir('./cogs')) > 1:
                 for f in os.listdir('./cogs'):
                     if f.endswith('.py'):
@@ -27,7 +27,8 @@ class Cogs(commands.Cog):
                         if f.endswith('.py'):
                             commands += str(f)+'\n'
                     embed.add_field(name=title, value=commands)
-        await ctx.send(embed=embed)
+        
+            await ctx.send(embed=embed)
 
 
 

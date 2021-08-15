@@ -4,58 +4,6 @@ from discord.ext import commands
 import subprocess
 import re
 
-
-# Add commands to load here
-admin = ['joinroles',
-         'reaction_roles',
-         'bjornbanansetprefix',
-         'bettervc',
-         'delete_pinned',
-         'joinleavemessage',
-         'rolelog',
-         'deletingchannel']
-
-games = []
-
-info = ['avatar',
-        'guild',
-        'help',
-        'user',
-        'ping',
-        'uptime']
-
-stats = ['tcstats',
-         'vcstats']
-
-logging = ['actionlog',
-           'joinleavelog',
-           'messagelog', ]
-
-moderation = ['ban',
-              'banlist',
-              'kick',
-              'tempban',
-              'ticket',
-              'unban',
-              'edited_messages',
-              'deleted_messages']
-
-utilities = ['clear',
-             'colorcode',
-             'dnd',
-             'todo',
-             'bomb_reactions']
-
-voice = ['basic_vc']
-
-dev = ['errorhandler',
-       'presence',
-       'cog_manager']
-
-logging = ['actionlog',
-           'joinleavelog',
-           'messagelog']
-
 # Set prefix here
 bot_prefix = ","
 
@@ -73,28 +21,9 @@ bot = commands.Bot(command_prefix=determine_prefix,
                    intents=discord.Intents.all())
 bot.remove_command('help')
 
-
-# Loads all commands
-allcogs = {"admin": admin,
-           "games": games,
-           "stats": stats,
-           "info": info,
-           "moderation": moderation,
-           "utilities": utilities,
-           "voice": voice,
-           "dev": dev,
-           "logging": logging}
-
 if __name__ == '__main__':
-    for coglist in allcogs.keys():
-        print(f"\n\n{coglist.capitalize()}")
-        for cog in allcogs[coglist]:
-            try:
-                n = "cogs." + f"{str(coglist)}." + str(cog)
-                print(f"LOADED      ::      {cog}")
-                bot.load_extension(n)
-            except commands.ExtensionFailed:
-                print(f"UNLOADED      ::      {cog}")
+    bot.load_extension('cogs.dev.cog_manager')
+    bot.load_extension('cogs.info.uptime')
 
 
 # Gets the token

@@ -48,7 +48,9 @@ utilities = ['clear',
              'colorcode', 
              'dnd', 
              'todo', 
-             'errorhandler']
+             'errorhandler',
+             'edited_messages',
+             'deleted_messages']
 
 voice = ['basic_vc']
 

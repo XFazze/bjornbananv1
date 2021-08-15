@@ -9,7 +9,7 @@ import re
 admin = ['joinroles',
          'reaction_roles',
          'bjornbanansetprefix',
-         'channels.bettervc',
+         'bettervc',
          'delete_pinned',
          'presence',
          'joinleavemessage',

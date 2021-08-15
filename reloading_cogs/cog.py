@@ -9,26 +9,46 @@ class Cogs(commands.Cog):
     
     
     @commands.command(pass_context=True)
+    async def show_cog(self, ctx, category = None, cog = None):
+        embed = discord.Embed(title="Cogs", description="category or cog gone", color=0xFFFFFF)
+        if len(os.listdir('./cogs')) > 1:
+            for f in os.listdir('./cogs'):
+                if f.endswith('.py'):
+                    continue
+
+                title=str(f)
+                commands = ''
+                for f in os.listdir('./cogs/'+title):
+                    if f.endswith('.py'):
+                        commands += str(f)+'\n'
+                embed.add_field(name=title, value=commands)
+        await ctx.send(embed=embed)
+
+    @commands.command(pass_context=True)
     async def load_cog(self, ctx, category = None, cog = None):
         if not str(ctx.author) == "mega#2222" and  not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
             return
 
-        if category == None:
-            embed = discord.Embed(title="Cogs", color=0xFFFFFF)
-            if len(os.listdir('./cogs')) > 1:
-                for f in os.listdir('./cogs'):
-                    if f.endswith('.py'):
-                        continue
-
-                    title=str(f)
-                    commands = ''
-                    for f in os.listdir('./cogs/'+title):
-                        if f.endswith('.py'):
-                            commands += str(f)+'\n'
-                    embed.add_field(name=title, value=commands)
-        
+        if category == None or cog == None:
+            embed = discord.Embed(title="No category or cog", color=0xFD3333)
             await ctx.send(embed=embed)
+            return
+            
+
+        try:
+            self.bot.load_extension(f"cogs.{category}.{cog}")
+        except:
+            await ctx.send("Cog is unloaded")
+
+    @commands.command(pass_context=True)
+    async def unload_cog(self, ctx, category = None, cog = None):
+        if category == None or cog == None:
+            embed = discord.Embed(title="No category or cog", color=0xFD3333)
+            await ctx.send(embed=embed)
+            return
+
+        
 
 
 

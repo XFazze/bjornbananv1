@@ -68,7 +68,7 @@ class Base(commands.Cog):
     @commands.command(pass_context=True, aliases=['jrl', 'jrlist'])
     async def joinrolelist(self, ctx):
         guild = ctx.guild
-        embed=discord.Embed(title="Join roles", color=0x233237)
+        embed=discord.Embed(title="Join roles", color=0xFFF4E6)
         with open('/tmp/discordbot/management/joinrole.json', 'r+') as f:
             joinrole = json.load(f)
             if str(guild.id) in joinrole.keys():

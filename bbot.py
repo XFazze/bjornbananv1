@@ -46,10 +46,7 @@ utilities = ['clear',
 
 voice = ['basic_vc']
 
-<<<<<<< HEAD
-=======
 utilities = ['clear', 'colorcode', 'dnd', 'todo', 'errorhandler']
->>>>>>> d73b3cbf194ba8d17fd2b0fa059be5656cedcb7c
 
 
 

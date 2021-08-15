@@ -8,10 +8,10 @@ class Presence(commands.Cog):
     
     @commands.command(pass_context=True)
     async def presence(self, ctx, presence = None):
-        if str(ctx.author) == "mega#2222" or str(ctx.author) == "AbstractNucleus#6969":
-            pass
-        else:
+        if not str(ctx.author) == "mega#2222" and  not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
+            return
+            
         if presence == None:
             await ctx.send("Specify a presence")
         else:

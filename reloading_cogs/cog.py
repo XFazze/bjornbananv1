@@ -7,6 +7,31 @@ class Cogs(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
     
+    
+    @commands.command(pass_context=True)
+    async def load_cog(self, ctx, category = None, cog = None):
+        if not str(ctx.author) == "mega#2222" and  not str(ctx.author) == "AbstractNucleus#6969":
+            await ctx.send("Youre noone")
+            return
+
+        embed = discord.Embed(title="Categories", color=0xFFFFFF)
+        if category == None:
+            if len(os.listdir('./cogs')) > 1:
+                for f in os.listdir('./cogs'):
+                    if f.endswith('.py'):
+                        continue
+
+                    title=str(f)
+                    commands = ''
+                    for f in os.listdir('./cogs/'+title):
+                        if f.endswith('.py'):
+                            commands += str(f)+'\n'
+                    embed.add_field(name=title, value=commands)
+        await ctx.send(embed=embed)
+
+
+
+
     @commands.command(pass_context=True)
     async def cog(self, ctx, category = None, cog = None):
         if category == None:

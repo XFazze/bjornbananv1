@@ -16,6 +16,9 @@ class Help(commands.Cog):
             for f in os.listdir('./cogs/admin'):
                 if f.endswith('.py'):
                     adminCommands += f"> {f[:-3]}\n"
+            for f in os.listdir('./cogs/admin/channels'):
+                if f.endswith('.py'):
+                    adminCommands += f"> {f[:-3]}\n"
             embed.add_field(name="Admin", value=adminCommands, inline=True)
         
         if len(os.listdir('./cogs/moderation')) > 1:
@@ -43,7 +46,7 @@ class Help(commands.Cog):
             statsCommands = ""
             for f in os.listdir('./cogs/stats'):
                 if f.endswith('.py'):
-                    statsCommands += f"> {f[:-3]}\n"
+                    statsCommands += f"> {f[:-3]}\n" 
             embed.add_field(name="Stats", value=statsCommands, inline=True)
             
         if len(os.listdir('./cogs/utilities')) > 1:

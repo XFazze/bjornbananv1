@@ -9,7 +9,6 @@ class Server(commands.Cog):
     
     @commands.command(pass_context=True, aliases=['serverinfo'])
     async def server(self, ctx):
-        
         await ctx.message.delete()
         
         

@@ -28,7 +28,7 @@ class Base(commands.Cog):
             print("new prefix", prefix)
             await message.channel.send('successfully changed the prefix')
         except:
-            await message.channel.send('"You failed. "gsetprefix [prefix]"')
+            await message.channel.send('You failed. "bjornbanansetprefix [prefix]"')
 
 
 def setup(bot):

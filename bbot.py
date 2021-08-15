@@ -46,10 +46,11 @@ moderation = ['ban',
 utilities = ['clear', 
              'colorcode', 
              'dnd', 
-             'todo', 
-             'errorhandler']
+             'todo']
 
 voice = ['basic_vc']
+
+dev = ['errorhandler']
 
 # Set prefix here
 bot_prefix = ","
@@ -75,7 +76,8 @@ allcogs = {"admin":admin,
            "info":info, 
            "moderation":moderation, 
            "utilities":utilities, 
-           "voice":voice}
+           "voice":voice,
+           "dev":dev}
 
 if __name__ == '__main__':
     for coglist in allcogs.keys():

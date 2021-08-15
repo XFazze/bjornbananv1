@@ -8,19 +8,45 @@ prefix = ","
 
 
 # Add commands to load here
-admin = ['channels.deletingchannel', 'channels.joinleavemessage', 'channels.rolelog', 'joinroles', 'reaction_roles', 'setprefix', 'channels.bettervc', 'delete_pinned']
+admin = ['channels.joinleavemessage',
+         'channels.rolelog',
+         'joinroles',
+         'reaction_roles',
+         'setprefix',
+         'channels.bettervc',
+         'delete_pinned']
 
 games = []
 
-info = ['avatar', 'guild', 'help', 'user', 'ping']
+info = ['avatar',
+        'guild',
+        'help',
+        'user',
+        'ping']
 
-stats = ['actionlog', 'edited_messages', 'deleted_messages', 'joinleavelog', 'messagelog', 'tcstats', 'vcstats']
+stats = ['actionlog',
+         'edited_messages',
+         'deleted_messages',
+         'joinleavelog',
+         'messagelog',
+         'tcstats',
+         'vcstats']
 
-moderation = ['ban', 'banlist', 'kick', 'tempban', 'ticket', 'unban']
+moderation = ['ban',
+              'banlist',
+              'kick',
+              'tempban',
+              'ticket',
+              'unban']
 
-utilities = ['clear', 'colorcode', 'dnd', 'todo']
+utilities = ['clear',
+             'colorcode',
+             'dnd',
+             'todo']
 
 voice = ['basic_vc']
+
+
 
 
 # Removes default help command and creates the bot object
@@ -41,6 +67,7 @@ if __name__ == '__main__':
 token1, error = subprocess.Popen(["cat", "/tmp/discordbot/secrets.txt"], stdout=subprocess.PIPE).communicate()
 token1 = re.split("'", str(token1))
 token = token1[1].split(" ")
+
 
 # Creates the bot event
 @bot.event

@@ -60,7 +60,7 @@ class Base(commands.Cog):
         elif isinstance(error, commands.ExtensionError):
             message = f"Extension error {error.name}"
         elif isinstance(error, commands.ExtensionAlreadyLoaded):
-            message = "Extension already loaded"
+            message = "Cog is already loaded"
         elif isinstance(error, commands.ExtensionNotLoaded):
             message = "Extension not found "
         elif isinstance(error, commands.NoEntryPointError):
@@ -68,7 +68,7 @@ class Base(commands.Cog):
         elif isinstance(error, commands.ExtensionFailed):
             message = f"Extension failed name {error.name} original {error.original}"
         elif isinstance(error, commands.ExtensionNotFound):
-            message = f"Extension not found name {error.name} "
+            message = f"Cog not found {error.name} "
         elif isinstance(error, commands.CommandRegistrationError):
             message = f"Command registration error name {error.name}  alias conlfict {error.name}"
         else:
@@ -76,9 +76,9 @@ class Base(commands.Cog):
 
 
             
-        print("ERROR HAS UCCURED", message)
-        await ctx.send(message, delete_after=5)
-        await ctx.message.delete(delay=5)
+        print(f"[#{ctx.channel}] ERROR HAS OCCURED: ", message)
+        await ctx.send(message, delete_after=20)
+        #await ctx.message.delete(delay=5)
 
 
 def setup(bot):

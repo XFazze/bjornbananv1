@@ -8,13 +8,15 @@ prefix = ","
 
 
 # Add commands to load here
-admin = ['channels.joinleavemessage',
-         'channels.rolelog',
-         'joinroles',
+admin = ['joinroles',
          'reaction_roles',
          'setprefix',
          'channels.bettervc',
-         'delete_pinned']
+         'delete_pinned',
+         'presence']
+
+channels = ['joinleavemessage',
+            'rolelog']
 
 games = []
 
@@ -22,15 +24,18 @@ info = ['avatar',
         'guild',
         'help',
         'user',
-        'ping']
+        'ping',
+        'cog',
+        'uptime']
 
-stats = ['actionlog',
-         'edited_messages',
-         'deleted_messages',
-         'joinleavelog',
-         'messagelog',
-         'tcstats',
+stats = ['tcstats',
          'vcstats']
+
+logging = ['actionlog',
+           'joinleavelog', 
+           'messagelog',
+           'edited_messages',
+           'deleted_messages']
 
 moderation = ['ban',
               'banlist',
@@ -39,14 +44,13 @@ moderation = ['ban',
               'ticket',
               'unban']
 
-utilities = ['clear',
-             'colorcode',
-             'dnd',
-             'todo']
+utilities = ['clear', 
+             'colorcode', 
+             'dnd', 
+             'todo', 
+             'errorhandler']
 
 voice = ['basic_vc']
-
-utilities = ['clear', 'colorcode', 'dnd', 'todo', 'errorhandler']
 
 
 
@@ -56,12 +60,26 @@ bot.remove_command('help')
 
 
 # Loads all commands
-allcogs = {"admin":admin, "games":games, "stats":games, "info":info, "moderation":moderation, "utilities":utilities, "voice":voice}
+allcogs = {"admin":admin, 
+           "admin.channels":channels, 
+           "games":games, 
+           "stats":stats, 
+           "stats.logging":logging, 
+           "info":info, 
+           "moderation":moderation, 
+           "utilities":utilities, 
+           "voice":voice}
+
 if __name__ == '__main__':
     for coglist in allcogs.keys():
+        print(f"\n\n{coglist.capitalize()}")
         for cog in allcogs[coglist]:
-            n = "cogs." + f"{str(coglist)}." + str(cog)
-            bot.load_extension(n)
+            try:
+                n = "cogs." + f"{str(coglist)}." + str(cog)
+                print(f"LOADED      ::      {cog}")
+                bot.load_extension(n)
+            except commands.ExtensionFailed:
+                print(f"UNLOADED      ::      {cog}")
 
 
 # Gets the token
@@ -73,7 +91,7 @@ token = token1[1].split(" ")
 # Creates the bot event
 @bot.event
 async def on_ready():
-    print("Logged in as: " + bot.user.name)
+    print(f"\n\nLogged in as: {bot.user.name}\n")
     await bot.change_presence(activity=discord.Game(name=f"{prefix}help"))
 
 

@@ -196,10 +196,8 @@ class Base(commands.Cog):
         with open('/tmp/discordbot/logs/delete_logs/delete_mega.json', 'r') as f:
             delete_logs = json.load(f)
             if str(ctx.guild_id) not in delete_logs.keys():
-                print("created guild dict")
                 delete_logs[str(ctx.guild_id)] = {}
             if str(ctx.channel_id) not in delete_logs[str(ctx.guild_id)].keys():
-                print("created channel dict")
                 delete_logs[str(ctx.guild_id)][str(ctx.channel_id)] = {}
 
             delete_logs[str(ctx.guild_id)][str(ctx.channel_id)

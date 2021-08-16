@@ -1,5 +1,7 @@
 import discord
 import json
+from pymongo import MongoClient, collation
+import pymongo as pm
 from discord.ext import commands
 
 
@@ -9,16 +11,80 @@ class Base(commands.Cog):
 
     @commands.command(pass_context=True)
     async def mdbguild(self, ctx):
+        await ctx.message.delete()
+        if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
+            await ctx.send("Youre noone")
+            return
         docs = []
         for guild in self.bot.guilds:
             text_channels = []
             for channel in guild.text_channels:
-                text_channels.append()
+                if channel.category != None:
+                    category = channel.category.name
+                    category_id = channel.category_id
+                else:
+                    category = None
+                    category_id = None
+
+                text_channel = {
+                    "id": channel.id,
+                    "name": channel.name,
+                    "category": category_id,
+                    "category_id": category_id,
+
+                }
+                text_channels.append(text_channel)
+            voice_channels = []
+            for channel in guild.voice_channels:
+                if channel.category != None:
+                    category = channel.category.name
+                    category_id = channel.category_id
+                else:
+                    category = None
+                    category_id = None
+                voice_channel = {
+                    "id": channel.id,
+                    "name": channel.name,
+                    "category": category_id,
+                    "category_id": category_id,
+                }
+                voice_channels.append(voice_channel)
 
             doc = {"name": guild.name,
                    "id": guild.id,
-                   "": guild.id }
-            print(guild)
+                   "text_channels": text_channels,
+                   "voice_channels": voice_channels}
+            docs.append(doc)
+
+        client = MongoClient('localhost', 27017)
+        db = client.maindb
+        myCollection = db.guilds
+        myCollection.insert_many(docs)
+
+    @commands.command(pass_context=True)
+    async def mdbaddconfig(self, ctx):
+        await ctx.message.delete()
+        if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
+            await ctx.send("Youre noone")
+            return
+
+        client = MongoClient('localhost', 27017)
+        db = client.maindb
+        myCollection = db.guilds
+        for guild in self.bot.guilds:
+            myquery = {"id" : guild.id}
+            newvalues = {"$set" : {"config": {
+                       "joinrole": [],
+                       "prefix": ',',
+                       "bettervc": [],
+                       "delete_pinned": [],
+                       "deletingchannel": [],
+                       "bettervc": []
+                   }}}
+            doc = myCollection.update_one(myquery, newvalues)
+            print("doc", doc)
+
+
 
 
 def setup(bot):

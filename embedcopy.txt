@@ -1,7 +1,4 @@
 
-embed = discord.Embed(title="Failure", color=0xFD3333)
-await ctx.send(embed=embed)
+await ctx.send(embed=discord.Embed(title="Failure", color=0xFD3333))
 
-
-embed = discord.Embed(title="Success", color=0x00FF42)
-await ctx.send(embed=embed)
+await ctx.send(embed=discord.Embed(title="Success", color=0x00FF42))

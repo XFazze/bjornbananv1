@@ -9,7 +9,7 @@ import git
 import pymongo as pm
 
 
-
+start_time = time.time()
 
 
 
@@ -161,6 +161,27 @@ class Dev(commands.Cog):
 
         embed = discord.Embed(title="Reloaded "+" all cogs", color=0x00FF42)
         await ctx.send(embed=embed)
+
+
+
+
+
+
+
+    # Uptime
+    
+    @commands.command(pass_context=True)
+    async def uptime(self, ctx):
+        current_time = time.time()
+        difference = int(round(current_time - start_time))
+        text = str(datetime.timedelta(seconds=difference))
+        embed = discord.Embed(colour=0xFFFFFF)
+        embed.add_field(name="Uptime", value=text)
+        try:
+            await ctx.send(embed=embed)
+        except discord.HTTPException:
+            await ctx.send("Current uptime: " + text)
+
 
 
 

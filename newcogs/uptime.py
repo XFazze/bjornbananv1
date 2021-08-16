@@ -9,7 +9,7 @@ class Uptime(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
     
-    @commands.command(pass_context=True)
+    @commands.command(pass_context=True, name="uptime", aliases=[], description="", usage="uptime")
     async def uptime(self, ctx):
         current_time = time.time()
         difference = int(round(current_time - start_time))

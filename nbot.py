@@ -1,27 +1,39 @@
 # https://discord.com/oauth2/authorize?client_id=775007176157954058&scope=bot&permissions=8589934591
 
 import discord
+import json
 from discord.ext import commands
-from cogwatch import Watcher
 import subprocess
 import re
-
 
 # Set prefix here
 prefix = "n."
 
 
+
+async def determine_prefix(bot, message):
+    prefixes = json.load(open('/tmp/discordbot/management/prefixes.json', 'r'))
+    guild = message.guild
+    if guild:
+        return prefixes.get(str(guild.id), prefix)
+    else:
+        return prefix
+
+
 # Removes default help command and creates the bot object
-bot = commands.Bot(command_prefix=prefix, intents=discord.Intents.all())
+bot = commands.Bot(command_prefix=determine_prefix, intents=discord.Intents.all())
 bot.remove_command('help')
+
+if __name__ == '__main__':
+    bot.load_extension('cogs.dev.cog_manager')
+    bot.load_extension('cogs.info.uptime')
 
 
 # When the bot starts
 @bot.event
 async def on_ready():
-    print("Logged in as: " + bot.user.name)
-    watcher = Watcher(bot, path=f"commands", preload=True)
-    await watcher.start()
+    print(f"\n\nLogged in as: {bot.user.name}\n")
+    prefix = determine_prefix
     await bot.change_presence(activity=discord.Game(name=f"{prefix}help"))
 
 

@@ -7,27 +7,15 @@ import time
 import os
 import pymongo as pm
 import ffmpeg
-
-
-
-
-
-
+import gTTS
 
 
 class Voice(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-
-    
-    
-    
-    
-    
-    
-    # Basic VC
-    
+        
+# Basic VC
     @commands.command(pass_context=True, aliases=['j'])
     async def join(self,ctx):
         global voice
@@ -113,14 +101,6 @@ class Voice(commands.Cog):
         vc.play(discord.FFmpegPCMAudio(path),
                 after=lambda e: print("song is done"))
         vc.source = discord.PCMVolumeTransformer(vc.source)
-
-
-
-
-
-
-
-
 
 
 def setup(bot):

@@ -6,12 +6,7 @@ from discord.ext import commands, tasks
 import time
 import os
 import pymongo as pm
-
-
-
-
-
-
+import math
 
 
 class Stats(commands.Cog):
@@ -19,14 +14,8 @@ class Stats(commands.Cog):
         self.bot = bot
 
 
-
-
-
-
-
-    # TC stats
-
-    @commands.command(pass_context=True, aliases=['tc', 'tcstats'])
+# TC stats
+    @commands.command(pass_context=True, aliases=['tc', 'tcstats'], enabled= False)
     async def textstats(self, ctx):
         with open('/tmp/discordbot/management/enable.json', 'r+') as f:
             enable = json.load(f)
@@ -60,16 +49,9 @@ class Stats(commands.Cog):
             mess = mess + str(messages[item]) + "   :   " + str(item) + "\n"
         await ctx.send(mess)
     
-    
-    
-    
-    
-    
-    
-    
-    # VC stats
-    
-    @commands.command(pass_context=True, aliases=['vc', 'vcstats'])
+
+# VC stats 
+    @commands.command(pass_context=True, aliases=['vc', 'vcstats'], enabled= False)
     async def vs(self, ctx):
         with open('/tmp/discordbot/management/enable.json', 'r+') as f:
             enable = json.load(f)
@@ -108,16 +90,6 @@ class Stats(commands.Cog):
             mess = mess + str(minutes[item]) + "   :   "+str(item)+"\n"
         await ctx.send(mess)
     
-    
-    
-    
-    
-    
-
-
-
-
-
 
 def setup(bot):
     bot.add_cog(Stats(bot))

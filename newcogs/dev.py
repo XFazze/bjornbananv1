@@ -9,27 +9,12 @@ import git
 import pymongo as pm
 
 
-
-
-
-
-
 class Dev(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
 
-
-
-
-
-
-
-
-
-
-
-    # Error handler
+# Error handler
 
     @commands.Cog.listener()
     async def on_command_error(self,ctx:commands.Context, error: commands.CommandError):
@@ -110,13 +95,7 @@ class Dev(commands.Cog):
         #await ctx.message.delete(delay=5)
 
 
-
-
-
-
-
-
-    # Git
+# Git
 
     @commands.command(pass_context=True)
     async def git(self, ctx, action = None):
@@ -138,13 +117,7 @@ class Dev(commands.Cog):
             await ctx.send(embed=embed)
 
 
-
-
-
-
-
-
-    # Mongo DB
+# Mongo DB
 
     @commands.command(pass_context=True)
     async def mdbguild(self, ctx):
@@ -219,13 +192,7 @@ class Dev(commands.Cog):
             print("doc", doc)
 
 
-
-
-
-
-
-
-    # Presence
+# Presence
 
     @commands.command(pass_context=True)
     async def presence(self, ctx, presence = None):
@@ -239,27 +206,6 @@ class Dev(commands.Cog):
         else:
             await self.bot.change_presence(activity=discord.Game(name=presence))
             await ctx.send("Success")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 def setup(bot):

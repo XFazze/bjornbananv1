@@ -6,13 +6,9 @@ from discord.ext import commands, tasks
 import time
 import os
 import pymongo as pm
-from math import degrees
-
-
-
-
-
-
+import math
+import random
+import re
 
 
 class Utilities(commands.Cog):
@@ -20,13 +16,7 @@ class Utilities(commands.Cog):
         self.bot = bot
 
 
-
-
-
-
-
-    # Bomb reactions
-
+# Bomb reactions
     @commands.command(pass_context=True, aliases=['boom', 'bomb', 'reactions'])
     async def bomb_reactions(self, ctx, *id):
         emojis = ['😀', '😃', '😄', '😁', '😆', '😅', '😂', '🤣', '☺', '😊', '😇', '🙂', '🙃',
@@ -54,14 +44,7 @@ class Utilities(commands.Cog):
                 await ctx.send("not a valid id")
 
 
-    
-    
-    
-    
-    
-    
-    # Clear 
-    
+# Clear   
     @commands.command(pass_context=True, aliases=['g', 'purge'])
     @commands.has_permissions(manage_messages=True)
     async def clear(self, ctx):
@@ -104,16 +87,9 @@ class Utilities(commands.Cog):
         message = await ctx.send(f"I have deleted {amount} messages for you master")
         time.sleep(2)
         await message.delete()
-    
-    
-    
-    
-    
-    
-    
-    
-    # Color code
-    
+
+
+# Color code 
     @commands.command(pass_context=True, aliases=['cc'])
     async def colorcode(self, ctx):
         await ctx.message.delete()
@@ -138,14 +114,7 @@ class Utilities(commands.Cog):
         await ctx.send("I have also given you the roles you're welcume")
     
     
-    
-    
-    
-    
-    
-    
-    # DND
-    
+# DND  
     @commands.Cog.listener()
     async def on_message(self, message):
         msg=message.content
@@ -239,14 +208,8 @@ class Utilities(commands.Cog):
             await channel_perm.set_permissions(role, read_messages=False)
             await channel_perm.set_permissions(dm, overwrite=overwrite)
     
-    
-
-
-
-
-
-
-    # To-Do
+  
+# To-Do
 
     @commands.command(pass_context=True)
     async def todo(self, ctx):
@@ -394,17 +357,6 @@ class Utilities(commands.Cog):
         embed = message.embeds[0]
         embed.add_field(name=str(len(message.embeds[0].fields)+1), value=field.value, inline=False)
         await message.edit(embed=embed)
-
-
-
-
-
-
-
-
-
-
-
 
 
 def setup(bot):

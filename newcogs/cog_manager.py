@@ -7,7 +7,7 @@ import time
 import os
 import git
 import pymongo as pm
-
+import datetime
 
 start_time = time.time()
 
@@ -18,14 +18,7 @@ class Dev(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-
-
-    
-    
-    
-    
-    # Cog manager
-    
+# Cog manager
     @commands.command(pass_context=True)
     async def showcogs(self, ctx, category=None, cog=None):
         #await ctx.message.delete()
@@ -162,15 +155,9 @@ class Dev(commands.Cog):
         embed = discord.Embed(title="Reloaded "+" all cogs", color=0x00FF42)
         await ctx.send(embed=embed)
 
-
-
-
-
-
-
-    # Uptime
+# Uptime
     
-    @commands.command(pass_context=True)
+    @commands.command(pass_context=True, name="uptime", aliases=[], description="", usage="uptime")
     async def uptime(self, ctx):
         current_time = time.time()
         difference = int(round(current_time - start_time))
@@ -181,10 +168,6 @@ class Dev(commands.Cog):
             await ctx.send(embed=embed)
         except discord.HTTPException:
             await ctx.send("Current uptime: " + text)
-
-
-
-
 
 
 def setup(bot):

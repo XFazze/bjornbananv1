@@ -7,24 +7,14 @@ import time
 import os
 import pymongo as pm
 import math
-
-
-
-
-
+import datetime
 
 class Logging(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
 
-
-
-
-
-
-    # Action log
-
+# Action log
     @commands.Cog.listener()
     async def on_voice_state_update(self, member, before, after):
         action = "admin abuse"
@@ -165,15 +155,9 @@ class Logging(commands.Cog):
             with open(filename, 'w') as f:
                 f.write(str(time.time()) + " typing " + str(channel.guild.id) +
                         " " + str(channel.id) + " " + str(user)+"\n")
+ 
 
-
-    
-    
-    
-    
-    
-    
-    # Join/leave log
+# Join/leave log
     
     @commands.Cog.listener()
     async def on_member_join(self, member):
@@ -197,14 +181,8 @@ class Logging(commands.Cog):
             with open(filename, 'w') as f:
                 f.write(str(time.time()) + " leave " + str(member) + " " + str(member.guild.id) +  "\n")
 
-
-    
-    
-    
-    
-    
-    
-    # Message log
+   
+# Message log
     
     @commands.Cog.listener()
     async def on_message(self, ctx):
@@ -233,35 +211,6 @@ class Logging(commands.Cog):
             with open(filename, 'w') as f:
                 jsonfile = { str(ctx.guild.id) : {str(ctx.channel.id): {str(ctx.id) : jsonf}}}
                 json.dump(jsonfile, f, indent=4)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 def setup(bot):

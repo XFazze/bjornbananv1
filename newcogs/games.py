@@ -7,27 +7,16 @@ import time
 import os
 import pymongo as pm
 import math
-
-
-
-
-
+import random
 
 class Games(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.all_xp.start()
         
-        
-        
-        
-
-
-
-    
-    # XP
-    
-    @tasks.loop(seconds=15)
+     
+# XP
+    @tasks.loop(seconds=15, enabled=False)
     async def all_xp(self):
         with open('/tmp/discordbot/tc_logs.txt', 'r') as tc_logs:
             tc_log_content = tc_logs.readlines()
@@ -43,6 +32,12 @@ class Games(commands.Cog):
                                 tc_formated[tmp[5]] = round(tc_formated[tmp[5]]/2)
                         except:
                             tc_formated[tmp[5]] = 1
+    
+
+# dice roll
+    @commands.command(pass_context=True, aliases=[])
+    async def diceroll(self, ctx, dice:int = 6):
+      await ctx.send(embed=discord.Embed(title="You got an " + str(random.randint(0,dice)), color=0x00FF42))
     
     
     @all_xp.before_loop

@@ -9,20 +9,12 @@ import pymongo as pm
 import random
 
 
-
-
-
-
 class Info(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
 
-
-
-
-
-    # Help
+# Help
     
     @commands.command(pass_context=True, aliases=['h','commands'])
     async def help(self, ctx):
@@ -76,16 +68,9 @@ class Info(commands.Cog):
             embed.add_field(name="Utilities", value=utilitiesCommands, inline=True)
             
         await ctx.send(embed=embed)
-    
-    
-    
-    
-    
-    
+   
 
-    
-    
-    # User info
+# User info
     
     @commands.command(pass_context=True, aliases= ['userinfo'])
     async def user(self, ctx, member:discord.Member = None):
@@ -134,15 +119,9 @@ class Info(commands.Cog):
             embed=discord.Embed(title=member, color=random.randint(0, 0xFFFFFF))
             embed.set_image(url=member.avatar_url)
             await ctx.send(embed=embed)
+     
     
-    
-    
-    
-    
-    
-    
-    
-    # Server info
+# Server info
     
     @commands.command(pass_context=True, aliases=['serverinfo', 'guild'])
     async def server(self, ctx):
@@ -163,14 +142,8 @@ class Info(commands.Cog):
         embed.set_image(url=ctx.guild.icon_url)
         await ctx.send(embed=embed)
     
-    
-    
-    
-    
-    
-    
-    
-    # Ping
+  
+# Ping
     
     @commands.command(pass_context=True, aliases=['latency'])
     async def ping(self, ctx):
@@ -180,17 +153,6 @@ class Info(commands.Cog):
         embed.add_field(name="Latency", value='{0}ms'.format(round(self.bot.latency*1000, 1)))
         await ctx.send(embed=embed)
     
-    
-    
-    
-    
-    
-    
-
-
-
-
-
 
 def setup(bot):
     bot.add_cog(Info(bot))

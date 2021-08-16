@@ -7,13 +7,9 @@ import time
 import os
 import pymongo as pm
 import asyncio
-
-
-
-
-
-
-
+import random
+import datetime
+import copy
 
 
 class Moderation(commands.Cog):
@@ -21,12 +17,7 @@ class Moderation(commands.Cog):
         self.bot = bot
 
 
-
-
-
-
-
-    # Ban
+# Ban
 
     @commands.command(pass_context=True)
     @commands.has_permissions(ban_members=True)
@@ -52,14 +43,8 @@ class Moderation(commands.Cog):
             else:
                 await ctx.send("The person you are trying to ban is more powerful than you")
     
-    
-    
-    
-    
-    
-    
-    
-    # Temp ban
+   
+# Temp ban
     
     @commands.command(pass_context=True)
     @commands.has_permissions(ban_members=True)
@@ -98,13 +83,7 @@ class Moderation(commands.Cog):
                 await ctx.send("The person you are trying to ban is more powerful than you")
 
 
-
-
-
-
-
-
-    # Ban list
+# Ban list
 
     @commands.command(pass_context=True)
     @commands.has_permissions(ban_members=True)
@@ -124,13 +103,7 @@ class Moderation(commands.Cog):
             await ctx.send(embed=embed)
 
 
-
-
-
-
-
-
-    # Unban
+# Unban
 
     @commands.command(pass_context=True)
     @commands.has_permissions(ban_members=True)
@@ -153,13 +126,7 @@ class Moderation(commands.Cog):
                     await ctx.send(f'{user} was unbanned')
 
 
-
-
-
-
-
-
-    # Kick
+# Kick
 
     @commands.command(pass_context=True)
     @commands.has_permissions(kick_members=True)
@@ -184,15 +151,8 @@ class Moderation(commands.Cog):
             else:
                 await ctx.send("The person you are trying to kick is more powerful than you")
 
-
     
-    
-    
-    
-    
-    
-    # Ticket
-
+# Ticket
     @commands.command(pass_context=True, aliases=['t'])
     async def ticket(self, ctx):
         
@@ -244,13 +204,7 @@ class Moderation(commands.Cog):
                 await member.send(file=discord.File(file))
 
 
-
-
-
-
-
-
-    # Edited messages
+# Edited messages
 
     @commands.command(pass_context=True, aliases = ['e'])
     async def editedmessages(self, ctx):
@@ -299,14 +253,7 @@ class Moderation(commands.Cog):
         pass
 
 
-
-
-
-
-
-
-    # Deleted messages
-
+# Deleted messages
     @commands.command(pass_context=True, aliases=['d', 'deleted', 'snipe'])
     async def deletedmessages(self, ctx):
         
@@ -492,37 +439,6 @@ class Moderation(commands.Cog):
                                            ][str(ctx.message_id)] = message
             with open('/tmp/discordbot/logs/delete_logs/delete_mega.json', 'w') as file:
                 json.dump(delete_logs, file, indent=4)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 def setup(bot):

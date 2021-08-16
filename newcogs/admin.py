@@ -21,7 +21,7 @@ class Admin(commands.Cog):
 
 
 
-    # Enable/disable command
+# Enable/disable command
     
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_roles=True)
@@ -87,12 +87,7 @@ class Admin(commands.Cog):
                         return
         await ctx.send("Command does not exist")
 
-
-    
-    
-    
-    
-    # Björnbanan set prefix
+# Björnbanan set prefix
     
     @commands.Cog.listener()
     @commands.has_permissions(manage_guild=True)
@@ -100,24 +95,24 @@ class Admin(commands.Cog):
         msg = message.content
         if msg[0:19] != "bjornbanansetprefix":
             return
-        try:
-            prefix = msg.split(" ")[1]
-            prefixes = json.load(open('/tmp/discordbot/management/prefixes.json', 'r'))
-            prefixes[str(message.guild.id)] = prefix
-            json.dump(prefixes, open('/tmp/discordbot/management/prefixes.json', 'w'))
-            print("new prefix", prefix)
-            await message.channel.send('successfully changed the prefix')
-        except:
-            await message.channel.send('You failed. "bjornbanansetprefix [prefix]"')
+        if len(msg.split(' ')) != 2:
+            embed = discord.Embed(title="Prove a valid prefix. bjornbanansetprefix [prefix]", color=0xFD3333)
+            await message.channel.send(embed=embed)
+            return
+        
+        prefix = msg.split(' ')[1]
 
+        collection = MongoClient('localhost', 27017).maindb.guilds
+        myquery = {"id": message.guild.id}
+        config = collection.find_one(myquery)["config"]
 
+        config["prefix"] = prefix
+        newvalue = {"$set": {"config": config}}
+        collection.update_one(myquery, newvalue)
+        embed = discord.Embed(title="Successfully changed the prefix to "+ prefix, color=0x00FF42)
+        await message.channel.send(embed=embed)
 
-
-    
-    
-    
-    
-    # Join roles
+# Join roles
 
     @commands.command(pass_context=True, aliases=['jra', 'jradd'])
     @commands.has_permissions(manage_roles=True)
@@ -201,14 +196,7 @@ class Admin(commands.Cog):
                     role = get(guild.roles, id=role_id)
                     await member.add_roles(role)
 
-
-
-
-
-
-
-
-    # Reaction roles
+# Reaction roles
 
     @commands.command(pass_context=True, aliases=['r'])
     @commands.has_permissions(manage_roles=True)
@@ -286,12 +274,6 @@ class Admin(commands.Cog):
         for sending in tosend:
             msg = await ctx.send(sending["content"])
             await msg.add_reaction(sending["reaction"])
-
-
-
-
-
-
 
 
 

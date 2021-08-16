@@ -63,7 +63,7 @@ class Channels(commands.Cog):
                 if channel == ctx.channel.id:
                     await ctx.delete()
 
-    # Deleting channel
+# Deleting channel
 
     @commands.command(pass_context=True, aliases=['ed'])
     @commands.has_permissions(manage_messages=True)
@@ -121,7 +121,7 @@ class Channels(commands.Cog):
         print('deletingchannel enabled')
         await self.bot.wait_until_ready()
 
-    # bettervc
+# bettervc
 
 
     @commands.command(pass_context=True, aliases=['eb'])
@@ -196,8 +196,7 @@ class Channels(commands.Cog):
                     await empty_channel.set_permissions(guild_object.default_role, read_messages=None)
                     break
 
-
-    # joinleavemessage 
+# joinleavemessage 
 
     @commands.command(pass_context=True, aliases=['ejlm'])
     @commands.has_permissions(manage_messages=True)
@@ -278,7 +277,7 @@ class Channels(commands.Cog):
                         member) + "  left " + str(times)+" times", description=time.asctime(), color=0xFF0000)
                     await channel.send(embed=embed)
 
-    # Role log
+# Role log
 
     @commands.command(pass_context=True, aliases=['er'])
     @commands.has_permissions(manage_roles=True)

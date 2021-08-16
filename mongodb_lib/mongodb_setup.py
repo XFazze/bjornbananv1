@@ -29,7 +29,7 @@ management is part of guild variables now(config)
                 "roleid" : [roleid]}
                     ]
                 } 
-    "config" : {                                     CREATE THIS WITH ENABLE/DISABLE COMMAND
+    "config" : {                                    
         "joinrole" : ['roleid'],
         "prefix" : ',',
         "bettervc" : ['category_id'],

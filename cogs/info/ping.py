@@ -26,8 +26,8 @@ class Ping(commands.Cog):
 
         
         
-        #for x in dbg.find():
-            #print(x)
+        for x in dbg.find():
+            print(x)
         
         
         

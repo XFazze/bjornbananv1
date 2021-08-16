@@ -75,6 +75,7 @@ class Base(commands.Cog):
             for empty_channel in category_object.channels:
                 if len(empty_channel.members) == 0:
                     await empty_channel.set_permissions(guild_object.default_role, read_messages=None)
+                    break
     
        
 

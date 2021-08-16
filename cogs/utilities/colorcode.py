@@ -5,7 +5,7 @@ from discord.ext import commands, tasks
 from discord.utils import get
 
 
-class Base(commands.Cog):
+class Color(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -36,4 +36,4 @@ class Base(commands.Cog):
 
 
 def setup(bot):
-    bot.add_cog(Base(bot))
+    bot.add_cog(Color(bot))

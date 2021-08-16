@@ -1,14 +1,29 @@
 import discord
-import time
-import math
-import os
 import json
-from discord.ext import commands
+from discord.utils import get
+from pymongo import MongoClient, collation
+from discord.ext import commands, tasks
+import time
+import os
+import pymongo as pm
+import math
 
 
-class Action_log(commands.Cog):
+
+
+
+
+class Logging(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+
+
+
+
+
+
+
+    # Action log
 
     @commands.Cog.listener()
     async def on_voice_state_update(self, member, before, after):
@@ -61,6 +76,7 @@ class Action_log(commands.Cog):
                 f.write(str(time.time())+" " + action+" " +
                         str(channel_id) + " "+str(member) + "\n")
 
+
     @commands.Cog.listener()
     async def on_message(self, message):
         member = await message.guild.fetch_member(message.author.id)
@@ -75,6 +91,7 @@ class Action_log(commands.Cog):
                 f.write(str(time.time()) + " send " + str(message.guild.id) + " " + str(
                     message.channel.id) + " "+str(message.id) + " " + str(member) + " " + "\n")
 
+
     @commands.Cog.listener()
     async def on_raw_message_delete(self, payload):
         filename = '/tmp/discordbot/logs/tc_logs/' + \
@@ -87,6 +104,7 @@ class Action_log(commands.Cog):
             with open(filename, 'w') as f:
                 f.write(str(time.time()) + " delete " + str(payload.guild_id) + " " +
                         str(payload.channel_id) + " " + str(payload.message_id) + " " + "\n")
+
 
     @commands.Cog.listener()
     async def on_raw_message_edit(self, payload):
@@ -104,6 +122,7 @@ class Action_log(commands.Cog):
             except:
                 print("the strange thing happeneded in actionlog")
 
+
     @commands.Cog.listener()
     async def on_raw_reaction_add(self, payload):
         filename = '/tmp/discordbot/logs/tc_logs/' + \
@@ -116,6 +135,7 @@ class Action_log(commands.Cog):
             with open(filename, 'w') as f:
                 f.write(str(time.time()) + " reactadd " + str(payload.guild_id) + " " + str(payload.channel_id) + " " + str(payload.message_id) +
                         " " + str(payload.member.name) + "#" + str(payload.member.discriminator) + " " + str(payload.emoji.name) + "\n")
+
 
     @commands.Cog.listener()
     async def on_raw_reaction_remove(self, payload):
@@ -132,6 +152,7 @@ class Action_log(commands.Cog):
                 f.write(str(time.time()) + " reactremove " + str(payload.guild_id) + " " + str(payload.channel_id) +
                         " " + str(payload.message_id) + " " + str(member) + " " + str(payload.emoji.name) + "\n")
 
+
     @commands.Cog.listener()
     async def on_typing(self, channel, user, when):
         filename = '/tmp/discordbot/logs/tc_logs/' + \
@@ -146,5 +167,102 @@ class Action_log(commands.Cog):
                         " " + str(channel.id) + " " + str(user)+"\n")
 
 
+    
+    
+    
+    
+    
+    
+    # Join/leave log
+    
+    @commands.Cog.listener()
+    async def on_member_join(self, member):
+        filename = '/tmp/discordbot/logs/joinleave_logs/' + \
+            str(math.floor(time.time()/86400))+'.txt'
+        try:
+            with open(filename, 'a') as f:
+                f.write(str(time.time()) + " join " + str(member) + " " + str(member.guild.id) + "\n")
+        except:
+            with open(filename, 'w') as f:
+                f.write(str(time.time()) + " join " + str(member) + " " + str(member.guild.id) + "\n")
+
+    @commands.Cog.listener()
+    async def on_member_remove(self, member):
+        filename = '/tmp/discordbot/logs/joinleave_logs/' + \
+            str(math.floor(time.time()/86400))+'.txt'
+        try:
+            with open(filename, 'a') as f:
+                f.write(str(time.time()) + " leave " + str(member) + " " + str(member.guild.id) + "\n")
+        except:
+            with open(filename, 'w') as f:
+                f.write(str(time.time()) + " leave " + str(member) + " " + str(member.guild.id) +  "\n")
+
+
+    
+    
+    
+    
+    
+    
+    # Message log
+    
+    @commands.Cog.listener()
+    async def on_message(self, ctx):
+        jsonf = {
+                    "content" : str(ctx.content),
+                    "author_name" : str(ctx.author.name),
+                    "author_discriminator" : str(ctx.author.discriminator),
+                    "time" : str(datetime.now())
+                }
+        filename = '/tmp/discordbot/logs/message_logs/' + \
+            str(math.floor(time.time()/86400))+'.json'
+        try:
+            with open(filename, 'r') as f:
+                deletemessages = json.load(f)
+                if str(ctx.guild.id) not in deletemessages.keys():
+                    deletemessages[str(ctx.guild.id)]={}
+                if str(ctx.channel.id) not in deletemessages[str(ctx.guild.id)].keys():
+                    deletemessages[str(ctx.guild.id)][str(ctx.channel.id)] ={}
+                
+                deletemessages[str(ctx.guild.id)][str(ctx.channel.id)][str(ctx.id)] = jsonf
+            with open(filename, 'w') as f:
+                json.dump(deletemessages, f, indent=4)
+
+        except:
+            print("created file")
+            with open(filename, 'w') as f:
+                jsonfile = { str(ctx.guild.id) : {str(ctx.channel.id): {str(ctx.id) : jsonf}}}
+                json.dump(jsonfile, f, indent=4)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def setup(bot):
-    bot.add_cog(Action_log(bot))
+    bot.add_cog(Logging(bot))

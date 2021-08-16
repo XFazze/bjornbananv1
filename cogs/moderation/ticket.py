@@ -6,7 +6,7 @@ from discord.utils import get
 
 
 
-class Base(commands.Cog):
+class Ticket(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -60,4 +60,4 @@ class Base(commands.Cog):
             for member in channel.members:
                 await member.send(file=discord.File(file))
 def setup(bot):
-    bot.add_cog(Base(bot))
+    bot.add_cog(Ticket(bot))

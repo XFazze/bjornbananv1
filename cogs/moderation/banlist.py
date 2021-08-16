@@ -3,7 +3,7 @@ from discord.ext import commands
 
 
 # Command
-class Banlist(commands.Cog):
+class Ban_list(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
     
@@ -26,7 +26,7 @@ class Banlist(commands.Cog):
             
 
 def setup(bot):
-    bot.add_cog(Banlist(bot))
+    bot.add_cog(Ban_list(bot))
 
 
 

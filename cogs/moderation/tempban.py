@@ -4,7 +4,7 @@ import asyncio
 
 
 # Command
-class Tempban(commands.Cog):
+class Temp_ban(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
     
@@ -59,4 +59,4 @@ class Tempban(commands.Cog):
     
 
 def setup(bot):
-    bot.add_cog(Tempban(bot))
+    bot.add_cog(Temp_ban(bot))

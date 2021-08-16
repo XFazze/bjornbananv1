@@ -3,11 +3,11 @@ from discord.ext import commands
 import random
 
 
-class Server(commands.Cog):
+class Server_info(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
     
-    @commands.command(pass_context=True, aliases=['serverinfo'])
+    @commands.command(pass_context=True, aliases=['serverinfo', 'guild'])
     async def server(self, ctx):
         await ctx.message.delete()
         
@@ -31,4 +31,4 @@ class Server(commands.Cog):
         
 
 def setup(bot):
-    bot.add_cog(Server(bot))
+    bot.add_cog(Server_info(bot))

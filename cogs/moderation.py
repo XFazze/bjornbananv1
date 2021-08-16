@@ -1,16 +1,311 @@
 import discord
 import json
-import os
+from discord.utils import get
+from pymongo import MongoClient, collation
+from discord.ext import commands, tasks
 import time
-import copy
-from datetime import datetime
-from discord import embeds
-from discord.ext import commands
+import os
+import pymongo as pm
+import asyncio
 
 
-class Deleted_messages(commands.Cog):
+
+
+
+
+
+
+
+class Moderation(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+
+
+
+
+
+
+
+    # Ban
+
+    @commands.command(pass_context=True)
+    @commands.has_permissions(ban_members=True)
+    @commands.bot_has_permissions(ban_members=True)
+    async def ban(self, ctx, member:discord.Member = None, *reason):
+        
+        # Sets default reason if not specified
+        if not reason:
+            reason = "Reason was not specified"
+        
+        # Bans member if the author has a higher role than the subject.
+        if member is None:
+            await ctx.send("Please mention someone to ban")
+        
+        else:
+            
+            if ctx.author.top_role.position > member.top_role.position:
+                
+                reason = ' '.join(map(str, reason))
+                await ctx.send(f'{member} was banned with reason "{reason}"')
+                await ctx.guild.ban(member, reason=reason)
+                
+            else:
+                await ctx.send("The person you are trying to ban is more powerful than you")
+    
+    
+    
+    
+    
+    
+    
+    
+    # Temp ban
+    
+    @commands.command(pass_context=True)
+    @commands.has_permissions(ban_members=True)
+    @commands.bot_has_permissions(ban_members=True)
+    async def tempban(self, ctx, member:discord.Member = None, days = None, *reason):
+        # Sets default time and reason if not specified
+        if days is None:
+            days = 7
+            
+        if reason is None:
+            reason = "Reason was not specified"
+        
+        
+        # Bans member for the specified time if a member is mentioned and if the author has a higher role than the subject.
+        if member is None:
+            await ctx.send("Please mention someone to ban")
+        
+        
+        else:
+            
+            if ctx.author.top_role.position > member.top_role.position:
+                
+                reason = ' '.join(map(str, reason))
+                
+                t = int(days)*24*60*60
+                
+                await ctx.send(f'{member} was banned with reason "{reason}" for {int(t/60/60/24)} days')
+                    
+                await ctx.guild.ban(member, reason=reason)
+                
+                await asyncio.sleep(t)
+                await member.unban()
+                
+            
+            else:
+                await ctx.send("The person you are trying to ban is more powerful than you")
+
+
+
+
+
+
+
+
+    # Ban list
+
+    @commands.command(pass_context=True)
+    @commands.has_permissions(ban_members=True)
+    @commands.bot_has_permissions(ban_members=True)
+    async def banlist(self, ctx):
+        
+        await ctx.message.delete()
+        
+        banlist = await ctx.guild.bans()
+        
+        for i in range(0, len(banlist)):
+            
+            embed=discord.Embed(title="Banned member", color=0xff0000)
+            embed.add_field(name="User", value=banlist[i].user, inline=False)
+            embed.add_field(name="ID", value=banlist[i].user.id, inline=False)
+            embed.add_field(name="Reason", value=banlist[i].reason, inline=False)
+            await ctx.send(embed=embed)
+
+
+
+
+
+
+
+
+    # Unban
+
+    @commands.command(pass_context=True)
+    @commands.has_permissions(ban_members=True)
+    @commands.bot_has_permissions(ban_members=True)
+    async def unban(self, ctx, member = None):
+
+        # Unbans a member
+        if member is None:
+            await ctx.send("Please mention someone to unban")
+        
+        else:
+            banned_users = await ctx.guild.bans()
+            member_name, member_discriminator = member.split("#")
+            
+            for ban_entry in banned_users:
+                user = ban_entry.user
+                
+                if (user.name, user.discriminator) == (member_name, member_discriminator):
+                    await ctx.guild.unban(user)
+                    await ctx.send(f'{user} was unbanned')
+
+
+
+
+
+
+
+
+    # Kick
+
+    @commands.command(pass_context=True)
+    @commands.has_permissions(kick_members=True)
+    @commands.bot_has_permissions(kick_members=True)
+    async def kick(self, ctx, member:discord.Member, *reason):
+        # Sets default reason if not specified
+        if not reason:
+            reason = "Reason was not specified"
+        
+        # Bans member if the author has a higher role than the subject.
+        if member is None:
+            await ctx.send("Please mention someone to kick")
+        
+        else:
+            
+            if ctx.author.top_role.position > member.top_role.position:
+                
+                reason = ' '.join(map(str, reason))
+                await ctx.send(f'{member} was kicked with reason "{reason}"')
+                await ctx.guild.kick(member, reason=reason)
+                
+            else:
+                await ctx.send("The person you are trying to kick is more powerful than you")
+
+
+    
+    
+    
+    
+    
+    
+    # Ticket
+
+    @commands.command(pass_context=True, aliases=['t'])
+    async def ticket(self, ctx):
+        
+        await ctx.message.delete()
+        guild = ctx.guild
+        tickets = True
+        for cat in guild.categories:
+            if cat.name == "tickets":
+                tickets = False
+                category = cat
+        
+        if tickets:
+            category = await guild.create_category("tickets")
+            await category.set_permissions(guild.default_role, read_messages=False)
+            #overwrite = discord.PermissionOverwrite()
+            #overwrite.read_messages = True
+            #role = get(guild.roles, id=802299956299169845)
+            #await category.set_permissions(role, overwrite=overwrite)
+        
+        name = str(random.randint(111111,999999))+"_"+str(ctx.author)
+        channel = await guild.create_text_channel(name=name, category=category)
+        await channel.set_permissions(guild.default_role, read_messages=False)
+        overwrite = discord.PermissionOverwrite()
+        overwrite.read_messages = True
+        await channel.set_permissions(ctx.author, overwrite=overwrite)
+        admin = get(guild.roles, id=802299956299169845)
+        await channel.set_permissions(admin, overwrite=overwrite)
+        message = await channel.send("Here you can contact the admins if you have a report or a proposal. When finished react with the :lock: to this message.")
+        await message.add_reaction("🔒")
+        
+
+    @commands.Cog.listener()
+    async def on_raw_reaction_add(self,payload):
+        channel = await self.bot.fetch_channel(payload.channel_id)
+        message = await channel.fetch_message(payload.message_id)
+        reaction = discord.utils.get(message.reactions, emoji=payload.emoji.name)
+        guild = self.bot.get_guild(payload.guild_id)
+        if message.author == guild.get_member(self.bot.user.id) and payload.member != guild.get_member(self.bot.user.id) and channel.category_id == 808279224485806110:
+            bigmessage = []
+            file = "/tmp/discordbot/tickets/"+channel.name+".txt"
+            with open(file, "w+") as f:
+                newhistory = []
+                async for message in channel.history(limit=20000):
+                    newhistory.insert(0, message)
+                for message in newhistory:
+                    f.write(message.author.name +":"+ message.content + "\n")
+            await channel.delete()
+            for member in channel.members:
+                await member.send(file=discord.File(file))
+
+
+
+
+
+
+
+
+    # Edited messages
+
+    @commands.command(pass_context=True, aliases = ['e'])
+    async def editedmessages(self, ctx):
+        
+        await ctx.message.delete()
+        with open('/tmp/discordbot/logs/delete_logs/edit_mega.json', 'r') as f:
+            delete_logs = json.load(f)
+            sending_message = 'Edited messages in this channel\n'
+            for message in delete_logs[str(ctx.guild.id)][str(ctx.channel.id)]:
+                sending_message = sending_message + "\n" + delete_logs[str(ctx.guild.id)][str(ctx.channel.id)][message]["time"] + " " + delete_logs[str(ctx.guild.id)][str(
+                    ctx.channel.id)][message]['author_name'] + "#" + delete_logs[str(ctx.guild.id)][str(ctx.channel.id)][message]['author_discriminator'] + ":\n" + delete_logs[str(ctx.guild.id)][str(ctx.channel.id)][message]['content']
+            sending_message = "```" + sending_message + "```"
+            await ctx.send(sending_message)
+
+
+    @commands.Cog.listener()
+    async def on_raw_message_edit(self, ctx):
+        filepath = '/tmp/discordbot/logs/message_logs/'
+        for file in os.listdir(filepath):
+            filename = "/tmp/discordbot/logs/message_logs/" + file
+            with open(filename, 'r') as f:
+                messagelog = json.load(f)
+                try:
+                    message = messagelog[str(ctx.data['guild_id'])][str(
+                        ctx.channel_id)][str(ctx.message_id)]
+                    break
+                except:
+                    pass
+        try:
+            if message:
+                pass
+        except:
+            return
+        with open('/tmp/discordbot/logs/delete_logs/edit_mega.json', 'r') as f:
+            delete_logs = json.load(f)
+            if str(ctx.data['guild_id']) not in delete_logs.keys():
+                delete_logs[str(ctx.data['guild_id'])] = {}
+            if str(ctx.channel_id) not in delete_logs[str(ctx.data['guild_id'])].keys():
+                delete_logs[str(ctx.data['guild_id'])
+                            ][str(ctx.channel_id)] = {}
+
+            delete_logs[str(ctx.data['guild_id'])][str(
+                ctx.channel_id)][str(ctx.message_id)] = message
+            with open('/tmp/discordbot/logs/delete_logs/edit_mega.json', 'w') as file:
+                json.dump(delete_logs, file, indent=4)
+        pass
+
+
+
+
+
+
+
+
+    # Deleted messages
 
     @commands.command(pass_context=True, aliases=['d', 'deleted', 'snipe'])
     async def deletedmessages(self, ctx):
@@ -164,15 +459,6 @@ class Deleted_messages(commands.Cog):
                     print("guild not found")
                     ret_message = "There are no deleted messages"
 
-    '''
-        with open('/tmp/discordbot/logs/delete_logs/delete_mega.json', 'r') as f:
-            delete_logs = json.load(f)
-            sending_message = 'Deleted messages in this channel\n'
-            for message in delete_logs[str(ctx.guild.id)][str(ctx.channel.id)]:
-                sending_message = sending_message +"\n" + delete_logs[str(ctx.guild.id)][str(ctx.channel.id)][message]["time"] + " " + delete_logs[str(ctx.guild.id)][str(ctx.channel.id)][message]['author_name'] + "#" + delete_logs[str(ctx.guild.id)][str(ctx.channel.id)][message]['author_discriminator']  + ":\n" + delete_logs[str(ctx.guild.id)][str(ctx.channel.id)][message]['content']
-            sending_message = "```" + sending_message + "```"
-            await ctx.send(sending_message)
-    '''
 
     @commands.Cog.listener()
     async def on_raw_message_delete(self, ctx):
@@ -208,5 +494,36 @@ class Deleted_messages(commands.Cog):
                 json.dump(delete_logs, file, indent=4)
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def setup(bot):
-    bot.add_cog(Deleted_messages(bot))
+    bot.add_cog(Moderation(bot))

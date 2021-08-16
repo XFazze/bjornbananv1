@@ -4,7 +4,7 @@ from discord.ext import commands, tasks
 from discord.utils import get
 
 # channels which get cleansed every 10 seoncds
-class Base(commands.Cog):
+class Deleting_channel(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.cleanse.start()
@@ -53,4 +53,4 @@ class Base(commands.Cog):
         await self.cleanse.wait_until_ready()
 
 def setup(bot):
-    bot.add_cog(Base(bot))
+    bot.add_cog(Deleting_channel(bot))

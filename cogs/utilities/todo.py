@@ -5,7 +5,7 @@ import random
 from discord import embeds
 from discord.ext import commands
 
-class Base(commands.Cog):
+class Todo(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -156,4 +156,4 @@ class Base(commands.Cog):
 
 
 def setup(bot):
-    bot.add_cog(Base(bot))
+    bot.add_cog(Todo(bot))

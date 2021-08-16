@@ -5,7 +5,7 @@ from discord.ext import commands, tasks
 from discord.utils import get
 
 
-class Base(commands.Cog):
+class Role_log(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -64,4 +64,4 @@ class Base(commands.Cog):
                     await channel.send(message)
 
 def setup(bot):
-    bot.add_cog(Base(bot))
+    bot.add_cog(Role_log(bot))

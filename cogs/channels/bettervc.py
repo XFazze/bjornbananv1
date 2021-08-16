@@ -5,7 +5,7 @@ from discord.ext import commands, tasks
 from discord.utils import get
 
 
-class Base(commands.Cog):
+class Better_vc(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.hidechannels.start()
@@ -85,4 +85,4 @@ class Base(commands.Cog):
 
 
 def setup(bot):
-    bot.add_cog(Base(bot))
+    bot.add_cog(Better_vc(bot))

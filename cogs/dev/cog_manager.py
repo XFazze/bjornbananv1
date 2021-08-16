@@ -3,7 +3,7 @@ from discord.ext import commands
 import os
 
 
-class Cogs(commands.Cog):
+class Cog_manager(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -141,4 +141,4 @@ class Cogs(commands.Cog):
 
 
 def setup(bot):
-    bot.add_cog(Cogs(bot))
+    bot.add_cog(Cog_manager(bot))

@@ -5,7 +5,7 @@ import os
 from discord.ext import commands
 
 
-class Base(commands.Cog):
+class Edited_messages(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -56,4 +56,4 @@ class Base(commands.Cog):
 
 
 def setup(bot):
-    bot.add_cog(Base(bot))
+    bot.add_cog(Edited_messages(bot))

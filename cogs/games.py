@@ -1,20 +1,32 @@
 import discord
+import json
+from discord.utils import get
+from pymongo import MongoClient, collation
+from discord.ext import commands, tasks
 import time
-import random
+import os
+import pymongo as pm
 import math
-from discord.ext import tasks, commands
-
-
-    
 
 
 
 
-class Xp(commands.Cog):
+
+
+class Games(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.all_xp.start()
+        
+        
+        
+        
 
+
+
+    
+    # XP
+    
     @tasks.loop(seconds=15)
     async def all_xp(self):
         with open('/tmp/discordbot/tc_logs.txt', 'r') as tc_logs:
@@ -31,13 +43,45 @@ class Xp(commands.Cog):
                                 tc_formated[tmp[5]] = round(tc_formated[tmp[5]]/2)
                         except:
                             tc_formated[tmp[5]] = 1
+    
+    
     @all_xp.before_loop
     async def before_all_xp(self):
         print('all xp enabled')
         await self.bot.wait_until_ready()
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 
 
+
+
+
+
+
 def setup(bot):
-    bot.add_cog(Xp(bot))
+    bot.add_cog(Games(bot))

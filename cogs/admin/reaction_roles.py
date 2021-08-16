@@ -4,7 +4,7 @@ from discord.ext import commands
 from discord.utils import get
 
 
-class Base(commands.Cog):
+class Reaction_roles(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
@@ -86,4 +86,4 @@ class Base(commands.Cog):
 
 
 def setup(bot):
-    bot.add_cog(Base(bot))
+    bot.add_cog(Reaction_roles(bot))

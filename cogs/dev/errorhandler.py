@@ -3,7 +3,7 @@ import json
 from discord.ext import commands
 
 
-class Base(commands.Cog):
+class Error_handler(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -71,6 +71,10 @@ class Base(commands.Cog):
             message = f"Extension not found name {error.name}"
         elif isinstance(error, commands.CommandRegistrationError):
             message = f"Command registration error name {error.name}  alias conlfict {error.name}"
+        elif isinstance(error, FileNotFoundError):
+            message = error 
+        elif isinstance(error, commands.CommandNotFound):
+            message = error
         else:
             message = f"Failure {error}"
 
@@ -83,4 +87,4 @@ class Base(commands.Cog):
 
 
 def setup(bot):
-    bot.add_cog(Base(bot))
+    bot.add_cog(Error_handler(bot))

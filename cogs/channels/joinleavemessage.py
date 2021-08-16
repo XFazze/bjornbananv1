@@ -5,7 +5,7 @@ import os
 from discord.ext import commands
 
 # how many times a user has been here
-class Base(commands.Cog):
+class Join_leave_message(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -88,4 +88,4 @@ class Base(commands.Cog):
                     await channel.send(embed=embed)
 
 def setup(bot):
-    bot.add_cog(Base(bot))
+    bot.add_cog(Join_leave_message(bot))

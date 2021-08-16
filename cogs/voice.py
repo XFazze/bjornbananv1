@@ -1,15 +1,32 @@
 import discord
-import ffmpeg
 import json
-from discord.ext import commands
 from discord.utils import get
+from pymongo import MongoClient, collation
+from discord.ext import commands, tasks
+import time
+import os
+import pymongo as pm
+import ffmpeg
 
 
 
-class Basic_vc(commands.Cog):
 
+
+
+
+
+class Voice(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+
+
+    
+    
+    
+    
+    
+    
+    # Basic VC
     
     @commands.command(pass_context=True, aliases=['j'])
     async def join(self,ctx):
@@ -38,6 +55,7 @@ class Basic_vc(commands.Cog):
         else:
             await ctx.send("Not in a channel f u")
             print(f"was asked to leave but not in channel{channel}")
+
 
     @commands.command(pass_context=True)
     async def od(self,ctx):
@@ -71,6 +89,7 @@ class Basic_vc(commands.Cog):
                 after=lambda e: print("song is done"))
         vc.source = discord.PCMVolumeTransformer(vc.source)
 
+
     @commands.command(pass_context=True, aliases=['tts'])
     async def texttospeech(self,ctx):
         message = ctx.message.content[6:]
@@ -94,12 +113,15 @@ class Basic_vc(commands.Cog):
         vc.play(discord.FFmpegPCMAudio(path),
                 after=lambda e: print("song is done"))
         vc.source = discord.PCMVolumeTransformer(vc.source)
-    
- 
+
+
+
+
+
+
+
+
+
 
 def setup(bot):
-    bot.add_cog(Basic_vc(bot))
-
-
-
-
+    bot.add_cog(Voice(bot))

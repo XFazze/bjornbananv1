@@ -1,7 +1,8 @@
 # https://pymongo.readthedocs.io/en/stable/tutorial.html
 # https://docs.mongodb.com/mongodb-shell/reference/access-mdb-shell-help/
+# https://www.w3schools.com/python/python_mongodb_insert.asp
 
-
+# db.guilds.find({}, {"text_channels" : 0, "voice_channels": 0})
 from pymongo import MongoClient, collation
 import pymongo as pm
 # connect to the mongodb server

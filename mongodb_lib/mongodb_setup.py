@@ -4,6 +4,7 @@ import pymongo as pm
 
 client = MongoClient('localhost', 27017)
 db = client.maindb
+mycollection = db.guilds
 
 '''
 name 'maindb'
@@ -18,17 +19,23 @@ database structure
 management is part of guild variables now(config)
 - guilds 
     {"_id" : mongodb id,
+    "name" : name
+    "id" : id,
+    "settings" : {
+        "commandname" : {
+            "guild" : [roleid],
+            "channel" : [
+                {"channelid" : channelid,
+                "roleid" : [roleid]}
+                    ]
+                } 
     "config" : {                                     CREATE THIS WITH ENABLE/DISABLE COMMAND
         "joinrole" : ['roleid'],
         "prefix" : ',',
-        "bettervc" : ['channelid'],
-        "delete_pinned" : {
-            "guild_wide" : bool,
-            "channels" : []
-            },
+        "bettervc" : ['category_id'],
+        "delete_pinned" : [channelid]
         "deletingchannel" : ['channelid'],
-        "joinleavemessage" : ['channelid'],,
-        "bettervc" : ['channelid'],                  
+        # "joinleavemessage" : ['channelid']         
     }
     "channels" : [                                       CREATE THIS WITH GUILDFIX WHICH IS CALLED AT TIMES
             {"_id" : mongodb id,
@@ -48,7 +55,11 @@ create multiple channel collections
 - per channel deleted messages 
     {"_id" : mongodb id,
     "messageid" : message,
-    bulk stuff like messages
+
+    }
+- per channel edit messages 
+    {"_id" : mongodb id,
+    "messageid" : message,
 
     }
 

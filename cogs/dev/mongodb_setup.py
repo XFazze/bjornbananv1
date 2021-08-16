@@ -56,10 +56,9 @@ class Base(commands.Cog):
                    "voice_channels": voice_channels}
             docs.append(doc)
 
-        client = MongoClient('localhost', 27017)
-        db = client.maindb
-        myCollection = db.guilds
-        myCollection.insert_many(docs)
+        db  = MongoClient('localhost', 27017).maindb
+        collection = db.guilds
+        collection.insert_many(docs)
 
     @commands.command(pass_context=True)
     async def mdbaddconfig(self, ctx):
@@ -68,9 +67,8 @@ class Base(commands.Cog):
             await ctx.send("Youre noone")
             return
 
-        client = MongoClient('localhost', 27017)
-        db = client.maindb
-        myCollection = db.guilds
+        db = MongoClient('localhost', 27017).maindb
+        collection = db.guilds
         for guild in self.bot.guilds:
             myquery = {"id" : guild.id}
             newvalues = {"$set" : {"config": {
@@ -79,9 +77,8 @@ class Base(commands.Cog):
                        "bettervc": [],
                        "delete_pinned": [],
                        "deletingchannel": [],
-                       "bettervc": []
                    }}}
-            doc = myCollection.update_one(myquery, newvalues)
+            doc = collection.update_one(myquery, newvalues)
             print("doc", doc)
 
 

@@ -9,6 +9,3 @@ Some features include:
 
 # Nucleus
 https://discord.com/oauth2/authorize?client_id=775007176157954058&scope=bot&permissions=8589934591
-
-## Commands
-* ban

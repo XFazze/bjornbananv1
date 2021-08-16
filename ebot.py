@@ -6,7 +6,7 @@ from discord.ext import commands
 from cogwatch import Watcher
 
 
-bot = commands.Bot(command_prefix="f.", intents=discord.Intents.all())   
+bot = commands.Bot(command_prefix="=", intents=discord.Intents.all())   
 bot.remove_command('help')
 
 
@@ -21,7 +21,7 @@ async def on_ready():
     print("Logged in as: " + bot.user.name)
     watcher = Watcher(bot, path="reloading_cogs", preload=True)
     await watcher.start()
-    await bot.change_presence(activity=discord.Game(name="you | fhelp"))
+    await bot.change_presence(activity=discord.Game(name="succs to succ"))
 
 
 bot.run(token[1])

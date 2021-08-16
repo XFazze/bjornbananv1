@@ -72,12 +72,13 @@ class Base(commands.Cog):
         elif isinstance(error, commands.CommandRegistrationError):
             message = f"Command registration error name {error.name}  alias conlfict {error.name}"
         else:
-            message = "Oh no! Something went wrong while running the command!"
+            message = f"Failure {error}"
 
 
             
-        print(f"[#{ctx.channel}] ERROR HAS OCCURED: ", message)
-        await ctx.send(message, delete_after=20)
+        print(f"[{ctx.guild}#{ctx.channel}] ERROR HAS OCCURED: ", message)
+        embed = discord.Embed(title=message, color=0xFD3333)
+        await ctx.send(embed=embed)
         #await ctx.message.delete(delay=5)
 
 

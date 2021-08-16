@@ -11,6 +11,7 @@ class Presence(commands.Cog):
         if not str(ctx.author) == "mega#2222" and  not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
             return
+        await ctx.message.delete()
             
         if presence == None:
             await ctx.send("Specify a presence")

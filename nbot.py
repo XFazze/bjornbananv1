@@ -1,13 +1,18 @@
 # https://discord.com/oauth2/authorize?client_id=775007176157954058&scope=bot&permissions=8589934591
 
+from pydoc import cli
 import discord
 import json
 from discord.ext import commands
 import subprocess
 import re
+import pymongo
+
 
 # Set prefix here
 prefix = "n."
+
+
 
 
 

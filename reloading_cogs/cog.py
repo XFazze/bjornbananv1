@@ -10,7 +10,7 @@ class Cogs(commands.Cog):
     
     @commands.command(pass_context=True)
     async def load_cog(self, ctx, category = None, cog = None):
-        if not str(ctx.author) == "mega#2222" and  not str(ctx.author) == "AbstractNucleus#6969":
+        if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
             return
 

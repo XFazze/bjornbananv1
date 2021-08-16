@@ -18,39 +18,50 @@ class Channels(commands.Cog):
     @commands.command(pass_context=True, aliases=['edp'])
     @commands.has_permissions(manage_messages=True)
     async def enabledeletepinned(self, ctx):
-        with open('/tmp/discordbot/management/delete_pinned.json', 'r+') as f:
-            delete_pinned = json.load(f)
-            c_id = ctx.channel.id
-            if c_id in delete_pinned:
-                await ctx.send("This channel is already added to delete_pinned")
-            else:
-                delete_pinned.append(c_id)
-                await ctx.send("Added channel to delete_pinned")
-                with open('/tmp/discordbot/management/delete_pinned.json', 'w') as file:
-                    json.dump(delete_pinned, file, indent=4)
+        collection = MongoClient('localhost', 27017).maindb.guilds
+        myquery = {"id": ctx.guild.id}
+        config = collection.find_one(myquery)["config"]
+
+        if ctx.channel.id in config["delete_pinned"]:
+            embed = discord.Embed(
+                title="Channel already added", color=0xFD3333)
+            await ctx.send(embed=embed)
+
+        else:
+            config["delete_pinned"].append(ctx.channel.id)
+            newvalue = {"$set": {"config": config}}
+            collection.update_one(myquery, newvalue)
+            embed = discord.Embed(
+                title="Added channel to delete_pinned", color=0x00FF42)
+            await ctx.send(embed=embed)
 
     @commands.command(pass_context=True, aliases=['ddp'])
     @commands.has_permissions(manage_messages=True)
     async def disabledeletepinned(self, ctx):
-        with open('/tmp/discordbot/management/delete_pinned.json', 'r+') as f:
-            delete_pinned = json.load(f)
-            c_id = ctx.channel.id
-            if c_id in delete_pinned:
-                delete_pinned.remove(c_id)
-                await ctx.send("removed channel from delete_pinned")
-                with open('/tmp/discordbot/management/delete_pinned.json', 'w') as file:
-                    json.dump(delete_pinned, file, indent=4)
-            else:
-                await ctx.send("This channel isnta a delete_pinned channel")
+        collection = MongoClient('localhost', 27017).maindb.guilds
+        myquery = {"id": ctx.guild.id}
+        config = collection.find_one(myquery)["config"]
+
+        if ctx.channel.id in config["delete_pinned"]:
+            config["delete_pinned"].remove(ctx.channel.id)
+            newvalue = {"$set": {"config": config}}
+            collection.update_one(myquery, newvalue)
+            embed = discord.Embed(
+                title="Removing channel from delete_pinned", color=0x00FF42)
+            await ctx.send(embed=embed)
+        else:
+            embed = discord.Embed(title="Channel isn't in delete_pinned", color=0xFD3333)
+            await ctx.send(embed=embed)
 
     @commands.Cog.listener()
     async def on_message(self, ctx):
         if ctx.type.value == 6:
-            with open('/tmp/discordbot/management/delete_pinned.json', 'r') as f:
-                channels = json.load(f)
-                for channel in channels:
-                    if channel == ctx.channel.id:
-                        await ctx.delete()
+            collection = MongoClient('localhost', 27017).maindb.guilds
+            myquery = {"id": ctx.guild.id}
+            channels = collection.find_one(myquery)["config"]["delete_pinned"]
+            for channel in channels:
+                if channel == ctx.channel.id:
+                    await ctx.delete()
 
     # Deleting channel
 
@@ -63,7 +74,7 @@ class Channels(commands.Cog):
 
         if ctx.channel.id in config["deletingchannel"]:
             embed = discord.Embed(
-                title="Channel already decided, remove if changing", color=0xFD3333)
+                title="Channel already added", color=0xFD3333)
             await ctx.send(embed=embed)
 
         else:
@@ -123,7 +134,7 @@ class Channels(commands.Cog):
         
         if ctx.author.voice.channel.category_id in config["bettervc"]:
             embed = discord.Embed(
-                title="Category already decided, remove if changing", color=0xFD3333)
+                title="Category already added", color=0xFD3333)
             await ctx.send(embed=embed)
 
         else:

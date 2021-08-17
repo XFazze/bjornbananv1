@@ -1,3 +1,4 @@
+from re import L
 import discord
 import json
 from discord.utils import get
@@ -16,8 +17,9 @@ class Dev(commands.Cog):
 
 # Error handler
 
+
     @commands.Cog.listener()
-    async def on_command_error(self,ctx:commands.Context, error: commands.CommandError):
+    async def on_command_error(self, ctx: commands.Context, error: commands.CommandError):
         if isinstance(error, commands.CommandNotFound):
             return
         elif isinstance(error, commands.CommandOnCooldown):
@@ -81,28 +83,25 @@ class Dev(commands.Cog):
         elif isinstance(error, commands.CommandRegistrationError):
             message = f"Command registration error name {error.name}  alias conlfict {error.name}"
         elif isinstance(error, FileNotFoundError):
-            message = error 
+            message = error
         elif isinstance(error, commands.CommandNotFound):
             message = error
         else:
             message = f"Failure {error}"
 
-
-            
         print(f"[{ctx.guild}#{ctx.channel}] ERROR HAS OCCURED: ", message)
         embed = discord.Embed(title=message, color=0xFD3333)
         await ctx.send(embed=embed)
-        #await ctx.message.delete(delay=5)
+        # await ctx.message.delete(delay=5)
 
 
 # Git
-
     @commands.command(pass_context=True)
-    async def git(self, ctx, action = None):
-        if not str(ctx.author) == "mega#2222" and  not str(ctx.author) == "AbstractNucleus#6969":
+    async def git(self, ctx, action=None):
+        if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("You're noone")
             return
-        
+
         g = git.cmd.Git("")
         if action == None:
             embed = discord.Embed(title="Specify an action.", color=0xFD3333)
@@ -113,94 +112,107 @@ class Dev(commands.Cog):
             embed.add_field(name="Git pull", value=s)
             await ctx.send(embed=embed)
         else:
-            embed = discord.Embed(title="Action does not exists.", color=0xFD3333)
+            embed = discord.Embed(
+                title="Action does not exists.", color=0xFD3333)
             await ctx.send(embed=embed)
 
 
 # Mongo DB
-
     @commands.command(pass_context=True)
     async def mdbguild(self, ctx):
         await ctx.message.delete()
-        if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
-            await ctx.send("Youre noone")
-            return
-        docs = []
-        for guild in self.bot.guilds:
-            text_channels = []
-            for channel in guild.text_channels:
-                if channel.category != None:
-                    category = channel.category.name
-                    category_id = channel.category_id
-                else:
-                    category = None
-                    category_id = None
-
-                text_channel = {
-                    "id": channel.id,
-                    "name": channel.name,
-                    "category": category_id,
-                    "category_id": category_id,
-
-                }
-                text_channels.append(text_channel)
-            voice_channels = []
-            for channel in guild.voice_channels:
-                if channel.category != None:
-                    category = channel.category.name
-                    category_id = channel.category_id
-                else:
-                    category = None
-                    category_id = None
-                voice_channel = {
-                    "id": channel.id,
-                    "name": channel.name,
-                    "category": category_id,
-                    "category_id": category_id,
-                }
-                voice_channels.append(voice_channel)
-
-            doc = {"name": guild.name,
-                   "id": guild.id,
-                   "text_channels": text_channels,
-                   "voice_channels": voice_channels}
-            docs.append(doc)
-
-        db  = MongoClient('localhost', 27017).maindb
-        collection = db.guilds
-        collection.insert_many(docs)
-
-    @commands.command(pass_context=True)
-    async def mdbaddconfig(self, ctx):
-        await ctx.message.delete()
+        print("strart====================")
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
             return
 
         db = MongoClient('localhost', 27017).maindb
         collection = db.guilds
+
         for guild in self.bot.guilds:
-            myquery = {"id" : guild.id}
-            newvalues = {"$set" : {"config": {
-                       "joinrole": [],
-                       "prefix": ',',
-                       "bettervc": [],
-                       "delete_pinned": [],
-                       "deletingchannel": [],
-                   }}}
-            doc = collection.update_one(myquery, newvalues)
-            print("doc", doc)
+            myquery = {"id": guild.id}
+            doc = collection.find_one(myquery)
+            create = False
+            if doc == None:
+                create = True
+                doc = {
+                    "id": guild.id,
+                    "name": guild.name
+                }
+
+                text_channels = []
+                for channel in guild.text_channels:
+                    if channel.category != None:
+                        category = channel.category.name
+                        category_id = channel.category_id
+                    else:
+                        category = None
+                        category_id = None
+
+                    text_channel = {
+                        "id": channel.id,
+                        "name": channel.name,
+                        "category": category_id,
+                        "category_id": category_id,
+
+                        }
+                    text_channels.append(text_channel)
+
+                voice_channels = []
+                for channel in guild.voice_channels:
+                    if channel.category != None:
+                        category = channel.category.name
+                        category_id = channel.category_id
+                    else:
+                        category = None
+                        category_id = None
+                    voice_channel = {
+                        "id": channel.id,
+                        "name": channel.name,
+                        "category": category_id,
+                        "category_id": category_id,
+                        }
+                    voice_channels.append(voice_channel)
+
+
+                doc["text_channels"] = text_channels
+                doc["voice_channels"] = voice_channels
+                if "config" not in doc.keys():
+                    doc["config"] = {}
+                if "joinrole" not in doc["config"].keys():
+                    doc["config"]["joinrole"] = []
+                if "prefix" not in doc["config"].keys():
+                    doc["config"]["prefix"] = ','
+                if "bettervc" not in doc["config"].keys():
+                    doc["config"]["bettervc"] = []
+                if "delete_pinned" not in doc["config"].keys():
+                    doc["config"]["delete_pinned"] = []
+                if "deletingchannel" not in doc["config"].keys():
+                    doc["config"]["deletingchannel"] = []
+                if "joinleavemessage" not in doc["config"].keys():
+                    doc["config"]["joinleavemessage"] = []
+
+            if create:
+                print("create")
+                collection.insert_one(doc)
+            else:
+                print("replace")
+                print(type(doc))
+                myquery = {"id": guild.id}
+                collection.replace_one(myquery, doc)
+        print(" success")
 
 
 # Presence
 
-    @commands.command(pass_context=True)
-    async def presence(self, ctx, presence = None):
-        if not str(ctx.author) == "mega#2222" and  not str(ctx.author) == "AbstractNucleus#6969":
+
+    @ commands.command(pass_context=True)
+    async def presence(self, ctx, presence=None):
+        if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
             return
         await ctx.message.delete()
-            
+
         if presence == None:
             await ctx.send("Specify a presence")
         else:

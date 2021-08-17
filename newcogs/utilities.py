@@ -60,6 +60,7 @@ class Utilities(commands.Cog):
                     embed = discord.Embed(title=f'Tried to delete `{amount}` messages')
                     await ctx.send(embed=embed)
                     await asyncio.sleep(10)
+                    await ctx.message.delete()
                 except:
                     embed = discord.Embed(title=f'Usage: `{self.bot.get_command("clear").usage}`')
                     await ctx.send(embed=embed)

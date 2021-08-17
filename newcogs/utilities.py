@@ -48,7 +48,7 @@ class Utilities(commands.Cog):
     @commands.command(aliases = ['purge','delete'], usage="clear [int]")
     @commands.has_permissions(manage_messages = True)
     async def clear(self, ctx, amount = None):
-        with self.bot.typing():
+        async with ctx.typing():
             if amount == None:
                 embed = discord.Embed(title=f'Usage: `{self.bot.get_command("clear").usage}`')
                 await ctx.send(embed=embed)

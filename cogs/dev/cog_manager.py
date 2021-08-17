@@ -97,7 +97,7 @@ class Cog_manager(commands.Cog):
         await ctx.send(embed=embed)
 
     @commands.command(pass_context=True)
-    async def reloadall(self, ctx):
+    async def reloada(self, ctx):
         await ctx.message.delete()
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")

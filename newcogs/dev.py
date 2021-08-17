@@ -132,7 +132,7 @@ class Dev(commands.Cog):
 
 # Git
     @commands.command(pass_context=True)
-    async def dgit(self, ctx, action=None):
+    async def git(self, ctx, action=None):
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("You're noone")
             return
@@ -256,7 +256,7 @@ class Dev(commands.Cog):
 
 # Presence
     @commands.command(pass_context=True)
-    async def dpresence(self, ctx, presence=None):
+    async def presence(self, ctx, presence=None):
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
             return
@@ -267,6 +267,26 @@ class Dev(commands.Cog):
         else:
             await self.bot.change_presence(activity=discord.Game(name=presence))
             await ctx.send("Success")
+
+
+# Activity
+    @commands.command(pass_context=True, aliases=[], usage="activity [activity]")
+    async def activity(self, ctx, activity=None):
+        if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
+            await ctx.send("Youre noone")
+            return
+
+        if activity == None:
+            embed = discord.Embed(title=f'Usage: `{self.bot.get_command("activity").usage}`', color=0xFD3333)
+            await ctx.send(embed=embed)
+        else:
+            custom_activity = discord.Activity(type=discord.ActivityType.custom,state=activity)
+            await self.bot.change_presence(activity=custom_activity)
+            embed = discord.Embed(title=f'Tried to set activity: `{activity}`', color=0x00FF42)
+            await ctx.send(embed=embed)
+
+
+
 
 
 def setup(bot):

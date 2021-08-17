@@ -15,7 +15,6 @@ class Cog_manager(commands.Cog):
 
     @commands.command(pass_context=True)
     async def sex(self, ctx):
-        self.bot.load_extension("newcogs.cog_manager")
         for extension in self.bot.extensions:
             await ctx.send(extension)
 

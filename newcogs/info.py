@@ -156,7 +156,7 @@ class Info(commands.Cog):
         embed.add_field(name='Users', value=len(self.bot.users), inline=False)
         embed.add_field(name='Commands', value=len(self.bot.commands), inline=False)
         embed.add_field(name='Emojis', value=len(self.bot.emojis), inline=False)
-        embed.add_field(name='Latency', value=self.bot.latency*1000, inline=False)
+        embed.add_field(name='Latency', value=round(self.bot.latency*100000)*0.1, inline=False)
         embed.add_field(name='Private channels', value=len(self.bot.private_channels), inline=False)
         embed.add_field(name='Voice clients', value=len(self.bot.voice_clients), inline=False)
         await ctx.send(embed=embed)

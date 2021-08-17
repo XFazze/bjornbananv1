@@ -54,12 +54,11 @@ class Utilities(commands.Cog):
         else:
             try:
                 int(amount)
+                await ctx.channel.purge(limit=amount)
             except:
                 embed = discord.Embed(title=f'Usage: `{self.bot.get_command("clear").usage}`')
                 await ctx.send(embed=embed)
-            else:
-                await ctx.channel.purge(limit=amount)
-
+                
 
 # Color code 
     @commands.command(pass_context=True, aliases=['cc'])

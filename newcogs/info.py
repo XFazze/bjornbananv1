@@ -142,7 +142,18 @@ class Info(commands.Cog):
         embed.set_image(url=ctx.guild.icon_url)
         await ctx.send(embed=embed)
     
-  
+# Bot info
+    @commands.command(pass_context=True, aliases=['botinfo', 'bot'])
+    async def app_info(self, ctx):
+        res = await self.bot.application_info()
+        embed=discord.Embed(title=res.name, description=res.description, color=0x00FF42)
+        if res.bot_public:
+            embed.add_field(name="Public bot Owner:", value=res.owner.name+"#"+res.owner.discriminator)
+        else:
+            embed.add_field(name="Private bot Owner: ", value=res.owner.name+"#"+res.owner.discriminator)
+        embed.add_field(name='Id', value=res.id, inline=False)
+
+        await ctx.send(embed=embed)
 # Ping
     
     @commands.command(pass_context=True, aliases=['latency'])

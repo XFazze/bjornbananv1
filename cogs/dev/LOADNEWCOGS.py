@@ -25,11 +25,7 @@ class Cog_manager(commands.Cog):
             await ctx.send("Youre noone")
             return
 
-        extensions = []
-        for extension in self.bot.extensions:
-            extensions.append(extension.split(
-                '.')[1] + '.' + extension.split('.')[2]+'.py')
-
+        
         if len(os.listdir('./cogs')) > 1:
             for f in os.listdir('./cogs'):
                 if f.endswith('.py'):

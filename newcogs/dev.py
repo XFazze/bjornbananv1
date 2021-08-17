@@ -269,8 +269,8 @@ class Dev(commands.Cog):
             await ctx.send("Success")
 
 
-# Activity
-    @commands.command(pass_context=True, aliases=[], usage="activity [activity]")
+# Activity      OBS!   W.I.P
+    '''@commands.command(pass_context=True, aliases=[], usage="activity [activity]")
     async def activity(self, ctx, activity=None):
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
@@ -283,7 +283,7 @@ class Dev(commands.Cog):
             custom_activity = discord.Activity(type=discord.ActivityType.custom,state=activity)
             await self.bot.change_presence(activity=custom_activity)
             embed = discord.Embed(title=f'Tried to set activity: `{activity}`', color=0x00FF42)
-            await ctx.send(embed=embed)
+            await ctx.send(embed=embed)'''
 
 
 

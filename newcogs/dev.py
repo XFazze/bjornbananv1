@@ -123,14 +123,16 @@ class Dev(commands.Cog):
         await ctx.send(embed=embed)
         # await ctx.message.delete(delay=5)
 
+
 # Rate limited
     @commands.Cog.listener()
     async def is_ws_ratelimited(self):
         print("Being websocket ratelimited")
 
+
 # Git
     @commands.command(pass_context=True)
-    async def git(self, ctx, action=None):
+    async def dgit(self, ctx, action=None):
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("You're noone")
             return
@@ -250,7 +252,7 @@ class Dev(commands.Cog):
 
 # Presence
     @commands.command(pass_context=True)
-    async def presence(self, ctx, presence=None):
+    async def dpresence(self, ctx, presence=None):
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
             return

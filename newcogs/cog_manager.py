@@ -18,7 +18,7 @@ class cog_manager(commands.Cog):
 
 # loading and unloading extensions
     @commands.command(pass_context=True)
-    async def show(self, ctx, cog=None):
+    async def dshow(self, ctx, cog=None):
         #await ctx.message.delete()
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
@@ -45,7 +45,7 @@ class cog_manager(commands.Cog):
 
 
     @commands.command(pass_context=True)
-    async def load(self, ctx, cog=None):
+    async def dload(self, ctx, cog=None):
         await ctx.message.delete()
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
@@ -61,7 +61,7 @@ class cog_manager(commands.Cog):
 
 
     @commands.command(pass_context=True)
-    async def unload(self, ctx, cog=None):
+    async def dunload(self, ctx, cog=None):
         await ctx.message.delete()
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
@@ -79,7 +79,7 @@ class cog_manager(commands.Cog):
 
 
     @commands.command(pass_context=True)
-    async def reload(self, ctx, cog=None):
+    async def dreload(self, ctx, cog=None):
         await ctx.message.delete()
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
@@ -97,7 +97,7 @@ class cog_manager(commands.Cog):
 
 
     @commands.command(pass_context=True)
-    async def reloadall(self, ctx):
+    async def dreloadall(self, ctx):
         await ctx.message.delete()
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
@@ -134,7 +134,7 @@ class cog_manager(commands.Cog):
         await ctx.send(embed=embed)
 
     @commands.command(pass_context=True)
-    async def sex(self, ctx):
+    async def dsex(self, ctx):
         #await ctx.message.delete()
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
@@ -146,7 +146,7 @@ class cog_manager(commands.Cog):
 
 # adding and removing commands
     @commands.command(pass_context=True)
-    async def showcommands(self, ctx):
+    async def dshowcommands(self, ctx):
         await ctx.message.delete()
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
@@ -181,7 +181,7 @@ class cog_manager(commands.Cog):
 
 
     @commands.command(pass_context=True)
-    async def enable(self, ctx, command = None):
+    async def denable(self, ctx, command = None):
         #await ctx.message.delete()
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
@@ -198,7 +198,7 @@ class cog_manager(commands.Cog):
 
 
     @commands.command(pass_context=True)
-    async def disable(self, ctx, command = None):
+    async def ddisable(self, ctx, command = None):
         #await ctx.message.delete()
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")

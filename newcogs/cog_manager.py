@@ -230,4 +230,4 @@ class cog_manager(commands.Cog):
 
 
 def setup(bot):
-    bot.add_cog(Dev(bot))
+    bot.add_cog(cog_manager(bot))

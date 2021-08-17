@@ -18,6 +18,13 @@ class Cog_manager(commands.Cog):
         for extension in self.bot.extensions:
             await ctx.send(extension)
 
+
+    @commands.command(pass_context=True)
+    async def unloadold(self, ctx):
+        self.bot.unload_extension('cogs.dev.git')
+        self.bot.unload_extension('cogs.dev.cog_manager')
+        self.bot.unload_extension('cogs.dev.errorhandler')
+
     @commands.command(pass_context=True)
     async def unloadold(self, ctx):
         await ctx.message.delete()

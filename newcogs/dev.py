@@ -154,7 +154,7 @@ class Dev(commands.Cog):
 
 # Mongo DB
     @commands.command(pass_context=True)
-    async def dmdbguildupdate(self):
+    async def mdbguildupdate(self):
         db = MongoClient('localhost', 27017).maindb
         collection = db.guilds
 
@@ -221,6 +221,9 @@ class Dev(commands.Cog):
                 if "joinleavemessage" not in doc["config"].keys():
                     doc["config"]["joinleavemessage"] = []
 
+                if "settings" not in doc.keys():
+                    doc["settings"] = {}
+
             if create:
                 collection.insert_one(doc)
             else:
@@ -234,6 +237,7 @@ class Dev(commands.Cog):
             await ctx.send("Youre noone")
             return
         await self.mdbguildupdate()
+        await ctx.send(embed=discord.Embed(title="Successfully updated mongodbguild", color=0x00FF42))
 
     @commands.Cog.listener()
     async def on_guild_join(self, guild):

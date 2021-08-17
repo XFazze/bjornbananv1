@@ -20,10 +20,9 @@ class Cog_manager(commands.Cog):
 
 
     @commands.command(pass_context=True)
-    async def unloadold(self, ctx):
+    async def unloadlastold(self, ctx):
         self.bot.unload_extension('cogs.dev.git')
         self.bot.unload_extension('cogs.dev.cog_manager')
-        self.bot.unload_extension('cogs.dev.errorhandler')
 
     @commands.command(pass_context=True)
     async def unloadold(self, ctx):

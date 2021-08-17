@@ -126,7 +126,7 @@ class Dev(commands.Cog):
 
 # Git
     @commands.command(pass_context=True)
-    async def git(self, ctx, action=None):
+    async def dgit(self, ctx, action=None):
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("You're noone")
             return
@@ -148,7 +148,7 @@ class Dev(commands.Cog):
 
 # Mongo DB
     @commands.command(pass_context=True)
-    async def mdbguildupdate(self):
+    async def dmdbguildupdate(self):
         db = MongoClient('localhost', 27017).maindb
         collection = db.guilds
 
@@ -222,7 +222,7 @@ class Dev(commands.Cog):
                 collection.replace_one(myquery, doc)
 
     @commands.command(pass_context=True)
-    async def mdbguild(self, ctx):
+    async def dmdbguild(self, ctx):
         await ctx.message.delete()
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
@@ -246,7 +246,7 @@ class Dev(commands.Cog):
 
 # Presence
     @commands.command(pass_context=True)
-    async def presence(self, ctx, presence=None):
+    async def dpresence(self, ctx, presence=None):
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
             return

@@ -58,6 +58,7 @@ class Utilities(commands.Cog):
                     await ctx.channel.purge(limit=amount+1)
                     embed = discord.Embed(title=f'Tried to delete `{amount}` messages')
                     await ctx.send(embed=embed)
+                    await ctx.message.delete(delay=10)
                 except:
                     embed = discord.Embed(title=f'Usage: `{self.bot.get_command("clear").usage}`')
                     await ctx.send(embed=embed)

@@ -124,6 +124,12 @@ class Dev(commands.Cog):
         # await ctx.message.delete(delay=5)
 
 
+# Rate limited
+    @commands.Cog.listener()
+    async def is_ws_ratelimited(self):
+        print("Being websocket ratelimited")
+
+
 # Git
     @commands.command(pass_context=True)
     async def dgit(self, ctx, action=None):

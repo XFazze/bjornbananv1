@@ -17,9 +17,8 @@ class cog_manager(commands.Cog):
         self.bot = bot
 
 # loading and unloading extensions
-    @commands.command(pass_context=True)
-    async def dshow(self, ctx, cog=None):
-        #await ctx.message.delete()
+    @commands.command(pass_context=True, usage="show")
+    async def show(self, ctx, cog=None):
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
             return
@@ -44,8 +43,8 @@ class cog_manager(commands.Cog):
         await ctx.send(embed=unloadedembed)
 
 
-    @commands.command(pass_context=True)
-    async def dload(self, ctx, cog=None):
+    @commands.command(pass_context=True, usage="load [cog]")
+    async def load(self, ctx, cog=None):
         await ctx.message.delete()
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
@@ -60,8 +59,8 @@ class cog_manager(commands.Cog):
         await ctx.send(embed=discord.Embed(title="Loaded "+f"newcogs.{cog}", color=0x00FF42))
 
 
-    @commands.command(pass_context=True)
-    async def dunload(self, ctx, cog=None):
+    @commands.command(pass_context=True, usage="unload [cog]")
+    async def unload(self, ctx, cog=None):
         await ctx.message.delete()
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
@@ -78,8 +77,8 @@ class cog_manager(commands.Cog):
         await ctx.send(embed=embed)
 
 
-    @commands.command(pass_context=True)
-    async def dreload(self, ctx, cog=None):
+    @commands.command(pass_context=True, usage="reload [cog]")
+    async def reload(self, ctx, cog=None):
         await ctx.message.delete()
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
@@ -96,8 +95,8 @@ class cog_manager(commands.Cog):
         await ctx.send(embed=embed)
 
 
-    @commands.command(pass_context=True)
-    async def dreloadall(self, ctx):
+    @commands.command(pass_context=True, usage="reloadall")
+    async def reloadall(self, ctx):
         await ctx.message.delete()
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
@@ -133,8 +132,8 @@ class cog_manager(commands.Cog):
         embed = discord.Embed(title="Reloaded "+" all cogs", color=0x00FF42)
         await ctx.send(embed=embed)
 
-    @commands.command(pass_context=True)
-    async def dsex(self, ctx):
+    @commands.command(pass_context=True, usage="sex")
+    async def sex(self, ctx):
         #await ctx.message.delete()
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
@@ -145,8 +144,8 @@ class cog_manager(commands.Cog):
 
 
 # adding and removing commands
-    @commands.command(pass_context=True)
-    async def dshowcommands(self, ctx):
+    @commands.command(pass_context=True, usage="showcommands")
+    async def showcommands(self, ctx):
         await ctx.message.delete()
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
@@ -180,7 +179,7 @@ class cog_manager(commands.Cog):
         await ctx.send(embed=disablededembed)
 
 
-    @commands.command(pass_context=True)
+    @commands.command(pass_context=True, usage="denable [command]")
     async def denable(self, ctx, command = None):
         #await ctx.message.delete()
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
@@ -197,7 +196,7 @@ class cog_manager(commands.Cog):
         await ctx.send(embed=discord.Embed(title=f"Added {command}", color=0x00FF42))
 
 
-    @commands.command(pass_context=True)
+    @commands.command(pass_context=True, usage="ddisable [command]")
     async def ddisable(self, ctx, command = None):
         #await ctx.message.delete()
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":

@@ -12,7 +12,6 @@ class Better_vc(commands.Cog):
 
     @tasks.loop(seconds=10)
     async def cleanse(self):
-        print("bettervc works")
         collection = MongoClient('localhost', 27017).maindb.guilds
         guilds = collection.find({})
         for guild in guilds:

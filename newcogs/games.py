@@ -44,37 +44,6 @@ class Games(commands.Cog):
         print('all xp enabled')
         await self.bot.wait_until_ready()
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-
-
-
-
 
 
 def setup(bot):

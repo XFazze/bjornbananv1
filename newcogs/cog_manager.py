@@ -12,7 +12,7 @@ import datetime
 start_time = time.time()
 
 
-class Dev(commands.Cog):
+class cog_manager(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -139,7 +139,7 @@ class Dev(commands.Cog):
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
             return
-            
+
         for extension in self.bot.extensions:
             await ctx.send(extension)
 

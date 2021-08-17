@@ -133,6 +133,16 @@ class Dev(commands.Cog):
         embed = discord.Embed(title="Reloaded "+" all cogs", color=0x00FF42)
         await ctx.send(embed=embed)
 
+    @commands.command(pass_context=True)
+    async def sex(self, ctx):
+        #await ctx.message.delete()
+        if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
+            await ctx.send("Youre noone")
+            return
+            
+        for extension in self.bot.extensions:
+            await ctx.send(extension)
+
 
 # adding and removing commands
     @commands.command(pass_context=True)

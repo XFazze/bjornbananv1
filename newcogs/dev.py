@@ -123,6 +123,10 @@ class Dev(commands.Cog):
         await ctx.send(embed=embed)
         # await ctx.message.delete(delay=5)
 
+# Rate limited
+    @commands.Cog.listener()
+    async def is_ws_ratelimited(self):
+        print("Being websocket ratelimited")
 
 # Git
     @commands.command(pass_context=True)

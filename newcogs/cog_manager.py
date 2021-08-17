@@ -162,12 +162,8 @@ class Dev(commands.Cog):
                 disabled[cogname] += command.name+'\n'
 
         for key in enabled.keys():
-            if  key == 'Dev':
-                continue
             enabledembed.add_field(name=key, value=enabled[key])
         for key in disabled.keys():
-            if  key == 'Dev':
-                continue
             disablededembed.add_field(name=key, value=disabled[key])
 
         await ctx.send(embed=enabledembed)

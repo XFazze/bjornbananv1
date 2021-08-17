@@ -16,7 +16,7 @@ class Admin(commands.Cog):
 
 # Enable/disable command
 
-    @commands.command(pass_context=True)
+    @commands.command(pass_context=True, enabled=False)
     @commands.has_permissions(manage_roles=True)
     async def adisable(self, ctx):
         try:
@@ -44,7 +44,7 @@ class Admin(commands.Cog):
                         with open('/tmp/discordbot/management/enable.json', 'w') as file:
                             json.dump(enable, file, indent=4)
 
-    @commands.command(pass_context=True)
+    @commands.command(pass_context=True, enabled=False)
     @commands.has_permissions(manage_roles=True)
     async def aenable(self, ctx):
         try:

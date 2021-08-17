@@ -48,16 +48,19 @@ class Utilities(commands.Cog):
     @commands.command(aliases = ['purge','delete'], usage="clear [int]")
     @commands.has_permissions(manage_messages = True)
     async def clear(self, ctx, amount = None):
-        if amount == None:
-            embed = discord.Embed(title=f'Usage: `{self.bot.get_command("clear").usage}`')
-            await ctx.send(embed=embed)
-        else:
-            try:
-                amount = int(amount)
-                await ctx.channel.purge(limit=amount)
-            except:
+        with self.bot.typing():
+            if amount == None:
                 embed = discord.Embed(title=f'Usage: `{self.bot.get_command("clear").usage}`')
                 await ctx.send(embed=embed)
+            else:
+                try:
+                    amount = int(amount)
+                    await ctx.channel.purge(limit=amount+1)
+                    embed = discord.Embed(title=f'Tried to delete `{amount}` messages')
+                    await ctx.send(embed=embed)
+                except:
+                    embed = discord.Embed(title=f'Usage: `{self.bot.get_command("clear").usage}`')
+                    await ctx.send(embed=embed)
                 
 
 # Color code 

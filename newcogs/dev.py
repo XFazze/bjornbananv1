@@ -13,11 +13,10 @@ import pymongo as pm
 class Dev(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        self.mdbguildloop.start()
 
 
 # Error handler
-
-
     @commands.Cog.listener()
     async def on_command_error(self, ctx: commands.Context, error: commands.CommandError):
         if isinstance(error, commands.CommandNotFound):
@@ -119,13 +118,7 @@ class Dev(commands.Cog):
 
 # Mongo DB
     @commands.command(pass_context=True)
-    async def mdbguild(self, ctx):
-        await ctx.message.delete()
-        print("strart====================")
-        if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
-            await ctx.send("Youre noone")
-            return
-
+    async def mdbguildupdate(self):
         db = MongoClient('localhost', 27017).maindb
         collection = db.guilds
 
@@ -193,20 +186,37 @@ class Dev(commands.Cog):
                     doc["config"]["joinleavemessage"] = []
 
             if create:
-                print("create")
                 collection.insert_one(doc)
             else:
-                print("replace")
-                print(type(doc))
                 myquery = {"id": guild.id}
                 collection.replace_one(myquery, doc)
-        print(" success")
+        print("mdbguildupdate success")
+
+    @commands.command(pass_context=True)
+    async def mdbguild(self, ctx):
+        await ctx.message.delete()
+        if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
+            await ctx.send("Youre noone")
+            return
+        await self.mdbguildupdate()
+
+    @commands.Cog.listener()
+    async def on_guild_join(self, guild):
+        await self.mdbguildupdate()
+        
+    @tasks.loop(seconds=120) 
+    async def mdbguildloop(self):
+        await self.mdbguildupdate()
+        
+       
+    @mdbguildloop.before_loop
+    async def before_cleanse(self):
+        print('deletingchannel enabled')
+        await self.bot.wait_until_ready()
 
 
 # Presence
-
-
-    @ commands.command(pass_context=True)
+    @commands.command(pass_context=True)
     async def presence(self, ctx, presence=None):
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")

@@ -9,11 +9,6 @@ import git
 import pymongo as pm
 
 
-
-
-
-
-
 class Cog_manager(commands.Cog):
     def __init__(self, bot):
         self.bot = bot

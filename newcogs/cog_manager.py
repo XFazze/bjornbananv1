@@ -12,15 +12,13 @@ import datetime
 start_time = time.time()
 
 
-
-
 class Dev(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-# Cog manager
+# loading and unloading extensions
     @commands.command(pass_context=True)
-    async def showcogs(self, ctx, category=None, cog=None):
+    async def showcogs(self, ctx, cog=None):
         #await ctx.message.delete()
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
@@ -28,87 +26,73 @@ class Dev(commands.Cog):
 
         extensions = []
         for extension in self.bot.extensions:
-            extensions.append(extension.split(
-                '.')[1] + '.' + extension.split('.')[2]+'.py')
+            extensions.append(extension.split('.')[1]+'.py')
 
         loadedembed = discord.Embed(title="Loaded Cogs", color=0xFFFFFF)
         unloadedembed = discord.Embed(title="Unloaded Cogs", color=0xFFFFFF)
-        if len(os.listdir('./newcogs')) > 1:
-            for f in os.listdir('./newcogs'):
-                if f.endswith('.py'):
-                    continue
+        
 
-                title = str(f)
-                loadedcommands = ''
-                unloadedcommands = ''
-                for f in os.listdir('./cogs/'+title):
-                    if f.endswith('.py'):
-                        if title+'.'+str(f) in extensions:
-                            loadedcommands += str(f)+'\n'
-                        else:
-                            unloadedcommands += str(f)+'\n'
+        for f in os.listdir('./newcogs'):
+            if f.endswith('.py'):
+                if str(f) in extensions:
+                    loadedembed.add_field(name=str(f), value='\u200b')
+                else:
+                    unloadedembed.add_field(name=str(f), value='\u200b')
 
-                if len(loadedcommands) != 0:
-                    loadedembed.add_field(name=title, value=loadedcommands)
-                if len(unloadedcommands) != 0:
-                    unloadedembed.add_field(name=title, value=unloadedcommands)
 
         await ctx.send(embed=loadedembed)
         await ctx.send(embed=unloadedembed)
 
 
     @commands.command(pass_context=True)
-    async def loadcog(self, ctx, category=None, cog=None):
+    async def load(self, ctx, cog=None):
         await ctx.message.delete()
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
             return
 
-        if category == None or cog == None:
-            embed = discord.Embed(title="No category or cog", color=0xFD3333)
+        if cog == None:
+            embed = discord.Embed(title="No cog", color=0xFD3333)
             await ctx.send(embed=embed)
             return
-        print(f"cogs.{category}.{cog}")
-        self.bot.load_extension(f"cogs.{category}.{cog}")
+        
+        self.bot.load_extension(f"newcogs.{cog}")
+        await ctx.send(embed=discord.Embed(title="Loaded "+f"newcogs.{cog}", color=0x00FF42))
+
+
+    @commands.command(pass_context=True)
+    async def unload(self, ctx, cog=None):
+        await ctx.message.delete()
+        if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
+            await ctx.send("Youre noone")
+            return
+
+        if cog == None:
+            embed = discord.Embed(title="No cog", color=0xFD3333)
+            await ctx.send(embed=embed)
+            return
+
+        self.bot.unload_extension(f"newcogs.{cog}")
         embed = discord.Embed(
-            title="Loaded "+f"cogs.{category}.{cog}", color=0x00FF42)
+            title="Unloaded "+f"newcogs.{cog}", color=0x00FF42)
         await ctx.send(embed=embed)
 
 
     @commands.command(pass_context=True)
-    async def unloadcog(self, ctx, category=None, cog=None):
+    async def reload(self, ctx, cog=None):
         await ctx.message.delete()
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
             return
 
-        if category == None or cog == None:
-            embed = discord.Embed(title="No category or cog", color=0xFD3333)
+        if cog == None:
+            embed = discord.Embed(title="No cog", color=0xFD3333)
             await ctx.send(embed=embed)
             return
 
-        self.bot.unload_extension(f"cogs.{category}.{cog}")
+        self.bot.reload_extension(f"newcogs.{cog}")
         embed = discord.Embed(
-            title="Unloaded "+f"cogs.{category}.{cog}", color=0x00FF42)
-        await ctx.send(embed=embed)
-
-
-    @commands.command(pass_context=True)
-    async def reloadcog(self, ctx, category=None, cog=None):
-        await ctx.message.delete()
-        if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
-            await ctx.send("Youre noone")
-            return
-
-        if category == None or cog == None:
-            embed = discord.Embed(title="No category or cog", color=0xFD3333)
-            await ctx.send(embed=embed)
-            return
-
-        self.bot.unload_extension(f"cogs.{category}.{cog}")
-        self.bot.load_extension(f"cogs.{category}.{cog}")
-        embed = discord.Embed(
-            title="Reloaded "+f"cogs.{category}.{cog}", color=0x00FF42)
+            title="Reloaded "+f"newcogs.{cog}", color=0x00FF42)
         await ctx.send(embed=embed)
 
 
@@ -121,39 +105,108 @@ class Dev(commands.Cog):
 
         extensions = []
         for extension in self.bot.extensions:
-            extensions.append(extension.split(
-                '.')[1] + '.' + extension.split('.')[2]+'.py')
+            extensions.append(extension.split('.')[1]+'.py')
 
-        if len(os.listdir('./cogs')) > 1:
-            for f in os.listdir('./cogs'):
-                if f.endswith('.py'):
+       
+
+        for f in os.listdir('./newcogs'):
+            if f.endswith('.py'):
+                cog = f"newcogs.{str(f)[:-3]}"
+                if str(f) == 'uptime.py' or str(f) == 'cog_manager.py':
                     continue
+                if str(f) in extensions:
+                    try:
+                        self.bot.reload_extension(cog)
+                    except:
+                        embed = discord.Embed(
+                            title="Broken cog: " + cog, color=0xFD3333)
+                        await ctx.send(embed=embed)
 
-                title = str(f)
-                for f in os.listdir('./cogs/'+title):
-                    if f.endswith('.py'):
-                        cog = f"cogs.{title}.{str(f)[:-3]}"
-                        if str(f) == 'uptime.py' or str(f) == 'cog_manager.py':
-                            continue
-                        if title+'.'+str(f) in extensions:
-                            try:
-                                self.bot.unload_extension(cog)
-                                self.bot.load_extension(cog)
-                            except:
-                                embed = discord.Embed(
-                                    title="Broken cog: " + cog, color=0xFD3333)
-                                await ctx.send(embed=embed)
-
-                        else:
-                            try:
-                                self.bot.load_extension(cog)
-                            except:
-                                embed = discord.Embed(
-                                    title="Broken cog: " + cog, color=0xFD3333)
-                                await ctx.send(embed=embed)
+                else:
+                    try:
+                        self.bot.load_extension(cog)
+                    except:
+                        embed = discord.Embed(
+                            title="Broken cog: " + cog, color=0xFD3333)
+                        await ctx.send(embed=embed)
 
         embed = discord.Embed(title="Reloaded "+" all cogs", color=0x00FF42)
         await ctx.send(embed=embed)
+
+
+# adding and removing commands
+    @commands.command(pass_context=True)
+    async def showcommands(self, ctx):
+        await ctx.message.delete()
+        if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
+            await ctx.send("Youre noone")
+            return
+
+        enabledembed = discord.Embed(title="Enabled commands", color=0xFFFFFF)
+        disablededembed = discord.Embed(title="Disabled commands", color=0xFFFFFF)
+        enabled = {}
+        disabled = {}
+        for command in self.bot.commands:
+            if command.cog_name == None:
+                cogname = "None"
+            else:
+                cogname = command.cog_name
+
+            if command.enabled:
+                if cogname not in enabled.keys():
+                    enabled[cogname] = ''
+                enabled[cogname] += command.name+'\n'
+            else:
+                if cogname not in disabled.keys():
+                    disabled[cogname] = ''
+                disabled[cogname] += command.name+'\n'
+
+        for key in enabled.keys():
+            if  key == 'Dev':
+                continue
+            enabledembed.add_field(name=key, value=enabled[key])
+        for key in disabled.keys():
+            if  key == 'Dev':
+                continue
+            disablededembed.add_field(name=key, value=disabled[key])
+
+        await ctx.send(embed=enabledembed)
+        await ctx.send(embed=disablededembed)
+
+
+    @commands.command(pass_context=True)
+    async def enable(self, ctx, command = None):
+        #await ctx.message.delete()
+        if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
+            await ctx.send("Youre noone")
+            return
+            
+        if command == None:
+            embed = discord.Embed(title="No command", color=0xFD3333)
+            await ctx.send(embed=embed)
+            return
+
+        command_obj = self.bot.get_command(command)
+        command_obj.update(enabled=True)
+        await ctx.send(embed=discord.Embed(title=f"Added {command}", color=0x00FF42))
+
+
+    @commands.command(pass_context=True)
+    async def disable(self, ctx, command = None):
+        #await ctx.message.delete()
+        if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
+            await ctx.send("Youre noone")
+            return
+            
+        if command == None:
+            embed = discord.Embed(title="No command", color=0xFD3333)
+            await ctx.send(embed=embed)
+            return
+            
+        command_obj = self.bot.get_command(command)
+        command_obj.update(enabled=False)
+        await ctx.send(embed=discord.Embed(title=f"Removed {command}", color=0x00FF42))
+        
 
 # Uptime
     

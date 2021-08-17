@@ -18,7 +18,7 @@ class Admin(commands.Cog):
 
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_roles=True)
-    async def disable(self, ctx):
+    async def adisable(self, ctx):
         try:
             command = str(ctx.message.content).split(" ")[1]
         except:
@@ -46,7 +46,7 @@ class Admin(commands.Cog):
 
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_roles=True)
-    async def enable(self, ctx):
+    async def aenable(self, ctx):
         try:
             command = str(ctx.message.content).split(" ")[1]
         except:

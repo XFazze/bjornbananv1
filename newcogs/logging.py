@@ -7,7 +7,7 @@ import time
 import os
 import pymongo as pm
 import math
-import datetime
+from datetime import datetime 
 
 class Logging(commands.Cog):
     def __init__(self, bot):

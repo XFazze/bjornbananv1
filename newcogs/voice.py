@@ -7,7 +7,7 @@ import time
 import os
 import pymongo as pm
 import ffmpeg
-import gTTS
+from gtts import gTTS
 
 
 class Voice(commands.Cog):

@@ -19,11 +19,10 @@ async def determine_prefix(bot, message):
 
 # Removes default help command and creates the bot object
 bot = commands.Bot(command_prefix=determine_prefix, intents=discord.Intents.all())
-bot.remove_command('help')
+#bot.remove_command('help')
 
 if __name__ == '__main__':
-    bot.load_extension('cogs.dev.cog_manager')
-    bot.load_extension('cogs.info.uptime')
+    bot.load_extension('newcogs.cog_manager')
 
 
 # Gets the token

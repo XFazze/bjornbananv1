@@ -12,11 +12,10 @@ import random
 class Games(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.all_xp.start()
         
      
 # XP
-    @tasks.loop(seconds=15, enabled=False)
+    @tasks.loop(seconds=15)
     async def all_xp(self):
         with open('/tmp/discordbot/tc_logs.txt', 'r') as tc_logs:
             tc_log_content = tc_logs.readlines()

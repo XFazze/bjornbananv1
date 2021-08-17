@@ -190,7 +190,6 @@ class Dev(commands.Cog):
             else:
                 myquery = {"id": guild.id}
                 collection.replace_one(myquery, doc)
-        print("mdbguildupdate success")
 
     @commands.command(pass_context=True)
     async def mdbguild(self, ctx):

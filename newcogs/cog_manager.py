@@ -144,7 +144,7 @@ class cog_manager(commands.Cog):
 
     @commands.command(pass_context=True, usage="sex", hidden=True)
     async def loadnew(self, ctx):
-        self.bot.load_extension('cogv3.dev.cog_manager.py')
+        self.bot.load_extension('cogv3.dev.cog_manager')
 
 
 # adding and removing commands

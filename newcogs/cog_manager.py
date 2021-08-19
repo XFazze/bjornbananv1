@@ -17,7 +17,7 @@ class cog_manager(commands.Cog):
         self.bot = bot
 
 # loading and unloading extensions
-    @commands.command(pass_context=True, usage="show")
+    @commands.command(pass_context=True, usage="show", hidden=True)
     async def show(self, ctx, cog=None):
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
@@ -43,7 +43,7 @@ class cog_manager(commands.Cog):
         await ctx.send(embed=unloadedembed)
 
 
-    @commands.command(pass_context=True, usage="load [cog]")
+    @commands.command(pass_context=True, usage="load [cog]", hidden=True)
     async def load(self, ctx, cog=None):
         await ctx.message.delete()
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
@@ -59,7 +59,7 @@ class cog_manager(commands.Cog):
         await ctx.send(embed=discord.Embed(title="Loaded "+f"newcogs.{cog}", color=0x00FF42))
 
 
-    @commands.command(pass_context=True, usage="unload [cog]")
+    @commands.command(pass_context=True, usage="unload [cog]", hidden=True)
     async def unload(self, ctx, cog=None):
         await ctx.message.delete()
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
@@ -77,7 +77,7 @@ class cog_manager(commands.Cog):
         await ctx.send(embed=embed)
 
 
-    @commands.command(pass_context=True, usage="reload [cog]")
+    @commands.command(pass_context=True, usage="reload [cog]", hidden=True)
     async def reload(self, ctx, cog=None):
         await ctx.message.delete()
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
@@ -95,7 +95,7 @@ class cog_manager(commands.Cog):
         await ctx.send(embed=embed)
 
 
-    @commands.command(pass_context=True, usage="reloadall")
+    @commands.command(pass_context=True, usage="reloadall", hidden=True)
     async def reloadall(self, ctx):
         await ctx.message.delete()
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
@@ -132,7 +132,7 @@ class cog_manager(commands.Cog):
         embed = discord.Embed(title="Reloaded "+" all cogs", color=0x00FF42)
         await ctx.send(embed=embed)
 
-    @commands.command(pass_context=True, usage="sex")
+    @commands.command(pass_context=True, usage="sex", hidden=True)
     async def sex(self, ctx):
         #await ctx.message.delete()
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
@@ -144,7 +144,7 @@ class cog_manager(commands.Cog):
 
 
 # adding and removing commands
-    @commands.command(pass_context=True, usage="showcommands")
+    @commands.command(pass_context=True, usage="showcommands", hidden=True)
     async def showcommands(self, ctx):
         await ctx.message.delete()
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
@@ -179,7 +179,7 @@ class cog_manager(commands.Cog):
         await ctx.send(embed=disablededembed)
 
 
-    @commands.command(pass_context=True, usage="denable [command]")
+    @commands.command(pass_context=True, usage="denable [command]", hidden=True)
     async def denable(self, ctx, command = None):
         #await ctx.message.delete()
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
@@ -196,7 +196,7 @@ class cog_manager(commands.Cog):
         await ctx.send(embed=discord.Embed(title=f"Added {command}", color=0x00FF42))
 
 
-    @commands.command(pass_context=True, usage="ddisable [command]")
+    @commands.command(pass_context=True, usage="ddisable [command]", hidden=True)
     async def ddisable(self, ctx, command = None):
         #await ctx.message.delete()
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":

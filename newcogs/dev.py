@@ -132,7 +132,7 @@ class Dev(commands.Cog):
 
 # Git
     @commands.command(pass_context=True)
-    async def git(self, ctx, action=None):
+    async def git(self, ctx, action=None, hidden=True):
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("You're noone")
             return
@@ -154,7 +154,7 @@ class Dev(commands.Cog):
 
 # Mongo DB
     @commands.command(pass_context=True)
-    async def mdbguildupdate(self):
+    async def mdbguildupdate(self, hidden=True):
         db = MongoClient('localhost', 27017).maindb
         collection = db.guilds
 
@@ -231,7 +231,7 @@ class Dev(commands.Cog):
                 collection.replace_one(myquery, doc)
 
     @commands.command(pass_context=True)
-    async def dmdbguild(self, ctx):
+    async def dmdbguild(self, ctx, hidden=True):
         await ctx.message.delete()
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
@@ -256,7 +256,7 @@ class Dev(commands.Cog):
 
 # Presence
     @commands.command(pass_context=True)
-    async def presence(self, ctx, presence=None):
+    async def presence(self, ctx, presence=None, hidden=True):
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
             return
@@ -269,8 +269,8 @@ class Dev(commands.Cog):
             await ctx.send("Success")
 
 
-# Activity      OBS!   W.I.P
-    @commands.command(pass_context=True, aliases=[], usage="activity [activity]")
+# Activity 
+    @commands.command(pass_context=True, aliases=[], usage="activity [activity]", hidden=True)
     async def activity(self, ctx, activity=None):
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")

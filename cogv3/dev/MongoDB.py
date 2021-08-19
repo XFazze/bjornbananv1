@@ -97,7 +97,6 @@ class MongoDB(commands.Cog):
 
     @commands.command(pass_context=True)
     async def dmdbguild(self, ctx, hidden=True):
-        await ctx.message.delete()
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
             return
@@ -114,7 +113,7 @@ class MongoDB(commands.Cog):
 
     @mdbguildloop.before_loop
     async def before_cleanse(self):
-        print('deletingchannel enabled')
+        print('mongodbguildupdate enabled')
         await self.bot.wait_until_ready()
 
 

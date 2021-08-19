@@ -142,6 +142,10 @@ class cog_manager(commands.Cog):
         for extension in self.bot.extensions:
             await ctx.send(extension)
 
+    @commands.command(pass_context=True, usage="sex", hidden=True)
+    async def loadnew(self, ctx):
+        self.bot.load_extension('cogsv3.dev.cog_manager.py')
+
 
 # adding and removing commands
     @commands.command(pass_context=True, usage="showcommands", hidden=True)

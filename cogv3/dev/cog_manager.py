@@ -9,7 +9,6 @@ import git
 import pymongo as pm
 import datetime
 
-start_time = time.time()
 
 
 class cog_manager(commands.Cog):
@@ -18,7 +17,7 @@ class cog_manager(commands.Cog):
 
 # loading and unloading extensions
     @commands.command(pass_context=True, usage="show", hidden=True)
-    async def sshow(self, ctx, cog=None):
+    async def show(self, ctx, cog=None):
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
             return
@@ -49,7 +48,7 @@ class cog_manager(commands.Cog):
         await ctx.send(embed=unloadedembed)
 
     @commands.command(pass_context=True, usage="load [cog]", hidden=True)
-    async def sload(self, ctx, cat=None, cog=None):
+    async def load(self, ctx, cat=None, cog=None):
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
             return
@@ -63,7 +62,7 @@ class cog_manager(commands.Cog):
         await ctx.send(embed=discord.Embed(title="Loaded "+f"cogv3.{cat}.{cog}", color=0x00FF42))
 
     @commands.command(pass_context=True, usage="unload [cog]", hidden=True)
-    async def sunload(self, ctx, cat=None, cog=None):
+    async def unload(self, ctx, cat=None, cog=None):
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
             return
@@ -79,7 +78,7 @@ class cog_manager(commands.Cog):
         await ctx.send(embed=embed)
 
     @commands.command(pass_context=True, usage="reload [cog]", hidden=True)
-    async def sreload(self, ctx, cat=None,  cog=None):
+    async def reload(self, ctx, cat=None,  cog=None):
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
             return
@@ -95,7 +94,7 @@ class cog_manager(commands.Cog):
         await ctx.send(embed=embed)
 
     @commands.command(pass_context=True, usage="reloadall", hidden=True)
-    async def sreloadall(self, ctx):
+    async def reloadall(self, ctx):
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
             return
@@ -132,7 +131,7 @@ class cog_manager(commands.Cog):
         await ctx.send(embed=embed)
 
     @commands.command(pass_context=True, usage="sex", hidden=True)
-    async def ssex(self, ctx):
+    async def sex(self, ctx):
         if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
             return
@@ -141,10 +140,6 @@ class cog_manager(commands.Cog):
             await ctx.send(extension)
         await ctx.send("done")
 
-    @commands.command(pass_context=True, usage="sex", hidden=True)
-    async def removeoldcog(self, ctx):
-        self.bot.unload_extension('newcogs.cog_manager')
-        
 
 
 def setup(bot):

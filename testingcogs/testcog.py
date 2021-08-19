@@ -20,7 +20,7 @@ class Test(commands.Cog):
 
     @commands.command(pass_context=True)
     async def a(self, ctx):
-        print(dir(self.bot))
+        print(ctx.channel.history)
 
     
     @commands.command(pass_context=True)

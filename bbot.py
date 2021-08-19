@@ -22,7 +22,7 @@ bot = commands.Bot(command_prefix=determine_prefix, intents=discord.Intents.all(
 #bot.remove_command('help')
 
 if __name__ == '__main__':
-    bot.load_extension('newcogs.cog_manager')
+    bot.load_extension('cogv3.dev.cog_manager')
 
 
 # Gets the token

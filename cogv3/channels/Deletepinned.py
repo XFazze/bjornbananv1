@@ -1,5 +1,6 @@
 import discord
 import json
+from ..admin.managecommands import perms
 from pymongo import MongoClient, collation
 from discord.ext import commands, tasks
 from discord.utils import get
@@ -15,6 +16,7 @@ class Deletepinned(commands.Cog):
 # Delete pinned
     @commands.command(pass_context=True, aliases=['edp'])
     @commands.has_permissions(manage_messages=True)
+    @commands.check(perms)
     async def enabledeletepinned(self, ctx):
         collection = MongoClient('localhost', 27017).maindb.guilds
         myquery = {"id": ctx.guild.id}
@@ -35,6 +37,7 @@ class Deletepinned(commands.Cog):
 
     @commands.command(pass_context=True, aliases=['ddp'])
     @commands.has_permissions(manage_messages=True)
+    @commands.check(perms)
     async def disabledeletepinned(self, ctx):
         collection = MongoClient('localhost', 27017).maindb.guilds
         myquery = {"id": ctx.guild.id}

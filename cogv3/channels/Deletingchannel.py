@@ -1,4 +1,5 @@
 import discord
+from ..admin.managecommands import perms
 import json
 from pymongo import MongoClient, collation
 from discord.ext import commands, tasks
@@ -17,6 +18,7 @@ class Deletingchannel(commands.Cog):
 
     @commands.command(pass_context=True, aliases=['ed'])
     @commands.has_permissions(manage_messages=True)
+    @commands.check(perms)
     async def enabledelete(self, ctx):
         collection = MongoClient('localhost', 27017).maindb.guilds
         myquery = {"id": ctx.guild.id}
@@ -37,6 +39,7 @@ class Deletingchannel(commands.Cog):
 
     @commands.command(pass_context=True, aliases=['dd'])
     @commands.has_permissions(manage_messages=True)
+    @commands.check(perms)
     async def disabledelete(self, ctx):
         collection = MongoClient('localhost', 27017).maindb.guilds
         myquery = {"id": ctx.guild.id}

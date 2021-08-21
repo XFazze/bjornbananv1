@@ -1,4 +1,5 @@
 import discord
+from ..admin.managecommands import perms
 import json
 from discord.utils import get
 from pymongo import MongoClient, collation
@@ -19,6 +20,7 @@ class Bombreactions(commands.Cog):
 
 # Bombreactions
     @commands.command(pass_context=True, aliases=['boom', 'bomb', 'reactions'])
+    @commands.check(perms)
     async def bomb_reactions(self, ctx, *id):
         emojis = ['😀', '😃', '😄', '😁', '😆', '😅', '😂', '🤣', '☺', '😊', '😇', '🙂', '🙃',
                     '😉', '😌', '😍', '🥰', '😘', '😗', '😙', '😚', '😋', '😛', '😝', '😜', '🤪', '🤨', '🧐',

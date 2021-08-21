@@ -1,4 +1,5 @@
 import discord
+from ..admin.managecommands import perms
 import json
 from discord.utils import get
 from pymongo import MongoClient, collation
@@ -77,6 +78,7 @@ class DND(commands.Cog):
 
     @commands.command(pass_context=True, aliases=['df'])
     @commands.has_permissions(manage_channels=True)
+    @commands.check(perms)
     async def dndframer(self, ctx):
         try:
             name = ctx.message.content[11:].split(",")[0]

@@ -1,4 +1,5 @@
 import discord
+from ..admin.managecommands import perms
 import json
 from discord.utils import get
 from pymongo import MongoClient, collation
@@ -21,6 +22,7 @@ class Todo(commands.Cog):
 # To-Do
 
     @commands.command(pass_context=True)
+    @commands.check(perms)
     async def todo(self, ctx):
         await ctx.message.delete()
         id = random.randint(100, 999)
@@ -33,6 +35,7 @@ class Todo(commands.Cog):
 
 
     @commands.command(pass_context=True)
+    @commands.check(perms)
     async def tadd(self, ctx, *content):
         await ctx.message.delete()
         try:
@@ -70,6 +73,7 @@ class Todo(commands.Cog):
         
         
     @commands.command(pass_context=True, aliases=['ta'])
+    @commands.check(perms)
     async def tactive(self, ctx, *content):
         await ctx.message.delete()
         try:
@@ -120,6 +124,7 @@ class Todo(commands.Cog):
 
 
     @commands.command(pass_context=True, aliases=['td'])
+    @commands.check(perms)
     async def tdone(self, ctx, *content):
         await ctx.message.delete()
         try:

@@ -1,4 +1,5 @@
 import discord
+from ..admin.managecommands import perms
 import json
 from discord.utils import get
 from pymongo import MongoClient, collation
@@ -17,6 +18,7 @@ class Basicvc(commands.Cog):
         
 # Basic VC
     @commands.command(pass_context=True, aliases=['j'])
+    @commands.check(perms)
     async def join(self,ctx):
         global voice
         channel = ctx.message.author.voice.channel
@@ -33,6 +35,7 @@ class Basicvc(commands.Cog):
 
 
     @commands.command(pass_context=True, aliases=['l'])
+    @commands.check(perms)
     async def leave(self,ctx):
         channel = ctx.message.author.voice.channel
         voice = get(self.bot.voice_clients, guild=ctx.guild)
@@ -46,6 +49,7 @@ class Basicvc(commands.Cog):
 
 
     @commands.command(pass_context=True)
+    @commands.check(perms)
     async def od(self,ctx):
         channel = ctx.message.author.voice.channel
         print(self.bot.voice_clients, ctx.guild)
@@ -63,6 +67,7 @@ class Basicvc(commands.Cog):
 
 
     @commands.command(pass_context=True)
+    @commands.check(perms)
     async def erika(self,ctx):
         channel = ctx.message.author.voice.channel
         voice = get(self.bot.voice_clients, guild=ctx.guild)
@@ -79,6 +84,7 @@ class Basicvc(commands.Cog):
 
 
     @commands.command(pass_context=True, aliases=['tts'])
+    @commands.check(perms)
     async def texttospeech(self,ctx):
         message = ctx.message.content[6:]
         if len(message) > 50:

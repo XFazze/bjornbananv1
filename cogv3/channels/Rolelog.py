@@ -1,4 +1,5 @@
 import discord
+from ..admin.managecommands import perms
 import json
 from pymongo import MongoClient, collation
 from discord.ext import commands, tasks
@@ -16,6 +17,7 @@ class Rolelog(commands.Cog):
 
     @commands.command(pass_context=True, aliases=['er'])
     @commands.has_permissions(manage_roles=True)
+    @commands.check(perms)
     async def enablerolelog(self, ctx):
         with open('/tmp/discordbot/management/rolelog.json', 'r+') as f:
             rolelog = json.load(f)
@@ -31,6 +33,7 @@ class Rolelog(commands.Cog):
 
     @commands.command(pass_context=True, aliases=['dr'])
     @commands.has_permissions(manage_roles=True)
+    @commands.check(perms)
     async def disablerolelog(self, ctx):
         with open('/tmp/discordbot/management/rolelog.json', 'r+') as f:
             rolelog = json.load(f)

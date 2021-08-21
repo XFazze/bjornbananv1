@@ -1,4 +1,5 @@
 import discord
+from ..admin.managecommands import perms
 import json
 from discord.utils import get
 from pymongo import MongoClient, collation
@@ -22,6 +23,7 @@ class Ban(commands.Cog):
     @commands.command(pass_context=True)
     @commands.has_permissions(ban_members=True)
     @commands.bot_has_permissions(ban_members=True)
+    @commands.check(perms)
     async def ban(self, ctx, member:discord.Member = None, *reason):
         
         # Sets default reason if not specified
@@ -49,6 +51,7 @@ class Ban(commands.Cog):
     @commands.command(pass_context=True)
     @commands.has_permissions(ban_members=True)
     @commands.bot_has_permissions(ban_members=True)
+    @commands.check(perms)
     async def banlist(self, ctx):
         
         await ctx.message.delete()
@@ -69,6 +72,7 @@ class Ban(commands.Cog):
     @commands.command(pass_context=True)
     @commands.has_permissions(ban_members=True)
     @commands.bot_has_permissions(ban_members=True)
+    @commands.check(perms)
     async def unban(self, ctx, member = None):
 
         # Unbans a member

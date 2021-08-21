@@ -1,5 +1,6 @@
 import discord
 import json
+from managecommands import perms
 from discord import member
 from discord.utils import get
 from pymongo import MongoClient, collation
@@ -19,6 +20,7 @@ class Reactionroles(commands.Cog):
 
     @commands.command(pass_context=True, aliases=['r'])
     @commands.has_permissions(manage_roles=True)
+    @commands.check(perms)
     async def reactionroles(self, ctx):
         try:
             role_id = int(str(ctx.message.content).split(" ")[1][3:-1])
@@ -77,6 +79,7 @@ class Reactionroles(commands.Cog):
             await member.remove_roles(role)
 
     @commands.command(pass_context=True, aliases=['c'])
+    @commands.check(perms)
     async def reactionrolesclean(self, ctx):
         await ctx.message.delete()
         channel = ctx.message.channel

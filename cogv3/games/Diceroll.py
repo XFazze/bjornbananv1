@@ -1,4 +1,5 @@
 import discord
+from ..admin.managecommands import perms
 import json
 from discord.utils import get
 from pymongo import MongoClient, collation
@@ -16,6 +17,7 @@ class Diceroll(commands.Cog):
 
 # Diceroll
     @commands.command(pass_context=True, aliases=[])
+    @commands.check(perms)
     async def diceroll(self, ctx, dice:int = 6):
       await ctx.send(embed=discord.Embed(title="You got an " + str(random.randint(0,dice)), color=0x00FF42))
     

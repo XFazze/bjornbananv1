@@ -1,4 +1,5 @@
 import discord
+from ..admin.managecommands import perms
 import json
 from discord.utils import get
 from pymongo import MongoClient, collation
@@ -24,6 +25,7 @@ class Kick(commands.Cog):
     @commands.command(pass_context=True)
     @commands.has_permissions(kick_members=True)
     @commands.bot_has_permissions(kick_members=True)
+    @commands.check(perms)
     async def kick(self, ctx, member:discord.Member, *reason):
         # Sets default reason if not specified
         if not reason:

@@ -1,4 +1,6 @@
+from cogv3.admin.managecommands import managecommands
 import discord
+from managecommands import perms
 import json
 from discord import member
 from discord.utils import get
@@ -18,6 +20,7 @@ class Joinroles(commands.Cog):
 # Join roles
 
     @commands.command(pass_context=True, aliases=['jra', 'jradd'])
+    @commands.check(perms)
     @commands.has_permissions(manage_roles=True)
     async def joinroleadd(self, ctx, role: discord.Role = None):
         if role == None:
@@ -43,6 +46,7 @@ class Joinroles(commands.Cog):
         collection.update_one(myquery, newvalue)
 
     @commands.command(pass_context=True, aliases=['jrr', 'jrremove'])
+    @commands.check(perms)
     @commands.has_permissions(manage_roles=True)
     async def joinroleremove(self, ctx, role: discord.Role = None):
         if role == None:
@@ -68,6 +72,7 @@ class Joinroles(commands.Cog):
         collection.update_one(myquery, newvalue)
 
     @commands.command(pass_context=True, aliases=['jrl', 'jrlist'])
+    @commands.check(perms)
     async def joinrolelist(self, ctx):
         collection = MongoClient('localhost', 27017).maindb.guilds
         myquery = {"id": ctx.guild.id}

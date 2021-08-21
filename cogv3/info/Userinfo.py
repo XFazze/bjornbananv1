@@ -1,4 +1,5 @@
 import discord, datetime, time
+from ..admin.managecommands import perms
 import json
 from discord.utils import get
 from pymongo import MongoClient, collation
@@ -18,6 +19,7 @@ class Userinfo(commands.Cog):
 # Userinfo
     
     @commands.command(pass_context=True, aliases= ['userinfo'])
+    @commands.check(perms)
     async def user(self, ctx, member:discord.Member = None):
         
         await ctx.message.delete()
@@ -49,6 +51,7 @@ class Userinfo(commands.Cog):
     
     
     @commands.command(pass_context=True, aliases=['av'])
+    @commands.check(perms)
     async def avatar(self, ctx, member:discord.Member = None):
         
         await ctx.message.delete()

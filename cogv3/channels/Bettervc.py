@@ -1,4 +1,5 @@
 import discord
+from ..admin.managecommands import perms
 import json
 from pymongo import MongoClient, collation
 from discord.ext import commands, tasks
@@ -17,6 +18,7 @@ class Bettervc(commands.Cog):
 # Bettervc
     @commands.command(pass_context=True, aliases=['eb'])
     @commands.has_permissions(manage_roles=True)
+    @commands.check(perms)
     async def enablebettervc(self, ctx):
         collection = MongoClient('localhost', 27017).maindb.guilds
         myquery = {"id": ctx.guild.id}
@@ -38,6 +40,7 @@ class Bettervc(commands.Cog):
 
     @commands.command(pass_context=True, aliases=['db'])
     @commands.has_permissions(manage_roles=True)
+    @commands.check(perms)
     async def disablebettervc(self, ctx):
         collection = MongoClient('localhost', 27017).maindb.guilds
         myquery = {"id": ctx.guild.id}

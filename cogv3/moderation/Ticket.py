@@ -1,4 +1,5 @@
 import discord
+from ..admin.managecommands import perms
 import json
 from discord.utils import get
 from pymongo import MongoClient, collation
@@ -20,6 +21,7 @@ class Ticket(commands.Cog):
     
 # Ticket
     @commands.command(pass_context=True, aliases=['t'])
+    @commands.check(perms)
     async def ticket(self, ctx):
         
         await ctx.message.delete()

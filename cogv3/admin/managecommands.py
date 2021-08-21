@@ -286,9 +286,38 @@ class managecommands(commands.Cog):
         newvalue = {"$set": {"settings": settings}}
         collection.update_one(myquery, newvalue)
         await ctx.send(embed=discord.Embed(title="Enabled "+command+" in channel " + channel.name + " for "+role.name, color=0x00FF42))
+    
+    @commands.command(pass_context=True)
+    @commands.has_permissions(manage_guild=True)
+    async def resetperms(self, ctx, command: str = None):
+        validcommand = False
+        for cmd in self.bot.commands:
+            if command == cmd.name:
+                validcommand = True
+                break
+
+        if not validcommand:
+            await ctx.send(embed=discord.Embed(title="Provide a valid command", color=0xFD3333))
+            return
+
+        collection = MongoClient('localhost', 27017).maindb.guilds
+        myquery = {"id": ctx.guild.id}
+        settings = collection.find_one(myquery)["settings"]
+        settings[command] = {
+            "guild": [],
+            "disabled_guild":  [],
+            "category":  {},
+            "disabled_category": {},
+            "channel":  {},
+            "disabled_channel":  {}}
+            
+
+        newvalue = {"$set": {"settings": settings}}
+        collection.update_one(myquery, newvalue)
+        await ctx.send(embed=discord.Embed(title="Reset command permissions", color=0x00FF42))
 
     @commands.command(pass_context=True)
-    async def commandperms(self, ctx):
+    async def showperms(self, ctx):
         collection = MongoClient('localhost', 27017).maindb.guilds
         myquery = {"id": ctx.guild.id}
         settings = collection.find_one(myquery)["settings"]
@@ -389,6 +418,47 @@ class managecommands(commands.Cog):
             await message.edit(embed=embed,components=[Select(placeholder="Select something!", options=options, custom_id="commandperms",)])
 
 
+    
+
 
 def setup(bot):
     bot.add_cog(managecommands(bot))
+    
+def perms(context):
+        command = context.command.name #str
+        guild_id = context.guild.id
+        channel_id = str(context.message.channel.id)
+        category_id = str(context.message.channel.category_id)
+        roles = []
+        for role in context.author.roles:
+            roles.append(role.id)
+
+        collection = MongoClient('localhost', 27017).maindb.guilds
+        myquery = {"id": guild_id}
+        settings = collection.find_one(myquery)["settings"]
+        if command in settings.keys():
+            if channel_id in settings[command]["channel"].keys():
+                print("channels exist")
+                if bool(set(roles) & set(settings[command]["channel"][channel_id])):
+                    return True
+
+            elif channel_id in settings[command]["disabled_channel"].keys():
+                if bool(set(roles) & set(settings[command]["disabled_channel"][channel_id])):
+                    return False
+                    
+            elif category_id in settings[command]["category"].keys():
+                if bool(set(roles) & set(settings[command]["category"][category_id])):
+                    return True
+                    
+            elif category_id in settings[command]["disabled_category"].keys():
+                if bool(set(roles) & set(settings[command]["disabled_category"][category_id])):
+                    return False
+
+            elif  bool(set(roles) & set(settings[command]["disabled_guild"])):
+                return False
+
+            elif bool(set(roles) & set(settings[command]["guild"])):
+                return True
+                    
+
+        return True

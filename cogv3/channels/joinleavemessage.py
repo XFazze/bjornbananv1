@@ -1,4 +1,5 @@
 import discord
+from ..admin.managecommands import perms
 import json
 from pymongo import MongoClient, collation
 from discord.ext import commands, tasks
@@ -17,6 +18,7 @@ class joinleavemessage(commands.Cog):
 
     @commands.command(pass_context=True, aliases=['ejlm'])
     @commands.has_permissions(manage_messages=True)
+    @commands.check(perms)
     async def enablejoinleavemessage(self, ctx):
         await ctx.message.delete()
         with open('/tmp/discordbot/management/joinleavemessage.json', 'r+') as f:
@@ -37,6 +39,7 @@ class joinleavemessage(commands.Cog):
 
     @commands.command(pass_context=True, aliases=['djlm'])
     @commands.has_permissions(manage_messages=True)
+    @commands.check(perms)
     async def disablejoinleavemessage(self, ctx):
         await ctx.message.delete()
         with open('/tmp/discordbot/management/joinleavemessage.json', 'r+') as f:

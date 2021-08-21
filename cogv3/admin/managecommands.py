@@ -288,7 +288,7 @@ class managecommands(commands.Cog):
         await ctx.send(embed=discord.Embed(title="Enabled "+command+" in channel " + channel.name + " for "+role.name, color=0x00FF42))
 
     @commands.command(pass_context=True)
-    async def command(self, ctx):
+    async def commandperms(self, ctx):
         collection = MongoClient('localhost', 27017).maindb.guilds
         myquery = {"id": ctx.guild.id}
         settings = collection.find_one(myquery)["settings"]
@@ -296,22 +296,93 @@ class managecommands(commands.Cog):
         for setting in settings.keys():
             options.append(SelectOption(label=setting, value=setting))
 
-        message = await ctx.send("NOEEEL", components=[Select(placeholder="Select something!", options=options, custom_id="commandperms",)])
+        message = await ctx.send("The lower in the hiearchy will go over the other. So channel enable will go over guild disable.", components=[Select(placeholder="Select something!", options=options, custom_id="commandperms",)])
         while True:
             interaction = await self.bot.wait_for("select_option")
-            embed = discord.Embed(name="Command permissions for ", value=interaction.values[0])
+            embed = discord.Embed(name="Command permissions for ", value=interaction.values[0], color=0xFFFFFF)
+
             if len(settings[interaction.values[0]]["guild"]) > 0:
                 msg = ""
                 for roleid in settings[interaction.values[0]]["guild"]:
                     role_obj = get(ctx.guild.roles, id=roleid)
                     msg += role_obj.name+'\n'
-            embed.add_field(name="GUILD WIDE allowed", value=msg)
+            else:
+                msg="None"
+            embed.add_field(name="Guild wide allowed", value=msg)
             if len(settings[interaction.values[0]]["guild"]) > 0:
                 msg = ""
                 for roleid in settings[interaction.values[0]]["disabled_guild"]:
                     role_obj = get(ctx.guild.roles, id=roleid)
                     msg += role_obj.name+'\n'
-            embed.add_field(name="GUILD WIDE denied", value=msg)
+            else:
+                msg="None"
+            embed.add_field(name="Guild wide denied", value=msg)
+
+
+
+            # this is no longer a list
+            # its a dictionary
+            embed.add_field(name="Category wide allowed", value="\u200b", inline=False)
+            if len(settings[interaction.values[0]]["category"].keys()) > 0:
+                for key in settings[interaction.values[0]]["category"].keys():
+                    if len(settings[interaction.values[0]]["category"][key]) == 0:
+                        continue
+                    
+                    msg = ""
+                    for roleid in settings[interaction.values[0]]["category"][key]:
+                        role_obj = get(ctx.guild.roles, id=roleid)
+                        msg += role_obj.name+'\n'
+                    name = get(ctx.guild.categories, id=int(key))
+                    embed.add_field(name=name, value=msg)
+            else:
+                msg = "None"
+
+            embed.add_field(name="Category wide denied", value="\u200b", inline=False)
+            if len(settings[interaction.values[0]]["disabled_category"].keys()) > 0:
+                for key in settings[interaction.values[0]]["disabled_category"].keys():
+                    if len(settings[interaction.values[0]]["disabled_category"][key]) == 0:
+                        continue
+                    
+                    msg = ""
+                    for roleid in settings[interaction.values[0]]["disabled_category"][key]:
+                        role_obj = get(ctx.guild.roles, id=roleid)
+                        msg += role_obj.name+'\n'
+                    name = get(ctx.guild.categories, id=int(key))
+                    embed.add_field(name=name, value=msg)
+            else:
+                msg = "None"
+
+
+
+            embed.add_field(name="Channel wide allowed", value="\u200b", inline=False)
+            if len(settings[interaction.values[0]]["channel"].keys()) > 0:
+                for key in settings[interaction.values[0]]["channel"].keys():
+                    if len(settings[interaction.values[0]]["channel"][key]) == 0:
+                        continue
+                    
+                    msg = ""
+                    for roleid in settings[interaction.values[0]]["channel"][key]:
+                        role_obj = get(ctx.guild.roles, id=roleid)
+                        msg += role_obj.name+'\n'
+                    name = get(ctx.guild.text_channels, id=int(key))
+                    embed.add_field(name=name, value=msg)
+            else:
+                msg = "None"
+
+            embed.add_field(name="Channel wide denied", value="\u200b", inline=False)
+            if len(settings[interaction.values[0]]["disabled_channel"].keys()) > 0:
+                for key in settings[interaction.values[0]]["disabled_channel"].keys():
+                    if len(settings[interaction.values[0]]["disabled_channel"][key]) == 0:
+                        continue
+                    
+                    msg = ""
+                    for roleid in settings[interaction.values[0]]["disabled_channel"][key]:
+                        role_obj = get(ctx.guild.roles, id=roleid)
+                        msg += role_obj.name+'\n'
+                    name = get(ctx.guild.text_channels, id=int(key))
+                    embed.add_field(name=name, value=msg)
+            else:
+                msg = "There "
 
 
                 

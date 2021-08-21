@@ -36,7 +36,7 @@ token = token1[1].split(" ")
 async def on_ready():
     print(f"\n\nLogged in as: {bot.user.name}\n")
     prefix = determine_prefix
-    await bot.change_presence(activity=discord.Game(name=f"{prefix}help | fabbe90.gq"))
+    await bot.change_presence(activity=discord.Game(name=f",help | fabbe90.gq"))
 
 
 bot.run(token[0])

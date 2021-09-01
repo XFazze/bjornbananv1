@@ -1,4 +1,3 @@
-from cogv3.admin.managecommands import managecommands
 import discord
 from managecommands import perms
 import json

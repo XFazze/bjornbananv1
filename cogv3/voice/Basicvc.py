@@ -37,15 +37,12 @@ class Basicvc(commands.Cog):
     @commands.command(pass_context=True, aliases=['l'])
     @commands.check(perms)
     async def leave(self,ctx):
-        channel = ctx.message.author.voice.channel
         voice = get(self.bot.voice_clients, guild=ctx.guild)
         if voice.is_connected():
             await voice.disconnect()
-            await ctx.send(f"Left {channel}")
-            print(f"Left channel:{channel}")
+            await ctx.send(f"Left {voice.channe}")
         else:
             await ctx.send("Not in a channel f u")
-            print(f"was asked to leave but not in channel{channel}")
 
 
     @commands.command(pass_context=True)

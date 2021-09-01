@@ -85,8 +85,11 @@ class Bettervc(commands.Cog):
         guild_object = self.bot.get_guild(guilds["id"])
         if after.channel.category_id in guilds["config"]["bettervc"] and len(after.channel.members) == 1:
             category_object = get(self.bot.get_all_channels(), id=after.channel.category_id)
+
+            i = 0
             for empty_channel in category_object.channels:
-                if len(empty_channel.members) == 0:
+                i += 1
+                if  len(empty_channel.members) == 0 and i < 20:
                     await empty_channel.set_permissions(guild_object.default_role, read_messages=True)
                     break
 

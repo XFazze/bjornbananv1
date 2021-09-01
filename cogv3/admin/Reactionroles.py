@@ -1,6 +1,6 @@
 import discord
 import json
-from managecommands import perms
+from .managecommands import perms
 from discord import member
 from discord.utils import get
 from pymongo import MongoClient, collation

@@ -1,5 +1,5 @@
 import discord
-from managecommands import perms
+from .managecommands import perms
 import json
 from discord import member
 from discord.utils import get

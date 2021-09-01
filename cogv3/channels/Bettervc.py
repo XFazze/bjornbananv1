@@ -67,8 +67,9 @@ class Bettervc(commands.Cog):
                     category_object = get(self.bot.get_all_channels(), id=category)
                     empty_channels = []
                     for channel in category_object.channels:
-                        if len(channel.members) == 0:
+                        if len(channel.members) == 0 and channel.name[0] == '|':
                             empty_channels.append(channel)
+                    empty_channels[0].set_permissions(guild_object.default_role, read_messages=True)
                     empty_channels.pop(0)
                     for hiding_channel in empty_channels:
                         await hiding_channel.set_permissions(guild_object.default_role, read_messages=False)
@@ -86,10 +87,8 @@ class Bettervc(commands.Cog):
         if after.channel.category_id in guilds["config"]["bettervc"] and len(after.channel.members) == 1:
             category_object = get(self.bot.get_all_channels(), id=after.channel.category_id)
 
-            i = 0
             for empty_channel in category_object.channels:
-                i += 1
-                if  len(empty_channel.members) == 0 and i > 20:
+                if  len(empty_channel.members) == 0 and empty_channel.name == '|':
                     await empty_channel.set_permissions(guild_object.default_role, read_messages=True)
                     break
 

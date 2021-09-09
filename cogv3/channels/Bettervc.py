@@ -87,6 +87,8 @@ class Bettervc(commands.Cog):
         
     @commands.Cog.listener()
     async def on_voice_state_update(self, member, before, after):
+        if after.channel is None:
+            return
         collection = MongoClient('localhost', 27017).maindb.guilds
         guilds = collection.find_one({"id" : after.channel.guild.id})
         guild_object = self.bot.get_guild(guilds["id"])

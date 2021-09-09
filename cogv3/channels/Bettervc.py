@@ -68,8 +68,8 @@ class Bettervc(commands.Cog):
                     channellog = get(self.bot.get_all_channels(), id=803650388884193280)
                     empty_channels = []
                     for channel in category_object.channels:
-                        await channellog.send("channel.name[0] "+ channel.name[0])
-                        print("channel name", channel.name[0],  channel.name[0] != '|')
+                        await channellog.send("channel.name[0] "+ channel.name[0]+ channel.name[0] != '|')
+                        print("channel name", channel.name[0],  )
                         if len(channel.members) == 0 and channel.name[0] != '|':
                             empty_channels.append(channel)
 

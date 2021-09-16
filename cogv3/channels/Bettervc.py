@@ -58,6 +58,7 @@ class Bettervc(commands.Cog):
 
     @tasks.loop(seconds=5)
     async def hidechannels(self):
+        print("hidechannels loop")
         collection = MongoClient('localhost', 27017).maindb.guilds
         guilds = collection.find({})
         for guild in guilds:
@@ -65,12 +66,16 @@ class Bettervc(commands.Cog):
             if len(guild["config"]["bettervc"]) != 0:
                 for category in guild["config"]["bettervc"]:
                     category_object = get(self.bot.get_all_channels(), id=category)
+                    
                     empty_channels = []
                     for channel in category_object.channels:
                         if len(channel.members) == 0 and channel.name[0] == '|':
                             empty_channels.append(channel)
-                    empty_channels[0].set_permissions(guild_object.default_role, read_messages=True)
-                    empty_channels.pop(0)
+
+                    showchannel = empty_channels.pop(0)
+                    await showchannel.set_permissions(guild_object.default_role, overwrite=None)
+                    await showchannel.set_permissions(guild_object.default_role, read_messages=True)
+                    
                     for hiding_channel in empty_channels:
                         await hiding_channel.set_permissions(guild_object.default_role, read_messages=False)
 
@@ -81,6 +86,8 @@ class Bettervc(commands.Cog):
         
     @commands.Cog.listener()
     async def on_voice_state_update(self, member, before, after):
+        if after.channel is None:
+            return
         collection = MongoClient('localhost', 27017).maindb.guilds
         guilds = collection.find_one({"id" : after.channel.guild.id})
         guild_object = self.bot.get_guild(guilds["id"])
@@ -88,9 +95,12 @@ class Bettervc(commands.Cog):
             category_object = get(self.bot.get_all_channels(), id=after.channel.category_id)
 
             for empty_channel in category_object.channels:
-                if  len(empty_channel.members) == 0 and empty_channel.name[0] == '|':
+                if  len(empty_channel.members) == 0 and empty_channel.name[0] != '|':
+                    await empty_channel.set_permissions(guild_object.default_role, overwrite=None)
                     await empty_channel.set_permissions(guild_object.default_role, read_messages=True)
+                    print("on_voice hide channel ",  empty_channel.name[0])
                     break
+            await category_object.create_text_channel("waowie",guild_object.default_role, read_messages=True)
 
 
 def setup(bot):

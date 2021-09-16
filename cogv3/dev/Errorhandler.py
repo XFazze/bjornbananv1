@@ -31,9 +31,21 @@ class Errorhandler(commands.Cog):
             message = f"User Input Error args: {error.args}"
         elif isinstance(error, commands.MissingRequiredArgument):
             message = f"Missing Required Argument!!!!!{error.param}"
+            collection = MongoClient('localhost', 27017).maindb.errors
+            collection.insert_one({
+                "errortype" : "MissingRequiredArgument",
+                "args" : error.param})
         elif isinstance(error, commands.DisabledCommand):
             message = "Disabled command"
+            collection = MongoClient('localhost', 27017).maindb.errors
+            collection.insert_one({
+                "errortype" : "DisabledCommand",
+                "args" : False})
         elif isinstance(error, commands.TooManyArguments):
+            collection = MongoClient('localhost', 27017).maindb.errors
+            collection.insert_one({
+                "errortype" : "TooManyArguments",
+                "args" : error.args})
             message = f"Too Many Arguments args: {error.args}"
         elif isinstance(error, commands.MaxConcurrencyReached):
             message = f"Max Concurrency Reached number: {error.number}  per: {error.per}"
@@ -67,6 +79,10 @@ class Errorhandler(commands.Cog):
             message = f"Missing any roles the bot is {error.missing_roles}"
         elif isinstance(error, commands.NSFWChannelRequired):
             message = f"NSFW channel required {error.channel}"
+            collection = MongoClient('localhost', 27017).maindb.errors
+            collection.insert_one({
+                "errortype" : "NSFWChannelRequired",
+                "args" : error.channel})
         elif isinstance(error, commands.ExtensionError):
             message = f"Extension error name: {error.name}"
         elif isinstance(error, commands.ExtensionAlreadyLoaded):
@@ -85,16 +101,36 @@ class Errorhandler(commands.Cog):
             message = error
         elif isinstance(error, commands.ConversionError):
             message = f"ConversionError converter: {error.converter} orignial: {error.original}"
+            collection = MongoClient('localhost', 27017).maindb.errors
+            collection.insert_one({
+                "errortype" : "ConversionError",
+                "args" : [error.converter,error.original] })
         elif isinstance(error, commands.ArgumentParsingError):
             message = f"Argument parsing error"
+            collection = MongoClient('localhost', 27017).maindb.errors
+            collection.insert_one({
+                "errortype" : "ArgumentParsingError",
+                "args" : False})
         elif isinstance(error, commands.UnexpectedQuoteError):
             message = f"Unexpected quote error quote: {error.quote}"
+            collection = MongoClient('localhost', 27017).maindb.errors
+            collection.insert_one({
+                "errortype" : "UnexpectedQuoteError",
+                "args" : error.quote})
         elif isinstance(error, commands.InvalidEndOfQuotedStringError):
             message = f"Invalid end of quoted string error char: {error.char}"
         elif isinstance(error, commands.ExpectedClosingQuoteError):
             message = f"Expected Closing Quote Error close_quote: {error.close_quote}"
+            collection = MongoClient('localhost', 27017).maindb.errors
+            collection.insert_one({
+                "errortype" : "ExpectedClosingQuoteError",
+                "args" : error.close_quote})
         elif isinstance(error, commands.BadArgument):
             message = f"Bad Argument args: {error.args}"
+            collection = MongoClient('localhost', 27017).maindb.errors
+            collection.insert_one({
+                "errortype" : "BadArgument",
+                "args" : error.args})
         elif isinstance(error, commands.BadUnionArgument):
             message = f"Bad Union Argument param: {error.param}  converters: {error.converters}  errors: {error.errors}"
         elif isinstance(error, commands.PrivateMessageOnly):
@@ -105,6 +141,10 @@ class Errorhandler(commands.Cog):
             message = f"Check Failure"
         elif isinstance(error, commands.CheckAnyFailure):
             message = f"Check Any Failure errors: {error.errors}  checks: {error.checks}"
+            collection = MongoClient('localhost', 27017).maindb.errors
+            collection.insert_one({
+                "errortype" : "CheckAnyFailure",
+                "args" : [error.errors, error.checks]})
         elif isinstance(error, commands.CommandInvokeError):
             message = f"Command Invoke Error original: {error.original}"
         elif isinstance(error, commands.BadColourArgument):

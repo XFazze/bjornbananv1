@@ -68,7 +68,7 @@ class Bettervc(commands.Cog):
                     
                     empty_channels = []
                     for channel in category_object.channels:
-                        if len(channel.members) == 0 and channel.name[0] == '|':
+                        if len(channel.members) == 0 and channel.name[0] != '|':
                             empty_channels.append(channel)
 
                     showchannel = empty_channels.pop(0)

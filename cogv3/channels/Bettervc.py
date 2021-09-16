@@ -85,20 +85,24 @@ class Bettervc(commands.Cog):
         
     @commands.Cog.listener()
     async def on_voice_state_update(self, member, before, after):
+        print("on_voice_state_update called")
         if after.channel is None:
             return
+        print("on_voice_state_update didnt leave")
         collection = MongoClient('localhost', 27017).maindb.guilds
         guilds = collection.find_one({"id" : after.channel.guild.id})
         guild_object = self.bot.get_guild(guilds["id"])
         if after.channel.category_id in guilds["config"]["bettervc"] and len(after.channel.members) == 1:
+            print("on_voice_state_update didnt category in bettervc and 1 member in channel")
             category_object = get(self.bot.get_all_channels(), id=after.channel.category_id)
 
             for empty_channel in category_object.channels:
-                if  len(empty_channel.members) == 0 and empty_channel.name[0] != '|':
+                if len(empty_channel.members) == 0 and empty_channel.name[0] != '|':
+                    print("on_voice_state_update found empty channel(row 101)")
                     await empty_channel.set_permissions(guild_object.default_role, overwrite=None)
                     await empty_channel.set_permissions(guild_object.default_role, read_messages=True)
-                    break
-            await category_object.create_text_channel("waowie",guild_object.default_role, read_messages=True)
+                    return
+            await category_object.create_voice_channel("waowie",guild_object.default_role, read_messages=True)
 
 
 def setup(bot):

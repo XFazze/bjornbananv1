@@ -66,8 +66,7 @@ class Bettervc(commands.Cog):
                 for category in guild["config"]["bettervc"]:
                     category_object = get(self.bot.get_all_channels(), id=category)
                     empty_channels = []
-                    for channel in category_object.channels:
-                        print("channel.name[0]", channel.name)
+                    for channel in category_object.channels:)
                         if len(channel.members) == 0 and channel.name[0] == '|':
                             empty_channels.append(channel)
                     empty_channels[0].set_permissions(guild_object.default_role, read_messages=True)

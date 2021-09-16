@@ -58,7 +58,6 @@ class Bettervc(commands.Cog):
 
     @tasks.loop(seconds=5)
     async def hidechannels(self):
-        print("hidechannels loop")
         collection = MongoClient('localhost', 27017).maindb.guilds
         guilds = collection.find({})
         for guild in guilds:
@@ -98,7 +97,6 @@ class Bettervc(commands.Cog):
                 if  len(empty_channel.members) == 0 and empty_channel.name[0] != '|':
                     await empty_channel.set_permissions(guild_object.default_role, overwrite=None)
                     await empty_channel.set_permissions(guild_object.default_role, read_messages=True)
-                    print("on_voice hide channel ",  empty_channel.name[0])
                     break
             await category_object.create_text_channel("waowie",guild_object.default_role, read_messages=True)
 

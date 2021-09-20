@@ -11,6 +11,7 @@ import pymongo as pm
 class Bettervc(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        self.hidechannels.start()
         
     @commands.Cog.listener()
     async def on_voice_state_update(self, member, before, after):
@@ -31,6 +32,30 @@ class Bettervc(commands.Cog):
                     await empty_channel.set_permissions(guild_object.default_role, overwrite=None)
                     return
             await category_object.create_voice_channel("waowie",guild_object.default_role, read_messages=None)
+            
+    @tasks.loop(seconds=15)
+    async def hidechannels(self):
+        category_object = get(self.bot.get_all_channels(), id=811447688532066314)
+        guild_object = self.bot.get_guild(802298523214938153)
+        
+        empty_channels = []
+        for channel in category_object.channels:
+            print("loop channel", channel)
+            if len(channel.members) != 0:
+                await channel.set_permissions(guild_object.default_role, overwrite=None)
+            if len(channel.members) == 0 and channel.name[0] != '|':
+                print("found empty")
+                empty_channels.append(channel)
+
+        showchannel = empty_channels.pop(0)
+        print("showin channel", showchannel)
+        print("permissions for channel", showchannel.overwrites_for(guild_object.default_role))
+
+        await showchannel.set_permissions(guild_object.default_role, overwrite=None)
+        
+        for hiding_channel in empty_channels:
+            print("hiding channel", hiding_channel)
+            await hiding_channel.set_permissions(guild_object.default_role, read_messages=False)
 
 
 def setup(bot):

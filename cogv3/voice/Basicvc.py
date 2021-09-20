@@ -40,7 +40,7 @@ class Basicvc(commands.Cog):
         voice = get(self.bot.voice_clients, guild=ctx.guild)
         if voice.is_connected():
             await voice.disconnect()
-            await ctx.send(f"Left {voice.channe}")
+            await ctx.send(f"Left {voice.channel}")
         else:
             await ctx.send("Not in a channel f u")
 

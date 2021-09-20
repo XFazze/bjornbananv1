@@ -73,7 +73,6 @@ class Bettervc(commands.Cog):
 
                     showchannel = empty_channels.pop(0)
                     await showchannel.set_permissions(guild_object.default_role, overwrite=None)
-                    await showchannel.set_permissions(guild_object.default_role, read_messages=True)
                     
                     for hiding_channel in empty_channels:
                         await hiding_channel.set_permissions(guild_object.default_role, read_messages=False)

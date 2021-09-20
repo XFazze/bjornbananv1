@@ -92,7 +92,7 @@ class Bettervc(commands.Cog):
         collection = MongoClient('localhost', 27017).maindb.guilds
         guilds = collection.find_one({"id" : after.channel.guild.id})
         guild_object = self.bot.get_guild(guilds["id"])
-        if after.channel.category_id in guilds["config"]["bettervc"] and len(after.channel.members) == 1:
+        if after.channel.category_id in guilds["config"]["bettervc"] and before.channel == None:
             print("on_voice_state_update didnt category in bettervc and 1 member in channel")
             category_object = get(self.bot.get_all_channels(), id=after.channel.category_id)
 

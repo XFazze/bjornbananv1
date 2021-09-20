@@ -83,6 +83,9 @@ class Bettervc(commands.Cog):
         print("Bettervc enabled")
         await self.bot.wait_until_ready()
         
+    def cog_unload(self):
+        self.hidechannels.cancel()
+
     @commands.Cog.listener()
     async def on_voice_state_update(self, member, before, after):
         print("on_voice_state_update called")
@@ -100,9 +103,8 @@ class Bettervc(commands.Cog):
                 if len(empty_channel.members) == 0 and empty_channel.name[0] != '|':
                     print("on_voice_state_update found empty channel(row 101)")
                     await empty_channel.set_permissions(guild_object.default_role, overwrite=None)
-                    await empty_channel.set_permissions(guild_object.default_role, read_messages=True)
                     return
-            await category_object.create_voice_channel("waowie",guild_object.default_role, read_messages=True)
+            await category_object.create_voice_channel("waowie",guild_object.default_role, read_messages=None)
 
 
 def setup(bot):

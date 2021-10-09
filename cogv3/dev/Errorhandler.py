@@ -55,8 +55,8 @@ class Errorhandler(commands.Cog):
             message = f"Message not found {error.argument}"
         elif isinstance(error, commands.MemberNotFound):
             message = f"Member not found {error.argument}"
-        elif isinstance(error, commands.GuildNotFound):
-            message = f"Guild not found {error.argument}"
+       # elif isinstance(error, commands.GuildNotFound):
+       #     message = f"Guild not found {error.argument}"
         elif isinstance(error, commands.UserNotFound):
             message = f"User not found {error.argument}"
         elif isinstance(error, commands.ChannelNotFound):

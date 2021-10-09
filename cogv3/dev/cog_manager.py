@@ -18,7 +18,7 @@ class cog_manager(commands.Cog):
 # loading and unloading extensions
     @commands.command(pass_context=True, usage="show", hidden=True)
     async def show(self, ctx, cog=None):
-        if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
+        if not str(ctx.author) == "mega#5630" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
             return
 
@@ -49,7 +49,7 @@ class cog_manager(commands.Cog):
 
     @commands.command(pass_context=True, usage="load [cog]", hidden=True)
     async def load(self, ctx, cat=None, cog=None):
-        if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
+        if not str(ctx.author) == "mega#5630" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
             return
 
@@ -63,7 +63,7 @@ class cog_manager(commands.Cog):
 
     @commands.command(pass_context=True, usage="unload [cog]", hidden=True)
     async def unload(self, ctx, cat=None, cog=None):
-        if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
+        if not str(ctx.author) == "mega#5630" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
             return
 
@@ -79,7 +79,7 @@ class cog_manager(commands.Cog):
 
     @commands.command(pass_context=True, usage="reload [cog]", hidden=True)
     async def reload(self, ctx, cat=None,  cog=None):
-        if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
+        if not str(ctx.author) == "mega#5630" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
             return
 
@@ -95,7 +95,7 @@ class cog_manager(commands.Cog):
 
     @commands.command(pass_context=True, usage="reloadall", hidden=True)
     async def reloadall(self, ctx):
-        if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
+        if not str(ctx.author) == "mega#5630" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
             return
 
@@ -132,7 +132,7 @@ class cog_manager(commands.Cog):
 
     @commands.command(pass_context=True, usage="sex", hidden=True)
     async def sex(self, ctx):
-        if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
+        if not str(ctx.author) == "mega#5630" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
             return
 

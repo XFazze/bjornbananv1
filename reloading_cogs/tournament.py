@@ -150,6 +150,7 @@ class Bettervc(commands.Cog):
             tmpuser['username'] = message.content
             tournament = collection.replace_one({'id': int(message.channel.name[6:10])}, tournament)
             await message.reply(embed=discord.Embed(title="You have changed your username.", color=0x00FF42))
+            await self.updateplayerlist()
             return
 
         newUser = {
@@ -160,7 +161,7 @@ class Bettervc(commands.Cog):
 
         collection.replace_one({'id': int(message.channel.name[6:10])}, tournament)
         await message.reply(embed=discord.Embed(title="You have signed up.", color=0x00FF42))
-        await self.sendplayerlist()
+        await self.updateplayerlist()
         
     # close sign ups
     @commands.command(pass_context=True)

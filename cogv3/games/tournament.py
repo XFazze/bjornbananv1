@@ -160,7 +160,7 @@ class Bettervc(commands.Cog):
 
         collection.replace_one({'id': int(message.channel.name[6:10])}, tournament)
         await message.reply(embed=discord.Embed(title="You have signed up.", color=0x00FF42))
-        await self.bot.updateplayerlist()
+        await self.sendplayerlist()
         
     # close sign ups
     @commands.command(pass_context=True)
@@ -256,6 +256,8 @@ class Bettervc(commands.Cog):
         await bracketChannel.send(embed=embed)
 
 
+    @commands.command(pass_context=True)
+    @commands.has_permissions(manage_roles=True)
     async def updateplayerlist(self):
         collection = MongoClient('localhost', 27017).maindb.tournaments
         tournaments = collection.find()

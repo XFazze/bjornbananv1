@@ -251,7 +251,8 @@ class Bettervc(commands.Cog):
         for user in tournament['users']:
             doubleuser = get(self.bot.get_all_members(), id=user['discord'])
             embed.add_field(name=user['discord'], value=user['username'], inline=False)
-
+        
+        await bracketChannel.purge(limit=100)
         await bracketChannel.send(embed=embed)
 
 

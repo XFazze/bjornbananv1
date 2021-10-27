@@ -64,6 +64,7 @@ def sendlayer(ctx, brackets, bracketChannel):
 class Bettervc(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        self.updateplayerlist.start()
 
 # TODO unsingup function
 # Tournament
@@ -248,15 +249,36 @@ class Bettervc(commands.Cog):
 
         embed=discord.Embed(title="Playerlist", color=0x00FF42)
         for user in tournament['users']:
-            print('adding field')
+            doubleuser = get(self.bot.get_all_members(), id=user['discord'])
             embed.add_field(name=user['discord'], value=user['username'], inline=False)
 
         await bracketChannel.send(embed=embed)
 
 
+    @tasks.loop(seconds=60)
+    async def updateplayerlist(self):
+        collection = MongoClient('localhost', 27017).maindb.tournaments
+        tournaments = collection.find()
+        for tournament in tournaments:
+            bracketChannel = self.bot.get_channel(tournament['bracketsChannel'])
 
+            embed=discord.Embed(title="Playerlist", color=0x00FF42)
+            for user in tournament['users']:
+                guild =  self.bot.get_guild(tournament['guild'])
+                doubleuser = guild.get_member(user['discord'])
+                name = doubleuser.name+"#"+doubleuser.discriminator
+                embed.add_field(name=name, value=user['username'], inline=False)
+
+            await bracketChannel.send(embed=embed)
+
+    @updateplayerlist.before_loop
+    async def before_updateplayerlist(self):
+        print("updateplayerlist enabled")
+        await self.bot.wait_until_ready()
     
 
+    def cog_unload(self):
+        self.updateplayerlist.cancel()
 
 
 

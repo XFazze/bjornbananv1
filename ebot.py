@@ -27,4 +27,4 @@ async def on_ready():
     await bot.change_presence(activity=discord.Game(name="succs to succ"))
 
 
-bot.run(token[1])
+bot.run(token[0])

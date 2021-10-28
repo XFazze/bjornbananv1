@@ -20,7 +20,7 @@ class Presence(commands.Cog):
 
     @commands.command(pass_context=True, aliases=[], usage="activity [activity]", hidden=True)
     async def presence(self, ctx, activity=None, type: int = None):
-        if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
+        if not str(ctx.author) == "mega#5630" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
             return
 

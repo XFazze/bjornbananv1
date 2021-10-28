@@ -20,7 +20,7 @@ class Git(commands.Cog):
 
     @commands.command(pass_context=True)
     async def git(self, ctx, action=None, hidden=True):
-        if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
+        if not str(ctx.author) == "mega#5630" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("You're noone")
             return
 

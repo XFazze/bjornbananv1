@@ -36,7 +36,6 @@ class Clear(commands.Cog):
                 except:
                     embed = discord.Embed(title=f'Usage: `{self.bot.get_command("clear").usage}`', color=0xFD3333)
                     await ctx.send(embed=embed)
-                
 
 
 def setup(bot):

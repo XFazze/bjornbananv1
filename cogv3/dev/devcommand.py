@@ -20,7 +20,7 @@ class devcommand(commands.Cog):
 # adding and removing commands
     @commands.command(pass_context=True, usage="showcommands", hidden=True)
     async def showcommands(self, ctx):
-        if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
+        if not str(ctx.author) == "mega#5630" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
             return
 
@@ -55,7 +55,7 @@ class devcommand(commands.Cog):
     @commands.command(pass_context=True, usage="denable [command]", hidden=True)
     async def denable(self, ctx, command = None):
         #await ctx.message.delete()
-        if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
+        if not str(ctx.author) == "mega#5630" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
             return
             
@@ -72,7 +72,7 @@ class devcommand(commands.Cog):
     @commands.command(pass_context=True, usage="ddisable [command]", hidden=True)
     async def ddisable(self, ctx, command = None):
         #await ctx.message.delete()
-        if not str(ctx.author) == "mega#2222" and not str(ctx.author) == "AbstractNucleus#6969":
+        if not str(ctx.author) == "mega#5630" and not str(ctx.author) == "AbstractNucleus#6969":
             await ctx.send("Youre noone")
             return
             

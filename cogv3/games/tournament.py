@@ -98,6 +98,11 @@ class Bettervc(commands.Cog):
         await brackets.set_permissions(role, read_messages=True,send_messages=True)
         await brackets.set_permissions(ctx.guild.default_role, send_messages=False, read_messages=False)
 
+        name = 'playerlist'+str(tournamentId)
+        playerlist = await ctx.channel.category.create_text_channel(name)
+        await playerlist.set_permissions(role, read_messages=True,send_messages=True)
+        await playerlist.set_permissions(ctx.guild.default_role, send_messages=False, read_messages=False)
+
 
         tournament = {
             'id' : tournamentId,
@@ -106,6 +111,7 @@ class Bettervc(commands.Cog):
             'date' : time.asctime(),
             'signupChannel' : signup.id,
             'bracketsChannel': brackets.id,
+            'playerlistChannel': playerlist.id,
             'categoryId' : ctx.channel.category.id,
             'role' : role.id,
             'users' : [],
@@ -245,7 +251,7 @@ class Bettervc(commands.Cog):
     async def sendplayerlist(self, ctx):
         collection = MongoClient('localhost', 27017).maindb.tournaments
         tournament = collection.find_one({'id': int(ctx.channel.name[5:9])})
-        bracketChannel = self.bot.get_channel(tournament['bracketsChannel'])
+        playerlistChannel = self.bot.get_channel(tournament['playerlistChannel'])
 
         embed=discord.Embed(title="Playerlist", color=0x00FF42)
         for user in tournament['users']:
@@ -253,8 +259,8 @@ class Bettervc(commands.Cog):
             name = doubleuser.name+"#"+doubleuser.discriminator
             embed.add_field(name=name, value=user['username'], inline=False)
         
-        await bracketChannel.purge(limit=100)
-        await bracketChannel.send(embed=embed)
+        await playerlistChannel.purge(limit=100)
+        await playerlistChannel.send(embed=embed)
 
 
     @commands.command(pass_context=True)
@@ -264,7 +270,7 @@ class Bettervc(commands.Cog):
         tournaments = collection.find()
         for tournament in tournaments:
             try:
-                bracketChannel = self.bot.get_channel(tournament['bracketsChannel'])
+                playerlistChannel = self.bot.get_channel(tournament['playerlistChannel'])
 
                 embed=discord.Embed(title="Playerlist", color=0x00FF42)
                 for user in tournament['users']:
@@ -273,8 +279,8 @@ class Bettervc(commands.Cog):
                     name = doubleuser.name+"#"+doubleuser.discriminator
                     embed.add_field(name=name, value=user['username'], inline=False)
 
-                await bracketChannel.purge(limit=100)
-                await bracketChannel.send(embed=embed)
+                await playerlistChannel.purge(limit=100)
+                await playerlistChannel.send(embed=embed)
             except:
                 pass
 

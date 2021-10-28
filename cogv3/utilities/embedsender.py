@@ -39,10 +39,10 @@ class embedsender(commands.Cog):
 
 
             await ctx.send(embed=embed) 
+            await ctx.message.delete()
         except:
             title = 'Error. example: ,sendembed 111111 \"a a \"  \"pool,, papa,,,new field,,values\"'
             await ctx.reply(embed=discord.Embed(title=title, color=0xFD3333))
-            await ctx.message.delete()
 
         
     

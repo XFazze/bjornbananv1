@@ -19,7 +19,7 @@ class Clear(commands.Cog):
 
 
 # Clear   
-    @commands.command(aliases = ['purge','delete'], usage="clear [int]")
+    @commands.command(aliases = ['purge','delete', 'g'], usage="clear [int]")
     @commands.has_permissions(manage_messages = True)
     @commands.check(perms)
     async def clear(self, ctx, amount = None):

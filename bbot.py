@@ -18,7 +18,7 @@ async def determine_prefix(bot, message):
         return prefix
 
 # Removes default help command and creates the bot object
-bot = commands.Bot(command_prefix=determine_prefix, intents=discord.Intents.all())
+bot = commands.Bot(command_prefix=',', intents=discord.Intents.all())
 #bot.remove_command('help')
 
 if __name__ == '__main__':
@@ -30,12 +30,11 @@ token1, error = subprocess.Popen(["cat", "/tmp/discordbot/secrets.txt"], stdout=
 token1 = re.split("'", str(token1))
 token = token1[1].split(" ")
 
-
 # Creates the bot event
 @bot.event
 async def on_ready():
     print(f"\n\nLogged in as: {bot.user.name}\n")
-    prefix = determine_prefix
+    prefix = ','
     await bot.change_presence(activity=discord.Game(name=f",help | fabbe90.gq"))
 
 

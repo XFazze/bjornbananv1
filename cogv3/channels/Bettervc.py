@@ -58,24 +58,27 @@ class Bettervc(commands.Cog):
 
     @tasks.loop(seconds=5)
     async def hidechannels(self):
-        collection = MongoClient('localhost', 27017).maindb.guilds
-        guilds = collection.find({})
-        for guild in guilds:
-            guild_object = self.bot.get_guild(guild["id"])
-            if len(guild["config"]["bettervc"]) != 0:
-                for category in guild["config"]["bettervc"]:
-                    category_object = get(self.bot.get_all_channels(), id=category)
-                    
-                    empty_channels = []
-                    for channel in category_object.channels:
-                        if len(channel.members) == 0 and channel.name[0] != '|':
-                            empty_channels.append(channel)
+        try:
+            collection = MongoClient('localhost', 27017).maindb.guilds
+            guilds = collection.find({})
+            for guild in guilds:
+                guild_object = self.bot.get_guild(guild["id"])
+                if len(guild["config"]["bettervc"]) != 0:
+                    for category in guild["config"]["bettervc"]:
+                        category_object = get(self.bot.get_all_channels(), id=category)
+                        
+                        empty_channels = []
+                        for channel in category_object.channels:
+                            if len(channel.members) == 0 and channel.name[0] != '|':
+                                empty_channels.append(channel)
 
-                    showchannel = empty_channels.pop(0)
-                    await showchannel.set_permissions(guild_object.default_role, overwrite=None)
-                    
-                    for hiding_channel in empty_channels:
-                        await hiding_channel.set_permissions(guild_object.default_role, read_messages=False)
+                        showchannel = empty_channels.pop(0)
+                        await showchannel.set_permissions(guild_object.default_role, overwrite=None)
+                        
+                        for hiding_channel in empty_channels:
+                            await hiding_channel.set_permissions(guild_object.default_role, read_messages=False)
+        except:
+            print('some error with bettervc hidechannels')
 
     @hidechannels.before_loop
     async def before_hidechannels(self):

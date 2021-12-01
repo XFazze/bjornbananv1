@@ -25,15 +25,15 @@ class joinleavemessage(commands.Cog):
             joinleavemessage = json.load(f)
             if str(ctx.guild.id) in joinleavemessage.keys():
                 if ctx.channel.id in joinleavemessage[str(ctx.guild.id)]:
-                    await ctx.send("This channel is already added to joinleavemessage")
+                    await ctx.reply("This channel is already added to joinleavemessage")
                 else:
                     joinleavemessage[str(ctx.guild.id)].append(ctx.channel.id)
-                    await ctx.send("Added channel to joinleavemessage")
+                    await ctx.reply("Added channel to joinleavemessage")
                     with open('/tmp/discordbot/management/joinleavemessage.json', 'w') as file:
                         json.dump(joinleavemessage, file, indent=4)
             else:
                 joinleavemessage[str(ctx.guild.id)] = [ctx.channel.id]
-                await ctx.send("Added channel to joinleavemessage")
+                await ctx.reply("Added channel to joinleavemessage")
                 with open('/tmp/discordbot/management/joinleavemessage.json', 'w') as file:
                     json.dump(joinleavemessage, file, indent=4)
 
@@ -47,11 +47,11 @@ class joinleavemessage(commands.Cog):
             if str(ctx.guild.id) in joinleavemessage.keys():
                 if ctx.channel.id in joinleavemessage[str(ctx.guild.id)]:
                     joinleavemessage[str(ctx.guild.id)].remove(ctx.channel.id)
-                    await ctx.send("removed channel from joinleavemessage")
+                    await ctx.reply("removed channel from joinleavemessage")
                     with open('/tmp/discordbot/management/joinleavemessage.json', 'w') as file:
                         json.dump(joinleavemessage, file, indent=4)
                     return
-            await ctx.send("Channel not in joinleavemessage")
+            await ctx.reply("Channel not in joinleavemessage")
 
     @commands.Cog.listener()
     async def on_member_join(self, member):
@@ -73,7 +73,7 @@ class joinleavemessage(commands.Cog):
                     channel = self.bot.get_channel(channel)
                     embed = discord.Embed(title=str(
                         member) + "  joined " + str(times)+" times", description=time.asctime(), color=0x00ff00)
-                    await channel.send(embed=embed)
+                    await channel.reply(embed=embed)
 
     @commands.Cog.listener()
     async def on_member_remove(self, member):
@@ -95,7 +95,7 @@ class joinleavemessage(commands.Cog):
                     channel = self.bot.get_channel(channel)
                     embed = discord.Embed(title=str(
                         member) + "  left " + str(times)+" times", description=time.asctime(), color=0xFF0000)
-                    await channel.send(embed=embed)
+                    await channel.reply(embed=embed)
 
 
 def setup(bot):

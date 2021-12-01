@@ -21,22 +21,22 @@ class Git(commands.Cog):
     @commands.command(pass_context=True)
     async def git(self, ctx, action=None, hidden=True):
         if not str(ctx.author) == "mega#5630" and not str(ctx.author) == "AbstractNucleus#6969":
-            await ctx.send("You're noone")
+            await ctx.reply("You're noone")
             return
 
         g = git.cmd.Git("")
         if action == None:
             embed = discord.Embed(title="Specify an action.", color=0xFD3333)
-            await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
         elif action == "pull":
             s = g.pull()
             embed = discord.Embed(color=0x00FF42)
             embed.add_field(name="Git pull", value=s)
-            await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
         else:
             embed = discord.Embed(
                 title="Action does not exists.", color=0xFD3333)
-            await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
 
 
 

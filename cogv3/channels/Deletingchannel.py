@@ -27,7 +27,7 @@ class Deletingchannel(commands.Cog):
         if ctx.channel.id in config["deletingchannel"]:
             embed = discord.Embed(
                 title="Channel already added", color=0xFD3333)
-            await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
 
         else:
             config["deletingchannel"].append(ctx.channel.id)
@@ -35,7 +35,7 @@ class Deletingchannel(commands.Cog):
             collection.update_one(myquery, newvalue)
             embed = discord.Embed(
                 title="Added channel to deletingchannel", color=0x00FF42)
-            await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
 
     @commands.command(pass_context=True, aliases=['dd'])
     @commands.has_permissions(manage_messages=True)
@@ -51,10 +51,10 @@ class Deletingchannel(commands.Cog):
             collection.update_one(myquery, newvalue)
             embed = discord.Embed(
                 title="Removing channel from deletingchannel", color=0x00FF42)
-            await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
         else:
             embed = discord.Embed(title="Channel isn't in deletingchannel", color=0xFD3333)
-            await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
 
     @tasks.loop(seconds=5) 
     async def cleanse(self):

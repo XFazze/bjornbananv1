@@ -22,7 +22,7 @@ class managecommands(commands.Cog):
                 validcommand = True
                 break
         if not validcommand:
-            await ctx.send(embed=discord.Embed(title="Provide a valid command", color=0xFD3333))
+            await ctx.reply(embed=discord.Embed(title="Provide a valid command", color=0xFD3333))
             return
 
         if role == None:
@@ -44,14 +44,14 @@ class managecommands(commands.Cog):
         if role.id not in settings[command]['disabled_guild']:
             settings[command]['disabled_guild'].append(role.id)
         else:
-            await ctx.send(embed=discord.Embed(title="Command is already disabled", color=0xFD3333))
+            await ctx.reply(embed=discord.Embed(title="Command is already disabled", color=0xFD3333))
             return
 
         if role.id in settings[command]['guild']:
             settings[command]['guild'].remove(role.id)
         newvalue = {"$set": {"settings": settings}}
         collection.update_one(myquery, newvalue)
-        await ctx.send(embed=discord.Embed(title="Disabled "+command+" on server for "+role.name, color=0x00FF42))
+        await ctx.reply(embed=discord.Embed(title="Disabled "+command+" on server for "+role.name, color=0x00FF42))
 
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_guild=True)
@@ -63,7 +63,7 @@ class managecommands(commands.Cog):
                 break
 
         if not validcommand:
-            await ctx.send(embed=discord.Embed(title="Provide a valid command", color=0xFD3333))
+            await ctx.reply(embed=discord.Embed(title="Provide a valid command", color=0xFD3333))
             return
 
         if role == None:
@@ -88,7 +88,7 @@ class managecommands(commands.Cog):
 
         else:
             if role.id in settings[command]['disabled_category'][str(category.id)]:
-                await ctx.send(embed=discord.Embed(title="Command is already disabled", color=0xFD3333))
+                await ctx.reply(embed=discord.Embed(title="Command is already disabled", color=0xFD3333))
                 return
             else:
                 settings[command]['disabled_category'][str(
@@ -100,7 +100,7 @@ class managecommands(commands.Cog):
 
         newvalue = {"$set": {"settings": settings}}
         collection.update_one(myquery, newvalue)
-        await ctx.send(embed=discord.Embed(title="Disabled "+command+" in category " + category.name+" for "+role.name + category.name, color=0x00FF42))
+        await ctx.reply(embed=discord.Embed(title="Disabled "+command+" in category " + category.name+" for "+role.name + category.name, color=0x00FF42))
 
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_guild=True)
@@ -112,7 +112,7 @@ class managecommands(commands.Cog):
                 break
 
         if not validcommand:
-            await ctx.send(embed=discord.Embed(title="Provide a valid command", color=0xFD3333))
+            await ctx.reply(embed=discord.Embed(title="Provide a valid command", color=0xFD3333))
             return
 
         if role == None:
@@ -136,7 +136,7 @@ class managecommands(commands.Cog):
 
         else:
             if role.id in settings[command]['disabled_channel'][str(channel.id)]:
-                await ctx.send(embed=discord.Embed(title="Command is already disabled", color=0xFD3333))
+                await ctx.reply(embed=discord.Embed(title="Command is already disabled", color=0xFD3333))
                 return
             else:
                 settings[command]['disabled_channel'][str(
@@ -148,7 +148,7 @@ class managecommands(commands.Cog):
 
         newvalue = {"$set": {"settings": settings}}
         collection.update_one(myquery, newvalue)
-        await ctx.send(embed=discord.Embed(title="Disabled "+command+" in channel " + channel.name+" for "+role.name, color=0x00FF42))
+        await ctx.reply(embed=discord.Embed(title="Disabled "+command+" in channel " + channel.name+" for "+role.name, color=0x00FF42))
 
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_guild=True)
@@ -159,7 +159,7 @@ class managecommands(commands.Cog):
                 validcommand = True
                 break
         if not validcommand:
-            await ctx.send(embed=discord.Embed(title="Provide a valid command", color=0xFD3333))
+            await ctx.reply(embed=discord.Embed(title="Provide a valid command", color=0xFD3333))
             return
 
         if role == None:
@@ -181,7 +181,7 @@ class managecommands(commands.Cog):
         if role.id not in settings[command]['guild']:
             settings[command]['guild'].append(role.id)
         else:
-            await ctx.send(embed=discord.Embed(title="Command is already enabled", color=0xFD3333))
+            await ctx.reply(embed=discord.Embed(title="Command is already enabled", color=0xFD3333))
             return
 
         if role.id in settings[command]['disabled_guild']:
@@ -189,7 +189,7 @@ class managecommands(commands.Cog):
 
         newvalue = {"$set": {"settings": settings}}
         collection.update_one(myquery, newvalue)
-        await ctx.send(embed=discord.Embed(title="Enabled "+command+" on server for "+role.name, color=0x00FF42))
+        await ctx.reply(embed=discord.Embed(title="Enabled "+command+" on server for "+role.name, color=0x00FF42))
 
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_guild=True)
@@ -201,7 +201,7 @@ class managecommands(commands.Cog):
                 break
 
         if not validcommand:
-            await ctx.send(embed=discord.Embed(title="Provide a valid command", color=0xFD3333))
+            await ctx.reply(embed=discord.Embed(title="Provide a valid command", color=0xFD3333))
             return
 
         if role == None:
@@ -225,7 +225,7 @@ class managecommands(commands.Cog):
 
         else:
             if role.id in settings[command]['category'][str(category.id)]:
-                await ctx.send(embed=discord.Embed(title="Command is already disabled", color=0xFD3333))
+                await ctx.reply(embed=discord.Embed(title="Command is already disabled", color=0xFD3333))
                 return
             else:
                 settings[command]['category'][str(category.id)].append(role.id)
@@ -237,7 +237,7 @@ class managecommands(commands.Cog):
 
         newvalue = {"$set": {"settings": settings}}
         collection.update_one(myquery, newvalue)
-        await ctx.send(embed=discord.Embed(title="Enabled "+command+" in category " + category.name + " for "+role.name, color=0x00FF42))
+        await ctx.reply(embed=discord.Embed(title="Enabled "+command+" in category " + category.name + " for "+role.name, color=0x00FF42))
 
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_guild=True)
@@ -249,7 +249,7 @@ class managecommands(commands.Cog):
                 break
 
         if not validcommand:
-            await ctx.send(embed=discord.Embed(title="Provide a valid command", color=0xFD3333))
+            await ctx.reply(embed=discord.Embed(title="Provide a valid command", color=0xFD3333))
             return
 
         if role == None:
@@ -273,7 +273,7 @@ class managecommands(commands.Cog):
 
         else:
             if role.id in settings[command]['channel'][str(channel.id)]:
-                await ctx.send(embed=discord.Embed(title="Command is already disabled", color=0xFD3333))
+                await ctx.reply(embed=discord.Embed(title="Command is already disabled", color=0xFD3333))
                 return
             else:
                 settings[command]['channel'][str(channel.id)].append(role.id)
@@ -285,7 +285,7 @@ class managecommands(commands.Cog):
 
         newvalue = {"$set": {"settings": settings}}
         collection.update_one(myquery, newvalue)
-        await ctx.send(embed=discord.Embed(title="Enabled "+command+" in channel " + channel.name + " for "+role.name, color=0x00FF42))
+        await ctx.reply(embed=discord.Embed(title="Enabled "+command+" in channel " + channel.name + " for "+role.name, color=0x00FF42))
     
     @commands.command(pass_context=True)
     @commands.has_permissions(manage_guild=True)
@@ -297,7 +297,7 @@ class managecommands(commands.Cog):
                 break
 
         if not validcommand:
-            await ctx.send(embed=discord.Embed(title="Provide a valid command", color=0xFD3333))
+            await ctx.reply(embed=discord.Embed(title="Provide a valid command", color=0xFD3333))
             return
 
         collection = MongoClient('localhost', 27017).maindb.guilds
@@ -314,7 +314,7 @@ class managecommands(commands.Cog):
 
         newvalue = {"$set": {"settings": settings}}
         collection.update_one(myquery, newvalue)
-        await ctx.send(embed=discord.Embed(title="Reset command permissions", color=0x00FF42))
+        await ctx.reply(embed=discord.Embed(title="Reset command permissions", color=0x00FF42))
 
     @commands.command(pass_context=True)
     async def showperms(self, ctx):
@@ -325,7 +325,7 @@ class managecommands(commands.Cog):
         for setting in settings.keys():
             options.append(SelectOption(label=setting, value=setting))
 
-        message = await ctx.send("The lower in the hiearchy will go over the other. So channel enable will go over guild disable.", components=[Select(placeholder="Select something!", options=options, custom_id="commandperms",)])
+        message = await ctx.reply("The lower in the hiearchy will go over the other. So channel enable will go over guild disable.", components=[Select(placeholder="Select something!", options=options, custom_id="commandperms",)])
         while True:
             interaction = await self.bot.wait_for("select_option")
             embed = discord.Embed(name="Command permissions for ", value=interaction.values[0], color=0xFFFFFF)

@@ -27,9 +27,9 @@ class uptime(commands.Cog):
         embed = discord.Embed(colour=0xFFFFFF)
         embed.add_field(name="Uptime", value=text)
         try:
-            await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
         except discord.HTTPException:
-            await ctx.send("Current uptime: " + text)
+            await ctx.reply("Current uptime: " + text)
 
 
 def setup(bot):

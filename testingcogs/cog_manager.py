@@ -25,7 +25,7 @@ class Cog_manager(commands.Cog):
             loaded_cogs.append(cog)
         
         embed1 = discord.Embed(title=f"Loaded cogs: ```{loaded_cogs}```", color=0x00FF42)
-        await ctx.send(embed=embed1)
+        await ctx.reply(embed=embed1)
         
         
         #self.bot.remove_cog("Test")
@@ -45,7 +45,7 @@ class Cog_manager(commands.Cog):
                 unloaded_cogs.append(x)
         
         embed2 = discord.Embed(title=f"Unloaded cogs: ```{unloaded_cogs}```", color=0xFD3333)
-        await ctx.send(embed=embed2)
+        await ctx.reply(embed=embed2)
         
                 
         
@@ -56,30 +56,30 @@ class Cog_manager(commands.Cog):
     async def load(self, ctx, cog):
         if cog == None:
             embed = discord.Embed(title="Specify a cog", color=0xFD3333)
-            await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
     
         try:
             self.bot.add_cog(cog)
             embed = discord.Embed(title=f"Loaded cog ```{cog}```", color=0x00FF42)
-            await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
         except:
             embed = discord.Embed(title=f"Cog ```{cog}``` doesn't exist or is already loaded", color=0xFD3333)
-            await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
     
     
     @commands.command(pass_context=True)
     async def unload(self, ctx, cog = None):
         if cog == None:
             embed = discord.Embed(title="Specify a cog", color=0xFD3333)
-            await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
             
         try:
             self.bot.remove_cog(str(cog))
             embed = discord.Embed(title=f"Unloaded cog ```{cog}```", color=0x00FF42)
-            await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
         except:
             embed = discord.Embed(title=f"Cog ```{cog}``` is not loaded", color=0xFD3333)
-            await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
         
         
     '''@commands.command(pass_context=True)

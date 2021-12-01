@@ -160,7 +160,7 @@ class Errorhandler(commands.Cog):
 
         print(f"[{ctx.guild}#{ctx.channel}] ERROR HAS OCCURED: ", message)
         embed = discord.Embed(title=message, color=0xFD3333)
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
         # await ctx.message.delete(delay=5)
 
 

@@ -41,10 +41,10 @@ class Todo(commands.Cog):
         try:
             id = int(content[0])
         except:
-            await ctx.send("you need to include the id for the lis")
+            await ctx.reply("you need to include the id for the lis")
             return
         if len(content[0]) != 3:
-            await ctx.send("the id of the list is 4 digits")
+            await ctx.reply("the id of the list is 4 digits")
             return
         found = False
         async for message in ctx.channel.history(limit=111):
@@ -56,10 +56,10 @@ class Todo(commands.Cog):
                 except:
                     pass
         if not found:
-            await ctx.send("wrong id")
+            await ctx.reply("wrong id")
             return
         if len(content) < 2:
-            await ctx.send("you need to write the activity you want")
+            await ctx.reply("you need to write the activity you want")
             return
             
         print(dir(message.embeds[0]))
@@ -79,10 +79,10 @@ class Todo(commands.Cog):
         try:
             id = int(content[0])
         except:
-            await ctx.send("you need to include the id for the list")
+            await ctx.reply("you need to include the id for the list")
             return
         if len(content[0]) != 3:
-            await ctx.send("the id of the list is 3 digits")
+            await ctx.reply("the id of the list is 3 digits")
             return
         found = False
         async for message in ctx.channel.history(limit=111):
@@ -94,7 +94,7 @@ class Todo(commands.Cog):
                 except:
                     pass
         if not found:
-            await ctx.send("wrong id")
+            await ctx.reply("wrong id")
             return
 
         
@@ -104,7 +104,7 @@ class Todo(commands.Cog):
             index = int(content[1])-1
             field = embed.fields[index]
         except:
-            await ctx.send("the index is out of range")
+            await ctx.reply("the index is out of range")
             return
         
         embed.remove_field(index)
@@ -130,10 +130,10 @@ class Todo(commands.Cog):
         try:
             id = int(content[0])
         except:
-            await ctx.send("you need to include the id for the list")
+            await ctx.reply("you need to include the id for the list")
             return
         if len(content[0]) != 3:
-            await ctx.send("the id of the list is 4 digits")
+            await ctx.reply("the id of the list is 4 digits")
             return
         found = False
         async for message in ctx.channel.history(limit=111):
@@ -145,13 +145,13 @@ class Todo(commands.Cog):
                 except:
                     pass
         if not found:
-            await ctx.send("wrong id")
+            await ctx.reply("wrong id")
             return
 
         try:
             index = int(content[1])-1
         except:
-            await ctx.send("the index is out of range")
+            await ctx.reply("the index is out of range")
             return
             
         embed = message.embeds[0]

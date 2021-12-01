@@ -24,10 +24,10 @@ class Joinroles(commands.Cog):
     async def joinroleadd(self, ctx, role: discord.Role = None):
         if role == None:
             embed = discord.Embed(title="Provide a role", color=0xFD3333)
-            await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
             return
         if ctx.author.top_role.position < role.position:
-            await ctx.send(embed=discord.Embed(title="You dont have the permissions to add this role", color=0xFD3333))
+            await ctx.reply(embed=discord.Embed(title="You dont have the permissions to add this role", color=0xFD3333))
             return
 
         collection = MongoClient('localhost', 27017).maindb.guilds
@@ -35,11 +35,11 @@ class Joinroles(commands.Cog):
         config = collection.find_one(myquery)["config"]
 
         if role.id in config["joinrole"]:
-            await ctx.send(embed=discord.Embed(title="This role is already added to joinrole", color=0xFD3333))
+            await ctx.reply(embed=discord.Embed(title="This role is already added to joinrole", color=0xFD3333))
             return
         else:
             config["joinrole"].append(role.id)
-            await ctx.send(embed=discord.Embed(title="Added role to joinrole", color=0x00FF42))
+            await ctx.reply(embed=discord.Embed(title="Added role to joinrole", color=0x00FF42))
 
         newvalue = {"$set": {"config": config}}
         collection.update_one(myquery, newvalue)
@@ -50,10 +50,10 @@ class Joinroles(commands.Cog):
     async def joinroleremove(self, ctx, role: discord.Role = None):
         if role == None:
             embed = discord.Embed(title="Provide a role", color=0xFD3333)
-            await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
             return
         if ctx.author.top_role.position < role.position:
-            await ctx.send(embed=discord.Embed(title="You dont have the permissions to remve this role", color=0xFD3333))
+            await ctx.reply(embed=discord.Embed(title="You dont have the permissions to remve this role", color=0xFD3333))
             return
 
         collection = MongoClient('localhost', 27017).maindb.guilds
@@ -62,9 +62,9 @@ class Joinroles(commands.Cog):
 
         if role.id in config["joinrole"]:
             config["joinrole"].remove(role.id)
-            await ctx.send(embed=discord.Embed(title="Role removed from joinrole", color=0x00FF42))
+            await ctx.reply(embed=discord.Embed(title="Role removed from joinrole", color=0x00FF42))
         else:
-            await ctx.send(embed=discord.Embed(title="Role not in joinrole", color=0xFD3333))
+            await ctx.reply(embed=discord.Embed(title="Role not in joinrole", color=0xFD3333))
             return
 
         newvalue = {"$set": {"config": config}}
@@ -82,9 +82,9 @@ class Joinroles(commands.Cog):
                 role = get(ctx.guild.roles, id=role_id)
                 embed.add_field(
                     name=role.name, value="\u200b", inline=False)
-            await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
         else:
-            await ctx.send(embed=discord.Embed(title="There are no join roles on this server", color=0xFD3333))
+            await ctx.reply(embed=discord.Embed(title="There are no join roles on this server", color=0xFD3333))
 
     @commands.Cog.listener()
     async def on_member_join(self, member):

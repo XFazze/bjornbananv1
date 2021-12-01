@@ -32,18 +32,18 @@ class Ban(commands.Cog):
         
         # Bans member if the author has a higher role than the subject.
         if member is None:
-            await ctx.send("Please mention someone to ban")
+            await ctx.reply("Please mention someone to ban")
         
         else:
             
             if ctx.author.top_role.position > member.top_role.position:
                 
                 reason = ' '.join(map(str, reason))
-                await ctx.send(f'{member} was banned with reason "{reason}"')
+                await ctx.reply(f'{member} was banned with reason "{reason}"')
                 await ctx.guild.ban(member, reason=reason)
                 
             else:
-                await ctx.send("The person you are trying to ban is more powerful than you")
+                await ctx.reply("The person you are trying to ban is more powerful than you")
     
 
 # Ban list
@@ -53,9 +53,6 @@ class Ban(commands.Cog):
     @commands.bot_has_permissions(ban_members=True)
     @commands.check(perms)
     async def banlist(self, ctx):
-        
-        await ctx.message.delete()
-        
         banlist = await ctx.guild.bans()
         
         for i in range(0, len(banlist)):
@@ -64,7 +61,7 @@ class Ban(commands.Cog):
             embed.add_field(name="User", value=banlist[i].user, inline=False)
             embed.add_field(name="ID", value=banlist[i].user.id, inline=False)
             embed.add_field(name="Reason", value=banlist[i].reason, inline=False)
-            await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
 
 
 # Unban
@@ -77,7 +74,7 @@ class Ban(commands.Cog):
 
         # Unbans a member
         if member is None:
-            await ctx.send("Please mention someone to unban")
+            await ctx.reply("Please mention someone to unban")
         
         else:
             banned_users = await ctx.guild.bans()
@@ -88,7 +85,7 @@ class Ban(commands.Cog):
                 
                 if (user.name, user.discriminator) == (member_name, member_discriminator):
                     await ctx.guild.unban(user)
-                    await ctx.send(f'{user} was unbanned')
+                    await ctx.reply(f'{user} was unbanned')
 
 
 

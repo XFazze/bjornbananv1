@@ -25,17 +25,17 @@ class Reactionroles(commands.Cog):
         try:
             role_id = int(str(ctx.message.content).split(" ")[1][3:-1])
         except:
-            await ctx.send("you forgot the role variable, format: grear @role emoji text. OBS spaces")
+            await ctx.reply("you forgot the role variable, format: grear @role emoji text. OBS spaces")
             return
         try:
             emoji = str(ctx.message.content).split(" ")[2]
         except:
-            await ctx.send("you forgot the amoji variable, format: grear @role emoji text. OBS spaces")
+            await ctx.reply("you forgot the amoji variable, format: grear @role emoji text. OBS spaces")
             return
         try:
             text = str(ctx.message.content).split(" ")[3:]
         except:
-            await ctx.send("you forgot the text variable, format: grear @role emoji text. OBS spaces")
+            await ctx.reply("you forgot the text variable, format: grear @role emoji text. OBS spaces")
             return
         highest_role = ctx.message.author.roles[-1]
         role = get(ctx.guild.roles, id=role_id)

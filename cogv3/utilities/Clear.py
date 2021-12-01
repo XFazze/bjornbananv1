@@ -26,16 +26,16 @@ class Clear(commands.Cog):
         async with ctx.typing():
             if amount == None:
                 embed = discord.Embed(title=f'Usage: `{self.bot.get_command("clear").usage}`', color=0xFD3333)
-                await ctx.send(embed=embed)
+                await ctx.reply(embed=embed)
             else:
                 try:
                     amount = int(amount)
                     await ctx.channel.purge(limit=amount+1)
                     embed = discord.Embed(title=f'Tried to delete `{amount}` messages')
-                    await ctx.send(embed=embed, delete_after=10)
+                    await ctx.reply(embed=embed, delete_after=10)
                 except:
                     embed = discord.Embed(title=f'Usage: `{self.bot.get_command("clear").usage}`', color=0xFD3333)
-                    await ctx.send(embed=embed)
+                    await ctx.reply(embed=embed)
 
 
 def setup(bot):

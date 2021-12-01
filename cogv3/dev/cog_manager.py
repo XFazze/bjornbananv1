@@ -19,7 +19,7 @@ class cog_manager(commands.Cog):
     @commands.command(pass_context=True, usage="show", hidden=True)
     async def show(self, ctx, cog=None):
         if not str(ctx.author) == "mega#5630" and not str(ctx.author) == "AbstractNucleus#6969":
-            await ctx.send("Youre noone")
+            await ctx.reply("Youre noone")
             return
 
         extensions = []
@@ -44,59 +44,59 @@ class cog_manager(commands.Cog):
             if len(unloaded) > 0:
                 unloadedembed.add_field(name=str(f0), value=unloaded)
 
-        await ctx.send(embed=loadedembed)
-        await ctx.send(embed=unloadedembed)
+        await ctx.reply(embed=loadedembed)
+        await ctx.reply(embed=unloadedembed)
 
     @commands.command(pass_context=True, usage="load [cog]", hidden=True)
     async def load(self, ctx, cat=None, cog=None):
         if not str(ctx.author) == "mega#5630" and not str(ctx.author) == "AbstractNucleus#6969":
-            await ctx.send("Youre noone")
+            await ctx.reply("Youre noone")
             return
 
         if cat == None or cog == None:
             embed = discord.Embed(title="No cat or cog", color=0xFD3333)
-            await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
             return
 
         self.bot.load_extension(f"cogv3.{cat}.{cog}")
-        await ctx.send(embed=discord.Embed(title="Loaded "+f"cogv3.{cat}.{cog}", color=0x00FF42))
+        await ctx.reply(embed=discord.Embed(title="Loaded "+f"cogv3.{cat}.{cog}", color=0x00FF42))
 
     @commands.command(pass_context=True, usage="unload [cog]", hidden=True)
     async def unload(self, ctx, cat=None, cog=None):
         if not str(ctx.author) == "mega#5630" and not str(ctx.author) == "AbstractNucleus#6969":
-            await ctx.send("Youre noone")
+            await ctx.reply("Youre noone")
             return
 
         if cat == None or cog == None:
             embed = discord.Embed(title="No cat or cog", color=0xFD3333)
-            await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
             return
 
         self.bot.unload_extension(f"cogv3.{cat}.{cog}")
         embed = discord.Embed(
             title="Unloaded "+f"cogv3.{cat}.{cog}", color=0x00FF42)
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
     @commands.command(pass_context=True, usage="reload [cog]", hidden=True)
     async def reload(self, ctx, cat=None,  cog=None):
         if not str(ctx.author) == "mega#5630" and not str(ctx.author) == "AbstractNucleus#6969":
-            await ctx.send("Youre noone")
+            await ctx.reply("Youre noone")
             return
 
         if cat == None or cog == None:
             embed = discord.Embed(title="No cat or cog", color=0xFD3333)
-            await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
             return
 
         self.bot.reload_extension(f"cogv3.{cat}.{cog}")
         embed = discord.Embed(
             title="Reloaded "+f"cogv3.{cat}.{cog}", color=0x00FF42)
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
     @commands.command(pass_context=True, usage="reloadall", hidden=True)
     async def reloadall(self, ctx):
         if not str(ctx.author) == "mega#5630" and not str(ctx.author) == "AbstractNucleus#6969":
-            await ctx.send("Youre noone")
+            await ctx.reply("Youre noone")
             return
 
         extensions = []
@@ -117,7 +117,7 @@ class cog_manager(commands.Cog):
                     except:
                         embed = discord.Embed(
                             title="Broken cog: " + cog, color=0xFD3333)
-                        await ctx.send(embed=embed)
+                        await ctx.reply(embed=embed)
 
                 else:
                     try:
@@ -125,20 +125,20 @@ class cog_manager(commands.Cog):
                     except:
                         embed = discord.Embed(
                             title="Broken cog: " + cog, color=0xFD3333)
-                        await ctx.send(embed=embed)
+                        await ctx.reply(embed=embed)
 
         embed = discord.Embed(title="Reloaded all cogs", color=0x00FF42)
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
     @commands.command(pass_context=True, usage="sex", hidden=True)
     async def sex(self, ctx):
         if not str(ctx.author) == "mega#5630" and not str(ctx.author) == "AbstractNucleus#6969":
-            await ctx.send("Youre noone")
+            await ctx.reply("Youre noone")
             return
 
         for extension in self.bot.extensions:
-            await ctx.send(extension)
-        await ctx.send("done")
+            await ctx.reply(extension)
+        await ctx.reply("done")
 
 
 

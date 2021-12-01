@@ -44,7 +44,7 @@ class Bombreactions(commands.Cog):
                     emoji = emojis[random.randint(0, len(emojis)-1)]
                     await mess.add_reaction(emoji)
             except:
-                await ctx.send("not a valid id")
+                await ctx.reply("not a valid id")
 
 def setup(bot):
     bot.add_cog(Bombreactions(bot))

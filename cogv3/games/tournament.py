@@ -74,7 +74,7 @@ class Bettervc(commands.Cog):
         author = ctx.author.id
 
         if member == None:
-            await ctx.send(embed=discord.Embed(title="You didnt provide a valid role.", color=0xFD3333))
+            await ctx.reply(embed=discord.Embed(title="You didnt provide a valid role.", color=0xFD3333))
 
 
         collection = MongoClient('localhost', 27017).maindb.tournaments

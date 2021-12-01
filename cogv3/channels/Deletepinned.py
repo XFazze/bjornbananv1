@@ -25,7 +25,7 @@ class Deletepinned(commands.Cog):
         if ctx.channel.id in config["delete_pinned"]:
             embed = discord.Embed(
                 title="Channel already added", color=0xFD3333)
-            await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
 
         else:
             config["delete_pinned"].append(ctx.channel.id)
@@ -33,7 +33,7 @@ class Deletepinned(commands.Cog):
             collection.update_one(myquery, newvalue)
             embed = discord.Embed(
                 title="Added channel to delete_pinned", color=0x00FF42)
-            await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
 
     @commands.command(pass_context=True, aliases=['ddp'])
     @commands.has_permissions(manage_messages=True)
@@ -49,10 +49,10 @@ class Deletepinned(commands.Cog):
             collection.update_one(myquery, newvalue)
             embed = discord.Embed(
                 title="Removing channel from delete_pinned", color=0x00FF42)
-            await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
         else:
             embed = discord.Embed(title="Channel isn't in delete_pinned", color=0xFD3333)
-            await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
 
     @commands.Cog.listener()
     async def on_message(self, ctx):

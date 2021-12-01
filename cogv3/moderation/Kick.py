@@ -33,18 +33,18 @@ class Kick(commands.Cog):
         
         # Bans member if the author has a higher role than the subject.
         if member is None:
-            await ctx.send("Please mention someone to kick")
+            await ctx.reply("Please mention someone to kick")
         
         else:
             
             if ctx.author.top_role.position > member.top_role.position:
                 
                 reason = ' '.join(map(str, reason))
-                await ctx.send(f'{member} was kicked with reason "{reason}"')
+                await ctx.reply(f'{member} was kicked with reason "{reason}"')
                 await ctx.guild.kick(member, reason=reason)
                 
             else:
-                await ctx.send("The person you are trying to kick is more powerful than you")
+                await ctx.reply("The person you are trying to kick is more powerful than you")
 
 
 

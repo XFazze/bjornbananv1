@@ -35,7 +35,7 @@ class Deletedmessages(commands.Cog):
                 if guild_id in delete_logs.keys():
                     if channel_id in delete_logs[guild_id].keys():
                         ret_message = {
-                            "content": "The bot is broken send help",
+                            "content": "The bot is broken reply help",
                             "author_name": "Bj\u00f6rnbanan",
                             "author_discriminator": "6641",
                             "time": "1021-05-20 15:38:31.421036"
@@ -52,7 +52,7 @@ class Deletedmessages(commands.Cog):
                 else:
                     print("guild not found")
                     ret_message = "There are no deleted messages"
-            await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
         else:
             list = False
             index = 0
@@ -99,12 +99,12 @@ class Deletedmessages(commands.Cog):
                                         x += 1
                                     embed.add_field(value="add a number to access the page",
                                                     name="page 0 of "+str(round(len(temp_delete_logs)/20)))
-                                await ctx.send(embed=embed)
+                                await ctx.reply(embed=embed)
 
                             elif index > round(len(temp_delete_logs)/20):
                                 embed = discord.Embed(
                                     title="There arent that many pages")
-                                await ctx.send(embed=embed)
+                                await ctx.reply(embed=embed)
 
                             else:
                                 embed = discord.Embed(title="Deleted Messages")
@@ -117,13 +117,13 @@ class Deletedmessages(commands.Cog):
                                     x += 1
                                 embed.add_field(value="add a number to access the page", name="page " + str(
                                     index) + " of "+str(round(len(temp_delete_logs)/20)))
-                                await ctx.send(embed=embed)
+                                await ctx.reply(embed=embed)
 
                         elif type(index) == int and type(mindex) == int:
                             if int(argument) > len(temp_delete_logs):
                                 embed = discord.Embed(
                                     title="Look help command")
-                                await ctx.send(embed=embed)
+                                await ctx.reply(embed=embed)
                                 return
                             else:
                                 message = delete_logs[guild_id][channel_id][temp_delete_logs[int(
@@ -132,7 +132,7 @@ class Deletedmessages(commands.Cog):
                                     title="Deleted message nr" + argument)
                                 embed.add_field(name=message['time']+" from "+message["author_name"] +
                                                 "#"+message['author_discriminator'], value=message['content'])
-                                await ctx.send(embed=embed)
+                                await ctx.reply(embed=embed)
                                 return
 
                         elif mindex:
@@ -142,19 +142,19 @@ class Deletedmessages(commands.Cog):
                             except:
                                 embed = discord.Embed(
                                     title="Look help command")
-                                await ctx.send(embed=embed)
+                                await ctx.reply(embed=embed)
                                 return
 
                             if mindex[1]-mindex[0] > 20:
                                 embed = discord.Embed(
                                     title="Look help command")
-                                await ctx.send(embed=embed)
+                                await ctx.reply(embed=embed)
                                 return
 
                             elif mindex[1] > len(temp_delete_logs):
                                 embed = discord.Embed(
                                     title="Look help command")
-                                await ctx.send(embed=embed)
+                                await ctx.reply(embed=embed)
                                 return
 
                             else:
@@ -163,7 +163,7 @@ class Deletedmessages(commands.Cog):
                                     message = delete_logs[guild_id][channel_id][temp_delete_logs[i+mindex[0]]]
                                     embed.add_field(name="nr " + str(i+mindex[0]) + " at " + message['time']+" from "+message["author_name"] +
                                                     "#"+message['author_discriminator'], value=message['content'], inline=False)
-                                await ctx.send(embed=embed)
+                                await ctx.reply(embed=embed)
 
                         # embed.add_field(name=ret_message['time']+" from "+ret_message['author_name']+"#"+ret_message['author_discriminator'], value=ret_message['content'])
                     else:

@@ -98,10 +98,10 @@ class MongoDB(commands.Cog):
     @commands.command(pass_context=True)
     async def dmdbguild(self, ctx, hidden=True):
         if not str(ctx.author) == "mega#5630" and not str(ctx.author) == "AbstractNucleus#6969":
-            await ctx.send("Youre noone")
+            await ctx.reply("Youre noone")
             return
         await self.mdbguildupdate()
-        await ctx.send(embed=discord.Embed(title="Successfully updated mongodbguild", color=0x00FF42))
+        await ctx.reply(embed=discord.Embed(title="Successfully updated mongodbguild", color=0x00FF42))
 
     @commands.Cog.listener()
     async def on_guild_join(self, guild):

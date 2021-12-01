@@ -32,7 +32,7 @@ class Editedmessages(commands.Cog):
                 sending_message = sending_message + "\n" + delete_logs[str(ctx.guild.id)][str(ctx.channel.id)][message]["time"] + " " + delete_logs[str(ctx.guild.id)][str(
                     ctx.channel.id)][message]['author_name'] + "#" + delete_logs[str(ctx.guild.id)][str(ctx.channel.id)][message]['author_discriminator'] + ":\n" + delete_logs[str(ctx.guild.id)][str(ctx.channel.id)][message]['content']
             sending_message = "```" + sending_message + "```"
-            await ctx.send(sending_message)
+            await ctx.reply(sending_message)
 
 
     @commands.Cog.listener()

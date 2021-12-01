@@ -18,12 +18,9 @@ class Userinfo(commands.Cog):
 
 # Userinfo
     
-    @commands.command(pass_context=True, aliases= ['userinfo'])
+    @commands.command(pass_context=True, aliases= ['userinfo', 'profile'])
     @commands.check(perms)
     async def user(self, ctx, member:discord.Member = None):
-        
-        await ctx.message.delete()
-        
         if member is None:
             
             roles_list = ' | '.join(map(str, ctx.author.roles))
@@ -34,7 +31,7 @@ class Userinfo(commands.Cog):
             embed.add_field(name="Highest role", value=ctx.author.top_role, inline=False)
             embed.add_field(name="Roles", value=roles_list, inline=False)
             embed.set_image(url=ctx.author.avatar_url)
-            await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
         
         
         else:
@@ -47,26 +44,24 @@ class Userinfo(commands.Cog):
             embed.add_field(name="Highest role", value=member.top_role, inline=False)
             embed.add_field(name="Roles", value=roles_list, inline=False)
             embed.set_image(url=member.avatar_url)
-            await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
     
     
     @commands.command(pass_context=True, aliases=['av'])
     @commands.check(perms)
     async def avatar(self, ctx, member:discord.Member = None):
-        
-        await ctx.message.delete()
         if member is None:
             
             embed=discord.Embed(title=ctx.author, color=random.randint(0, 0xFFFFFF))
             embed.set_image(url=ctx.author.avatar_url)
-            await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
         
         
         else:
             
             embed=discord.Embed(title=member, color=random.randint(0, 0xFFFFFF))
             embed.set_image(url=member.avatar_url)
-            await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
      
  
 

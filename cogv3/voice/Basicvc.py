@@ -31,7 +31,7 @@ class Basicvc(commands.Cog):
             voice = await channel.connect()
             print(f"connected to a channel{channel}")
 
-        await ctx.send(f"Joined {channel}")
+        await ctx.reply(f"Joined {channel}")
 
 
     @commands.command(pass_context=True, aliases=['l'])
@@ -40,9 +40,9 @@ class Basicvc(commands.Cog):
         voice = get(self.bot.voice_clients, guild=ctx.guild)
         if voice.is_connected():
             await voice.disconnect()
-            await ctx.send(f"Left {voice.channel}")
+            await ctx.reply(f"Left {voice.channel}")
         else:
-            await ctx.send("Not in a channel f u")
+            await ctx.reply("Not in a channel f u")
 
 
     @commands.command(pass_context=True)
@@ -56,7 +56,7 @@ class Basicvc(commands.Cog):
             await voice.move_to(channel)
         else:
             voice = await channel.connect()
-            await ctx.send("God has entered the chat")
+            await ctx.reply("God has entered the chat")
         vc = get(self.bot.voice_clients, guild=ctx.guild)
         vc.play(discord.FFmpegPCMAudio(path),
                 after=lambda e: print("song is done"))
@@ -73,7 +73,7 @@ class Basicvc(commands.Cog):
             await voice.move_to(channel)
         else:
             voice = await channel.connect()
-            await ctx.send("God has entered the chat")
+            await ctx.reply("God has entered the chat")
         vc = get(self.bot.voice_clients, guild=ctx.guild)
         vc.play(discord.FFmpegPCMAudio(path),
                 after=lambda e: print("song is done"))
@@ -86,7 +86,7 @@ class Basicvc(commands.Cog):
         message = ctx.message.content[6:]
         if len(message) > 50:
             print("tried to add too long")
-            await ctx.send("Tha fuck, u trying to bible bitch??")
+            await ctx.reply("Tha fuck, u trying to bible bitch??")
             return
         voice = gTTS(message)
         filename = "/tmp/discordbot/quote/tts/"+message+".mp3"
@@ -99,7 +99,7 @@ class Basicvc(commands.Cog):
             await voice.move_to(channel)
         else:
             voice = await channel.connect()
-            await ctx.send("God has entered the chat")
+            await ctx.reply("God has entered the chat")
         vc = get(self.bot.voice_clients, guild=ctx.guild)
         vc.play(discord.FFmpegPCMAudio(path),
                 after=lambda e: print("song is done"))

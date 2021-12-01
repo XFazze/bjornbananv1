@@ -24,10 +24,10 @@ class Rolelog(commands.Cog):
             c_id = ctx.channel.id
             g_id = str(ctx.guild.id)
             if c_id in rolelog.values():
-                await ctx.send("This channel is already added to rolelog")
+                await ctx.reply("This channel is already added to rolelog")
             else:
                 rolelog[g_id] = c_id
-                await ctx.send("Added channel to rolelog")
+                await ctx.reply("Added channel to rolelog")
                 with open('/tmp/discordbot/management/rolelog.json', 'w') as file:
                     json.dump(rolelog, file, indent=4)
 
@@ -41,11 +41,11 @@ class Rolelog(commands.Cog):
             g_id = str(ctx.guild.id)
             if c_id in rolelog.values():
                 del rolelog[g_id]
-                await ctx.send("removed channel to rolelog")
+                await ctx.reply("removed channel to rolelog")
                 with open('/tmp/discordbot/management/rolelog.json', 'w') as file:
                     json.dump(rolelog, file, indent=4)
             else:
-                await ctx.send("This channel isnta a rolelog channel")
+                await ctx.reply("This channel isnta a rolelog channel")
 
     @commands.Cog.listener()
     async def on_member_update(self, before, after):
@@ -63,7 +63,7 @@ class Rolelog(commands.Cog):
                     role = list(set(before.roles)-set(after.roles))[0]
                     message = "User: " + \
                         str(before) + "\nRole removed: " + role.name
-                    await channel.send(message)
+                    await channel.reply(message)
                 else:
                     role = list(set(after.roles)-set(before.roles))[0]
                     if role.id == 802300001875001455:
@@ -72,7 +72,7 @@ class Rolelog(commands.Cog):
                     else:
                         message = "User: " + \
                             str(before) + "\nRole added: " + role.name
-                    await channel.send(message)
+                    await channel.reply(message)
 
 
 

@@ -32,7 +32,7 @@ class Tempban(commands.Cog):
         
         # Bans member for the specified time if a member is mentioned and if the author has a higher role than the subject.
         if member is None:
-            await ctx.send("Please mention someone to ban")
+            await ctx.reply("Please mention someone to ban")
         
         
         else:
@@ -43,7 +43,7 @@ class Tempban(commands.Cog):
                 
                 t = int(days)*24*60*60
                 
-                await ctx.send(f'{member} was banned with reason "{reason}" for {int(t/60/60/24)} days')
+                await ctx.reply(f'{member} was banned with reason "{reason}" for {int(t/60/60/24)} days')
                     
                 await ctx.guild.ban(member, reason=reason)
                 
@@ -52,7 +52,7 @@ class Tempban(commands.Cog):
                 
             
             else:
-                await ctx.send("The person you are trying to ban is more powerful than you")
+                await ctx.reply("The person you are trying to ban is more powerful than you")
 
 
 

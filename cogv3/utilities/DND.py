@@ -71,7 +71,7 @@ class DND(commands.Cog):
                 if op == "*":
                     result = result*int(value[x+1])
             print(f"success  {value[0]} {result}")
-            await message.channel.send(f"```d{dice}:{value[0]} = {result}```")
+            await message.channel.reply(f"```d{dice}:{value[0]} = {result}```")
         except:
             return
 
@@ -83,7 +83,7 @@ class DND(commands.Cog):
         try:
             name = ctx.message.content[11:].split(",")[0]
         except:
-            await ctx.send('format was wrong("gdndframer your name @person1 @person2")')
+            await ctx.reply('format was wrong("gdndframer your name @person1 @person2")')
         guild = ctx.guild
         role = await guild.create_role(name=name)
         dm = ctx.message.author

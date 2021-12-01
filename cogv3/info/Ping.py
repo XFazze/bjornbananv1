@@ -22,7 +22,7 @@ class Ping(commands.Cog):
         #await ctx.message.delete()
         embed = discord.Embed(colour=0xFFFFFF)
         embed.add_field(name="Latency", value='{0}ms'.format(round(self.bot.latency*1000, 1)))
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
     
 
 def setup(bot):

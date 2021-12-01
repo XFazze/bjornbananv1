@@ -28,7 +28,7 @@ class Bettervc(commands.Cog):
         if ctx.author.voice.channel.category_id in config["bettervc"]:
             embed = discord.Embed(
                 title="Category already added", color=0xFD3333)
-            await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
 
         else:
             config["bettervc"].append(ctx.author.voice.channel.category_id)
@@ -36,7 +36,7 @@ class Bettervc(commands.Cog):
             collection.update_one(myquery, newvalue)
             embed = discord.Embed(
                 title="Added category to bettervc", color=0x00FF42)
-            await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
 
     @commands.command(pass_context=True, aliases=['db'])
     @commands.has_permissions(manage_roles=True)
@@ -52,9 +52,9 @@ class Bettervc(commands.Cog):
             collection.update_one(myquery, newvalue)
             embed = discord.Embed(
                 title="Removing category from bettervc", color=0x00FF42)
-            await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
         else:
-            await ctx.send("category isn't in bettervc")
+            await ctx.reply("category isn't in bettervc")
 
     @tasks.loop(seconds=5)
     async def hidechannels(self):

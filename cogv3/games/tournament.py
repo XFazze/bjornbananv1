@@ -61,7 +61,7 @@ def sendlayer(ctx, brackets, bracketChannel):
 
 
 
-class Bettervc(commands.Cog):
+class tournament(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 

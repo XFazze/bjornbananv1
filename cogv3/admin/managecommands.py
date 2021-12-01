@@ -388,7 +388,7 @@ class managecommands(commands.Cog):
                 for key in settings[interaction.values[0]]["channel"].keys():
                     if len(settings[interaction.values[0]]["channel"][key]) == 0:
                         continue
-                    
+
                     msg = ""
                     for roleid in settings[interaction.values[0]]["channel"][key]:
                         role_obj = get(ctx.guild.roles, id=roleid)
@@ -403,7 +403,7 @@ class managecommands(commands.Cog):
                 for key in settings[interaction.values[0]]["disabled_channel"].keys():
                     if len(settings[interaction.values[0]]["disabled_channel"][key]) == 0:
                         continue
-                    
+
                     msg = ""
                     for roleid in settings[interaction.values[0]]["disabled_channel"][key]:
                         role_obj = get(ctx.guild.roles, id=roleid)

@@ -1,0 +1,21 @@
+VC stats
+temp collection which logs joins
+on leave look for person in temp collection
+add that to mega vc
+doc = {
+    userid,
+    channelid,
+    categoryid or none,
+    serverid,
+    lenght,
+    join date in seconds,
+    join date nicely formatted,
+    join users in vc,
+    leave users in vc,
+
+}
+same with mute, deafen, streaming
+
+
+
+TC stats

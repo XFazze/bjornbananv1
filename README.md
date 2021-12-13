@@ -1,6 +1,6 @@
 # Björnbanan
 This bot is an all-around discordbot with varius purposes. 
-[The invite link with administrative priveliges!](https://discord.com/oauth2/authorize?client_id=759541425078534154&permissions=8&scope=bot)
+[The invite link with administrative priveliges.](https://discord.com/oauth2/authorize?client_id=759541425078534154&permissions=8&scope=bot)
 
 ## Functions [all commands](https://fabbe90.gq/bjornbanan/commands)
 * Moderation commands

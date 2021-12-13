@@ -6,7 +6,7 @@ doc = {
     userid,
     channelid,
     categoryid or none,
-    serverid,
+    guildId,
     lenght,
     join date in seconds,
     join date nicely formatted,
@@ -14,7 +14,7 @@ doc = {
     leave users in vc,
 
 }
-same with mute, deafen, streaming
+same with mute, deafen, adminmute, admindeaf, streaming, video
 
 
 

@@ -27,3 +27,5 @@ data = list(collection.aggregate(pipeline))
 pprint.pprint(data)
 nd = [list(col) for col in zip(*[d.values() for d in data])]
 print(nd)
+
+#https://matplotlib.org/stable/plot_types/basic/bar.html#sphx-glr-plot-types-basic-bar-py

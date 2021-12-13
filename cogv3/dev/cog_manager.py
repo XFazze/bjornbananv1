@@ -104,6 +104,8 @@ class cog_manager(commands.Cog):
             extensions.append(extension.split('.')[1]+"."+extension.split('.')[2]+'.py')
 
         for f0 in os.listdir('./cogv3'):
+            if f0 == 'brokenCogs':
+                continue
             for f in os.listdir('./cogv3/'+str(f0)):
                 if not f.endswith('.py'):
                     continue

@@ -1,13 +1,7 @@
 import discord
 from ..admin.managecommands import perms
-import json
 from discord.utils import get
-from pymongo import MongoClient, collation
-from discord.ext import commands, tasks
-import time
-import os
-import pymongo as pm
-import ffmpeg
+from discord.ext import commands
 from gtts import gTTS
 
 
@@ -15,7 +9,6 @@ class Basicvc(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-        
 # Basic VC
     @commands.command(pass_context=True, aliases=['j'])
     @commands.check(perms)
@@ -49,7 +42,6 @@ class Basicvc(commands.Cog):
     @commands.check(perms)
     async def od(self,ctx):
         channel = ctx.message.author.voice.channel
-        print(self.bot.voice_clients, ctx.guild)
         voice = get(self.bot.voice_clients, guild=ctx.guild)
         path = r"/home/pi/discordbot/static/songs/djungeltrubbaduren.mp3"
         if voice and voice.is_connected():
@@ -85,7 +77,6 @@ class Basicvc(commands.Cog):
     async def texttospeech(self,ctx):
         message = ctx.message.content[6:]
         if len(message) > 50:
-            print("tried to add too long")
             await ctx.reply("Tha fuck, u trying to bible bitch??")
             return
         voice = gTTS(message)

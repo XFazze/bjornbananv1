@@ -1,12 +1,7 @@
 import discord
-import json
 from ..admin.managecommands import perms
-from pymongo import MongoClient, collation
-from discord.ext import commands, tasks
-from discord.utils import get
-import time
-import os
-import pymongo as pm
+from pymongo import MongoClient
+from discord.ext import commands
 
 
 class Deletepinned(commands.Cog):

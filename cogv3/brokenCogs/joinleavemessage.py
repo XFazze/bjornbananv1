@@ -1,5 +1,5 @@
 import discord
-from ..admin.managecommands import perms
+from ..cogv3.admin.managecommands import perms
 import json
 from pymongo import MongoClient, collation
 from discord.ext import commands, tasks
@@ -13,7 +13,7 @@ class joinleavemessage(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-
+#TODO make this work with mognodb
 # joinleavemessage 
 
     @commands.command(pass_context=True, aliases=['ejlm'])

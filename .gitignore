@@ -5,3 +5,7 @@ cogs/*/__pycache__
 reloading_cogs/__pycache__
 config.txt
 test.py
+
+commands
+
+cogv3/reloading_cogs

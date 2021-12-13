@@ -286,8 +286,8 @@ class tournament(commands.Cog):
 
 
 
-# on message signup 
-# if started 
+# on message signup
+# if started
 # if discord user already has singpuped
 # if username already signuped
 # signup
@@ -296,7 +296,7 @@ class tournament(commands.Cog):
 
 # start
 
-# win lose report 
+# win lose report
 
 # advance
 

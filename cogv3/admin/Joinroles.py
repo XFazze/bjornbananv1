@@ -1,13 +1,8 @@
 import discord
 from .managecommands import perms
-import json
-from discord import member
 from discord.utils import get
-from pymongo import MongoClient, collation
-from discord.ext import commands, tasks
-import time
-import os
-import pymongo as pm
+from pymongo import MongoClient
+from discord.ext import commands
 
 
 class Joinroles(commands.Cog):
@@ -17,7 +12,6 @@ class Joinroles(commands.Cog):
 
 
 # Join roles
-
     @commands.command(pass_context=True, aliases=['jra', 'jradd'])
     @commands.check(perms)
     @commands.has_permissions(manage_roles=True)

@@ -13,9 +13,8 @@ class Bjornbanansetprefix(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-
+#FIXME Does it work? 
 # Björnbanan set prefix
-
     @commands.Cog.listener()
     @commands.has_permissions(manage_guild=True)
     async def on_message(self, message):

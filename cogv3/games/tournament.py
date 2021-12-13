@@ -303,4 +303,4 @@ class tournament(commands.Cog):
 
 
 def setup(bot):
-    bot.add_cog(Bettervc(bot))
+    bot.add_cog(tournament(bot))

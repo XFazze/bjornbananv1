@@ -1,16 +1,6 @@
-import discord
 from ..admin.managecommands import perms
-import json
-from discord.utils import get
-from pymongo import MongoClient, collation
-from discord.ext import commands, tasks
-import time
-import os
-import pymongo as pm
-import math
-import random
+from discord.ext import commands
 import re
-import asyncio
 
 
 class Colorcode(commands.Cog):
@@ -18,7 +8,7 @@ class Colorcode(commands.Cog):
         self.bot = bot
 
 
-# Colorcode 
+# Colorcode
     @commands.command(pass_context=True, aliases=['cc'])
     @commands.check(perms)
     async def colorcode(self, ctx):

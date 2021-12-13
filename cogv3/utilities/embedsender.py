@@ -1,16 +1,6 @@
 import discord
 #from ..admin.managecommands import perms
-import json
-from discord.utils import get
-from pymongo import MongoClient, collation
-from discord.ext import commands, tasks
-import time
-import os
-import pymongo as pm
-import asyncio
-import random
-import datetime
-import copy
+from discord.ext import commands
 
 
 class embedsender(commands.Cog):

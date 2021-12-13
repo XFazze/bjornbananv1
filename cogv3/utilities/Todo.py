@@ -1,16 +1,7 @@
 import discord
 from ..admin.managecommands import perms
-import json
-from discord.utils import get
-from pymongo import MongoClient, collation
-from discord.ext import commands, tasks
-import time
-import os
-import pymongo as pm
-import math
+from discord.ext import commands
 import random
-import re
-import asyncio
 
 
 class Todo(commands.Cog):

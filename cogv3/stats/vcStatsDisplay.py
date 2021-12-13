@@ -3,7 +3,6 @@ from pymongo import MongoClient
 from discord.ext import commands
 from discord.utils import get
 import matplotlib.pyplot as plt
-from manage_commands import enable
 import numpy as np
 import pprint
 

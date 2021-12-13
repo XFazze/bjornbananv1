@@ -1,5 +1,5 @@
 from pymongo import MongoClient
-botName = 'ebot'
+botName = input('the bots name:')
 
 collection = MongoClient('localhost', 27017).maindb.tokens
 myquery = {"botname": botName}

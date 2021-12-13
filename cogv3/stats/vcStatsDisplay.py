@@ -3,15 +3,16 @@ from pymongo import MongoClient
 from discord.ext import commands
 from discord.utils import get
 import matplotlib.pyplot as plt
+from manage_commands import enable
 import numpy as np
 import pprint
 
 
-class cogName(commands.Cog):
+class vcStatsDisplay(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(pass_context=True, aliases=[])
+    @commands.command(pass_context=True, aliases=[], enable=True)
     async def vctime(self, ctx, category='guildId'):
         await ctx.trigger_typing()
         # TODO add channel and cateogory
@@ -55,4 +56,4 @@ class cogName(commands.Cog):
 
 
 def setup(bot):
-    bot.add_cog(cogName(bot))
+    bot.add_cog(vcStatsDisplay(bot))

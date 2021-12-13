@@ -51,7 +51,7 @@ class Basicvc(commands.Cog):
         channel = ctx.message.author.voice.channel
         print(self.bot.voice_clients, ctx.guild)
         voice = get(self.bot.voice_clients, guild=ctx.guild)
-        path = r"/home/pi/discordbot/songs/djungeltrubbaduren.mp3"
+        path = r"/home/pi/discordbot/static/songs/djungeltrubbaduren.mp3"
         if voice and voice.is_connected():
             await voice.move_to(channel)
         else:
@@ -68,7 +68,7 @@ class Basicvc(commands.Cog):
     async def erika(self,ctx):
         channel = ctx.message.author.voice.channel
         voice = get(self.bot.voice_clients, guild=ctx.guild)
-        path = r"/tmp/discordbot/songs/erika.mp3"
+        path = r"/tmp/discordbot/static/songs/erika.mp3"
         if voice and voice.is_connected():
             await voice.move_to(channel)
         else:

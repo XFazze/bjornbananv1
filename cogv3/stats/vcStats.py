@@ -20,7 +20,7 @@ class vcStatsLogger(commands.Cog):
             doc = {
                 'action' : 'join',
                 'userId' : member.id,
-                'userName':f'{member.name}#{member.discrominator}',
+                'userName':f'{member.name}#{member.discriminator}',
                 'channel' : after.channel.id,
                 'category' : after.channel.category_id,
                 'guild' : after.channel.guild.id,
@@ -69,7 +69,7 @@ class vcStatsLogger(commands.Cog):
             doc = {
                 'action' : 'join',
                 'userId' : member.id,
-                'userName':f'{member.name}#{member.discrominator}',
+                'userName':f'{member.name}#{member.discriminator}',
                 'channel' : after.channel.id,
                 'category' : after.channel.category_id,
                 'guild' : after.channel.guild.id,
@@ -86,7 +86,7 @@ class vcStatsLogger(commands.Cog):
                 doc = {
                     'action' : 'selfDeaf',
                     'userId' : member.id,
-                    'userName':f'{member.name}#{member.discrominator}',
+                    'userName':f'{member.name}#{member.discriminator}',
                     'channel' : after.channel.id,
                     'category' : after.channel.category_id,
                     'guild' : after.channel.guild.id,
@@ -120,7 +120,7 @@ class vcStatsLogger(commands.Cog):
                 doc = {
                     'action' : 'SelfMute',
                     'userId' : member.id,
-                    'userName':f'{member.name}#{member.discrominator}',
+                    'userName':f'{member.name}#{member.discriminator}',
                     'channel' : after.channel.id,
                     'category' : after.channel.category_id,
                     'guild' : after.channel.guild.id,
@@ -154,7 +154,7 @@ class vcStatsLogger(commands.Cog):
                 doc = {
                     'action' : 'Stream',
                     'userId' : member.id,
-                    'userName':f'{member.name}#{member.discrominator}',
+                    'userName':f'{member.name}#{member.discriminator}',
                     'channel' : after.channel.id,
                     'category' : after.channel.category_id,
                     'guild' : after.channel.guild.id,
@@ -188,7 +188,7 @@ class vcStatsLogger(commands.Cog):
                 doc = {
                     'action' : 'AdminMute',
                     'userId' : member.id,
-                    'userName':f'{member.name}#{member.discrominator}',
+                    'userName':f'{member.name}#{member.discriminator}',
                     'channel' : after.channel.id,
                     'category' : after.channel.category_id,
                     'guild' : after.channel.guild.id,
@@ -222,7 +222,7 @@ class vcStatsLogger(commands.Cog):
                 doc = {
                     'action' : 'AdminDeaf',
                     'userId' : member.id,
-                    'userName':f'{member.name}#{member.discrominator}',
+                    'userName':f'{member.name}#{member.discriminator}',
                     'channel' : after.channel.id,
                     'category' : after.channel.category_id,
                     'guild' : after.channel.guild.id,
@@ -256,7 +256,7 @@ class vcStatsLogger(commands.Cog):
                 doc = {
                     'action' : 'Video',
                     'userId' : member.id,
-                    'userName':f'{member.name}#{member.discrominator}',
+                    'userName':f'{member.name}#{member.discriminator}',
                     'channel' : after.channel.id,
                     'category' : after.channel.category_id,
                     'guild' : after.channel.guild.id,

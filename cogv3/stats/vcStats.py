@@ -23,7 +23,7 @@ class vcStatsLogger(commands.Cog):
                 'userName':f'{member.name}#{member.discriminator}',
                 'channel' : after.channel.id,
                 'category' : after.channel.category_id,
-                'guild' : after.channel.guild.id,
+                'guildId' : after.channel.guild.id,
                 'time': time.time(),
                 'date' : datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
                 'joinUsersInChannel' : len(after.channel.members)-1
@@ -72,7 +72,7 @@ class vcStatsLogger(commands.Cog):
                 'userName':f'{member.name}#{member.discriminator}',
                 'channel' : after.channel.id,
                 'category' : after.channel.category_id,
-                'guild' : after.channel.guild.id,
+                'guildId' : after.channel.guild.id,
                 'time': time.time(),
                 'date' : datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
                 'joinUsersInChannel' : len(before.channel.members)
@@ -89,7 +89,7 @@ class vcStatsLogger(commands.Cog):
                     'userName':f'{member.name}#{member.discriminator}',
                     'channel' : after.channel.id,
                     'category' : after.channel.category_id,
-                    'guild' : after.channel.guild.id,
+                    'guildId' : after.channel.guild.id,
                     'time': time.time(),
                     'date' : datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
                     'usersInChannel' : len(after.channel.members)
@@ -123,7 +123,7 @@ class vcStatsLogger(commands.Cog):
                     'userName':f'{member.name}#{member.discriminator}',
                     'channel' : after.channel.id,
                     'category' : after.channel.category_id,
-                    'guild' : after.channel.guild.id,
+                    'guildId' : after.channel.guild.id,
                     'time': time.time(),
                     'date' : datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
                     'usersInChannel' : len(after.channel.members)
@@ -157,7 +157,7 @@ class vcStatsLogger(commands.Cog):
                     'userName':f'{member.name}#{member.discriminator}',
                     'channel' : after.channel.id,
                     'category' : after.channel.category_id,
-                    'guild' : after.channel.guild.id,
+                    'guildId' : after.channel.guild.id,
                     'time': time.time(),
                     'date' : datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
                     'usersInChannel' : len(after.channel.members)
@@ -191,7 +191,7 @@ class vcStatsLogger(commands.Cog):
                     'userName':f'{member.name}#{member.discriminator}',
                     'channel' : after.channel.id,
                     'category' : after.channel.category_id,
-                    'guild' : after.channel.guild.id,
+                    'guildId' : after.channel.guild.id,
                     'time': time.time(),
                     'date' : datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
                     'usersInChannel' : len(after.channel.members)
@@ -225,7 +225,7 @@ class vcStatsLogger(commands.Cog):
                     'userName':f'{member.name}#{member.discriminator}',
                     'channel' : after.channel.id,
                     'category' : after.channel.category_id,
-                    'guild' : after.channel.guild.id,
+                    'guildId' : after.channel.guild.id,
                     'time': time.time(),
                     'date' : datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
                     'usersInChannel' : len(after.channel.members)
@@ -259,7 +259,7 @@ class vcStatsLogger(commands.Cog):
                     'userName':f'{member.name}#{member.discriminator}',
                     'channel' : after.channel.id,
                     'category' : after.channel.category_id,
-                    'guild' : after.channel.guild.id,
+                    'guildId' : after.channel.guild.id,
                     'time': time.time(),
                     'date' : datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
                     'usersInChannel' : len(after.channel.members)

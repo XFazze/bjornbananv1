@@ -35,9 +35,9 @@ class vcStatsDisplay(commands.Cog):
                 }]
 
             data = list(collection.aggregate(pipeline))
-            #pprint.pprint(data)
+            pprint.pprint(data)
             nd = [list(col) for col in zip(*[d.values() for d in data])]
-            #print(nd)
+            print(nd)
             fig, ax = plt.subplots()
             x = [get(self.bot.get_all_members(), id=d).name for d in nd[0]]
             y = [d/3600 for d in nd[1]]

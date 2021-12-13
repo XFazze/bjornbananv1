@@ -109,9 +109,9 @@ class cog_manager(commands.Cog):
                     continue
 
                 cog = "cogv3."+str(f0)+f".{str(f)[:-3]}"
-                if str(f) == 'uptime.py' or str(f) == 'cog_manager.py':
+                if str(f) == 'cog_manager.py':
                     continue
-                if str(f0)+"."+str(f) in extensions:
+                if str(f) != 'uptime.py' and str(f0)+"."+str(f) in extensions:
                     try:
                         self.bot.reload_extension(cog)
                     except:

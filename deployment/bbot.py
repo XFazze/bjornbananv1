@@ -1,14 +1,12 @@
 import discord
 import json
 from discord.ext import commands
-import subprocess
-import re
-
+from pymongo import MongoClient
 
 # Set prefix here
 prefix = ","
 
-
+#FIXME editing prefix doesnt work
 async def determine_prefix(bot, message):
     prefixes = json.load(open('/tmp/discordbot/management/prefixes.json', 'r'))
     guild = message.guild
@@ -26,10 +24,12 @@ if __name__ == '__main__':
 
 
 # Gets the token
-token1, error = subprocess.Popen(["cat", "/tmp/discordbot/secrets.txt"], stdout=subprocess.PIPE).communicate()
-token1 = re.split("'", str(token1))
-token = token1[1].split(" ")
-
+collection = MongoClient('localhost', 27017).maindb.tokens
+myquery = {"botName": 'bbot'}
+doc = collection.find_one(myquery)
+if not doc:
+    raise ValueError('Token not found in mongodb database.')
+token = doc['token']
 # Creates the bot event
 @bot.event
 async def on_ready():
@@ -38,4 +38,4 @@ async def on_ready():
     await bot.change_presence(activity=discord.Game(name=f",help | fabbe90.gq"))
 
 
-bot.run(token[0])
+bot.run(token)

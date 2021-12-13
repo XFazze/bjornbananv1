@@ -1,13 +1,7 @@
 import discord
-import json
 from discord.utils import get
-from pymongo import MongoClient, collation
 from discord.ext import commands, tasks
-import time
 import os
-import git
-import pymongo as pm
-import datetime
 
 
 

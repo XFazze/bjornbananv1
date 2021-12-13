@@ -1,12 +1,7 @@
 import discord
-import json
-from discord import member
 from discord.utils import get
-from pymongo import MongoClient, collation
-from discord.ext import commands, tasks
-import time
-import os
-import pymongo as pm
+from pymongo import MongoClient
+from discord.ext import commands
 
 
 class Bjornbanansetprefix(commands.Cog):

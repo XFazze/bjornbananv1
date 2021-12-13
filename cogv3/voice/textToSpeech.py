@@ -3,6 +3,7 @@ from ..admin.managecommands import perms
 from discord.utils import get
 from discord.ext import commands
 from gtts import gTTS
+import os
 
 class textToSpeech(commands.Cog):
     def __init__(self, bot):
@@ -32,7 +33,7 @@ class textToSpeech(commands.Cog):
             await ctx.reply("God has entered the chat")
         vc = get(self.bot.voice_clients, guild=ctx.guild)
         vc.play(discord.FFmpegPCMAudio(path),
-                after=lambda e: print("song is done"))
+                after=lambda e: os.remove(path))
         vc.source = discord.PCMVolumeTransformer(vc.source)
 
 

@@ -35,6 +35,7 @@ class vcStatsDisplay(commands.Cog):
                 }]
 
             data = list(collection.aggregate(pipeline))
+            data = sorted(data, key = lambda i: i['count'],reverse=True)
             pprint.pprint(data)
             nd = [list(col) for col in zip(*[d.values() for d in data])]
             print(nd)

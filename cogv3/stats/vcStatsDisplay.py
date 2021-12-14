@@ -44,7 +44,7 @@ class vcStatsDisplay(commands.Cog):
             print(x, nd[1])
 
             ax.bar(x, y, width=0.7, edgecolor="white", linewidth=1)
-
+            fig.autofmt_xdate(rotation=90)
 
             plt.savefig(f'static/plots/{category}-{timeframe}.jpg')
             embed = discord.Embed(

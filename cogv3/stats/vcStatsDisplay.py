@@ -16,7 +16,7 @@ class vcStatsDisplay(commands.Cog):
         await ctx.trigger_typing()
         # TODO add channel and cateogory
         collection = MongoClient('localhost', 27017).maindb.VCJoins
-        timeframes = ['9999999999999']
+        timeframes = ['lifetime']
         for timeframe in timeframes:
             pipeline = [
                 {
@@ -49,7 +49,7 @@ class vcStatsDisplay(commands.Cog):
 
             plt.savefig(f'static/plots/{category}-{timeframe}.jpg')
             embed = discord.Embed(
-                title=f"This is {category} for {timeframe}", color=0xFFF)
+                title=f"Time spent in vc in {category[:-2]} in {timeframe}", color=0xFFF)
             with open(f'static/plots/{category}-{timeframe}.jpg', 'rb') as f:
                 picture = discord.File(f)
                 await ctx.reply(embed=embed, file=picture)

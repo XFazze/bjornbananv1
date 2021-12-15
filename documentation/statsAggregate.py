@@ -7,21 +7,7 @@ import pprint
 
 
 collection = MongoClient('localhost', 27017).maindb.VCJoins
-pipeline = [
-    {
-        '$match': {
-            'guildId': 802298523214938153
-        }
-    },
-    {
-        '$group': {
-            "_id" : "$userId",
-            "count" : {
-                '$sum' : '$length'
-            }
-        }
-
-    }]
+pipeline =  [{'$match': {'$and': [{'guildId': 802298523214938153}, {'time': {'gt': 1638996791.4233649}}]}}, {'$group': {'_id': '$userId', 'count': {'$sum': '$length'}}}]
 
 data = list(collection.aggregate(pipeline))
 pprint.pprint(data)

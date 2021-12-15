@@ -10,11 +10,12 @@ import pprint
 class vcStatsDisplay(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-
+    #TODO add time frames
+    #TODO add different scopes giuld channel category lifetime etc
+    #TODO add time muted etc
     @commands.command(pass_context=True, aliases=[], enable=True)
     async def vctime(self, ctx, category='guildId'):
         await ctx.trigger_typing()
-        # TODO add channel and cateogory
         collection = MongoClient('localhost', 27017).maindb.VCJoins
         timeframes = ['lifetime']
         for timeframe in timeframes:

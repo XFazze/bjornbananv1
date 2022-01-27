@@ -1,13 +1,6 @@
-import discord
-from itsdangerous import exc
 from ..admin.managecommands import perms
-import json
-from pymongo import MongoClient, collation
 from discord.ext import commands, tasks
 from discord.utils import get
-import time
-import os
-import pymongo as pm
 
 
 class fabianLOL(commands.Cog):

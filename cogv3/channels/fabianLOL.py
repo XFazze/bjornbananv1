@@ -16,7 +16,7 @@ class fabianLOL(commands.Cog):
                 num = int(ctx.content)
             except:
                 return
-            await ctx.send(f'{num}/3600, WINS: {(3600-num)/10}  LOSSES: {(3600-num)/5}')
+            await ctx.reply(f'{num}/3600, WINS: {(3600-num)/10}  LOSSES: {(3600-num)/5}')
             await ctx.delete()
 
 

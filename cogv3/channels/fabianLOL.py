@@ -17,7 +17,7 @@ class fabianLOL(commands.Cog):
             except:
                 return
             if ctx.author.id == 212483159659380739:
-                await ctx.reply(f'{num}/3600, WINS: {(3600-num)/10}  LOSSES: {(3600-num)/5}')
+                await ctx.reply(f'{num}/2200, WINS: {(2200-num)/10}  LOSSES: {(2200-num)/5}')
             else:
                 await ctx.reply(f'{num}/16500, WINS: {(16500-num)/10}  LOSSES: {(16500-num)/5}')
             await ctx.delete()

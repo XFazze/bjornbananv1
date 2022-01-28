@@ -16,7 +16,7 @@ class fabianLOL(commands.Cog):
                 num = int(ctx.content)
             except:
                 return
-            if ctx.author.id == 212483159659380739:
+            if ctx.author.id == 243022798543519745:
                 await ctx.reply(f'{num}/2200, WINS: {(2200-num)/10}  LOSSES: {(2200-num)/5}')
             else:
                 await ctx.reply(f'{num}/16500, WINS: {(16500-num)/10}  LOSSES: {(16500-num)/5}')

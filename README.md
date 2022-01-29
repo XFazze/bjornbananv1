@@ -26,6 +26,7 @@ https://discord.com/oauth2/authorize?client_id=775007176157954058&scope=bot&perm
 ## Prerequsiteies
 * MongoDB (v4 or later should be good)
 * Python3
+* sudo apt-get install python3-git
 
 ## discord token setup
 1. Add a database 'maindb'.

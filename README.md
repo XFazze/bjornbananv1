@@ -26,12 +26,12 @@ https://discord.com/oauth2/authorize?client_id=775007176157954058&scope=bot&perm
 ## Prerequsiteies
 * MongoDB (v4 or later should be good)
 * Python3
-* sudo apt-get install python3-git
+* ```sudo apt-get install python3-git```
 
 ## discord token setup
 1. Add a database 'maindb'.
 2. To that db add a collection 'tokens'.
 3. Insert {'botName':'bbot', 'token':yourDiscordToken'} into that collection
 
-## python3 bbot.py
+## ```python3 bbot.py```
 The bot should be running

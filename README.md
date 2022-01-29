@@ -33,5 +33,5 @@ https://discord.com/oauth2/authorize?client_id=775007176157954058&scope=bot&perm
 2. To that db add a collection 'tokens'.
 3. Insert {'botName':'bbot', 'token':yourDiscordToken'} into that collection
 
-## ```python3 bbot.py```
-The bot should be running
+## Run the bot
+```python3 bbot.py```

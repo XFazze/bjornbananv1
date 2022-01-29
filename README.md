@@ -35,3 +35,4 @@ https://discord.com/oauth2/authorize?client_id=775007176157954058&scope=bot&perm
 
 ## Run the bot
 ```python3 bbot.py```
+use the command ,reloadall in a dicord channel with the bot to load the cogs

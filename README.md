@@ -27,6 +27,8 @@ https://discord.com/oauth2/authorize?client_id=775007176157954058&scope=bot&perm
 * MongoDB (v4 or later should be good)
 * Python3
 * ```sudo apt-get install python3-git```
+* npm
+* pm2(npm)
 
 ## discord token setup
 1. Add a database 'maindb'.
@@ -36,3 +38,9 @@ https://discord.com/oauth2/authorize?client_id=775007176157954058&scope=bot&perm
 ## Run the bot
 ```python3 bbot.py```
 use the command ,reloadall in a dicord channel with the bot to load the cogs
+
+## Run bot as without terminal open
+[guide](https://www.vultr.com/docs/how-to-run-a-python-discord-bot-on-ubuntu-21-04/)
+```
+pm2 start bbot.py --interpreter=/usr/bin/python3
+```

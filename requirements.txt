@@ -1,0 +1,5 @@
+discord
+pymongo
+gtts
+matplotlib
+discord_components

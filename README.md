@@ -26,6 +26,7 @@ https://discord.com/oauth2/authorize?client_id=775007176157954058&scope=bot&perm
 ## Prerequsiteies
 * MongoDB (v4 or later should be good) [install on ubuntu](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/)
 * Python3
+* ```pip install -r requirements.txt```
 * ```sudo apt-get install python3-git```
 * pm2(npm)
 

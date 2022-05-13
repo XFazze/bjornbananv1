@@ -3,3 +3,5 @@ pymongo
 gtts
 matplotlib
 discord_components
+cogwatch
+discord-py-interactions
